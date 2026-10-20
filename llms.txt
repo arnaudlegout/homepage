@@ -1,0 +1,11 @@
+# Arnaud Legout
+
+> Directeur de recherche à Inria (Sophia Antipolis), Arnaud Legout analyse des données à très grande échelle depuis plus de vingt ans. Il propose des formations Python data science et du conseil indépendant en data science.
+
+## Pages
+- [Arnaud Legout — directeur de recherche Inria, formation et conseil en data science](https://arnaudlegout.fr/) : parcours, recherche, enseignement, liens.
+
+## Sites liés
+- [Formations Python data science](https://formation.arnaudlegout.fr/) : formations intra-entreprise en Python, data science, calcul performant et machine learning.
+- [Conseil data science](https://consulting.arnaudlegout.fr/) : audit de la performance des traitements de données, de l'usage des agents IA et revue scientifique des analyses.
+- [Page de recherche Inria](https://www-sop.inria.fr/members/Arnaud.Legout/) : publications, projets, encadrement.
