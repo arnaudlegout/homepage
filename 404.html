@@ -9,6 +9,12 @@
   <!-- Chemins racine-absolus : GitHub Pages sert cette page depuis n'importe quelle URL -->
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <link rel="stylesheet" href="/style.css">
+  <!-- Script vide volontaire, à garder juste après la feuille de style : Firefox doit
+       attendre style.css avant de l'exécuter, donc il ne lit pas le <body> tant que le CSS
+       n'est pas chargé. Sans lui, une extension qui force la mise en page trop tôt
+       (« La mise en page a été forcée avant le chargement complet de la page ») fait
+       afficher la page sans style un instant au rechargement. Ne pas supprimer. -->
+  <script>0</script>
 </head>
 
 <body>
