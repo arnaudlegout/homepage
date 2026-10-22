@@ -43,9 +43,9 @@ FORMATION_MENU = [
     ("Compléments Python", [("/formation/python-niveau-1.html", "Python — niveau 1"),
                             ("/formation/python-avance.html", "Python — avancé")]),
 ]
-CONSEIL_MENU = [("/consulting/audit-performance-cout-traitements-data.html", "Performance et coût"),
-                ("/consulting/audit-agents-ia-data-science.html", "Agents IA"),
-                ("/consulting/revue-scientifique-analyses-data.html", "Revue scientifique")]
+CONSEIL_MENU = [("/consulting/audit-performance-cout-traitements-data.html", "Audit performance et coût"),
+                ("/consulting/audit-agents-ia-data-science.html", "Audit des agents IA"),
+                ("/consulting/revue-scientifique-analyses-data.html", "Revue scientifique des analyses")]
 CTA = {"formation": ("/formation/contact.html", "Demander un devis", "Devis"),
        "consulting": ("/consulting/contact.html", "Demander un diagnostic", "Diagnostic")}
 EXTERNAL = [("https://www-sop.inria.fr/members/Arnaud.Legout/", "Recherche Inria"),
@@ -94,22 +94,25 @@ def header(p, ind):
         return f'<a href="{p.link(target)}"{c}{p.current(target) or extra}>{p.typo(label)}</a>'
 
     def trigger(sec):
-        inside = ' aria-current="true"' if p.section == sec and p.path != f"/{sec}/" else ""
-        return a(f"/{sec}/", SECTION_NAME[sec], "nav__link", inside)
+        # the section the page belongs to (its root included): aria-current="true"; the
+        # page itself is marked once, by the breadcrumb or the dropdown
+        inside = ' aria-current="true"' if p.section == sec else ""
+        return f'<a href="{p.link(f"/{sec}/")}" class="nav__link"{inside}>{p.typo(SECTION_NAME[sec])}</a>'
 
     if BREADCRUMB == "header" and p.section:
-        sec = SECTION_NAME[p.section]
-        brand = [f'{ind}    <div class="nav__brand">',
-                 f'{ind}      {a("/", "Arnaud Legout", "nav__logo")}',
-                 f'{ind}      <span class="nav__brand-sep" aria-hidden="true">/</span>',
-                 f'{ind}      {a(f"/{p.section}/", sec, "nav__section")}',
-                 f'{ind}    </div>']
+        # breadcrumb landmark next to (not inside) the main navigation landmark
+        brand = [f'{ind}    <nav class="nav__brand" aria-label="Fil d\'Ariane">',
+                 f'{ind}      <ol>',
+                 f'{ind}        <li>{a("/", "Arnaud Legout", "nav__logo")}</li>',
+                 f'{ind}        <li>{a(f"/{p.section}/", SECTION_NAME[p.section], "nav__section")}</li>',
+                 f'{ind}      </ol>',
+                 f'{ind}    </nav>']
     else:
         brand = [f'{ind}    {a("/", "Arnaud Legout", "nav__logo")}']
     L = [f'{ind}<header class="header">',
-         f'{ind}  <nav class="nav container" aria-label="Navigation principale">',
+         f'{ind}  <div class="nav container">',
          *brand,
-         f'{ind}    <div class="nav__menu" id="nav-menu">',
+         f'{ind}    <nav class="nav__menu" id="nav-menu" aria-label="Navigation principale">',
          f'{ind}      <ul class="nav__list">',
          f'{ind}        <li class="nav__item nav__item--has-dropdown">',
          f'{ind}          {trigger("formation")}',
@@ -126,7 +129,7 @@ def header(p, ind):
     L += [f'{ind}          </ul>',
           f'{ind}        </li>']
     L += [f'{ind}      </ul>',
-          f'{ind}    </div>',
+          f'{ind}    </nav>',
           f'{ind}    <div class="nav__actions">']
     if p.section:  # no action button at the root, whose role is to route to the sections
         target, long, short = CTA[p.section]
@@ -135,7 +138,7 @@ def header(p, ind):
           *[f'{ind}        <span class="nav__burger-bar"></span>'] * 3,
           f'{ind}      </button>',
           f'{ind}    </div>',
-          f'{ind}  </nav>',
+          f'{ind}  </div>',
           f'{ind}</header>']
     return "\n".join(L)
 
@@ -145,9 +148,10 @@ def footer(p, ind):
         href = target if external else p.link(target)
         return f'<li><a href="{href}"{BLANK if external else ""}>{p.typo(label)}</a></li>'
 
-    def col(title, items, extra=""):
+    def col(title, items, extra="", href=None):
+        t = f'<a href="{p.link(href)}">{p.typo(title)}</a>' if href else p.typo(title)
         return [f'{ind}      <div class="footer__col">',
-                f'{ind}        <p class="footer__col-title">{p.typo(title)}</p>', *extra,
+                f'{ind}        <p class="footer__col-title">{t}</p>', *extra,
                 f'{ind}        <ul class="footer__link-list">',
                 *[f'{ind}          {x}' for x in items],
                 f'{ind}        </ul>',
@@ -159,8 +163,8 @@ def footer(p, ind):
          f'{ind}    <div class="footer__grid">',
          *col("Arnaud Legout", [li("/", "Parcours")] + [li(u, n, True) for u, n in EXTERNAL],
               [f'{ind}        <p class="footer__tagline">Directeur de recherche Inria — Sophia Antipolis, France</p>']),
-         *col("Formation", formation),
-         *col("Conseil", conseil),
+         *col("Formation", formation, href="/formation/"),
+         *col("Conseil", conseil, href="/consulting/"),
          *col("Contact", [li("/formation/contact.html", "Contact formation"),
                           li("/consulting/contact.html", "Contact conseil"),
                           '<li><a href="mailto:arnaud.legout@gmail.com">Email</a></li>',
@@ -240,10 +244,13 @@ def rewrite(rel):
     assert n == 1, (rel, "body")
 
     # same site, same tab
-    def same_tab(m):
+    def same_tab(m):  # attributes may be split over several lines
         tag = m.group(0)
         href = re.search(r'href="([^"]*)"', tag)
-        return tag.replace(BLANK, "") if href and internal(href.group(1)) else tag
+        if href and internal(href.group(1)):
+            tag = re.sub(r'\s+target="_blank"', "", tag)
+            tag = re.sub(r'\s+rel="noopener(?: noreferrer)?"', "", tag)
+        return tag
     t = re.sub(r"<a\s[^>]*>", same_tab, t)
 
     if crlf:

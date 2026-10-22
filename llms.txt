@@ -5,9 +5,7 @@
 ## Pages
 - [Arnaud Legout — directeur de recherche Inria, formation et conseil en data science](https://arnaudlegout.fr/) : parcours, recherche, enseignement, liens.
 
-## Sites liés
-- [Formations Python data science](https://arnaudlegout.fr/formation/) : formations intra-entreprise en Python, data science, calcul performant et machine learning.
-- [Conseil data science](https://arnaudlegout.fr/consulting/) : audit de la performance des traitements de données, de l'usage des agents IA et revue scientifique des analyses.
+## Liens
 - [Page de recherche Inria](https://www-sop.inria.fr/members/Arnaud.Legout/) : publications, projets, encadrement.
 
 ## Formation

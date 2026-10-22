@@ -69,7 +69,7 @@
       {
         "@type": "Service",
         "@id": "https://arnaudlegout.fr/consulting/revue-scientifique-analyses-data.html#service",
-        "name": "Votre analyse est-elle juste ? Et répond-elle à la bonne question ?",
+        "name": "Revue scientifique de vos analyses data",
         "description": "Avant de décider à partir d'une analyse ou d'un test A/B : relecture indépendante par un directeur de recherche. Vos calculs répondent-ils à la bonne question ?",
         "provider": { "@id": "https://arnaudlegout.fr/#arnaud-legout" },
         "areaServed": { "@type": "Country", "name": "France" },
@@ -102,13 +102,14 @@
 
   <!-- ====== HEADER ====== -->
   <header class="header">
-    <nav class="nav container" aria-label="Navigation principale">
-      <div class="nav__brand">
-        <a href="/" class="nav__logo">Arnaud Legout</a>
-        <span class="nav__brand-sep" aria-hidden="true">/</span>
-        <a href="./" class="nav__section">Conseil</a>
-      </div>
-      <div class="nav__menu" id="nav-menu">
+    <div class="nav container">
+      <nav class="nav__brand" aria-label="Fil d'Ariane">
+        <ol>
+          <li><a href="/" class="nav__logo">Arnaud Legout</a></li>
+          <li><a href="./" class="nav__section">Conseil</a></li>
+        </ol>
+      </nav>
+      <nav class="nav__menu" id="nav-menu" aria-label="Navigation principale">
         <ul class="nav__list">
           <li class="nav__item nav__item--has-dropdown">
             <a href="/formation/" class="nav__link">Formation</a>
@@ -125,13 +126,13 @@
           <li class="nav__item nav__item--has-dropdown">
             <a href="./" class="nav__link" aria-current="true">Conseil</a>
             <ul class="nav__dropdown">
-              <li><a href="audit-performance-cout-traitements-data.html">Performance et coût</a></li>
-              <li><a href="audit-agents-ia-data-science.html">Agents IA</a></li>
-              <li><a href="revue-scientifique-analyses-data.html" aria-current="page">Revue scientifique</a></li>
+              <li><a href="audit-performance-cout-traitements-data.html">Audit performance et coût</a></li>
+              <li><a href="audit-agents-ia-data-science.html">Audit des agents IA</a></li>
+              <li><a href="revue-scientifique-analyses-data.html" aria-current="page">Revue scientifique des analyses</a></li>
             </ul>
           </li>
         </ul>
-      </div>
+      </nav>
       <div class="nav__actions">
         <a href="contact.html" class="nav__cta btn btn--primary"><span class="nav__cta-long">Demander un diagnostic</span><span class="nav__cta-short">Diagnostic</span></a>
         <button type="button" class="nav__burger" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="nav-menu">
@@ -140,7 +141,7 @@
           <span class="nav__burger-bar"></span>
         </button>
       </div>
-    </nav>
+    </div>
   </header>
 
   <!-- ====== MAIN ====== -->
@@ -212,7 +213,8 @@
 
         <div class="page-section">
           <h2>Pourquoi moi</h2>
-          <p>Directeur de recherche à Inria, habilité à diriger des recherches, j'ai construit ma carrière sur l'analyse expérimentale de données à grande échelle, publiée dans les conférences les plus sélectives de mon domaine et reprise par la presse internationale. Mes travaux ont notamment établi, sur l'ensemble du graphe de Twitter, que près de six personnes sur dix partagent un article sans l'avoir lu (<a href="https://www.washingtonpost.com/news/the-intersect/wp/2016/06/16/six-in-10-of-you-will-share-this-link-without-reading-it-according-to-a-new-and-depressing-study/" target="_blank" rel="noopener">The Washington Post</a>, <a href="https://fortune.com/2016/06/19/6-out-of-10-twitter-link-clicks/" target="_blank" rel="noopener">Fortune</a>, <a href="https://web.archive.org/web/20160805065730/http://www.lesechos.fr/tech-medias/medias/0211047169697-la-plupart-des-internautes-partagent-des-articles-sans-les-avoir-lus-2007983.php" target="_blank" rel="noopener">Les Échos</a>, <a href="https://www.slate.fr/story/119811/reseaux-sociaux-lisent-titre" target="_blank" rel="noopener">Slate.fr</a>) — le genre de résultat qui n'a de valeur que si la méthode est irréprochable. J'ai aussi été adjoint du CTO d'une startup, puis fondateur et dirigeant d'une autre : je connais la pression qui pousse à décider vite sur une analyse qu'on n'a pas eu le temps de vérifier.</p>
+          <p>Directeur de recherche à Inria, habilité à diriger des recherches, j'ai construit ma carrière sur l'analyse expérimentale de données à grande échelle, publiée dans les conférences les plus sélectives de mon domaine et reprise par la presse internationale. Mes travaux ont notamment établi, sur l'ensemble du graphe de Twitter, que près de six personnes sur dix partagent un article sans l'avoir lu (<a href="https://www.washingtonpost.com/news/the-intersect/wp/2016/06/16/six-in-10-of-you-will-share-this-link-without-reading-it-according-to-a-new-and-depressing-study/" target="_blank" rel="noopener">The Washington Post</a>, <a href="https://fortune.com/2016/06/19/6-out-of-10-twitter-link-clicks/" target="_blank" rel="noopener">Fortune</a>, <a href="https://web.archive.org/web/20160805065730/http://www.lesechos.fr/tech-medias/medias/0211047169697-la-plupart-des-internautes-partagent-des-articles-sans-les-avoir-lus-2007983.php" target="_blank" rel="noopener">Les Échos</a>, <a href="https://www.slate.fr/story/119811/reseaux-sociaux-lisent-titre" target="_blank" rel="noopener">Slate.fr</a>) — le genre de résultat qui n'a de valeur que si la méthode est irréprochable. J'ai aussi été adjoint du CTO d'une startup, puis fondateur d'une autre : je connais la pression qui pousse à décider vite sur une analyse qu'on n'a pas eu le temps de vérifier.</p>
+          <p><a href="/">Mon parcours et mes recherches →</a></p>
         </div>
 
         <div class="page-section">
@@ -342,7 +344,7 @@
           </ul>
         </div>
         <div class="footer__col">
-          <p class="footer__col-title">Formation</p>
+          <p class="footer__col-title"><a href="/formation/">Formation</a></p>
           <ul class="footer__link-list">
             <li><a href="/formation/python-data-science-niveau-1.html">Python data science — niveau 1</a></li>
             <li><a href="/formation/python-data-science-niveau-2.html">Python data science — niveau 2</a></li>
@@ -352,11 +354,11 @@
           </ul>
         </div>
         <div class="footer__col">
-          <p class="footer__col-title">Conseil</p>
+          <p class="footer__col-title"><a href="./">Conseil</a></p>
           <ul class="footer__link-list">
-            <li><a href="audit-performance-cout-traitements-data.html">Performance et coût</a></li>
-            <li><a href="audit-agents-ia-data-science.html">Agents IA</a></li>
-            <li><a href="revue-scientifique-analyses-data.html">Revue scientifique</a></li>
+            <li><a href="audit-performance-cout-traitements-data.html">Audit performance et coût</a></li>
+            <li><a href="audit-agents-ia-data-science.html">Audit des agents IA</a></li>
+            <li><a href="revue-scientifique-analyses-data.html">Revue scientifique des analyses</a></li>
           </ul>
         </div>
         <div class="footer__col">

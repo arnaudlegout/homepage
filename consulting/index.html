@@ -95,6 +95,7 @@
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
+                "@id": "https://arnaudlegout.fr/consulting/audit-performance-cout-traitements-data.html#service",
                 "name": "Audit de la performance et du coût de vos traitements de données",
                 "description": "Vos analyses Python sont lentes, vos notebooks saturent, votre facture cloud grimpe. Audit indépendant : où va le temps, où va l'argent, et ce qu'il faut changer.",
                 "serviceType": "Conseil en data science",
@@ -105,6 +106,7 @@
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
+                "@id": "https://arnaudlegout.fr/consulting/audit-agents-ia-data-science.html#service",
                 "name": "Audit de l'usage des agents IA par votre équipe data",
                 "description": "Copilot, Cursor, Claude Code : que produisent-ils réellement dans votre équipe data ? Audit de la qualité du code, de la productivité et des fuites de données.",
                 "serviceType": "Conseil en data science",
@@ -115,6 +117,7 @@
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
+                "@id": "https://arnaudlegout.fr/consulting/revue-scientifique-analyses-data.html#service",
                 "name": "Revue scientifique de vos analyses data",
                 "description": "Avant de décider à partir d'une analyse ou d'un test A/B : relecture indépendante par un directeur de recherche.",
                 "serviceType": "Conseil en data science",
@@ -150,13 +153,14 @@
 
   <!-- ====== HEADER ====== -->
   <header class="header">
-    <nav class="nav container" aria-label="Navigation principale">
-      <div class="nav__brand">
-        <a href="/" class="nav__logo">Arnaud Legout</a>
-        <span class="nav__brand-sep" aria-hidden="true">/</span>
-        <a href="./" class="nav__section" aria-current="page">Conseil</a>
-      </div>
-      <div class="nav__menu" id="nav-menu">
+    <div class="nav container">
+      <nav class="nav__brand" aria-label="Fil d'Ariane">
+        <ol>
+          <li><a href="/" class="nav__logo">Arnaud Legout</a></li>
+          <li><a href="./" class="nav__section" aria-current="page">Conseil</a></li>
+        </ol>
+      </nav>
+      <nav class="nav__menu" id="nav-menu" aria-label="Navigation principale">
         <ul class="nav__list">
           <li class="nav__item nav__item--has-dropdown">
             <a href="/formation/" class="nav__link">Formation</a>
@@ -171,15 +175,15 @@
             </ul>
           </li>
           <li class="nav__item nav__item--has-dropdown">
-            <a href="./" class="nav__link" aria-current="page">Conseil</a>
+            <a href="./" class="nav__link" aria-current="true">Conseil</a>
             <ul class="nav__dropdown">
-              <li><a href="audit-performance-cout-traitements-data.html">Performance et coût</a></li>
-              <li><a href="audit-agents-ia-data-science.html">Agents IA</a></li>
-              <li><a href="revue-scientifique-analyses-data.html">Revue scientifique</a></li>
+              <li><a href="audit-performance-cout-traitements-data.html">Audit performance et coût</a></li>
+              <li><a href="audit-agents-ia-data-science.html">Audit des agents IA</a></li>
+              <li><a href="revue-scientifique-analyses-data.html">Revue scientifique des analyses</a></li>
             </ul>
           </li>
         </ul>
-      </div>
+      </nav>
       <div class="nav__actions">
         <a href="contact.html" class="nav__cta btn btn--primary"><span class="nav__cta-long">Demander un diagnostic</span><span class="nav__cta-short">Diagnostic</span></a>
         <button type="button" class="nav__burger" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="nav-menu">
@@ -188,7 +192,7 @@
           <span class="nav__burger-bar"></span>
         </button>
       </div>
-    </nav>
+    </div>
   </header>
 
   <!-- ====== MAIN ====== -->
@@ -286,8 +290,7 @@
         <p>Un diagnostic conclut parfois que l'équipe n'a pas besoin d'un audit mais de compétences. Quand c'est le cas,
           je le dis. Mes formations intra-entreprise Python data science couvrent une partie de ces besoins ; quand le
           vôtre est ailleurs, je vous le dis aussi et je vous oriente vers d'autres formations.</p>
-        <a class="btn btn--secondary" href="/formation/" target="_blank"
-          rel="noopener">Voir les formations →</a>
+        <a class="btn btn--secondary" href="/formation/">Voir les formations →</a>
       </div>
     </div>
 
@@ -324,9 +327,10 @@
         <h2 id="regard-title">Pourquoi un regard indépendant</h2>
         <p class="lead">Je suis directeur de recherche à Inria, à Sophia Antipolis, et habilité à diriger des recherches. Depuis plus de vingt ans, mon travail consiste à poser des questions auxquelles personne n'a encore répondu, à collecter les données qui permettent d'y répondre, et à défendre la méthode devant les relecteurs les plus exigeants du domaine. Mes travaux sont publiés dans les conférences de référence des réseaux, des systèmes et de la protection de la vie privée, et plusieurs ont été repris par la presse internationale.</p>
         <p>Trois de ces travaux disent ce que je sais faire. L'analyse de l'intégralité du graphe social de Twitter, plus de cinq cents millions de comptes, qui a établi que la majorité des articles partagés ne sont jamais lus. L'analyse de la totalité de la chaîne Bitcoin, seize milliards de liens, pour retrouver les fonds définitivement perdus. Des années de mesure des échanges BitTorrent, qui ont montré que l'anonymat promis par certains outils n'existait pas. À chaque fois : des données que personne n'avait traitées à cette échelle, sur une seule machine, et des résultats qui n'ont de valeur que parce que la méthode a résisté.</p>
-        <p>J'ai aussi quitté deux fois le laboratoire pour l'entreprise : adjoint du CTO d'une startup de diffusion vidéo, puis fondateur et dirigeant d'une startup dont l'application a été téléchargée par plus d'un million de personnes. Je sais ce qu'est une décision prise avec des données incomplètes, un budget serré et une échéance.</p>
+        <p>J'ai aussi quitté deux fois le laboratoire pour l'entreprise : adjoint du CTO d'une startup de diffusion vidéo, puis fondateur d'une startup dont l'application a été téléchargée par plus d'un million de personnes. Je sais ce qu'est une décision prise avec des données incomplètes, un budget serré et une échéance.</p>
         <p>Depuis 2011, je forme des ingénieurs et des chercheurs à Python et à la data science, en entreprise et dans un MOOC suivi par plus de cent cinquante mille personnes. Ce que ces années m'ont appris, c'est que la plupart des équipes n'ont pas besoin de plus d'outils ; elles ont besoin de comprendre ce que font ceux qu'elles ont.</p>
         <p>Le conseil que je propose découle de tout cela. Je ne vends ni plateforme, ni licence, ni jours de développement. Je regarde votre code, vos données et vos analyses comme je regarde un article soumis à une conférence : avec l'idée que la seule chose qui compte est de savoir si c'est juste.</p>
+        <p><a href="/">Mon parcours et mes recherches →</a></p>
       </div>
     </section>
 
@@ -359,7 +363,7 @@
           </ul>
         </div>
         <div class="footer__col">
-          <p class="footer__col-title">Formation</p>
+          <p class="footer__col-title"><a href="/formation/">Formation</a></p>
           <ul class="footer__link-list">
             <li><a href="/formation/python-data-science-niveau-1.html">Python data science — niveau 1</a></li>
             <li><a href="/formation/python-data-science-niveau-2.html">Python data science — niveau 2</a></li>
@@ -369,11 +373,11 @@
           </ul>
         </div>
         <div class="footer__col">
-          <p class="footer__col-title">Conseil</p>
+          <p class="footer__col-title"><a href="./">Conseil</a></p>
           <ul class="footer__link-list">
-            <li><a href="audit-performance-cout-traitements-data.html">Performance et coût</a></li>
-            <li><a href="audit-agents-ia-data-science.html">Agents IA</a></li>
-            <li><a href="revue-scientifique-analyses-data.html">Revue scientifique</a></li>
+            <li><a href="audit-performance-cout-traitements-data.html">Audit performance et coût</a></li>
+            <li><a href="audit-agents-ia-data-science.html">Audit des agents IA</a></li>
+            <li><a href="revue-scientifique-analyses-data.html">Revue scientifique des analyses</a></li>
           </ul>
         </div>
         <div class="footer__col">

@@ -69,7 +69,7 @@
       {
         "@type": "Service",
         "@id": "https://arnaudlegout.fr/consulting/audit-performance-cout-traitements-data.html#service",
-        "name": "Vos traitements de données sont lents et coûtent cher. Ce n'est pas une fatalité.",
+        "name": "Audit de la performance et du coût de vos traitements de données",
         "description": "Vos analyses Python sont lentes, vos notebooks saturent, votre facture cloud grimpe. Audit indépendant : où va le temps, où va l'argent, et ce qu'il faut changer.",
         "provider": { "@id": "https://arnaudlegout.fr/#arnaud-legout" },
         "areaServed": { "@type": "Country", "name": "France" },
@@ -102,13 +102,14 @@
 
   <!-- ====== HEADER ====== -->
   <header class="header">
-    <nav class="nav container" aria-label="Navigation principale">
-      <div class="nav__brand">
-        <a href="/" class="nav__logo">Arnaud Legout</a>
-        <span class="nav__brand-sep" aria-hidden="true">/</span>
-        <a href="./" class="nav__section">Conseil</a>
-      </div>
-      <div class="nav__menu" id="nav-menu">
+    <div class="nav container">
+      <nav class="nav__brand" aria-label="Fil d'Ariane">
+        <ol>
+          <li><a href="/" class="nav__logo">Arnaud Legout</a></li>
+          <li><a href="./" class="nav__section">Conseil</a></li>
+        </ol>
+      </nav>
+      <nav class="nav__menu" id="nav-menu" aria-label="Navigation principale">
         <ul class="nav__list">
           <li class="nav__item nav__item--has-dropdown">
             <a href="/formation/" class="nav__link">Formation</a>
@@ -125,13 +126,13 @@
           <li class="nav__item nav__item--has-dropdown">
             <a href="./" class="nav__link" aria-current="true">Conseil</a>
             <ul class="nav__dropdown">
-              <li><a href="audit-performance-cout-traitements-data.html" aria-current="page">Performance et coût</a></li>
-              <li><a href="audit-agents-ia-data-science.html">Agents IA</a></li>
-              <li><a href="revue-scientifique-analyses-data.html">Revue scientifique</a></li>
+              <li><a href="audit-performance-cout-traitements-data.html" aria-current="page">Audit performance et coût</a></li>
+              <li><a href="audit-agents-ia-data-science.html">Audit des agents IA</a></li>
+              <li><a href="revue-scientifique-analyses-data.html">Revue scientifique des analyses</a></li>
             </ul>
           </li>
         </ul>
-      </div>
+      </nav>
       <div class="nav__actions">
         <a href="contact.html" class="nav__cta btn btn--primary"><span class="nav__cta-long">Demander un diagnostic</span><span class="nav__cta-short">Diagnostic</span></a>
         <button type="button" class="nav__burger" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="nav-menu">
@@ -140,7 +141,7 @@
           <span class="nav__burger-bar"></span>
         </button>
       </div>
-    </nav>
+    </div>
   </header>
 
   <!-- ====== MAIN ====== -->
@@ -225,7 +226,8 @@ réellement du volume.</p>        </div>
 
         <div class="page-section">
           <h2>Pourquoi moi</h2>
-          <p>Directeur de recherche à Inria, je fais de l'analyse de données à grande échelle depuis plus de vingt ans, en Python, sur des problèmes de recherche où la reproductibilité compte autant que la vitesse. J'ai aussi été adjoint du CTO d'une startup, puis fondateur et dirigeant d'une autre : je sais ce que coûte une infrastructure surdimensionnée à une entreprise qui compte chaque euro, et je sais qu'un serveur amorti sur sept ans est parfois le meilleur investissement data qu'elle fera.</p>
+          <p>Directeur de recherche à Inria, je fais de l'analyse de données à grande échelle depuis plus de vingt ans, en Python, sur des problèmes de recherche où la reproductibilité compte autant que la vitesse. J'ai aussi été adjoint du CTO d'une startup, puis fondateur d'une autre : je sais ce que coûte une infrastructure surdimensionnée à une entreprise qui compte chaque euro, et je sais qu'un serveur amorti sur sept ans est parfois le meilleur investissement data qu'elle fera.</p>
+          <p><a href="/">Mon parcours et mes recherches →</a></p>
         </div>
 
         <div class="page-section">
@@ -356,7 +358,7 @@ réellement du volume.</p>        </div>
           </ul>
         </div>
         <div class="footer__col">
-          <p class="footer__col-title">Formation</p>
+          <p class="footer__col-title"><a href="/formation/">Formation</a></p>
           <ul class="footer__link-list">
             <li><a href="/formation/python-data-science-niveau-1.html">Python data science — niveau 1</a></li>
             <li><a href="/formation/python-data-science-niveau-2.html">Python data science — niveau 2</a></li>
@@ -366,11 +368,11 @@ réellement du volume.</p>        </div>
           </ul>
         </div>
         <div class="footer__col">
-          <p class="footer__col-title">Conseil</p>
+          <p class="footer__col-title"><a href="./">Conseil</a></p>
           <ul class="footer__link-list">
-            <li><a href="audit-performance-cout-traitements-data.html">Performance et coût</a></li>
-            <li><a href="audit-agents-ia-data-science.html">Agents IA</a></li>
-            <li><a href="revue-scientifique-analyses-data.html">Revue scientifique</a></li>
+            <li><a href="audit-performance-cout-traitements-data.html">Audit performance et coût</a></li>
+            <li><a href="audit-agents-ia-data-science.html">Audit des agents IA</a></li>
+            <li><a href="revue-scientifique-analyses-data.html">Revue scientifique des analyses</a></li>
           </ul>
         </div>
         <div class="footer__col">

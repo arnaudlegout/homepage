@@ -264,7 +264,10 @@ pre code {
   flex-shrink: 0;
   background: none;
   border: none;
-  padding: 0;
+  /* zone de toucher de 48×41px pour un dessin de 24×17px */
+  box-sizing: content-box;
+  padding: 12px;
+  margin: -12px;
 }
 
 .nav__burger-bar {
@@ -332,7 +335,9 @@ button.nav__link {
   display: none;
   position: absolute;
   top: calc(100% + 0.5rem);
-  left: 0;
+  /* ancré sur le bord droit de son entrée : sans bouton d'action (racine du site), les
+     entrées touchent le bord droit et un sous-menu ancré à gauche sortirait de l'écran */
+  right: 0;
   background: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: 6px;
@@ -458,14 +463,14 @@ button.nav__link {
   }
   .nav__dropdown a:last-child { border-bottom: none; }
 
-  /* Hamburger → X animation */
-  .nav__checkbox:checked ~ .nav__burger .nav__burger-bar:nth-child(1) {
+  /* Hamburger → X quand le menu est ouvert (état porté par aria-expanded, nav.js) */
+  .nav__burger[aria-expanded="true"] .nav__burger-bar:nth-child(1) {
     transform: translateY(7.5px) rotate(45deg);
   }
-  .nav__checkbox:checked ~ .nav__burger .nav__burger-bar:nth-child(2) {
+  .nav__burger[aria-expanded="true"] .nav__burger-bar:nth-child(2) {
     opacity: 0;
   }
-  .nav__checkbox:checked ~ .nav__burger .nav__burger-bar:nth-child(3) {
+  .nav__burger[aria-expanded="true"] .nav__burger-bar:nth-child(3) {
     transform: translateY(-7.5px) rotate(-45deg);
   }
 }
@@ -669,7 +674,7 @@ button.nav__link {
    ============================================================ */
 
 .section-header { margin-bottom: 2.5rem; }
-.section-header h2 { margin-bottom: 0.75rem; }
+.section-header h2 { margin-bottom: var(--title-gap); }
 .section-header p  { color: var(--color-text-muted); }
 
 .eyebrow {
@@ -1004,7 +1009,7 @@ button.nav__link {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
-  margin-top: 2rem;
+  margin-top: 2.5rem;  /* écart titre → grille, comme .section-header */
 }
 @media (min-width: 768px) {
   .refs-groups { grid-template-columns: repeat(3, 1fr); }
@@ -1066,7 +1071,7 @@ button.nav__link {
   .footer__grid { grid-template-columns: repeat(2, 1fr); gap: 2.5rem 3rem; }
 }
 @media (min-width: 1000px) {
-  .footer__grid { grid-template-columns: 1.2fr 1.2fr 1fr 1fr; gap: 3rem; }
+  .footer__grid { grid-template-columns: 1.15fr 1.2fr 1.2fr 0.85fr; gap: 3rem; }
 }
 
 .footer__col-title {
@@ -1076,6 +1081,9 @@ button.nav__link {
   color: var(--color-text);
   margin-bottom: 0.625rem;
 }
+/* titre de colonne lien (Formation, Conseil) : pas le soulignement des liens du texte courant */
+.footer .footer__col-title a { text-decoration: none; transition: color 0.15s ease; }
+.footer .footer__col-title a:hover { color: var(--color-accent); }
 
 /* Serif italique : un intitulé, à ne pas confondre avec les liens (sans-serif) dessous */
 .footer__tagline {
@@ -1527,16 +1535,20 @@ button.nav__link {
 .nav__dropdown a[aria-current="page"] { color: var(--color-accent); }
 
 /* Fil d'Ariane dans la barre (variante « header » de site_chrome.py) :
-   « Arnaud Legout / Section », le logo et la section étant deux liens. Sous 480px,
-   empilé (logo, puis section en petit) pour laisser la place au bouton et au burger. */
-.nav__brand {
+   « Arnaud Legout / Section », une liste dans <nav aria-label="Fil d'Ariane">, à côté
+   de la navigation principale. Sous 480px, empilé (logo, puis section en petit) pour
+   laisser la place au bouton et au burger. */
+.nav__brand { flex-shrink: 0; white-space: nowrap; }
+.nav__brand ol {
   display: flex;
   align-items: baseline;
   gap: 0.5rem;
-  flex-shrink: 0;
-  white-space: nowrap;
 }
-.nav__brand-sep { color: #A3A3A3; }
+.nav__brand li + li::before {
+  content: '/';
+  margin-right: 0.5rem;
+  color: #A3A3A3;
+}
 .nav__section {
   font-size: 0.9375rem;
   font-weight: 500;
@@ -1545,8 +1557,8 @@ button.nav__link {
 }
 .nav__section:hover { color: var(--color-accent); }
 @media (max-width: 479px) {
-  .nav__brand { flex-direction: column; align-items: flex-start; gap: 0.1rem; line-height: 1.15; }
-  .nav__brand-sep { display: none; }
+  .nav__brand ol { flex-direction: column; align-items: flex-start; gap: 0.1rem; line-height: 1.15; }
+  .nav__brand li + li::before { content: none; }
   .nav__brand .nav__logo { font-size: 1rem; }
   .nav__section { font-size: 0.8125rem; }
 }
@@ -1557,12 +1569,30 @@ button.nav__link {
   .nav__actions:not(:has(.nav__cta)) { display: none; }
 }
 
-/* Section courante : trait sous l'entrée de la barre (pas dans le menu burger) */
+/* Section courante : trait sous l'entrée de la barre (pas dans le menu burger), de la
+   première lettre à la pointe du chevron : la largeur du lien moins ses marges
+   intérieures (0.875rem de chaque côté, voir .nav__link) */
 @media (min-width: 800px) {
   .nav__item > .nav__link[aria-current] {
-    box-shadow: inset 0 -2px 0 var(--color-accent);
-    border-radius: 4px 4px 0 0;
+    background-image: linear-gradient(var(--color-accent), var(--color-accent));
+    background-repeat: no-repeat;
+    background-size: calc(100% - 1.75rem) 2px;
+    background-position: 50% 100%;
   }
+}
+
+/* Sous-menu refermé par Échap (nav.js) : reste fermé tant que le pointeur ou le focus
+   ne l'ont pas quitté */
+@media (min-width: 800px) {
+  .nav__item--has-dropdown.is-dismissed .nav__dropdown { display: none; }
+  .nav__item--has-dropdown.is-dismissed > .nav__link::after { transform: translateY(-0.2em) rotate(45deg); }
+}
+
+/* Bouton d'action de même largeur dans les deux sections (« Demander un devis » est plus
+   court que « Demander un diagnostic ») : les entrées de la barre ne bougent plus d'une
+   section à l'autre */
+@media (min-width: 480px) {
+  .nav .nav__cta { min-width: 12.75rem; text-align: center; }
 }
 
 /* Entrées à sous-menu : chevron, retourné à l'ouverture */
@@ -1863,15 +1893,6 @@ a.card--link:focus-visible .card__link {
   .hero__photo { order: 0; width: 220px; height: 286px; }
 }
 
-/* Cartes d'entrée vers les sections : le domaine au-dessus du titre */
-.card__domain {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  color: var(--color-cta);
-  margin-bottom: 0.75rem;
-}
 
 /* Prose — sections de texte (recherche, enseignement…) ;
    colonne de lecture alignée à gauche, comme le hero et les cartes */

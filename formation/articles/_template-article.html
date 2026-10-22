@@ -118,13 +118,14 @@
   <a class="skip-link" href="#main">Aller au contenu principal</a>
 
   <header class="header">
-    <nav class="nav container" aria-label="Navigation principale">
-      <div class="nav__brand">
-        <a href="/" class="nav__logo">Arnaud Legout</a>
-        <span class="nav__brand-sep" aria-hidden="true">/</span>
-        <a href="../" class="nav__section">Formation</a>
-      </div>
-      <div class="nav__menu" id="nav-menu">
+    <div class="nav container">
+      <nav class="nav__brand" aria-label="Fil d'Ariane">
+        <ol>
+          <li><a href="/" class="nav__logo">Arnaud Legout</a></li>
+          <li><a href="../" class="nav__section">Formation</a></li>
+        </ol>
+      </nav>
+      <nav class="nav__menu" id="nav-menu" aria-label="Navigation principale">
         <ul class="nav__list">
           <li class="nav__item nav__item--has-dropdown">
             <a href="../" class="nav__link" aria-current="true">Formation</a>
@@ -141,13 +142,13 @@
           <li class="nav__item nav__item--has-dropdown">
             <a href="/consulting/" class="nav__link">Conseil</a>
             <ul class="nav__dropdown">
-              <li><a href="/consulting/audit-performance-cout-traitements-data.html">Performance et coût</a></li>
-              <li><a href="/consulting/audit-agents-ia-data-science.html">Agents IA</a></li>
-              <li><a href="/consulting/revue-scientifique-analyses-data.html">Revue scientifique</a></li>
+              <li><a href="/consulting/audit-performance-cout-traitements-data.html">Audit performance et coût</a></li>
+              <li><a href="/consulting/audit-agents-ia-data-science.html">Audit des agents IA</a></li>
+              <li><a href="/consulting/revue-scientifique-analyses-data.html">Revue scientifique des analyses</a></li>
             </ul>
           </li>
         </ul>
-      </div>
+      </nav>
       <div class="nav__actions">
         <a href="../contact.html" class="nav__cta btn btn--primary"><span class="nav__cta-long">Demander un devis</span><span class="nav__cta-short">Devis</span></a>
         <button type="button" class="nav__burger" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="nav-menu">
@@ -156,7 +157,7 @@
           <span class="nav__burger-bar"></span>
         </button>
       </div>
-    </nav>
+    </div>
   </header>
 
   <main id="main">
@@ -248,7 +249,7 @@ print(df.head())</code></pre>
           </ul>
         </div>
         <div class="footer__col">
-          <p class="footer__col-title">Formation</p>
+          <p class="footer__col-title"><a href="../">Formation</a></p>
           <ul class="footer__link-list">
             <li><a href="../python-data-science-niveau-1.html">Python data science — niveau 1</a></li>
             <li><a href="../python-data-science-niveau-2.html">Python data science — niveau 2</a></li>
@@ -258,11 +259,11 @@ print(df.head())</code></pre>
           </ul>
         </div>
         <div class="footer__col">
-          <p class="footer__col-title">Conseil</p>
+          <p class="footer__col-title"><a href="/consulting/">Conseil</a></p>
           <ul class="footer__link-list">
-            <li><a href="/consulting/audit-performance-cout-traitements-data.html">Performance et coût</a></li>
-            <li><a href="/consulting/audit-agents-ia-data-science.html">Agents IA</a></li>
-            <li><a href="/consulting/revue-scientifique-analyses-data.html">Revue scientifique</a></li>
+            <li><a href="/consulting/audit-performance-cout-traitements-data.html">Audit performance et coût</a></li>
+            <li><a href="/consulting/audit-agents-ia-data-science.html">Audit des agents IA</a></li>
+            <li><a href="/consulting/revue-scientifique-analyses-data.html">Revue scientifique des analyses</a></li>
           </ul>
         </div>
         <div class="footer__col">

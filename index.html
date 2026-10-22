@@ -63,7 +63,7 @@
         "inLanguage": "fr",
         "isPartOf": { "@id": "https://arnaudlegout.fr/#website" },
         "dateCreated": "2026-10-20T17:35:52+02:00",
-        "dateModified": "2026-10-22T12:49:09+02:00",
+        "dateModified": "2026-10-22T16:02:01+02:00",
         "mainEntity": { "@id": "https://arnaudlegout.fr/#arnaud-legout" }
       },
       {
@@ -121,9 +121,9 @@
 
   <!-- ====== HEADER ====== -->
   <header class="header">
-    <nav class="nav container" aria-label="Navigation principale">
+    <div class="nav container">
       <a href="/" class="nav__logo" aria-current="page">Arnaud Legout</a>
-      <div class="nav__menu" id="nav-menu">
+      <nav class="nav__menu" id="nav-menu" aria-label="Navigation principale">
         <ul class="nav__list">
           <li class="nav__item nav__item--has-dropdown">
             <a href="/formation/" class="nav__link">Formation</a>
@@ -140,13 +140,13 @@
           <li class="nav__item nav__item--has-dropdown">
             <a href="/consulting/" class="nav__link">Conseil</a>
             <ul class="nav__dropdown">
-              <li><a href="/consulting/audit-performance-cout-traitements-data.html">Performance et coût</a></li>
-              <li><a href="/consulting/audit-agents-ia-data-science.html">Agents IA</a></li>
-              <li><a href="/consulting/revue-scientifique-analyses-data.html">Revue scientifique</a></li>
+              <li><a href="/consulting/audit-performance-cout-traitements-data.html">Audit performance et coût</a></li>
+              <li><a href="/consulting/audit-agents-ia-data-science.html">Audit des agents IA</a></li>
+              <li><a href="/consulting/revue-scientifique-analyses-data.html">Revue scientifique des analyses</a></li>
             </ul>
           </li>
         </ul>
-      </div>
+      </nav>
       <div class="nav__actions">
         <button type="button" class="nav__burger" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="nav-menu">
           <span class="nav__burger-bar"></span>
@@ -154,7 +154,7 @@
           <span class="nav__burger-bar"></span>
         </button>
       </div>
-    </nav>
+    </div>
   </header>
 
   <!-- ====== MAIN ====== -->
@@ -188,7 +188,7 @@
         <div class="cards-grid cards-grid--pair">
 
           <a class="card card--link" href="/formation/">
-            <p class="card__domain">arnaudlegout.fr/formation</p>
+            <p class="eyebrow">Formation</p>
             <h3 class="card__title">Formations Python et data science</h3>
             <ul class="card__stack">
               <li>Python</li>
@@ -202,7 +202,7 @@
           </a>
 
           <a class="card card--link" href="/consulting/">
-            <p class="card__domain">arnaudlegout.fr/consulting</p>
+            <p class="eyebrow">Conseil</p>
             <h3 class="card__title">Conseil et audit en data science</h3>
             <ul class="card__stack">
               <li>performance et coût</li>
@@ -249,7 +249,7 @@
           </li>
           <li class="timeline__item">
             <span class="timeline__date">2016–2020</span>
-            <p class="timeline__text">Fondateur et dirigeant de la startup ElectroSmart, dont l'application a été téléchargée par plus d'un million de personnes.</p>
+            <p class="timeline__text">Fondateur de la startup ElectroSmart, dont l'application a été téléchargée par plus d'un million de personnes.</p>
           </li>
           <li class="timeline__item">
             <span class="timeline__date">2021</span>
@@ -268,13 +268,14 @@
       <div class="container prose">
         <h2 id="recherche-title">Recherche</h2>
         <p>Mes travaux portent sur la mesure de l'Internet, les réseaux sociaux et la propagation de l'information, la sécurité et la protection de la vie privée, les systèmes mobiles et la distribution de contenus en pair-à-pair. Ils sont publiés dans les conférences de référence de ces domaines.</p>
-        <p>Trois d'entre eux illustrent la démarche&nbsp;:</p>
+        <p>Quatre d'entre eux illustrent la démarche&nbsp;:</p>
         <ul>
-          <li>l'analyse de l'intégralité du graphe social de Twitter, plus de cinq cents millions de comptes, qui a établi que la majorité des articles partagés ne sont jamais lus&nbsp;;</li>
+          <li>l'analyse de l'intégralité du graphe social de Twitter, plus de cinq cents millions de comptes, qui a établi que la majorité des articles partagés ne sont jamais lus (<a href="https://inria.hal.science/hal-00948889/en/" target="_blank" rel="noopener">ACM SIGMETRICS 2014</a>, <a href="https://inria.hal.science/hal-01281190/en/" target="_blank" rel="noopener">ACM SIGMETRICS 2016</a>)&nbsp;;</li>
           <li>l'analyse de la totalité de la chaîne Bitcoin, seize milliards de liens, pour retrouver les fonds définitivement perdus&nbsp;;</li>
-          <li>des années de mesure des échanges BitTorrent, qui ont montré que l'anonymat promis par certains outils n'existait pas.</li>
+          <li>des années de mesure des échanges BitTorrent, qui ont montré que l'anonymat promis par certains outils n'existait pas (<a href="https://inria.hal.science/inria-00470324/en/" target="_blank" rel="noopener">LEET 2010</a>, <a href="https://inria.hal.science/inria-00574178/en/" target="_blank" rel="noopener">LEET 2011</a>, <a href="https://inria.hal.science/inria-00632780/en/" target="_blank" rel="noopener">ACM SIGCOMM/USENIX IMC 2011</a>)&nbsp;;</li>
+          <li>la mesure crowdsourcée de l'exposition aux ondes radiofréquences avec l'application ElectroSmart, auprès de 254&nbsp;410 utilisateurs dans 13 pays de 2017 à 2020 (<a href="https://doi.org/10.1016/j.envint.2022.107144" target="_blank" rel="noopener"><em>Environment International</em></a>).</li>
         </ul>
-        <p>Plusieurs de ces travaux ont été repris par la presse internationale, dont le <a href="https://archive.nytimes.com/bits.blogs.nytimes.com/2011/11/29/skype-can-expose-your-location-researchers-say/" target="_blank" rel="noopener">New York Times</a>, le <a href="https://www.washingtonpost.com/news/the-intersect/wp/2016/06/16/six-in-10-of-you-will-share-this-link-without-reading-it-according-to-a-new-and-depressing-study/" target="_blank" rel="noopener">Washington Post</a>, <a href="https://fortune.com/2016/06/19/6-out-of-10-twitter-link-clicks/" target="_blank" rel="noopener">Fortune</a> et <a href="https://www.lemonde.fr/technologies/article/2010/05/08/l-anonymat-du-reseau-bittorrent-mis-en-cause_1348214_651865.html" target="_blank" rel="noopener">Le Monde</a>. Mes travaux récents portent aussi sur l'effet des suggestions de type IA sur la justesse des décisions, sur l'identification d'adresses Bitcoin illicites dans les forums clandestins et sur les discours de santé sur les réseaux sociaux.</p>
+        <p>Plusieurs de ces travaux ont été repris par la presse internationale, dont le <a href="https://archive.nytimes.com/bits.blogs.nytimes.com/2011/11/29/skype-can-expose-your-location-researchers-say/" target="_blank" rel="noopener">New York Times</a>, le <a href="https://www.washingtonpost.com/news/the-intersect/wp/2016/06/16/six-in-10-of-you-will-share-this-link-without-reading-it-according-to-a-new-and-depressing-study/" target="_blank" rel="noopener">Washington Post</a>, <a href="https://fortune.com/2016/06/19/6-out-of-10-twitter-link-clicks/" target="_blank" rel="noopener">Fortune</a>, <a href="https://www.eldiario.es/tecnologia/personas-compartan-articulo-twitter-abierto_1_3937933.html" target="_blank" rel="noopener">El Diario</a> et <a href="https://www.lemonde.fr/technologies/article/2010/05/08/l-anonymat-du-reseau-bittorrent-mis-en-cause_1348214_651865.html" target="_blank" rel="noopener">Le Monde</a>. Mes travaux récents portent aussi sur l'effet des suggestions de type IA sur la justesse des décisions, sur l'identification d'adresses Bitcoin illicites dans les forums clandestins et sur les discours de santé sur les réseaux sociaux.</p>
         <p>J'ai encadré six thèses jusqu'à la soutenance, siégé aux comités éditoriaux de <em>Proceedings on Privacy Enhancing Technologies</em> (2021–2023) et d'<em>Elsevier Computer Networks</em> (2012–2016), et aux comités de programme de conférences comme ACM SIGCOMM, ACM IMC, ACM CoNEXT et PETS.</p>
         <p>La liste complète de mes publications se trouve sur ma <a href="https://www-sop.inria.fr/members/Arnaud.Legout/" target="_blank" rel="noopener">page de recherche Inria</a>, qui présente aussi mes projets et mes interventions, ainsi que sur <a href="https://scholar.google.com/citations?user=uGy5lroAAAAJ" target="_blank" rel="noopener">Google Scholar</a> et sur mon <a href="https://cv.hal.science/arnaudlegout" target="_blank" rel="noopener">CV HAL</a>.</p>
       </div>
@@ -286,7 +287,7 @@
         <h2 id="enseignement-title">Enseignement</h2>
         <p>Le MOOC Python que j'ai conçu avec Thierry Parmentelat sur la plateforme FUN a réuni plus de 150&nbsp;000&nbsp;inscrits depuis 2014&nbsp;; il est aussi utilisé par Sorbonne Université et CentraleSupélec.</p>
         <p>J'enseigne en master à l'université Côte d'Azur, aujourd'hui un cours sur la blockchain et la vie privée dans le master Ubinet, et auparavant des cours sur les applications pair-à-pair, la communication scientifique et l'introduction à la data science. Depuis 2024, j'enseigne aussi à Eurecom le cours ComEng, consacré à la communication orale et écrite pour les ingénieurs.</p>
-        <p>Depuis 2011, je forme aussi des ingénieurs et des chercheurs en entreprise&nbsp;: c'est l'objet de mon <a href="/formation/">site de formation</a>.</p>
+        <p>Depuis 2011, je forme aussi des ingénieurs et des chercheurs en entreprise&nbsp;: c'est l'objet de la <a href="/formation/">section formation</a>.</p>
       </div>
     </section>
 
@@ -326,7 +327,7 @@
           </ul>
         </div>
         <div class="footer__col">
-          <p class="footer__col-title">Formation</p>
+          <p class="footer__col-title"><a href="/formation/">Formation</a></p>
           <ul class="footer__link-list">
             <li><a href="/formation/python-data-science-niveau-1.html">Python data science — niveau 1</a></li>
             <li><a href="/formation/python-data-science-niveau-2.html">Python data science — niveau 2</a></li>
@@ -336,11 +337,11 @@
           </ul>
         </div>
         <div class="footer__col">
-          <p class="footer__col-title">Conseil</p>
+          <p class="footer__col-title"><a href="/consulting/">Conseil</a></p>
           <ul class="footer__link-list">
-            <li><a href="/consulting/audit-performance-cout-traitements-data.html">Performance et coût</a></li>
-            <li><a href="/consulting/audit-agents-ia-data-science.html">Agents IA</a></li>
-            <li><a href="/consulting/revue-scientifique-analyses-data.html">Revue scientifique</a></li>
+            <li><a href="/consulting/audit-performance-cout-traitements-data.html">Audit performance et coût</a></li>
+            <li><a href="/consulting/audit-agents-ia-data-science.html">Audit des agents IA</a></li>
+            <li><a href="/consulting/revue-scientifique-analyses-data.html">Revue scientifique des analyses</a></li>
           </ul>
         </div>
         <div class="footer__col">
