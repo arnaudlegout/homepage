@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audit de l'usage des agents IA en data science | Arnaud Legout</title>
+  <meta name="description" content="Copilot, Cursor, Claude Code : que produisent-ils réellement dans votre équipe data ? Audit de la qualité du code, de la productivité et des fuites de données.">
+
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://arnaudlegout.fr/consulting/audit-agents-ia-data-science.html">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Font preloads (les plus critiques) -->
+  <link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arnaudlegout.fr/consulting/audit-agents-ia-data-science.html">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Arnaud Legout — Conseil data science">
+  <meta property="og:title" content="Audit de l'usage des agents IA en data science | Arnaud Legout">
+  <meta property="og:description" content="Copilot, Cursor, Claude Code : que produisent-ils réellement dans votre équipe data ? Audit de la qualité du code, de la productivité et des fuites de données.">
+  <meta property="og:image" content="https://arnaudlegout.fr/consulting/assets/og-image-v2.jpg">
+  <meta property="og:image:secure_url" content="https://arnaudlegout.fr/consulting/assets/og-image-v2.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Arnaud Legout, directeur de recherche Inria — conseil indépendant en data science">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Audit de l'usage des agents IA en data science | Arnaud Legout">
+  <meta name="twitter:description" content="Copilot, Cursor, Claude Code : que produisent-ils réellement dans votre équipe data ? Audit de la qualité du code, de la productivité et des fuites de données.">
+  <meta name="twitter:image" content="https://arnaudlegout.fr/consulting/assets/og-image-v2.jpg">
+  <meta name="twitter:image:alt" content="Arnaud Legout, directeur de recherche Inria — conseil indépendant en data science">
+
+  <!-- Données structurées -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://arnaudlegout.fr/#arnaud-legout",
+        "name": "Arnaud Legout",
+        "jobTitle": "Directeur de recherche Inria",
+        "worksFor": { "@type": "Organization", "name": "Inria", "url": "https://www.inria.fr/" },
+        "url": "https://arnaudlegout.fr/",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Sophia Antipolis",
+          "addressRegion": "Provence-Alpes-Côte d'Azur",
+          "addressCountry": "FR"
+        },
+        "sameAs": [
+          "https://www-sop.inria.fr/members/Arnaud.Legout/",
+          "https://www.linkedin.com/in/arnaud-legout-866a404/",
+          "https://scholar.google.com/citations?user=uGy5lroAAAAJ",
+          "https://orcid.org/0000-0003-4706-424X",
+          "https://cv.hal.science/arnaudlegout",
+          "https://arnaudlegout.fr/",
+          "https://univ-cotedazur.fr/arnaud-legout",
+          "https://github.com/arnaudlegout"
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://arnaudlegout.fr/consulting/audit-agents-ia-data-science.html#service",
+        "name": "Vos data scientists codent avec des agents IA. Savez-vous ce que ça a changé ?",
+        "description": "Copilot, Cursor, Claude Code : que produisent-ils réellement dans votre équipe data ? Audit de la qualité du code, de la productivité et des fuites de données.",
+        "provider": { "@id": "https://arnaudlegout.fr/#arnaud-legout" },
+        "areaServed": { "@type": "Country", "name": "France" },
+        "serviceType": "Conseil en data science"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Arnaud Legout", "item": "https://arnaudlegout.fr/" },
+          { "@type": "ListItem", "position": 2, "name": "Accueil", "item": "https://arnaudlegout.fr/consulting/" },
+          { "@type": "ListItem", "position": 3, "name": "Usage des agents IA par votre équipe data", "item": "https://arnaudlegout.fr/consulting/audit-agents-ia-data-science.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+  <!-- Script vide volontaire, à garder juste après la feuille de style : Firefox doit
+       attendre style.css avant de l'exécuter, donc il ne lit pas le <body> tant que le CSS
+       n'est pas chargé. Sans lui, une extension qui force la mise en page trop tôt
+       (« La mise en page a été forcée avant le chargement complet de la page ») fait
+       afficher la page sans style un instant au rechargement. Ne pas supprimer. -->
+  <script>0</script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main">Aller au contenu principal</a>
+
+  <!-- ====== HEADER ====== -->
+  <header class="header">
+    <nav class="nav container" aria-label="Navigation principale">
+      <a href="./" class="nav__logo">Arnaud Legout</a>
+
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="audit-performance-cout-traitements-data.html" class="nav__link">Performance et coût</a></li>
+          <li class="nav__item"><a href="audit-agents-ia-data-science.html" class="nav__link" aria-current="page">Agents IA</a></li>
+          <li class="nav__item"><a href="revue-scientifique-analyses-data.html" class="nav__link">Revue scientifique</a></li>
+          <li class="nav__item"><a href="a-propos.html" class="nav__link">À propos</a></li>
+        </ul>
+      </div>
+      <div class="nav__actions">
+        <a href="contact.html" class="nav__cta btn btn--primary"><span
+            class="nav__cta-long">Demander un diagnostic</span><span
+            class="nav__cta-short">Diagnostic</span></a>
+        <button type="button" class="nav__burger" aria-label="Ouvrir le menu de navigation" aria-expanded="false"
+          aria-controls="nav-menu">
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ====== MAIN ====== -->
+  <main id="main">
+
+    <div class="page-hero">
+      <div class="container container--text">
+        <h1>Vos data scientists codent avec des agents IA. Savez-vous ce que ça a changé ?</h1>
+        <div class="page-hero__badges">
+          <span class="badge">⏱ Audit de 3 à 5 jours</span>
+          <span class="badge">🔎 Diagnostic préalable d'une à deux journées</span>
+          <span class="badge">🔁 Conseil récurrent possible</span>
+          <span class="badge">💶 Tarifs sur demande</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-content">
+      <div class="container">
+
+        <div class="page-section">
+          <p class="lead">Depuis deux ans, l'essentiel du code de votre équipe
+          data est écrit avec Copilot, Cursor, Claude Code ou ChatGPT. Personne
+          ne l'a décidé formellement ; c'est arrivé poste par poste. Chacun vous
+          dira qu'il va plus vite, et sur une partie du travail c'est exact.</p>
+          <p>Trois questions restent cependant sans réponse. La qualité du code produit
+          s'améliore-t-elle ou se dégrade-t-elle ? Le gain de productivité
+          est-il réel ou perçu ? Et ce qui part vers les modèles — votre code,
+          vos données, vos méthodes — représente-t-il un risque pour
+          l'entreprise ?</p>
+          <p>Cet audit y répond à partir de votre code et de vos pratiques, pas à partir de généralités sur l'IA.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Qualité et productivité : ce que produisent réellement les agents</h2>
+          <p>Les résultats de recherche sont plus nuancés que les promesses des
+          éditeurs. Dans un <a
+          href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/"
+          target="_blank" rel="noopener">essai randomisé de METR</a>, des
+          développeurs expérimentés travaillant avec des outils IA sur leurs
+          propres projets ont mis 19 % de temps en plus, tout en s'estimant 20 %
+          plus rapides. À Stanford, <a
+          href="https://dl.acm.org/doi/10.1145/3576915.3623157" target="_blank"
+          rel="noopener">Perry et ses coauteurs</a> ont montré que les
+          participants assistés écrivaient un code moins sûr et en étaient
+          pourtant plus confiants. <a
+          href="https://dl.acm.org/doi/10.1145/3632620.3671116" target="_blank"
+          rel="noopener">Prather et ses coauteurs</a> décrivent un écart qui se
+          creuse : l'assistance profite à ceux qui maîtrisent le sujet et nuit
+          aux autres, en leur donnant une illusion de compétence. <a
+          href="https://www.pnas.org/doi/10.1073/pnas.2422633122"
+          target="_blank" rel="noopener">Bastani et ses coauteurs</a> en
+          établissent le mécanisme sur près d'un millier de participants : une
+          IA sans garde-fous améliore les résultats immédiats et dégrade
+          l'apprentissage, parce qu'on cesse de comprendre ce qu'on obtient.</p>
+          <p>Le principe est simple. Un agent fait gagner du temps à qui sait déjà faire, parce qu'il sait juger et corriger la proposition. À qui ne maîtrise pas le sujet, il propose une solution qui s'écarte de la bonne sans que rien ne le signale. La qualité finale tient aux petits ajustements de l'expert ; la dégradation tient aux petits renoncements à comprendre.</p>
+          <p>En data science, ce mécanisme est plus dangereux qu'en développement logiciel. Un bug applicatif se voit : le programme plante, un test échoue. Une erreur d'analyse ne se voit pas. Une fuite d'information entre entraînement et test, une validation croisée mal construite, une hypothèse statistique ignorée produisent un résultat plausible, présenté avec assurance, et repris dans une décision. Les notebooks n'ont pas de tests, le code exploratoire finit en production, et le modèle qui a écrit l'analyse ne connaissait rien de vos données.</p>
+          <p class="apport"><strong>Ce que j'apporte.</strong> Je forme des équipes à Python depuis 2011 (<a href="/formation/" target="_blank" rel="noopener">arnaudlegout.fr/formation</a>) et je code moi-même quotidiennement avec ces agents. Je reconnais le code qu'un praticien compétent n'aurait pas écrit, et l'analyse qui a l'air juste sans l'être. L'audit établit, par type de tâche et par profil, où l'agent accélère l'équipe et où elle perd le contrôle de ce qu'elle produit.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Données, code et méthodes : ce qui sort de l'entreprise, et ce que ça vous coûte</h2>
+          <p>Là aussi, la recherche a devancé les pratiques. <a href="https://www.usenix.org/conference/usenixsecurity21/presentation/carlini-extracting" target="_blank" rel="noopener">Carlini et ses coauteurs</a> ont montré qu'on peut extraire d'un modèle des extraits textuels de ses données d'entraînement, y compris du code, et que <a href="https://arxiv.org/abs/2202.07646" target="_blank" rel="noopener">cette mémorisation augmente avec la taille des modèles</a>. <a href="https://arxiv.org/abs/2302.12173" target="_blank" rel="noopener">Greshake et ses coauteurs</a> ont établi qu'un agent qui lit des documents ou des pages web peut recevoir des instructions cachées et exfiltrer ce à quoi il a accès — le risque grandit à mesure que les agents gagnent en autonomie et en outils. <a href="https://www.usenix.org/conference/usenixsecurity21/presentation/schuster" target="_blank" rel="noopener">Schuster et ses coauteurs</a> ont montré qu'un assistant de complétion de code peut être empoisonné pour suggérer du code vulnérable.</p>
+          <p>Concrètement, chaque requête envoie du contexte : extraits de code, noms de colonnes, échantillons de données, parfois des chiffres d'affaires ou des données clients. Selon l'outil, l'abonnement et la configuration, ce contexte est conservé ou non, réutilisé pour l'entraînement ou non, hébergé en Europe ou non. L'usage déborde souvent le cadre contractuel : un compte personnel pour dépanner, une extension installée sans validation.</p>
+          <p>La question n'est pas seulement de savoir ce qui sort, mais si ça vous nuit. Un algorithme métier qui vous distingue de vos concurrents, transmis à un modèle qui s'entraîne dessus, devient une suggestion disponible pour tout le monde. Des données clients transmises hors d'Europe engagent votre responsabilité au titre du RGPD. Un agent autonome qui accède à vos bases et à Internet est une cible d'exfiltration que vos contrôles de sécurité ne couvrent pas. Et une dépendance à un fournisseur dont les conditions changent est une question de souveraineté que peu d'équipes ont posée.</p>
+          <p class="apport"><strong>Ce que j'apporte.</strong> Une part importante de mes travaux de recherche, publiés dans les conférences de référence en sécurité et protection de la vie privée, porte sur la mesure des fuites de données et des menaces sur Internet. L'audit établit ce qui sort réellement, vers qui, sous quelles conditions, et qualifie le risque selon votre activité : ce qui est anodin, ce qui est réglementaire, ce qui met en jeu votre avantage compétitif.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Comment je procède</h2>
+          <p>L'audit dure trois à cinq jours, en partie sur site.</p>
+          <ul>
+            <li><strong>Entretiens individuels</strong> sur la pratique réelle des agents : pour quelles tâches, avec quel niveau de relecture, avec quels outils et quels comptes.</li>
+            <li><strong>Revue d'un échantillon</strong> de notebooks, scripts et pipelines produits sur les derniers mois, avec l'historique Git, pour distinguer ce qui a été généré, compris et repris.</li>
+            <li><strong>Observation de sessions de travail</strong>, pour voir comment les propositions sont acceptées, modifiées ou rejetées.</li>
+            <li><strong>Vérification de validité</strong> sur deux ou trois analyses critiques pour votre activité.</li>
+            <li><strong>Cartographie des flux</strong> : outils, abonnements, configuration, clauses de rétention et d'entraînement, données effectivement transmises, et sensibilité de chacune pour l'entreprise.</li>
+          </ul>
+        </div>
+
+        <div class="page-section">
+          <h2>Ce que vous recevez</h2>
+          <p>Un rapport écrit qui répond aux trois questions, avec les
+          observations qui les fondent ; une évaluation des pratiques par type
+          de tâche et de profil ; des règles d'usage, de
+          relecture et de vérification adaptées à votre équipe ; les mesures de
+          protection du code, des données et des méthodes à mettre en place, par
+          ordre de priorité. Deux restitutions : l'une à l'équipe, orientée
+          pratiques ; l'autre à la direction, orientée risques et décisions.</p>
+          <p>L'objectif n'est pas de restreindre l'usage des agents. C'est que votre équipe en tire la productivité qu'ils permettent, sans perdre la maîtrise de ce qu'elle produit ni la propriété de ce qu'elle sait.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Conseil récurrent</h2>
+          <p>Les outils et les usages évoluent vite, et les règles adoptées après un audit se relâchent ou deviennent obsolètes en quelques mois. Une demi-journée à une journée par mois permet de relire un échantillon récent, de vérifier ce qui a réellement été retenu par l'équipe, et d'ajuster les règles aux outils du moment.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Pour qui</h2>
+          <p>Les équipes data science, data engineering et R&amp;D de PME, d'ETI et de startups en croissance, dont les analyses, les modèles et le code sont un actif de l'entreprise.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Pourquoi moi</h2>
+          <p>Directeur de recherche à Inria, habilité à diriger des recherches, j'ai construit ma carrière sur l'analyse expérimentale de très grands volumes de données : le graphe complet de Twitter, l'intégralité des transactions Bitcoin, des millions d'adresses IP observées en continu. Une part importante de ces travaux porte sur la protection des données et la mesure de ce qui fuit sur Internet. J'ai aussi été adjoint du CTO d'une startup, puis fondateur et dirigeant d'une autre : je connais les arbitrages d'une équipe qui doit livrer.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Diagnostic préalable</h2>
+          <p>Avant toute chose, un appel d'une heure, gratuit et sans engagement, pour comprendre votre situation et vérifier que je peux vous être utile. S'il y a matière, un diagnostic d'une à deux journées : entretiens avec le responsable et deux ou trois membres de l'équipe, revue rapide d'un échantillon de code, restitution orale et recommandations écrites. Il conclut sur ce qui mérite d'être approfondi, par un audit ou par une <a href="/formation/" target="_blank" rel="noopener">formation</a>.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <section class="section section--alt quiz" data-quiz aria-labelledby="quiz-title">
+      <div class="container container--text">
+        <h2 id="quiz-title">Cinq questions avant de me contacter</h2>
+        <form class="quiz__form">
+        <fieldset class="quiz__item">
+          <legend><span class="quiz__num">1</span> Chaque membre de votre équipe peut-il expliquer, ligne par ligne, le code de ses analyses en production ?</legend>
+          <div class="quiz__options">
+            <input type="radio" class="quiz__radio" id="q1-oui" name="q1" value="oui">
+            <label class="quiz__label" for="q1-oui">Oui</label>
+            <input type="radio" class="quiz__radio" id="q1-non" name="q1" value="non">
+            <label class="quiz__label" for="q1-non">Non</label>
+            <input type="radio" class="quiz__radio" id="q1-nsp" name="q1" value="nsp">
+            <label class="quiz__label" for="q1-nsp">Je ne sais pas</label>
+          </div>
+        </fieldset>
+        <fieldset class="quiz__item">
+          <legend><span class="quiz__num">2</span> Savez-vous quels outils IA sont utilisés dans l'équipe, avec quels comptes et sous quelles conditions de rétention des données ?</legend>
+          <div class="quiz__options">
+            <input type="radio" class="quiz__radio" id="q2-oui" name="q2" value="oui">
+            <label class="quiz__label" for="q2-oui">Oui</label>
+            <input type="radio" class="quiz__radio" id="q2-non" name="q2" value="non">
+            <label class="quiz__label" for="q2-non">Non</label>
+            <input type="radio" class="quiz__radio" id="q2-nsp" name="q2" value="nsp">
+            <label class="quiz__label" for="q2-nsp">Je ne sais pas</label>
+          </div>
+        </fieldset>
+        <fieldset class="quiz__item">
+          <legend><span class="quiz__num">3</span> Vos analyses critiques sont-elles relues par quelqu'un d'autre que leur auteur, et l'agent qui a aidé à les écrire ?</legend>
+          <div class="quiz__options">
+            <input type="radio" class="quiz__radio" id="q3-oui" name="q3" value="oui">
+            <label class="quiz__label" for="q3-oui">Oui</label>
+            <input type="radio" class="quiz__radio" id="q3-non" name="q3" value="non">
+            <label class="quiz__label" for="q3-non">Non</label>
+            <input type="radio" class="quiz__radio" id="q3-nsp" name="q3" value="nsp">
+            <label class="quiz__label" for="q3-nsp">Je ne sais pas</label>
+          </div>
+        </fieldset>
+        <fieldset class="quiz__item">
+          <legend><span class="quiz__num">4</span> Avez-vous mesuré le gain de productivité des agents autrement qu'en demandant à l'équipe ?</legend>
+          <div class="quiz__options">
+            <input type="radio" class="quiz__radio" id="q4-oui" name="q4" value="oui">
+            <label class="quiz__label" for="q4-oui">Oui</label>
+            <input type="radio" class="quiz__radio" id="q4-non" name="q4" value="non">
+            <label class="quiz__label" for="q4-non">Non</label>
+            <input type="radio" class="quiz__radio" id="q4-nsp" name="q4" value="nsp">
+            <label class="quiz__label" for="q4-nsp">Je ne sais pas</label>
+          </div>
+        </fieldset>
+        <fieldset class="quiz__item">
+          <legend><span class="quiz__num">5</span> Si un fournisseur d'IA changeait ses conditions demain, sauriez-vous quel code et quelles données lui ont déjà été transmis ?</legend>
+          <div class="quiz__options">
+            <input type="radio" class="quiz__radio" id="q5-oui" name="q5" value="oui">
+            <label class="quiz__label" for="q5-oui">Oui</label>
+            <input type="radio" class="quiz__radio" id="q5-non" name="q5" value="non">
+            <label class="quiz__label" for="q5-non">Non</label>
+            <input type="radio" class="quiz__radio" id="q5-nsp" name="q5" value="nsp">
+            <label class="quiz__label" for="q5-nsp">Je ne sais pas</label>
+          </div>
+        </fieldset>
+          <div class="quiz__actions" hidden data-quiz-actions>
+            <button type="button" class="btn btn--primary" data-quiz-submit>Voir le résultat</button>
+          </div>
+        </form>
+        <div class="quiz__result" data-quiz-result role="status" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <h2>Décrivez-moi votre situation</h2>
+        <p>Tarifs sur demande.</p>
+        <div class="cta-section__actions">
+          <a href="contact.html" class="btn btn--primary">Me décrire votre situation</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section voir-aussi">
+      <div class="container">
+        <div class="section-header">
+          <h2>Voir aussi</h2>
+        </div>
+        <div class="cards-grid cards-grid--pair">
+          <a class="card card--link" href="audit-performance-cout-traitements-data.html">
+            <h3 class="card__title">Performance et coût de vos traitements de données</h3>
+            <p class="card__body">Vos analyses Python sont lentes, vos notebooks saturent, votre facture cloud grimpe.</p>
+            <span class="card__link">En savoir plus →</span>
+          </a>
+
+          <a class="card card--link" href="revue-scientifique-analyses-data.html">
+            <h3 class="card__title">Revue scientifique de vos analyses</h3>
+            <p class="card__body">Avant de mettre un modèle en production, de présenter une métrique à vos investisseurs ou de décider à partir d'un test A/B : une relecture indépendante, par quelqu'un dont c'est le métier.</p>
+            <span class="card__link">En savoir plus →</span>
+          </a>
+        </div>
+        <p class="voir-aussi__note">Un diagnostic conclut parfois que l'équipe n'a pas besoin d'un audit mais de
+          compétences. Quand c'est le cas, je le dis.
+          <a href="/formation/" target="_blank" rel="noopener">Voir les formations →</a></p>
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+
+        <div class="footer__col">
+          <p class="footer__col-title">Arnaud Legout</p>
+          <p class="footer__tagline">Directeur de recherche Inria — Sophia Antipolis, France</p>
+          <ul class="footer__link-list">
+            <li><a href="/" target="_blank" rel="noopener">Site personnel — arnaudlegout.fr</a></li>
+            <li><a href="https://www-sop.inria.fr/members/Arnaud.Legout/" target="_blank" rel="noopener">Page professionnelle Inria</a></li>
+            <li><a href="https://www.linkedin.com/in/arnaud-legout-866a404/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://scholar.google.com/citations?user=uGy5lroAAAAJ" target="_blank" rel="noopener">Google Scholar</a></li>
+            <li><a href="/formation/" target="_blank" rel="noopener">Formations Python</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <p class="footer__col-title">Interventions</p>
+          <ul class="footer__link-list">
+            <li><a href="audit-performance-cout-traitements-data.html">Performance et coût</a></li>
+            <li><a href="audit-agents-ia-data-science.html">Agents IA</a></li>
+            <li><a href="revue-scientifique-analyses-data.html">Revue scientifique</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="contact.html">Formulaire de contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <p class="footer__col-title">Contact</p>
+          <ul class="footer__contact-list">
+            <li><a href="contact.html">Formulaire de contact</a></li>
+            <li><a href="mailto:arnaud.legout@gmail.com">Email</a></li>
+            <li><a href="/mentions-legales.html">Mentions légales</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p>© 2026 Arnaud Legout. Site statique, sans cookie.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script data-goatcounter="https://arnaudlegout-consulting.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+
+  <script src="js/quiz.js" defer></script>
+  <script>
+    (function () {
+      var btn = document.querySelector('.nav__burger');
+      var menu = document.getElementById('nav-menu');
+      if (!btn || !menu) return;
+      function closeMenu() {
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', 'Ouvrir le menu de navigation');
+        menu.classList.remove('is-open');
+      }
+      btn.addEventListener('click', function () {
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        btn.setAttribute('aria-label', open ? 'Ouvrir le menu de navigation' : 'Fermer le menu de navigation');
+        menu.classList.toggle('is-open', !open);
+      });
+      menu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') closeMenu();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeMenu();
+      });
+    })();
+  </script>
+</body>
+
+</html>

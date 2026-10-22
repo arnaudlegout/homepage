@@ -6,6 +6,24 @@
 - [Arnaud Legout — directeur de recherche Inria, formation et conseil en data science](https://arnaudlegout.fr/) : parcours, recherche, enseignement, liens.
 
 ## Sites liés
-- [Formations Python data science](https://formation.arnaudlegout.fr/) : formations intra-entreprise en Python, data science, calcul performant et machine learning.
-- [Conseil data science](https://consulting.arnaudlegout.fr/) : audit de la performance des traitements de données, de l'usage des agents IA et revue scientifique des analyses.
+- [Formations Python data science](https://arnaudlegout.fr/formation/) : formations intra-entreprise en Python, data science, calcul performant et machine learning.
+- [Conseil data science](https://arnaudlegout.fr/consulting/) : audit de la performance des traitements de données, de l'usage des agents IA et revue scientifique des analyses.
 - [Page de recherche Inria](https://www-sop.inria.fr/members/Arnaud.Legout/) : publications, projets, encadrement.
+
+## Formation
+- [Formation Python data science — NumPy, Pandas, Polars, scikit-learn](https://arnaudlegout.fr/formation/) : Formations intra-entreprise Python data science et haute performance. 3 jours, 10 participants max, français ou anglais. Note 4,93/5. Devis gratuit.
+- [Formation Python data science — NumPy, Pandas, Seaborn](https://arnaudlegout.fr/formation/python-data-science-niveau-1.html) : NumPy, Pandas, Seaborn en 3 jours : vectorisation, DataFrames, Parquet, visualisation. Intra-entreprise, français ou anglais. Note 4,93/5.
+- [Formation Python haute performance — Polars, Numba, Multiprocessing](https://arnaudlegout.fr/formation/python-data-science-niveau-2.html) : Polars streaming engine, Numba JIT, parallélisme multi-cœurs. Au-delà de Pandas. 3 jours pour data scientists et ingénieurs. Intra-entreprise. Note 4,93/5.
+- [Formation Python machine learning scikit-learn](https://arnaudlegout.fr/formation/python-machine-learning.html) : scikit-learn en 3 jours : pipelines, validation croisée, méthodes d'ensemble. Rigueur méthodologique, sans surapprentissage. Intra-entreprise. Note 4,93/5.
+- [Formation Python fondamentaux — pour ingénieurs et chercheurs](https://arnaudlegout.fr/formation/python-niveau-1.html) : Fondamentaux Python en 3 jours : fonctions, itération, modules, espaces de nommage. Pour ingénieurs et chercheurs. Prérequis data science. Note 4,93/5.
+- [Formation Python avancé — décorateurs, descripteurs, métaclasses](https://arnaudlegout.fr/formation/python-avance.html) : Mécanismes internes de Python : décorateurs, générateurs, descripteurs, métaclasses. 3 jours pour développeurs expérimentés. Intra-entreprise. Note 4,93/5.
+- [Arnaud Legout — directeur de recherche Inria, formateur Python](https://arnaudlegout.fr/formation/a-propos.html) : Directeur de recherche Inria, formateur Python depuis 2011. Co-créateur du MOOC Python FUN, plus de 150 000 inscrits. Travaux : Twitter, BitTorrent, Bitcoin.
+- [Contact — Formation Python data science | Arnaud Legout](https://arnaudlegout.fr/formation/contact.html) : Décrivez votre besoin de formation Python ou data science pour votre équipe. Arnaud Legout répond sous 48 heures avec une proposition adaptée.
+
+## Conseil
+- [Audit data science indépendant : performance, agents IA, analyses | Arnaud Legout](https://arnaudlegout.fr/consulting/) : Traitements lents ou coûteux, code produit avec des agents IA, analyses non relues : diagnostic d'une à deux journées par un directeur de recherche Inria.
+- [Traitements data lents ou coûteux : audit indépendant | A. Legout](https://arnaudlegout.fr/consulting/audit-performance-cout-traitements-data.html) : Vos analyses Python sont lentes, vos notebooks saturent, votre facture cloud grimpe. Audit indépendant : où va le temps, où va l'argent, et ce qu'il faut changer.
+- [Audit de l'usage des agents IA en data science | Arnaud Legout](https://arnaudlegout.fr/consulting/audit-agents-ia-data-science.html) : Copilot, Cursor, Claude Code : que produisent-ils réellement dans votre équipe data ? Audit de la qualité du code, de la productivité et des fuites de données.
+- [Revue scientifique de vos analyses data | Arnaud Legout](https://arnaudlegout.fr/consulting/revue-scientifique-analyses-data.html) : Avant de décider à partir d'une analyse ou d'un test A/B : relecture indépendante par un directeur de recherche. Vos calculs répondent-ils à la bonne question ?
+- [Arnaud Legout — directeur de recherche Inria, conseil data science](https://arnaudlegout.fr/consulting/a-propos.html) : Directeur de recherche à Inria, plus de vingt ans d'analyse de données à grande échelle, deux startups, formateur Python depuis 2011. Pourquoi un regard indépendant.
+- [Contact — conseil data science | Arnaud Legout](https://arnaudlegout.fr/consulting/contact.html) : Décrivez votre situation : traitements lents, agents IA, analyse à relire. Réponse sous 48 heures avec une proposition de diagnostic ou d'intervention.

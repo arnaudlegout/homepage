@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traitements data lents ou coûteux : audit indépendant | A. Legout</title>
+  <meta name="description" content="Vos analyses Python sont lentes, vos notebooks saturent, votre facture cloud grimpe. Audit indépendant : où va le temps, où va l'argent, et ce qu'il faut changer.">
+
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://arnaudlegout.fr/consulting/audit-performance-cout-traitements-data.html">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Font preloads (les plus critiques) -->
+  <link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arnaudlegout.fr/consulting/audit-performance-cout-traitements-data.html">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Arnaud Legout — Conseil data science">
+  <meta property="og:title" content="Traitements data lents ou coûteux : audit indépendant | A. Legout">
+  <meta property="og:description" content="Vos analyses Python sont lentes, vos notebooks saturent, votre facture cloud grimpe. Audit indépendant : où va le temps, où va l'argent, et ce qu'il faut changer.">
+  <meta property="og:image" content="https://arnaudlegout.fr/consulting/assets/og-image-v2.jpg">
+  <meta property="og:image:secure_url" content="https://arnaudlegout.fr/consulting/assets/og-image-v2.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Arnaud Legout, directeur de recherche Inria — conseil indépendant en data science">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Traitements data lents ou coûteux : audit indépendant | A. Legout">
+  <meta name="twitter:description" content="Vos analyses Python sont lentes, vos notebooks saturent, votre facture cloud grimpe. Audit indépendant : où va le temps, où va l'argent, et ce qu'il faut changer.">
+  <meta name="twitter:image" content="https://arnaudlegout.fr/consulting/assets/og-image-v2.jpg">
+  <meta name="twitter:image:alt" content="Arnaud Legout, directeur de recherche Inria — conseil indépendant en data science">
+
+  <!-- Données structurées -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://arnaudlegout.fr/#arnaud-legout",
+        "name": "Arnaud Legout",
+        "jobTitle": "Directeur de recherche Inria",
+        "worksFor": { "@type": "Organization", "name": "Inria", "url": "https://www.inria.fr/" },
+        "url": "https://arnaudlegout.fr/",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Sophia Antipolis",
+          "addressRegion": "Provence-Alpes-Côte d'Azur",
+          "addressCountry": "FR"
+        },
+        "sameAs": [
+          "https://www-sop.inria.fr/members/Arnaud.Legout/",
+          "https://www.linkedin.com/in/arnaud-legout-866a404/",
+          "https://scholar.google.com/citations?user=uGy5lroAAAAJ",
+          "https://orcid.org/0000-0003-4706-424X",
+          "https://cv.hal.science/arnaudlegout",
+          "https://arnaudlegout.fr/",
+          "https://univ-cotedazur.fr/arnaud-legout",
+          "https://github.com/arnaudlegout"
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://arnaudlegout.fr/consulting/audit-performance-cout-traitements-data.html#service",
+        "name": "Vos traitements de données sont lents et coûtent cher. Ce n'est pas une fatalité.",
+        "description": "Vos analyses Python sont lentes, vos notebooks saturent, votre facture cloud grimpe. Audit indépendant : où va le temps, où va l'argent, et ce qu'il faut changer.",
+        "provider": { "@id": "https://arnaudlegout.fr/#arnaud-legout" },
+        "areaServed": { "@type": "Country", "name": "France" },
+        "serviceType": "Conseil en data science"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Arnaud Legout", "item": "https://arnaudlegout.fr/" },
+          { "@type": "ListItem", "position": 2, "name": "Accueil", "item": "https://arnaudlegout.fr/consulting/" },
+          { "@type": "ListItem", "position": 3, "name": "Performance et coût de vos traitements de données", "item": "https://arnaudlegout.fr/consulting/audit-performance-cout-traitements-data.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+  <!-- Script vide volontaire, à garder juste après la feuille de style : Firefox doit
+       attendre style.css avant de l'exécuter, donc il ne lit pas le <body> tant que le CSS
+       n'est pas chargé. Sans lui, une extension qui force la mise en page trop tôt
+       (« La mise en page a été forcée avant le chargement complet de la page ») fait
+       afficher la page sans style un instant au rechargement. Ne pas supprimer. -->
+  <script>0</script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main">Aller au contenu principal</a>
+
+  <!-- ====== HEADER ====== -->
+  <header class="header">
+    <nav class="nav container" aria-label="Navigation principale">
+      <a href="./" class="nav__logo">Arnaud Legout</a>
+
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="audit-performance-cout-traitements-data.html" class="nav__link" aria-current="page">Performance et coût</a></li>
+          <li class="nav__item"><a href="audit-agents-ia-data-science.html" class="nav__link">Agents IA</a></li>
+          <li class="nav__item"><a href="revue-scientifique-analyses-data.html" class="nav__link">Revue scientifique</a></li>
+          <li class="nav__item"><a href="a-propos.html" class="nav__link">À propos</a></li>
+        </ul>
+      </div>
+      <div class="nav__actions">
+        <a href="contact.html" class="nav__cta btn btn--primary"><span
+            class="nav__cta-long">Demander un diagnostic</span><span
+            class="nav__cta-short">Diagnostic</span></a>
+        <button type="button" class="nav__burger" aria-label="Ouvrir le menu de navigation" aria-expanded="false"
+          aria-controls="nav-menu">
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ====== MAIN ====== -->
+  <main id="main">
+
+    <div class="page-hero">
+      <div class="container container--text">
+        <h1>Vos traitements de données sont lents et coûtent cher. Ce n'est pas une fatalité.</h1>
+        <div class="page-hero__badges">
+          <span class="badge">⏱ Audit de 3 à 5 jours</span>
+          <span class="badge">🔎 Diagnostic préalable d'une à deux journées</span>
+          <span class="badge">🔁 Conseil récurrent possible</span>
+          <span class="badge">💶 Tarifs sur demande</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-content">
+      <div class="container">
+
+        <div class="page-section">
+          <p class="lead">Un job de nuit qui déborde sur la matinée. Un notebook qui sature la mémoire sur un volume pourtant raisonnable. Une facture cloud qui grimpe à chaque nouveau cas d'usage. Face à ces symptômes, la réponse habituelle est d'ajouter : une instance plus grosse, un cluster, une plateforme distribuée. C'est presque toujours la réponse la plus chère, et rarement la bonne.</p>
+          <p>Cet audit répond à deux questions. Où vos traitements perdent-ils réellement du temps, et quels leviers permettent de le récupérer ? Où perdez-vous de l'argent, et quelle infrastructure correspond vraiment à votre charge de travail ?</p>
+          <p>Je ne vends ni plateforme, ni licence, ni projet de migration. Mes recommandations n'ont pas d'autre intérêt que le vôtre.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Le mauvais réflexe : les outils de Google pour des données qui ne sont pas celles de Google</h2>
+          <p>Spark, Hadoop, et les plateformes construites dessus ont été conçus pour des entreprises qui traitent des données que leurs machines ne peuvent pas contenir. C'est un problème réel, et rare. La plupart des équipes qui adoptent ces outils ont des volumes de plusieurs ordres de grandeur inférieurs, mais raisonnent ainsi : si c'est assez bon pour Google ou Amazon, c'est ce qu'il y a de mieux. Elles héritent alors d'une couche d'exploitation, de compétences et de coût qu'elles n'amortissent jamais, et de traitements souvent plus lents que sur une seule machine bien utilisée.</p>
+          <p>La recherche décrit ce décalage. <a href="https://dl.acm.org/doi/10.1145/3639313" target="_blank" rel="noopener">Baziotis, Kang et Mendis</a> constatent qu'une grande part du travail réel en data science tourne sur une seule machine, avec du code ad hoc, et que les frameworks distribués n'ont pas été conçus pour ces cas ; ils obtiennent des accélérations importantes en réécrivant du code pandas existant, sans toucher à l'infrastructure. <a href="https://dl.acm.org/doi/10.14778/3407790.3407807" target="_blank" rel="noopener">Petersohn et ses coauteurs</a> montrent que les problèmes de performance des dataframes apparaissent dès des volumes modérés et tiennent à la façon dont les opérations sont exprimées, pas à la machine.</p>
+          <p>Mon expérience le confirme à une échelle que peu d'équipes atteignent. J'ai analysé l'intégralité du graphe social de Twitter, plus de cinq cents millions de comptes et vingt-trois milliards de liens ; l'intégralité de la chaîne de transactions Bitcoin, plus de seize milliards de liens ; des années d'échanges BitTorrent portant sur des centaines de millions d'adresses. Tout cela sur une seule machine, en Python. Vos données sont presque certainement plus petites.</p>
+          <p class="apport"><strong>Ce que j'apporte.</strong> Le regard de quelqu'un qui a déjà
+rencontré ces problèmes, les a résolus, et ne vend ni infrastructure ni licences. Je sais
+reconnaître, en lisant votre code et en examinant votre architecture, la part de la
+lenteur qui vient de l'outillage, celle qui vient du code, et celle, rare, qui vient
+réellement du volume.</p>        </div>
+
+        <div class="page-section">
+          <h2>Où va le temps, où va l'argent</h2>
+          <p>Les gains de performance en data science viennent rarement de la
+          puissance de calcul. Ils viennent de la façon dont le code est écrit :
+          boucles là où une opération vectorisée suffirait, jointures qui
+          recalculent ce qui pourrait être conservé, types de données qui
+          multiplient l'empreinte mémoire par dix, lecture intégrale de fichiers
+          dont trois colonnes servent. Le passage de pandas à Polars, la
+          compilation d'un noyau avec Numba, ou la réécriture de dix lignes
+          critiques apportent des ordres de grandeur d'amélioration de la
+          performance — à condition de
+          savoir où les appliquer, et d'utiliser ces outils comme ils sont
+          conçus : du code pandas traduit ligne à ligne vers Polars ne gagne
+          rien.</p>
+          <p>Côté infrastructure, les enquêtes convergent : <a href="https://info.flexera.com/CM-REPORT-State-of-the-Cloud" target="_blank" rel="noopener">Flexera</a> rapporte en 2026 que 85 % des organisations considèrent la gestion des coûts cloud comme un défi majeur et estiment gaspiller 29 % de leurs dépenses d'infrastructure. Le cloud à la demande est rentable pour une charge irrégulière et ruineux pour une charge continue. Pour beaucoup d'équipes, une machine dédiée, achetée et amortie sur plusieurs années, coûte moins que six mois d'abonnement, tient dans un placard, et ne dépend d'aucun fournisseur. Pour d'autres, c'est l'inverse. L'arbitrage se fait sur votre profil de charge réel, pas sur des principes.</p>
+          <p class="apport"><strong>Ce que j'apporte.</strong> Je forme des équipes à la performance Python depuis 2011, et ma formation <a href="/formation/python-data-science-niveau-2.html" target="_blank" rel="noopener">« Python haute performance »</a> est née de mes propres traitements à grande échelle. Je lis un profil d'exécution, je reconnais les motifs qui coûtent, et je sais décider entre optimiser l'existant, migrer une section, compiler, réécrire, ou changer d'infrastructure. Je sais aussi dire quand il ne faut rien faire.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Comment je procède</h2>
+          <p>L'audit dure trois à cinq jours selon le périmètre. Je ne réécris pas votre code et je ne dimensionne pas votre infrastructure à votre place : j'établis un diagnostic et je donne à votre équipe les moyens d'agir.</p>
+          <ul>
+            <li><strong>Cadrage</strong> avec le responsable : les traitements qui posent problème, leur fréquence, leur coût actuel, ce qu'un gain changerait pour l'activité.</li>
+            <li><strong>Revue du code</strong> des traitements critiques : structures de données, types, ordre des opérations, formats de fichiers, usage des bibliothèques.</li>
+            <li><strong>Revue de l'architecture</strong> : ce qui tourne où, pourquoi, et ce que ça coûte.</li>
+            <li><strong>Sessions avec l'équipe</strong> sur les traitements identifiés, pour localiser ensemble où le temps et la mémoire partent et vérifier les hypothèses sur vos données.</li>
+            <li><strong>Analyse du profil de charge</strong> avec vous : volumes actuels et prévisibles, régularité, contraintes réelles.</li>
+          </ul>
+        </div>
+
+        <div class="page-section">
+          <h2>Ce que vous recevez</h2>
+          <p>Un rapport de constats et de recommandations : les causes de lenteur identifiées, classées par rapport entre effort et gain attendu ; les endroits où une migration vers Polars, une compilation Numba ou une réécriture est justifiée, et ceux où elle ne l'est pas ; une position argumentée sur l'infrastructure — conserver, réduire, changer, ou acheter — avec les ordres de grandeur de coût sur plusieurs années ; et un plan d'action que l'équipe exécute elle-même. Si le plan demande des compétences que l'équipe n'a pas encore, je le dis, et une <a href="/formation/" target="_blank" rel="noopener">formation ciblée</a> peut prendre le relais.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Conseil récurrent</h2>
+          <p>Après un audit, les gains se perdent parfois : nouveaux cas d'usage, nouvelles dépendances, code écrit dans l'urgence, et la facture qui remonte sans qu'on sache pourquoi. Une demi-journée à une journée par mois permet de vérifier que les choix retenus tiennent, d'arbitrer les nouveaux, et de repérer une dérive avant qu'elle ne coûte.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Pour qui</h2>
+          <p>Les équipes data science, data engineering et R&amp;D de PME, d'ETI et de startups en croissance, dont les traitements Python — pandas, NumPy, scikit-learn — sont devenus trop lents ou trop coûteux pour l'activité qu'ils soutiennent, ou qui s'apprêtent à investir dans une plateforme distribuée et veulent un avis indépendant avant de signer.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Pourquoi moi</h2>
+          <p>Directeur de recherche à Inria, je fais de l'analyse de données à grande échelle depuis plus de vingt ans, en Python, sur des problèmes de recherche où la reproductibilité compte autant que la vitesse. J'ai aussi été adjoint du CTO d'une startup, puis fondateur et dirigeant d'une autre : je sais ce que coûte une infrastructure surdimensionnée à une entreprise qui compte chaque euro, et je sais qu'un serveur amorti sur sept ans est parfois le meilleur investissement data qu'elle fera.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Diagnostic préalable</h2>
+          <p>Avant toute chose, un appel d'une heure, gratuit et sans engagement, pour comprendre votre situation et vérifier que je peux vous être utile. S'il y a matière, un diagnostic d'une à deux journées : cadrage avec le responsable, revue rapide d'un ou deux traitements représentatifs, restitution orale et recommandations écrites. Il conclut sur ce qui mérite un audit, une formation, ou rien.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <section class="section section--alt quiz" data-quiz aria-labelledby="quiz-title">
+      <div class="container container--text">
+        <h2 id="quiz-title">Cinq questions avant de me contacter</h2>
+        <form class="quiz__form">
+        <fieldset class="quiz__item">
+          <legend><span class="quiz__num">1</span> Savez-vous combien de temps prend votre traitement le plus long, et à quelle étape il le passe ?</legend>
+          <div class="quiz__options">
+            <input type="radio" class="quiz__radio" id="q1-oui" name="q1" value="oui">
+            <label class="quiz__label" for="q1-oui">Oui</label>
+            <input type="radio" class="quiz__radio" id="q1-non" name="q1" value="non">
+            <label class="quiz__label" for="q1-non">Non</label>
+            <input type="radio" class="quiz__radio" id="q1-nsp" name="q1" value="nsp">
+            <label class="quiz__label" for="q1-nsp">Je ne sais pas</label>
+          </div>
+        </fieldset>
+        <fieldset class="quiz__item">
+          <legend><span class="quiz__num">2</span> Avez-vous déjà profilé ce traitement, ou seulement augmenté la machine ?</legend>
+          <div class="quiz__options">
+            <input type="radio" class="quiz__radio" id="q2-oui" name="q2" value="oui">
+            <label class="quiz__label" for="q2-oui">Oui</label>
+            <input type="radio" class="quiz__radio" id="q2-non" name="q2" value="non">
+            <label class="quiz__label" for="q2-non">Non</label>
+            <input type="radio" class="quiz__radio" id="q2-nsp" name="q2" value="nsp">
+            <label class="quiz__label" for="q2-nsp">Je ne sais pas</label>
+          </div>
+        </fieldset>
+        <fieldset class="quiz__item">
+          <legend><span class="quiz__num">3</span> Votre plus gros jeu de données tient-il sur le disque d'un poste de travail ?</legend>
+          <div class="quiz__options">
+            <input type="radio" class="quiz__radio" id="q3-oui" name="q3" value="oui">
+            <label class="quiz__label" for="q3-oui">Oui</label>
+            <input type="radio" class="quiz__radio" id="q3-non" name="q3" value="non">
+            <label class="quiz__label" for="q3-non">Non</label>
+            <input type="radio" class="quiz__radio" id="q3-nsp" name="q3" value="nsp">
+            <label class="quiz__label" for="q3-nsp">Je ne sais pas</label>
+          </div>
+        </fieldset>
+        <fieldset class="quiz__item">
+          <legend><span class="quiz__num">4</span> Connaissez-vous le coût annuel complet de votre infrastructure data, exploitation comprise ?</legend>
+          <div class="quiz__options">
+            <input type="radio" class="quiz__radio" id="q4-oui" name="q4" value="oui">
+            <label class="quiz__label" for="q4-oui">Oui</label>
+            <input type="radio" class="quiz__radio" id="q4-non" name="q4" value="non">
+            <label class="quiz__label" for="q4-non">Non</label>
+            <input type="radio" class="quiz__radio" id="q4-nsp" name="q4" value="nsp">
+            <label class="quiz__label" for="q4-nsp">Je ne sais pas</label>
+          </div>
+        </fieldset>
+        <fieldset class="quiz__item">
+          <legend><span class="quiz__num">5</span> Quelqu'un vous a-t-il déjà dit que vous n'aviez pas besoin d'un cluster ?</legend>
+          <div class="quiz__options">
+            <input type="radio" class="quiz__radio" id="q5-oui" name="q5" value="oui">
+            <label class="quiz__label" for="q5-oui">Oui</label>
+            <input type="radio" class="quiz__radio" id="q5-non" name="q5" value="non">
+            <label class="quiz__label" for="q5-non">Non</label>
+            <input type="radio" class="quiz__radio" id="q5-nsp" name="q5" value="nsp">
+            <label class="quiz__label" for="q5-nsp">Je ne sais pas</label>
+          </div>
+        </fieldset>
+          <div class="quiz__actions" hidden data-quiz-actions>
+            <button type="button" class="btn btn--primary" data-quiz-submit>Voir le résultat</button>
+          </div>
+        </form>
+        <div class="quiz__result" data-quiz-result role="status" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <h2>Décrivez-moi votre situation</h2>
+        <p>Tarifs sur demande.</p>
+        <div class="cta-section__actions">
+          <a href="contact.html" class="btn btn--primary">Me décrire votre situation</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section voir-aussi">
+      <div class="container">
+        <div class="section-header">
+          <h2>Voir aussi</h2>
+        </div>
+        <div class="cards-grid cards-grid--pair">
+          <a class="card card--link" href="audit-agents-ia-data-science.html">
+            <h3 class="card__title">Usage des agents IA par votre équipe data</h3>
+            <p class="card__body">Copilot, Cursor, Claude Code : vos data
+            scientists vont plus vite, mais que produisent-ils, et qu'est-ce qui sort de chez vous ?</p>
+            <span class="card__link">En savoir plus →</span>
+          </a>
+
+          <a class="card card--link" href="revue-scientifique-analyses-data.html">
+            <h3 class="card__title">Revue scientifique de vos analyses</h3>
+            <p class="card__body">Avant de mettre un modèle en production, de présenter une métrique à vos investisseurs ou de décider à partir d'un test A/B : une relecture indépendante, par quelqu'un dont c'est le métier.</p>
+            <span class="card__link">En savoir plus →</span>
+          </a>
+        </div>
+        <p class="voir-aussi__note">Un diagnostic conclut parfois que l'équipe n'a pas besoin d'un audit mais de
+          compétences. Quand c'est le cas, je le dis.
+          <a href="/formation/" target="_blank" rel="noopener">Voir les formations →</a></p>
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+
+        <div class="footer__col">
+          <p class="footer__col-title">Arnaud Legout</p>
+          <p class="footer__tagline">Directeur de recherche Inria — Sophia Antipolis, France</p>
+          <ul class="footer__link-list">
+            <li><a href="/" target="_blank" rel="noopener">Site personnel — arnaudlegout.fr</a></li>
+            <li><a href="https://www-sop.inria.fr/members/Arnaud.Legout/" target="_blank" rel="noopener">Page professionnelle Inria</a></li>
+            <li><a href="https://www.linkedin.com/in/arnaud-legout-866a404/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://scholar.google.com/citations?user=uGy5lroAAAAJ" target="_blank" rel="noopener">Google Scholar</a></li>
+            <li><a href="/formation/" target="_blank" rel="noopener">Formations Python</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <p class="footer__col-title">Interventions</p>
+          <ul class="footer__link-list">
+            <li><a href="audit-performance-cout-traitements-data.html">Performance et coût</a></li>
+            <li><a href="audit-agents-ia-data-science.html">Agents IA</a></li>
+            <li><a href="revue-scientifique-analyses-data.html">Revue scientifique</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="contact.html">Formulaire de contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <p class="footer__col-title">Contact</p>
+          <ul class="footer__contact-list">
+            <li><a href="contact.html">Formulaire de contact</a></li>
+            <li><a href="mailto:arnaud.legout@gmail.com">Email</a></li>
+            <li><a href="/mentions-legales.html">Mentions légales</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p>© 2026 Arnaud Legout. Site statique, sans cookie.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script data-goatcounter="https://arnaudlegout-consulting.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+
+  <script src="js/quiz.js" defer></script>
+  <script>
+    (function () {
+      var btn = document.querySelector('.nav__burger');
+      var menu = document.getElementById('nav-menu');
+      if (!btn || !menu) return;
+      function closeMenu() {
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', 'Ouvrir le menu de navigation');
+        menu.classList.remove('is-open');
+      }
+      btn.addEventListener('click', function () {
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        btn.setAttribute('aria-label', open ? 'Ouvrir le menu de navigation' : 'Fermer le menu de navigation');
+        menu.classList.toggle('is-open', !open);
+      });
+      menu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') closeMenu();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeMenu();
+      });
+    })();
+  </script>
+</body>
+
+</html>

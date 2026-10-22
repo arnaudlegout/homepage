@@ -1,0 +1,969 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formation Python data science — NumPy, Pandas, Polars, scikit-learn</title>
+  <meta name="description"
+    content="Formations intra-entreprise Python data science et haute performance. 3 jours, 10 participants max, français ou anglais. Note 4,93/5. Devis gratuit.">
+  <!-- Google Search Console -->
+  <meta name="google-site-verification" content="2ZB5VmVOFcLjOfzvv1SirssB8B54ssDbqv8Rmw_51UU">
+  <meta name="google-site-verification" content="TptHKZTI5h6IzFEe5raHuz4iS6fqZ1oFkjd_YNmQ6tI">
+  <!-- Bing Webmaster Tools -->
+  <meta name="msvalidate.01" content="D42AAF6A4D1B0E72D80564BAE3329F0C">
+
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://arnaudlegout.fr/formation/">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+  <!-- Font preloads (most critical) -->
+  <link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arnaudlegout.fr/formation/">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Arnaud Legout — Formations Python data science">
+  <meta property="og:title"
+    content="Formation Python data science en entreprise — NumPy, Pandas, Polars, scikit-learn | Arnaud Legout">
+  <meta property="og:description"
+    content="Formations intra-entreprise Python data science et haute performance. 3 jours, 10 participants max, français ou anglais. Note 4,93/5. Devis gratuit.">
+  <meta property="og:image" content="https://arnaudlegout.fr/formation/assets/images/og-image-v2.jpg">
+  <meta property="og:image:secure_url" content="https://arnaudlegout.fr/formation/assets/images/og-image-v2.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Formation Python data science par Arnaud Legout, directeur de recherche Inria — Note 4,93/5">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title"
+    content="Formation Python data science en entreprise — NumPy, Pandas, Polars, scikit-learn | Arnaud Legout">
+  <meta name="twitter:description"
+    content="Formations intra-entreprise Python data science et haute performance. 3 jours, 10 participants max, français ou anglais. Note 4,93/5. Devis gratuit.">
+  <meta name="twitter:image" content="https://arnaudlegout.fr/formation/assets/images/og-image-v2.jpg">
+  <meta name="twitter:image:alt" content="Formation Python data science par Arnaud Legout, directeur de recherche Inria — Note 4,93/5">
+
+  <!-- Données structurées -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://arnaudlegout.fr/#arnaud-legout",
+        "name": "Arnaud Legout",
+        "jobTitle": "Directeur de recherche Inria",
+        "worksFor": { "@type": "Organization", "name": "Inria", "url": "https://www.inria.fr/" },
+        "url": "https://arnaudlegout.fr/",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Sophia Antipolis",
+          "addressRegion": "Provence-Alpes-Côte d'Azur",
+          "addressCountry": "FR"
+        },
+        "sameAs": [
+          "https://www-sop.inria.fr/members/Arnaud.Legout/",
+          "https://www.linkedin.com/in/arnaud-legout-866a404/",
+          "https://scholar.google.com/citations?user=uGy5lroAAAAJ",
+          "https://orcid.org/0000-0003-4706-424X",
+          "https://cv.hal.science/arnaudlegout",
+          "https://arnaudlegout.fr/",
+          "https://univ-cotedazur.fr/arnaud-legout",
+          "https://github.com/arnaudlegout"
+        ]
+      },
+      {
+        "@type": ["LocalBusiness", "EducationalOrganization"],
+        "@id": "https://arnaudlegout.fr/formation/#formation-arnaud-legout",
+        "name": "Elara Formations",
+        "alternateName": "Formations Python — Arnaud Legout",
+        "url": "https://arnaudlegout.fr/formation/",
+        "description": "Formations intra-entreprise Python data science et haute performance. 3 jours, 10 participants max, français ou anglais. Note 4,93/5. Devis gratuit.",
+        "areaServed": ["Nice", "Sophia Antipolis", "Antibes", "Monaco", "Paris"],
+        "sameAs": [
+          "https://g.page/r/CQmq-9dkIGmCEBM/"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Antibes",
+          "addressRegion": "Provence-Alpes-Côte d'Azur",
+          "addressCountry": "FR"
+        },
+        "founder": { "@id": "https://arnaudlegout.fr/#arnaud-legout" },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.93",
+          "bestRating": "5",
+          "ratingCount": "289"
+        },
+        "review": [
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "Tony Z.",
+              "affiliation": { "@type": "Organization", "name": "Mines Paris – PSL / CEMEF" }
+            },
+            "reviewBody": "M. Legout maîtrise parfaitement le sujet. Il répond humblement à toutes les questions de la manière la plus claire et la plus honnête. J'ai très bien appris Pandas et Seaborn, et également plein de choses très utiles sur NumPy : les méthodes les plus efficaces parmi plusieurs, la manière dont NumPy « pense ». J'aimerais bien participer aussi s'il donne un autre cours."
+          },
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "Damien P.",
+              "affiliation": { "@type": "Organization", "name": "IGBMC – CNRS" }
+            },
+            "reviewBody": "Arnaud Legout est un très bon formateur, il explique très bien, il connaît très bien son sujet et répond à toutes nos questions. L'outil CoCalc est très pratique, il permet d'écrire du code tout en ce que le formateur puisse voir ce que l'on fait pour qu'il puisse nous aider en cas de blocage. J'ai appris beaucoup de choses qui me seront très utiles dans mon travail."
+          },
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "Fabien P.",
+              "affiliation": { "@type": "Organization", "name": "Observatoire de la Côte d'Azur" }
+            },
+            "reviewBody": "Very well documented. Perfectly meets my needs and goes further. Pedagogical course. The rhythm is fine. The answers to questions are great."
+          }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Formations Elara Formations",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Course",
+                "@id": "https://arnaudlegout.fr/formation/python-niveau-1.html#course",
+                "name": "Formation Python — niveau 1 (fondamentaux du langage)",
+                "description": "Formation professionnelle intensive de 3 jours sur les fondamentaux de Python pour développeurs expérimentés (C, C++, Java, Fortran, Matlab). Références partagées, typage dynamique, espaces de nommage, protocole d'itération, modules et packages, gestion des exceptions.",
+                "url": "https://arnaudlegout.fr/formation/python-niveau-1.html"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Course",
+                "@id": "https://arnaudlegout.fr/formation/python-avance.html#course",
+                "name": "Formation Python avancé — programmation objet, fonctionnelle et méta-programmation",
+                "description": "Formation professionnelle intensive de 3 jours sur les paradigmes avancés de Python : décorateurs et clôtures, itérateurs et générateurs personnalisés, descripteurs, métaclasses. Comprendre les mécanismes internes du langage pour lire et écrire des librairies Python de qualité professionnelle.",
+                "url": "https://arnaudlegout.fr/formation/python-avance.html"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Course",
+                "@id": "https://arnaudlegout.fr/formation/python-data-science-niveau-1.html#course",
+                "name": "Formation Python data science — niveau 1",
+                "description": "Formation professionnelle intensive de 3 jours sur NumPy, Pandas et Seaborn. Vectorisation, broadcasting, manipulation de DataFrames, séries temporelles, format Parquet, visualisation statistique. Pour data scientists, ingénieurs et chercheurs en entreprise.",
+                "url": "https://arnaudlegout.fr/formation/python-data-science-niveau-1.html"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Course",
+                "@id": "https://arnaudlegout.fr/formation/python-data-science-niveau-2.html#course",
+                "name": "Data science haute performance — Polars, Numba, Multiprocessing",
+                "description": "Formation professionnelle intensive de 3 jours sur la data science haute performance en Python. Polars et son streaming engine, accélération JIT avec Numba, parallélisme multi-cœurs avec multiprocessing. Aller au-delà de Pandas quand les volumes dépassent la RAM ou que les performances comptent.",
+                "url": "https://arnaudlegout.fr/formation/python-data-science-niveau-2.html"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Course",
+                "@id": "https://arnaudlegout.fr/formation/python-machine-learning.html#course",
+                "name": "Formation Python machine learning — scikit-learn",
+                "description": "Formation professionnelle intensive de 3 jours sur le machine learning avec scikit-learn. Maîtrise pratique du ML supervisé et non supervisé : pipelines, régularisation, méthodes d'ensemble, sélection de modèles. Accent sur la rigueur méthodologique : évitement du surapprentissage, validation croisée, sélection sans fuite de données.",
+                "url": "https://arnaudlegout.fr/formation/python-machine-learning.html"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ItemList",
+        "name": "Formations Python",
+        "itemListElement": [
+          {
+            "@type": "ListItem", "position": 1,
+            "item": {
+              "@type": "Course",
+              "@id": "https://arnaudlegout.fr/formation/python-data-science-niveau-1.html#course",
+              "name": "Formation Python data science — niveau 1",
+              "description": "Formation professionnelle intensive de 3 jours sur NumPy, Pandas et Seaborn. Vectorisation, broadcasting, manipulation de DataFrames, séries temporelles, format Parquet, visualisation statistique. Pour data scientists, ingénieurs et chercheurs en entreprise.",
+              "url": "https://arnaudlegout.fr/formation/python-data-science-niveau-1.html",
+              "hasCourseInstance": {
+                "@type": "CourseInstance",
+                "courseMode": "Blended",
+                "courseWorkload": "PT21H",
+                "location": { "@type": "Place", "name": "Intra-entreprise (sur site ou à distance)" }
+              },
+              "provider": {
+                "@type": "Organization",
+                "@id": "https://arnaudlegout.fr/formation/#formation-arnaud-legout",
+                "name": "Elara Formations",
+                "url": "https://arnaudlegout.fr/formation/"
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.93",
+                "bestRating": "5",
+                "ratingCount": "289"
+              }
+            }
+          },
+          {
+            "@type": "ListItem", "position": 2,
+            "item": {
+              "@type": "Course",
+              "@id": "https://arnaudlegout.fr/formation/python-data-science-niveau-2.html#course",
+              "name": "Data science haute performance — Polars, Numba, Multiprocessing",
+              "description": "Formation professionnelle intensive de 3 jours sur la data science haute performance en Python. Polars et son streaming engine, accélération JIT avec Numba, parallélisme multi-cœurs avec multiprocessing. Aller au-delà de Pandas quand les volumes dépassent la RAM ou que les performances comptent.",
+              "url": "https://arnaudlegout.fr/formation/python-data-science-niveau-2.html",
+              "hasCourseInstance": {
+                "@type": "CourseInstance",
+                "courseMode": "Blended",
+                "courseWorkload": "PT21H",
+                "location": { "@type": "Place", "name": "Intra-entreprise (sur site ou à distance)" }
+              },
+              "provider": {
+                "@type": "Organization",
+                "@id": "https://arnaudlegout.fr/formation/#formation-arnaud-legout",
+                "name": "Elara Formations",
+                "url": "https://arnaudlegout.fr/formation/"
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.93",
+                "bestRating": "5",
+                "ratingCount": "289"
+              }
+            }
+          },
+          {
+            "@type": "ListItem", "position": 3,
+            "item": {
+              "@type": "Course",
+              "@id": "https://arnaudlegout.fr/formation/python-machine-learning.html#course",
+              "name": "Formation Python machine learning — scikit-learn",
+              "description": "Formation professionnelle intensive de 3 jours sur le machine learning avec scikit-learn. Maîtrise pratique du ML supervisé et non supervisé : pipelines, régularisation, méthodes d'ensemble, sélection de modèles. Accent sur la rigueur méthodologique : évitement du surapprentissage, validation croisée, sélection sans fuite de données.",
+              "url": "https://arnaudlegout.fr/formation/python-machine-learning.html",
+              "hasCourseInstance": {
+                "@type": "CourseInstance",
+                "courseMode": "Blended",
+                "courseWorkload": "PT21H",
+                "location": { "@type": "Place", "name": "Intra-entreprise (sur site ou à distance)" }
+              },
+              "provider": {
+                "@type": "Organization",
+                "@id": "https://arnaudlegout.fr/formation/#formation-arnaud-legout",
+                "name": "Elara Formations",
+                "url": "https://arnaudlegout.fr/formation/"
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.93",
+                "bestRating": "5",
+                "ratingCount": "289"
+              }
+            }
+          },
+          {
+            "@type": "ListItem", "position": 4,
+            "item": {
+              "@type": "Course",
+              "@id": "https://arnaudlegout.fr/formation/python-niveau-1.html#course",
+              "name": "Formation Python — niveau 1 (fondamentaux du langage)",
+              "description": "Formation professionnelle intensive de 3 jours sur les fondamentaux de Python pour développeurs expérimentés (C, C++, Java, Fortran, Matlab). Références partagées, typage dynamique, espaces de nommage, protocole d'itération, modules et packages, gestion des exceptions.",
+              "url": "https://arnaudlegout.fr/formation/python-niveau-1.html",
+              "hasCourseInstance": {
+                "@type": "CourseInstance",
+                "courseMode": "Blended",
+                "courseWorkload": "PT21H",
+                "location": { "@type": "Place", "name": "Intra-entreprise (sur site ou à distance)" }
+              },
+              "provider": {
+                "@type": "Organization",
+                "@id": "https://arnaudlegout.fr/formation/#formation-arnaud-legout",
+                "name": "Elara Formations",
+                "url": "https://arnaudlegout.fr/formation/"
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.93",
+                "bestRating": "5",
+                "ratingCount": "289"
+              }
+            }
+          },
+          {
+            "@type": "ListItem", "position": 5,
+            "item": {
+              "@type": "Course",
+              "@id": "https://arnaudlegout.fr/formation/python-avance.html#course",
+              "name": "Formation Python avancé — programmation objet, fonctionnelle et méta-programmation",
+              "description": "Formation professionnelle intensive de 3 jours sur les paradigmes avancés de Python : décorateurs et clôtures, itérateurs et générateurs personnalisés, descripteurs, métaclasses. Comprendre les mécanismes internes du langage pour lire et écrire des librairies Python de qualité professionnelle.",
+              "url": "https://arnaudlegout.fr/formation/python-avance.html",
+              "hasCourseInstance": {
+                "@type": "CourseInstance",
+                "courseMode": "Blended",
+                "courseWorkload": "PT21H",
+                "location": { "@type": "Place", "name": "Intra-entreprise (sur site ou à distance)" }
+              },
+              "provider": {
+                "@type": "Organization",
+                "@id": "https://arnaudlegout.fr/formation/#formation-arnaud-legout",
+                "name": "Elara Formations",
+                "url": "https://arnaudlegout.fr/formation/"
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.93",
+                "bestRating": "5",
+                "ratingCount": "289"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Le format distanciel est-il adapté à ce type de formation ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, et c'est une question légitime pour des formations aussi techniques. Le distanciel fonctionne bien ici pour plusieurs raisons : les exercices pratiques se font sur CoCalc, un environnement cloud collaboratif qui me permet de voir le code de chaque participant en temps réel et d'intervenir directement en cas de blocage — exactement comme en présentiel. Les sessions sont limitées à 10 participants maximum pour garantir un suivi individualisé. Le rythme est adapté, avec des temps d'échanges fréquents. Dans nos enquêtes post-formation, 90 % des participants jugent le format distanciel équivalent ou supérieur au présentiel."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quelle est la durée et la structure des formations ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Chaque formation dure 3 jours (21 heures), en sessions continues. Le format intra-entreprise permet d'adapter le rythme journalier à vos contraintes (3 jours consécutifs ou espacés). Le groupe est limité à 10 participants maximum."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Les formations peuvent-elles se dérouler dans nos locaux ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui. Les formations sont proposées en présentiel sur site ou à distance. Pour le présentiel, chaque participant a besoin d'un poste avec accès à internet et d'un grand écran permettant de mettre deux fenêtres côte à côte confortablement, ou d'un double écran. L'environnement technique (CoCalc) ne nécessite aucune installation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Faut-il déjà connaître Python pour suivre ces formations ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cela dépend de la formation choisie. La formation Python data science (NumPy, Pandas, Seaborn) suppose une première expérience de Python mais pas de data science. La formation Data science haute performance en Python (Polars, Numba, parallélisme) s'adresse à des équipes déjà à l'aise avec l'écosystème data science. Si votre équipe a besoin d'une remise à niveau sur Python avant de démarrer, je propose également une formation Python niveau 1 dédiée. Un échange préalable permet de vérifier l'adéquation entre le niveau de l'équipe et le programme proposé."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Les formations sont-elles adaptables au contexte de notre équipe ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui. Le format intra-entreprise permet d'ajuster le contenu à vos cas d'usage, vos données et vos contraintes techniques. Un échange de cadrage avant la formation permet d'identifier les priorités et d'orienter les exercices en conséquence."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quelle est la différence entre les trois formations du catalogue ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Les trois formations couvrent des niveaux et des objectifs distincts : Python data science pose les fondations (NumPy, Pandas, visualisation) ; Data science haute performance en Python va vers la performance à grande échelle (Polars, Numba, parallélisme, gestion mémoire) ; la troisième formation est centrée sur le machine learning avec scikit-learn, du prototype à la mise en production. Elles peuvent être suivies indépendamment selon le niveau de l'équipe."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Les formations sont-elles disponibles en anglais ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui. Toutes les formations sont disponibles en français ou en anglais, selon la composition de votre équipe."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment obtenir un devis ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Il suffit de remplir le formulaire de contact. Je prends en compte le nombre de participants, le format souhaité (présentiel / distanciel), la langue et les éventuels besoins d'adaptation du programme. Un devis est envoyé rapidement après un échange de cadrage."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Peut-on avoir des références de formations déjà réalisées ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ces formations ont été réalisées pour des équipes de nombreuses organisations, en entreprise comme en recherche publique : Orange, Cisco, Intel Mobile Communications, Gemalto, EPCOS, Transvalor, Supersonic Imagine, Eau d'Azur côté entreprises ; CNRS, INRAE, INSERM, Observatoire de la Côte d'Azur, Université Côte d'Azur côté recherche et enseignement supérieur. Des témoignages détaillés sont disponibles sur la page, et je peux fournir des références supplémentaires sur demande."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Proposez-vous du suivi post-formation ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Les formations sont conçues pour être directement opérationnelles. Les supports complets (notebooks, exercices, corrections) sont remis à chaque participant. Pour des besoins de suivi spécifiques ou d'accompagnement plus long, n'hésitez pas à l'évoquer dans votre demande de devis."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <link rel="stylesheet" href="style.css">
+  <!-- Script vide volontaire, à garder juste après la feuille de style : Firefox doit
+       attendre style.css avant de l'exécuter, donc il ne lit pas le <body> tant que le CSS
+       n'est pas chargé. Sans lui, une extension qui force la mise en page trop tôt
+       (« La mise en page a été forcée avant le chargement complet de la page ») fait
+       afficher la page sans style un instant au rechargement. Ne pas supprimer. -->
+  <script>0</script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main">Aller au contenu principal</a>
+
+  <!-- ====== HEADER ====== -->
+  <header class="header">
+    <nav class="nav container" aria-label="Navigation principale">
+      <a href="./" class="nav__logo">Arnaud Legout</a>
+
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item nav__item--has-dropdown">
+            <button type="button" class="nav__link">Formations</button>
+            <ul class="nav__dropdown">
+              <li class="nav__dropdown-label">Data science</li>
+              <li><a href="python-data-science-niveau-1.html">Python data science — niveau 1</a></li>
+              <li><a href="python-data-science-niveau-2.html">Python data science — niveau 2</a></li>
+              <li><a href="python-machine-learning.html">Python machine learning</a></li>
+              <li class="nav__dropdown-label">Compléments Python</li>
+              <li><a href="python-niveau-1.html">Python — niveau 1</a></li>
+              <li><a href="python-avance.html">Python — avancé</a></li>
+            </ul>
+          </li>
+          <li class="nav__item"><a href="a-propos.html" class="nav__link">À propos</a></li>
+        </ul>
+      </div>
+      <div class="nav__actions">
+        <a href="contact.html" class="nav__cta btn btn--primary"><span class="nav__cta-long">Demander un devis</span><span class="nav__cta-short">Devis</span></a>
+        <button type="button" class="nav__burger" aria-label="Ouvrir le menu de navigation" aria-expanded="false"
+          aria-controls="nav-menu">
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ====== MAIN ====== -->
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__content">
+          <h1>Former vos équipes à la data science Python moderne</h1>
+          <p class="hero__tagline">Du prototype au passage en production haute performance</p>
+          <p class="hero__intro">Formations intra-entreprise intensives en Python, data science et calcul performant.
+            Pour data scientists, ingénieurs et chercheurs en entreprise.</p>
+          <div class="hero__cta">
+            <a href="contact.html" class="btn btn--primary">Demander un devis</a>
+          </div>
+          <p class="hero__note"><em>En français ou en anglais — sur site ou à distance</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHIFFRES CLÉS -->
+    <div class="figures-bandeau">
+      <div class="container">
+        <div class="figures-grid">
+          <div class="figure-item">
+            <span class="figure-item__value">15&nbsp;ans</span>
+            <span class="figure-item__label">de formations professionnelles en entreprise depuis 2011</span>
+          </div>
+          <div class="figure-item">
+            <span class="figure-item__value">150&nbsp;000+</span>
+            <span class="figure-item__label">inscrits au MOOC Python FUN co-créé en 2014</span>
+            <span class="figure-item__note"><span class="figure-item__stars">★★★★<span
+                  class="figure-item__star-half">★</span></span> <a
+                href="https://www.my-mooc.com/fr/mooc/python-des-fondamentaux-a-lutilisation-du-langage-abaa71d6-1f4a-4c30-a0c7-e6367efbd8c6"
+                target="_blank" rel="noopener">Voir les avis&nbsp;→</a></span>
+          </div>
+          <div class="figure-item">
+            <span class="figure-item__value">20+&nbsp;ans</span>
+            <span class="figure-item__label">d'usage de Python en recherche</span>
+          </div>
+          <div class="figure-item">
+            <span class="figure-item__value figure-item__value--text">Directeur de recherche</span>
+            <span class="figure-item__label">à Inria — institut national de recherche en sciences du numérique</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TROIS FORMATIONS -->
+    <section class="section" id="formations" aria-labelledby="formations-title">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="formations-title">Trois formations data science conçues pour la production</h2>
+          <p>Chaque formation dure 3 jours (21 heures), en présentiel ou à distance, pour 10 participants maximum.</p>
+        </div>
+
+        <div class="cards-grid">
+          <!-- Carte 1 -->
+          <article class="card" data-num="01">
+            <h3 class="card__title">Python data science — niveau&nbsp;1</h3>
+            <p class="card__subtitle">Analyse et visualisation de données</p>
+            <ul class="card__stack">
+              <li>NumPy</li>
+              <li>Pandas</li>
+              <li>Seaborn</li>
+            </ul>
+            <p class="card__body">Les fondations de l'écosystème data science Python. Vectorisation, broadcasting,
+              manipulation de DataFrames, séries temporelles, format Parquet, visualisation statistique avec Seaborn.
+            </p>
+            <a href="python-data-science-niveau-1.html" class="card__link">Voir le programme →</a>
+          </article>
+
+          <!-- Carte 2 -->
+          <article class="card" data-num="02">
+            <h3 class="card__title">Python data science — niveau&nbsp;2</h3>
+            <p class="card__subtitle">Manipulation avancée et haute performance</p>
+            <ul class="card__stack">
+              <li>Polars</li>
+              <li>Numba</li>
+              <li>Multiprocessing</li>
+            </ul>
+            <p class="card__body">Aller au-delà de Pandas quand les volumes dépassent la RAM ou que les performances
+              comptent. Polars et son streaming engine, accélération JIT avec Numba, parallélisme multi-cœurs avec
+              multiprocessing.</p>
+            <a href="python-data-science-niveau-2.html" class="card__link">Voir le programme →</a>
+          </article>
+
+          <!-- Carte 3 -->
+          <article class="card" data-num="03">
+            <h3 class="card__title">Python machine learning</h3>
+            <p class="card__subtitle">Du concept à la mise en production</p>
+            <ul class="card__stack">
+              <li>scikit-learn</li>
+            </ul>
+            <p class="card__body">Maîtrise pratique du machine learning supervisé et non supervisé avec scikit-learn.
+              Pipelines, régularisation, méthodes d'ensemble, sélection de modèles. Accent mis sur la rigueur
+              méthodologique&nbsp;: évitement du surapprentissage, validation croisée, sélection sans fuite de données.
+            </p>
+            <a href="python-machine-learning.html" class="card__link">Voir le programme →</a>
+          </article>
+        </div>
+        <div class="encart">
+          <h2 id="python-niveau-title">Vos équipes ont-elles le niveau Python requis&nbsp;?</h2>
+          <p>Les formations data science supposent une bonne maîtrise de Python&nbsp;: fonctions, itération, modules,
+            espaces de nommage. Si ce n'est pas le cas de tous vos collaborateurs, je peux compléter la formation par le
+            module <strong><a href="python-niveau-1.html">Python — niveau 1</a></strong> en amont des
+            journées data science. Pour les équipes qui développent du code complexe, le module <strong><a
+                href="python-avance.html">Python — avancé</a></strong> (programmation objet, décorateurs,
+            métaclasses) est également disponible.</p>
+          <p>Ces compléments sont proposés au cas par cas — n'hésitez pas à m'en parler dans votre demande de devis.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- POURQUOI MOI -->
+    <section class="section section--alt" aria-labelledby="pourquoi-title">
+      <div class="container">
+        <h2 id="pourquoi-title">Pourquoi me confier la formation de vos équipes&nbsp;?</h2>
+        <div class="reasons-grid">
+
+          <div class="reason">
+            <h3>Un chercheur qui pratique ce qu'il enseigne</h3>
+            <p>Directeur de recherche à Inria, j'utilise Python depuis plus de
+              20 ans dans mes propres travaux de recherche, sur des données à très
+              grande échelle&nbsp;: analyse complète du graphe social de Twitter (505
+              millions de comptes, 23 milliards de liens), traitement de
+              l'intégralité du graphe de transactions Bitcoin (16,5 milliards de liens, 1,5 milliard d'adresses),
+              mesures massives
+              d'exposition aux ondes radio. Ces travaux ont donné lieu à une
+              couverture par le <a
+                href="https://archive.nytimes.com/bits.blogs.nytimes.com/2011/11/29/skype-can-expose-your-location-researchers-say/"
+                target="_blank" rel="noopener noreferrer">New York Times</a>, <a
+                href="https://www.washingtonpost.com/news/the-intersect/wp/2016/06/16/six-in-10-of-you-will-share-this-link-without-reading-it-according-to-a-new-and-depressing-study/"
+                target="_blank" rel="noopener noreferrer">le Washington Post</a>, <a
+                href="https://fortune.com/2016/06/19/6-out-of-10-twitter-link-clicks/" target="_blank"
+                rel="noopener noreferrer">Fortune</a> et <a
+                href="https://www.lemonde.fr/technologies/article/2010/05/08/l-anonymat-du-reseau-bittorrent-mis-en-cause_1348214_651865.html"
+                target="_blank" rel="noopener noreferrer">Le Monde</a>.
+              Quand j'enseigne Polars, le streaming engine ou les pièges du
+              parallélisme, ce sont les outils que j'utilise au quotidien.</p>
+          </div>
+
+          <div class="reason">
+            <h3>Une pédagogie rodée sur 150&nbsp;000 apprenants</h3>
+            <p>Co-créateur en 2014 avec Thierry Parmentelat du MOOC Python sur
+              la plateforme FUN, suivi par plus de 150&nbsp;000 inscrits et utilisé par
+              Sorbonne Université et CentraleSupélec. Les supports et la
+              progression pédagogique sont éprouvés sur un public extrêmement
+              varié, du débutant complet au développeur expérimenté qui souhaite
+              consolider ses fondations. Cette diversité m'a appris à identifier
+              rapidement le niveau réel d'une équipe et à adapter le rythme en
+              conséquence.</p>
+          </div>
+
+          <div class="reason">
+            <h3>Un focus performance toujours à l'état de l'art</h3>
+            <p>La spécificité de mon catalogue&nbsp;: aller au-delà de la data
+              science d'introduction. Polars vs Pandas sur des volumes qui
+              dépassent la RAM, parallélisme CPU-bound, accélération JIT avec
+              Numba, gestion mémoire fine. Ce sont les sujets qui distinguent une
+              équipe qui prototype d'une équipe qui livre en production. Les
+              supports évoluent en continu pour suivre l'écosystème — nouvelles
+              versions de Polars, évolutions du streaming engine, bonnes pratiques
+              émergentes — parce que c'est aussi mon terrain de recherche au
+              quotidien.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- IA AGENTIQUE -->
+    <section class="section ia-section" aria-labelledby="ia-agentique-title">
+      <div class="container">
+        <p class="eyebrow">IA agentique</p>
+        <h2 id="ia-agentique-title">Pourquoi former vos équipes à l'ère de l'IA agentique&nbsp;?</h2>
+
+        <p class="ia-section__lead">Claude Code, Codex, Cursor, Gemini CLI, Aider&nbsp;: les agents de codage transforment le métier d'ingénieur. Un développeur peut aujourd'hui produire des centaines de lignes de NumPy ou Polars sans en maîtriser les fondements. C'est précisément ce qui rend la formation stratégique aujourd'hui.</p>
+
+        <div class="ia-point">
+          <h3>Les modèles sont structurellement en retard sur les bibliothèques</h3>
+          <p>L'entraînement d'un modèle de pointe prend des mois, et les bibliothèques data science évoluent en permanence — nouvelles API Polars, évolutions du streaming engine, changements de comportement de scikit-learn, nouvelles versions de NumPy. Les agents génèrent souvent du code qui paraît plausible mais s'appuie sur des API obsolètes, des patterns dépréciés, ou ignore des optimisations récentes. Sans une équipe capable de reconnaître ces décalages, le code produit dérive silencieusement.</p>
+        </div>
+
+        <div class="ia-point">
+          <h3>L'IA agentique amplifie autant les lacunes que les compétences</h3>
+          <p>Pour un ingénieur qui maîtrise le sujet, c'est un véritable accélérateur de productivité&nbsp;: il sait orienter l'agent, vérifier ses sorties, corriger ses dérives. Pour une équipe qui ne maîtrise pas les fondamentaux, c'est l'inverse&nbsp;: un puits de code non maintenable, où s'accumulent des bugs subtils et difficiles à corriger. Une étude récente de CodeRabbit, <a href="https://stackoverflow.blog/2026/01/28/are-bugs-and-incidents-inevitable-with-ai-coding-agents/" target="_blank" rel="noopener noreferrer">relayée par Stack Overflow</a>, montre que le code généré par IA contient 1,7 fois plus de bugs que le code écrit par des humains, dont 75&nbsp;% de problèmes en plus sur la logique et la correction — exactement le type d'erreurs qui passent en code review et finissent en incidents de production.</p>
+        </div>
+
+        <div class="ia-point">
+          <h3>Mes formations intègrent l'usage des agents IA</h3>
+          <p>J'utilise moi-même ces outils au quotidien dans mon travail de recherche — Claude Code, GitHub Copilot, et d'autres — et j'en ai une vision transversale. Au-delà des fondamentaux Python et data science, j'enseigne comment tirer le meilleur parti des assistants de codage dans un contexte professionnel&nbsp;: structurer ses demandes pour obtenir du code de qualité, relire et auditer les sorties efficacement, identifier les patterns suspects, et combiner l'agent avec les bonnes pratiques de test et de profilage. L'objectif&nbsp;: faire de l'IA un véritable levier de productivité, tout en garantissant la maintenabilité et la fiabilité du code livré.</p>
+        </div>
+
+        <p class="ia-section__takeaway">Former vos équipes aujourd'hui, c'est leur donner la capacité critique qui transforme un agent IA en véritable levier de productivité, et un avantage compétitif durable face à des équipes qui subissent l'IA au lieu de la piloter.</p>
+
+        <div class="ia-section__cta">
+          <a href="#formations" class="btn btn--secondary">Voir les formations →</a>
+          <a href="contact.html" class="btn btn--primary">Demander un devis pour mon équipe</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONSEIL -->
+    <div class="conseil-bloc">
+      <div class="container">
+        <h2>Au-delà de la formation&nbsp;: un regard indépendant sur votre data science</h2>
+        <p>Vos traitements sont lents ou coûtent trop cher&nbsp;? Vos data scientists codent avec des agents IA sans que
+          personne ne mesure ce que ça change&nbsp;? Une décision importante repose sur une analyse que personne n'a
+          relue&nbsp;? J'interviens en conseil sur ces trois sujets&nbsp;: un diagnostic d'une à deux journées, une
+          mission approfondie si elle se justifie, ou un conseil récurrent d'une demi-journée à une journée par mois.
+        </p>
+        <a href="/consulting/" class="btn btn--secondary" target="_blank"
+          rel="noopener">Découvrir le conseil →</a>
+      </div>
+    </div>
+
+    <!-- SATISFACTION CHIFFRÉE -->
+    <section class="section" aria-labelledby="satisfaction-title">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="satisfaction-title">La satisfaction des participants</h2>
+          <p>Sur <strong>289 évaluations</strong> collectées sur <strong>39 sessions</strong> de formation depuis
+            2022&nbsp;:
+          </p>
+        </div>
+        <div class="figures-grid">
+          <div class="figure-item">
+            <span class="figure-item__value">4,98/5</span>
+            <span class="figure-item__label">sur la maîtrise du sujet</span>
+          </div>
+          <div class="figure-item">
+            <span class="figure-item__value">4,88/5</span>
+            <span class="figure-item__label">sur les qualités pédagogiques</span>
+          </div>
+          <div class="figure-item">
+            <span class="figure-item__value">4,93/5</span>
+            <span class="figure-item__label">sur l'écoute et l'adaptation aux questions</span>
+          </div>
+          <div class="figure-item">
+            <span class="figure-item__value">90&nbsp;%</span>
+            <span class="figure-item__label">des participants jugent le format distanciel équivalent ou meilleur que le
+              présentiel</span>
+          </div>
+        </div>
+        <h2 id="temoignages-title" class="visually-hidden">Témoignages</h2>
+        <div class="testimonials-grid">
+
+          <blockquote class="testimonial">
+            <p class="testimonial__text">«&nbsp;M. Legout maîtrise parfaitement le sujet. Il répond humblement à toutes
+              les
+              questions de la manière la plus claire et la plus honnête. J'ai très bien appris Pandas et Seaborn, et
+              également plein de choses très utiles sur NumPy&nbsp;: les méthodes les plus efficaces parmi plusieurs, la
+              manière dont NumPy "pense". J'aimerais bien participer aussi s'il donne un autre cours.&nbsp;»</p>
+            <footer class="testimonial__author">— Tony Z., Mines Paris – PSL / CEMEF</footer>
+          </blockquote>
+
+          <blockquote class="testimonial">
+            <p class="testimonial__text">«&nbsp;Arnaud Legout est un très bon formateur, il explique très bien, il
+              connaît
+              très bien son sujet et répond à toutes nos questions. L'outil CoCalc est très pratique, il permet d'écrire
+              du code tout en ce que le formateur puisse voir ce que l'on fait pour qu'il puisse nous aider en cas de
+              blocage. J'ai appris beaucoup de choses qui me seront très utiles dans mon travail.&nbsp;»</p>
+            <footer class="testimonial__author">— Damien P., IGBMC – CNRS</footer>
+          </blockquote>
+
+          <blockquote class="testimonial">
+            <p class="testimonial__text">«&nbsp;Very well documented. Perfectly meets my needs and goes further.
+              Pedagogical
+              course. The rhythm is fine. The answers to questions are great.&nbsp;»</p>
+            <footer class="testimonial__author">— Fabien P., Observatoire de la Côte d'Azur</footer>
+          </blockquote>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- RÉFÉRENCES ENTREPRISES -->
+    <section class="section section--alt" aria-labelledby="refs-title">
+      <div class="container">
+        <h2 id="refs-title">Ils m'ont confié la formation de leurs équipes</h2>
+        <div class="refs-groups">
+
+          <div class="refs-group">
+            <p class="refs-group__title">Entreprises tech et industrie</p>
+            <p class="refs-group__list">Orange · Cisco · Intel Mobile Communications · Gemalto · EPCOS · Transvalor ·
+              Supersonic Imagine · CNEDI-CERTIAM · Eau d'Azur</p>
+          </div>
+
+          <div class="refs-group">
+            <p class="refs-group__title">Recherche publique et enseignement supérieur</p>
+            <p class="refs-group__list">CNRS · INRAE · INSERM · Observatoire de la Côte d'Azur · Université Côte d'Azur
+            </p>
+          </div>
+
+          <div class="refs-group">
+            <p class="refs-group__title">Formation spécialisée</p>
+            <p class="refs-group__list">École des Marins-Pompiers de Marseille</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="faq-title">Questions fréquentes</h2>
+        </div>
+
+        <p class="faq__group-title">Format et organisation</p>
+        <div class="faq">
+
+          <details class="faq__item">
+            <summary>Le format distanciel est-il adapté à ce type de formation&nbsp;?</summary>
+            <div class="faq__answer">
+              <p>Oui, et c'est une question légitime pour des formations aussi techniques. Le distanciel fonctionne bien ici pour plusieurs raisons&nbsp;: les exercices pratiques se font sur CoCalc, un environnement cloud collaboratif qui me permet de voir le code de chaque participant en temps réel et d'intervenir directement en cas de blocage — exactement comme en présentiel. Les sessions sont limitées à 10 participants maximum pour garantir un suivi individualisé. Le rythme est adapté, avec des temps d'échanges fréquents. Dans nos enquêtes post-formation, 90&nbsp;% des participants jugent le format distanciel équivalent ou supérieur au présentiel.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>Quelle est la durée et la structure des formations&nbsp;?</summary>
+            <div class="faq__answer">
+              <p>Chaque formation dure 3 jours (21 heures), en sessions continues. Le format intra-entreprise permet d'adapter le rythme journalier à vos contraintes (3 jours consécutifs ou espacés). Le groupe est limité à 10 participants maximum.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>Les formations peuvent-elles se dérouler dans nos locaux&nbsp;?</summary>
+            <div class="faq__answer">
+              <p>Oui. Les formations sont proposées en présentiel sur site ou à distance. Pour le présentiel, chaque participant a besoin d'un poste avec accès à internet et d'un grand écran permettant de mettre deux fenêtres côte à côte confortablement, ou d'un double écran. L'environnement technique (CoCalc) ne nécessite aucune installation.</p>
+            </div>
+          </details>
+
+        </div>
+
+        <p class="faq__group-title">Contenu et niveau</p>
+        <div class="faq">
+
+          <details class="faq__item">
+            <summary>Faut-il déjà connaître Python pour suivre ces formations&nbsp;?</summary>
+            <div class="faq__answer">
+              <p>Cela dépend de la formation choisie. La formation Python data science (NumPy, Pandas, Seaborn) suppose une première expérience de Python mais pas de data science. La formation Data science haute performance en Python (Polars, Numba, parallélisme) s'adresse à des équipes déjà à l'aise avec l'écosystème data science. Si votre équipe a besoin d'une remise à niveau sur Python avant de démarrer, je propose également une formation Python niveau&nbsp;1 dédiée. Un échange préalable permet de vérifier l'adéquation entre le niveau de l'équipe et le programme proposé.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>Les formations sont-elles adaptables au contexte de notre équipe&nbsp;?</summary>
+            <div class="faq__answer">
+              <p>Oui. Le format intra-entreprise permet d'ajuster le contenu à vos cas d'usage, vos données et vos contraintes techniques. Un échange de cadrage avant la formation permet d'identifier les priorités et d'orienter les exercices en conséquence.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>Quelle est la différence entre les trois formations du catalogue&nbsp;?</summary>
+            <div class="faq__answer">
+              <p>Les trois formations couvrent des niveaux et des objectifs distincts&nbsp;: Python data science pose les fondations (NumPy, Pandas, visualisation)&nbsp;; Data science haute performance en Python va vers la performance à grande échelle (Polars, Numba, parallélisme, gestion mémoire)&nbsp;; la troisième formation est centrée sur le machine learning avec scikit-learn, du prototype à la mise en production. Elles peuvent être suivies indépendamment selon le niveau de l'équipe.</p>
+            </div>
+          </details>
+
+        </div>
+
+        <p class="faq__group-title">Organisation et tarifs</p>
+        <div class="faq">
+
+          <details class="faq__item">
+            <summary>Les formations sont-elles disponibles en anglais&nbsp;?</summary>
+            <div class="faq__answer">
+              <p>Oui. Toutes les formations sont disponibles en français ou en anglais, selon la composition de votre équipe.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>Comment obtenir un devis&nbsp;?</summary>
+            <div class="faq__answer">
+              <p>Il suffit de remplir le formulaire de contact. Je prends en compte le nombre de participants, le format souhaité (présentiel / distanciel), la langue et les éventuels besoins d'adaptation du programme. Un devis est envoyé rapidement après un échange de cadrage.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>Peut-on avoir des références de formations déjà réalisées&nbsp;?</summary>
+            <div class="faq__answer">
+              <p>Ces formations ont été réalisées pour des équipes de nombreuses organisations, en entreprise comme en recherche publique&nbsp;: Orange, Cisco, Intel Mobile Communications, Gemalto, EPCOS, Transvalor, Supersonic Imagine, Eau d'Azur côté entreprises&nbsp;; CNRS, INRAE, INSERM, Observatoire de la Côte d'Azur, Université Côte d'Azur côté recherche et enseignement supérieur. Des témoignages détaillés sont disponibles sur la page, et je peux fournir des références supplémentaires sur demande.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>Proposez-vous du suivi post-formation&nbsp;?</summary>
+            <div class="faq__answer">
+              <p>Les formations sont conçues pour être directement opérationnelles. Les supports complets (notebooks, exercices, corrections) sont remis à chaque participant. Pour des besoins de suivi spécifiques ou d'accompagnement plus long, n'hésitez pas à l'évoquer dans votre demande de devis.</p>
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-section section--alt" aria-labelledby="cta-title">
+      <div class="container">
+        <h2 id="cta-title">Discutons de votre besoin de formation</h2>
+        <p>Chaque formation peut être adaptée au contexte de vos équipes&nbsp;: niveau initial, cas d'usage métier,
+          choix des
+          modules. Décrivez-moi votre besoin et je vous propose un format et un devis adaptés.</p>
+        <div class="cta-section__actions">
+          <a href="contact.html" class="btn btn--primary">Demander un devis</a>
+          <a href="mailto:arnaud.legout@gmail.com" class="btn btn--secondary">Me contacter par email</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+
+        <!-- Colonne 1 -->
+        <div class="footer__col">
+          <p class="footer__col-title">Arnaud Legout</p>
+          <p class="footer__tagline">Directeur de recherche Inria — Sophia Antipolis, France</p>
+          <ul class="footer__link-list">
+            <li><a href="/" target="_blank" rel="noopener">Site personnel — arnaudlegout.fr</a></li>
+            <li><a href="https://www-sop.inria.fr/members/Arnaud.Legout/" target="_blank" rel="noopener">Page
+                professionnelle Inria</a></li>
+            <li><a href="https://www.linkedin.com/in/arnaud-legout-866a404/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="/consulting/" target="_blank" rel="noopener">Conseil data science</a></li>
+          </ul>
+        </div>
+
+        <!-- Colonne 2 -->
+        <div class="footer__col">
+          <p class="footer__col-title">Navigation</p>
+          <ul class="footer__link-list">
+            <li><a href="python-data-science-niveau-1.html">Python data science niveau 1</a></li>
+            <li><a href="python-data-science-niveau-2.html">Python data science niveau 2</a></li>
+            <li><a href="python-machine-learning.html">Python machine learning</a></li>
+            <li><a href="python-niveau-1.html">Python — niveau 1</a></li>
+            <li><a href="python-avance.html">Python — avancé</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="contact.html">Formulaire de contact</a></li>
+            <!-- <li><a href="articles.html">Articles</a></li> -->
+          </ul>
+        </div>
+
+        <!-- Colonne 3 -->
+        <div class="footer__col">
+          <p class="footer__col-title">Contact</p>
+          <ul class="footer__contact-list">
+            <li><a href="contact.html">Formulaire de contact</a></li>
+            <li><a href="mailto:arnaud.legout@gmail.com">Email</a></li>
+            <li><a href="/mentions-legales.html">Mentions légales</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p>© 2026 Arnaud Legout. Site statique, sans cookie.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script data-goatcounter="https://arnaudlegout-formations.goatcounter.com/count" async
+    src="//gc.zgo.at/count.js"></script>
+  <script>
+    (function () {
+      var btn = document.querySelector('.nav__burger');
+      var menu = document.getElementById('nav-menu');
+      if (!btn || !menu) return;
+      function closeMenu() {
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', 'Ouvrir le menu de navigation');
+        menu.classList.remove('is-open');
+      }
+      btn.addEventListener('click', function () {
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        btn.setAttribute('aria-label', open ? 'Ouvrir le menu de navigation' : 'Fermer le menu de navigation');
+        menu.classList.toggle('is-open', !open);
+      });
+      menu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') closeMenu();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeMenu();
+      });
+    })();
+  </script>
+</body>
+
+</html>

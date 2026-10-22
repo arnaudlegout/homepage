@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audit data science indépendant : performance, agents IA, analyses | Arnaud Legout</title>
+  <meta name="description" content="Traitements lents ou coûteux, code produit avec des agents IA, analyses non relues : diagnostic d'une à deux journées par un directeur de recherche Inria.">
+
+  <!-- Google Search Console -->
+  <meta name="google-site-verification" content="TptHKZTI5h6IzFEe5raHuz4iS6fqZ1oFkjd_YNmQ6tI">
+  <!-- Bing Webmaster Tools -->
+  <meta name="msvalidate.01" content="D42AAF6A4D1B0E72D80564BAE3329F0C">
+
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://arnaudlegout.fr/consulting/">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Font preloads (les plus critiques) -->
+  <link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arnaudlegout.fr/consulting/">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Arnaud Legout — Conseil data science">
+  <meta property="og:title" content="Audit data science indépendant : performance, agents IA, analyses | Arnaud Legout">
+  <meta property="og:description" content="Traitements lents ou coûteux, code produit avec des agents IA, analyses non relues : diagnostic d'une à deux journées par un directeur de recherche Inria.">
+  <meta property="og:image" content="https://arnaudlegout.fr/consulting/assets/og-image-v2.jpg">
+  <meta property="og:image:secure_url" content="https://arnaudlegout.fr/consulting/assets/og-image-v2.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Arnaud Legout, directeur de recherche Inria — conseil indépendant en data science">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Audit data science indépendant : performance, agents IA, analyses | Arnaud Legout">
+  <meta name="twitter:description" content="Traitements lents ou coûteux, code produit avec des agents IA, analyses non relues : diagnostic d'une à deux journées par un directeur de recherche Inria.">
+  <meta name="twitter:image" content="https://arnaudlegout.fr/consulting/assets/og-image-v2.jpg">
+  <meta name="twitter:image:alt" content="Arnaud Legout, directeur de recherche Inria — conseil indépendant en data science">
+
+  <!-- Données structurées -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://arnaudlegout.fr/#arnaud-legout",
+        "name": "Arnaud Legout",
+        "jobTitle": "Directeur de recherche Inria",
+        "worksFor": { "@type": "Organization", "name": "Inria", "url": "https://www.inria.fr/" },
+        "url": "https://arnaudlegout.fr/",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Sophia Antipolis",
+          "addressRegion": "Provence-Alpes-Côte d'Azur",
+          "addressCountry": "FR"
+        },
+        "sameAs": [
+          "https://www-sop.inria.fr/members/Arnaud.Legout/",
+          "https://www.linkedin.com/in/arnaud-legout-866a404/",
+          "https://scholar.google.com/citations?user=uGy5lroAAAAJ",
+          "https://orcid.org/0000-0003-4706-424X",
+          "https://cv.hal.science/arnaudlegout",
+          "https://arnaudlegout.fr/",
+          "https://univ-cotedazur.fr/arnaud-legout",
+          "https://github.com/arnaudlegout"
+        ]
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://arnaudlegout.fr/consulting/#conseil",
+        "name": "Arnaud Legout — Conseil data science",
+        "url": "https://arnaudlegout.fr/consulting/",
+        "description": "Audit indépendant de vos traitements data, de l'usage des agents IA par vos équipes et de la validité scientifique de vos analyses.",
+        "founder": { "@id": "https://arnaudlegout.fr/#arnaud-legout" },
+        "email": "arnaud.legout@gmail.com",
+        "image": "https://arnaudlegout.fr/consulting/assets/og-image-v2.jpg",
+        "areaServed": { "@type": "Country", "name": "France" },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Antibes",
+          "addressRegion": "Provence-Alpes-Côte d'Azur",
+          "addressCountry": "FR"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Interventions de conseil en data science",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Audit de la performance et du coût de vos traitements de données",
+                "description": "Vos analyses Python sont lentes, vos notebooks saturent, votre facture cloud grimpe. Audit indépendant : où va le temps, où va l'argent, et ce qu'il faut changer.",
+                "serviceType": "Conseil en data science",
+                "url": "https://arnaudlegout.fr/consulting/audit-performance-cout-traitements-data.html"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Audit de l'usage des agents IA par votre équipe data",
+                "description": "Copilot, Cursor, Claude Code : que produisent-ils réellement dans votre équipe data ? Audit de la qualité du code, de la productivité et des fuites de données.",
+                "serviceType": "Conseil en data science",
+                "url": "https://arnaudlegout.fr/consulting/audit-agents-ia-data-science.html"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Revue scientifique de vos analyses data",
+                "description": "Avant de décider à partir d'une analyse ou d'un test A/B : relecture indépendante par un directeur de recherche.",
+                "serviceType": "Conseil en data science",
+                "url": "https://arnaudlegout.fr/consulting/revue-scientifique-analyses-data.html"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+  <!-- Script vide volontaire, à garder juste après la feuille de style : Firefox doit
+       attendre style.css avant de l'exécuter, donc il ne lit pas le <body> tant que le CSS
+       n'est pas chargé. Sans lui, une extension qui force la mise en page trop tôt
+       (« La mise en page a été forcée avant le chargement complet de la page ») fait
+       afficher la page sans style un instant au rechargement. Ne pas supprimer. -->
+  <script>0</script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main">Aller au contenu principal</a>
+
+  <!-- ====== HEADER ====== -->
+  <header class="header">
+    <nav class="nav container" aria-label="Navigation principale">
+      <a href="./" class="nav__logo">Arnaud Legout</a>
+
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="audit-performance-cout-traitements-data.html" class="nav__link">Performance et coût</a></li>
+          <li class="nav__item"><a href="audit-agents-ia-data-science.html" class="nav__link">Agents IA</a></li>
+          <li class="nav__item"><a href="revue-scientifique-analyses-data.html" class="nav__link">Revue scientifique</a></li>
+          <li class="nav__item"><a href="a-propos.html" class="nav__link">À propos</a></li>
+        </ul>
+      </div>
+      <div class="nav__actions">
+        <a href="contact.html" class="nav__cta btn btn--primary"><span
+            class="nav__cta-long">Demander un diagnostic</span><span
+            class="nav__cta-short">Diagnostic</span></a>
+        <button type="button" class="nav__burger" aria-label="Ouvrir le menu de navigation" aria-expanded="false"
+          aria-controls="nav-menu">
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ====== MAIN ====== -->
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__content">
+          <p class="eyebrow">Conseil data science</p>
+          <h1>Un regard indépendant sur votre data science</h1>
+          <p class="hero__intro">Vos traitements sont lents ou coûtent trop cher. Vos data scientists codent avec des agents IA sans que personne ne mesure ce que ça change. Une décision importante repose sur une analyse que personne n'a relue. Dans les trois cas, ce qu'il vous manque n'est pas une plateforme ni un prestataire de plus : c'est un avis extérieur, compétent, et indépendant de toute solution technique.</p>
+          <p class="hero__intro">Je suis directeur de recherche à Inria. J'analyse des données à très grande échelle depuis plus de vingt ans, je forme des équipes à Python depuis 2011, et j'ai travaillé dans deux startups. Je ne vends ni licence, ni infrastructure, ni jours de développement : mes recommandations n'ont pas d'autre intérêt que le vôtre.</p>
+          <div class="hero__cta">
+            <a href="contact.html" class="btn btn--primary">Décrivez-moi votre situation</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TROIS INTERVENTIONS -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-header">
+          <h2>Trois interventions</h2>
+        </div>
+        <div class="cards-grid">
+
+          <a class="card card--link" data-num="01" href="audit-performance-cout-traitements-data.html">
+            <h3 class="card__title">Performance et coût de vos traitements de données</h3>
+            <ul class="card__stack">
+              <li>pandas</li>
+              <li>Polars</li>
+              <li>Numba</li>
+              <li>coût cloud</li>
+            </ul>
+            <p class="card__body">Vos analyses Python sont lentes, vos notebooks saturent, votre facture cloud grimpe. J'identifie où va le temps et où va l'argent, et ce qu'il faut changer — souvent moins que vous ne le pensez.</p>
+            <span class="card__link">En savoir plus →</span>
+          </a>
+
+          <a class="card card--link" data-num="02" href="audit-agents-ia-data-science.html">
+            <h3 class="card__title">Usage des agents IA par votre équipe data</h3>
+            <ul class="card__stack">
+              <li>Copilot</li>
+              <li>Cursor</li>
+              <li>Claude Code</li>
+              <li>fuites de données</li>
+            </ul>
+            <p class="card__body">Copilot, Cursor, Claude Code : vos data scientists vont plus vite, mais que produisent-ils, et que transmettent-ils ? Audit de la qualité du code, de la productivité réelle et des fuites de données et de méthodes.</p>
+            <span class="card__link">En savoir plus →</span>
+          </a>
+
+          <a class="card card--link" data-num="03" href="revue-scientifique-analyses-data.html">
+            <h3 class="card__title">Revue scientifique de vos analyses</h3>
+            <ul class="card__stack">
+              <li>validation croisée</li>
+              <li>contamination des données</li>
+              <li>reproductibilité</li>
+            </ul>
+            <p class="card__body">Avant de mettre un modèle en production, de présenter une métrique à vos investisseurs ou de décider à partir d'un test A/B : une relecture indépendante, par quelqu'un dont c'est le métier.</p>
+            <span class="card__link">En savoir plus →</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- DEUX FORMATS -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Deux formats</h2>
+        </div>
+        <div class="cards-grid cards-grid--pair">
+
+          <article class="card">
+            <h3 class="card__title">Diagnostic, puis mission si nécessaire</h3>
+            <p class="card__body">Tout commence par un appel d'une heure, gratuit et sans engagement, pour comprendre votre situation et vérifier que je peux vous être utile. S'il y a matière, un diagnostic d'une à deux journées : entretiens avec l'équipe, lecture rapide du code et des analyses, restitution orale et recommandations écrites.</p>
+            <p class="card__body">Il conclut sur ce qui mérite une mission approfondie, une formation, ou rien. Une mission dure de deux à cinq jours selon l'intervention.</p>
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">Conseil récurrent</h3>
+            <p class="card__body">Une demi-journée à une journée par mois, pour les équipes qui prennent régulièrement des décisions à partir de leurs analyses ou qui viennent de faire évoluer leurs pratiques. Relecture des travaux en cours, participation aux choix de méthode, et vérification que les recommandations d'une mission précédente tiennent : ce qui s'est stabilisé, ce qui a dérivé, ce qu'il faut corriger.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- RENVOI VERS LE SITE FORMATION -->
+    <div class="formation-bloc">
+      <div class="container">
+        <h2>Et si le besoin est une formation ?</h2>
+        <p>Un diagnostic conclut parfois que l'équipe n'a pas besoin d'un audit mais de compétences. Quand c'est le cas,
+          je le dis. Mes formations intra-entreprise Python data science couvrent une partie de ces besoins ; quand le
+          vôtre est ailleurs, je vous le dis aussi et je vous oriente vers d'autres formations.</p>
+        <a class="btn btn--secondary" href="/formation/" target="_blank"
+          rel="noopener">Voir les formations →</a>
+      </div>
+    </div>
+
+    <!-- POUR QUI -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Pour qui</h2>
+        </div>
+        <div class="cards-grid">
+
+          <article class="card">
+            <h3 class="card__title">Startups en croissance</h3>
+            <p class="card__body">Vous prenez des décisions à partir d'analyses produites vite, et souvent par une équipe de deux ou trois personnes. Une erreur de méthode dans un test A/B ou dans une métrique présentée à vos investisseurs coûte bien plus cher que le temps de la relire.</p>
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">PME et ETI</h3>
+            <p class="card__body">Votre équipe data ou R&amp;D s'est constituée par recrutements successifs, les pratiques varient d'une personne à l'autre, et personne n'a le recul — ni le temps — pour trancher depuis l'intérieur.</p>
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">Équipes R&amp;D</h3>
+            <p class="card__body">Vos données, vos analyses et votre code sont un actif de l'entreprise. Vous cherchez un avis externe sur des choix qui vous engagent pour plusieurs années, pas un prestataire pour les exécuter à votre place.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section section--alt">
+      <div class="container">
+        <h2>Décrivez-moi votre situation</h2>
+        <p>Le premier échange est un appel d'une heure, gratuit et sans engagement : vous m'exposez votre contexte, je vous dis si je peux vous être utile et sous quel format. Si ce n'est pas le cas, je vous le dis aussi. Les tarifs sont établis après cet échange, quand le périmètre est clair.</p>
+        <div class="cta-section__actions">
+          <a href="contact.html" class="btn btn--primary">Me décrire votre situation</a>
+          <a href="mailto:arnaud.legout@gmail.com" class="btn btn--secondary">Me contacter par email</a>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+
+        <div class="footer__col">
+          <p class="footer__col-title">Arnaud Legout</p>
+          <p class="footer__tagline">Directeur de recherche Inria — Sophia Antipolis, France</p>
+          <ul class="footer__link-list">
+            <li><a href="/" target="_blank" rel="noopener">Site personnel — arnaudlegout.fr</a></li>
+            <li><a href="https://www-sop.inria.fr/members/Arnaud.Legout/" target="_blank" rel="noopener">Page professionnelle Inria</a></li>
+            <li><a href="https://www.linkedin.com/in/arnaud-legout-866a404/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://scholar.google.com/citations?user=uGy5lroAAAAJ" target="_blank" rel="noopener">Google Scholar</a></li>
+            <li><a href="/formation/" target="_blank" rel="noopener">Formations Python</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <p class="footer__col-title">Interventions</p>
+          <ul class="footer__link-list">
+            <li><a href="audit-performance-cout-traitements-data.html">Performance et coût</a></li>
+            <li><a href="audit-agents-ia-data-science.html">Agents IA</a></li>
+            <li><a href="revue-scientifique-analyses-data.html">Revue scientifique</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="contact.html">Formulaire de contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <p class="footer__col-title">Contact</p>
+          <ul class="footer__contact-list">
+            <li><a href="contact.html">Formulaire de contact</a></li>
+            <li><a href="mailto:arnaud.legout@gmail.com">Email</a></li>
+            <li><a href="/mentions-legales.html">Mentions légales</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p>© 2026 Arnaud Legout. Site statique, sans cookie.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script data-goatcounter="https://arnaudlegout-consulting.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+
+  <script>
+    (function () {
+      var btn = document.querySelector('.nav__burger');
+      var menu = document.getElementById('nav-menu');
+      if (!btn || !menu) return;
+      function closeMenu() {
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', 'Ouvrir le menu de navigation');
+        menu.classList.remove('is-open');
+      }
+      btn.addEventListener('click', function () {
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        btn.setAttribute('aria-label', open ? 'Ouvrir le menu de navigation' : 'Fermer le menu de navigation');
+        menu.classList.toggle('is-open', !open);
+      });
+      menu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') closeMenu();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeMenu();
+      });
+    })();
+  </script>
+</body>
+
+</html>

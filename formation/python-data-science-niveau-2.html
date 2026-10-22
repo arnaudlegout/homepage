@@ -1,0 +1,475 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formation Python haute performance — Polars, Numba, Multiprocessing</title>
+  <meta name="description" content="Polars streaming engine, Numba JIT, parallélisme multi-cœurs. Au-delà de Pandas. 3 jours pour data scientists et ingénieurs. Intra-entreprise. Note 4,93/5.">
+    <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://arnaudlegout.fr/formation/python-data-science-niveau-2.html">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arnaudlegout.fr/formation/python-data-science-niveau-2.html">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Arnaud Legout — Formations Python data science">
+  <meta property="og:title" content="Formation Python haute performance — Polars, Numba, Multiprocessing | Arnaud Legout">
+  <meta property="og:description" content="Polars streaming engine, Numba JIT, parallélisme multi-cœurs. Au-delà de Pandas. 3 jours pour data scientists et ingénieurs. Intra-entreprise. Note 4,93/5.">
+  <meta property="og:image" content="https://arnaudlegout.fr/formation/assets/images/og-image-v2.jpg">
+  <meta property="og:image:secure_url" content="https://arnaudlegout.fr/formation/assets/images/og-image-v2.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Formation Python data science par Arnaud Legout, directeur de recherche Inria — Note 4,93/5">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Formation Python haute performance — Polars, Numba, Multiprocessing | Arnaud Legout">
+  <meta name="twitter:description" content="Polars streaming engine, Numba JIT, parallélisme multi-cœurs. Au-delà de Pandas. 3 jours pour data scientists et ingénieurs. Intra-entreprise. Note 4,93/5.">
+  <meta name="twitter:image" content="https://arnaudlegout.fr/formation/assets/images/og-image-v2.jpg">
+  <meta name="twitter:image:alt" content="Formation Python data science par Arnaud Legout, directeur de recherche Inria — Note 4,93/5">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <!-- Script vide volontaire, à garder juste après la feuille de style : Firefox doit
+       attendre style.css avant de l'exécuter, donc il ne lit pas le <body> tant que le CSS
+       n'est pas chargé. Sans lui, une extension qui force la mise en page trop tôt
+       (« La mise en page a été forcée avant le chargement complet de la page ») fait
+       afficher la page sans style un instant au rechargement. Ne pas supprimer. -->
+  <script>0</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "@id": "https://arnaudlegout.fr/formation/python-data-science-niveau-2.html#course",
+    "name": "Data science haute performance — Polars, Numba, Multiprocessing",
+    "description": "Formation professionnelle intensive de 3 jours sur la data science haute performance en Python. Polars et son streaming engine, accélération JIT avec Numba, parallélisme multi-cœurs avec multiprocessing. Aller au-delà de Pandas quand les volumes dépassent la RAM ou que les performances comptent.",
+    "url": "https://arnaudlegout.fr/formation/python-data-science-niveau-2.html",
+    "inLanguage": ["fr", "en"],
+    "provider": {
+      "@type": "Organization",
+      "@id": "https://arnaudlegout.fr/formation/#formation-arnaud-legout",
+      "name": "Elara Formations",
+      "url": "https://arnaudlegout.fr/formation/"
+    },
+    "about": [
+      "Polars",
+      "Numba",
+      "Multiprocessing",
+      "Data science haute performance",
+      "Python",
+      "Streaming engine",
+      "JIT compilation",
+      "Parquet"
+    ],
+    "teaches": [
+      "Écrire ou réécrire des traitements en Polars pour des gains de vitesse significatifs",
+      "Traiter des datasets qui dépassent la RAM grâce au streaming engine de Polars",
+      "Lire et écrire des fichiers Parquet avec Polars et PyArrow",
+      "Accélérer les calculs numériques avec Numba et la compilation JIT",
+      "Paralléliser des tâches CPU-bound indépendantes avec multiprocessing",
+      "Choisir la bonne stratégie de performance selon le contexte"
+    ],
+    "audience": {
+      "@type": "EducationalAudience",
+      "educationalRole": "Data scientists, ingénieurs, chercheurs, post-doctorants et doctorants utilisant Pandas"
+    },
+    "educationalLevel": "Advanced",
+    "coursePrerequisites": "Niveau intermédiaire en Python (fonctions, itération, espaces de nommage) et en Pandas/NumPy. Suite logique de la formation Python data science niveau 1.",
+    "timeRequired": "PT21H",
+    "hasCourseInstance": [
+      {
+        "@type": "CourseInstance",
+        "courseMode": "Onsite",
+        "courseWorkload": "PT21H",
+        "instructor": {
+          "@type": "Person",
+          "@id": "https://arnaudlegout.fr/#arnaud-legout",
+          "name": "Arnaud Legout",
+          "jobTitle": "Directeur de recherche Inria",
+          "url": "https://arnaudlegout.fr/formation/a-propos.html"
+        },
+        "location": {
+          "@type": "Place",
+          "name": "Sur site client, France"
+        }
+      },
+      {
+        "@type": "CourseInstance",
+        "courseMode": "Online",
+        "courseWorkload": "PT21H",
+        "instructor": {
+          "@type": "Person",
+          "@id": "https://arnaudlegout.fr/#arnaud-legout",
+          "name": "Arnaud Legout",
+          "jobTitle": "Directeur de recherche Inria",
+          "url": "https://arnaudlegout.fr/formation/a-propos.html"
+        }
+      }
+    ],
+    "offers": {
+      "@type": "Offer",
+      "category": "Formation professionnelle",
+      "availability": "https://schema.org/InStock",
+      "url": "https://arnaudlegout.fr/formation/contact.html"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.93",
+      "bestRating": "5",
+      "ratingCount": "289",
+      "reviewCount": "289"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Arnaud Legout",
+        "item": "https://arnaudlegout.fr/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Accueil",
+        "item": "https://arnaudlegout.fr/formation/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Python data science — niveau 2",
+        "item": "https://arnaudlegout.fr/formation/python-data-science-niveau-2.html"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Polars remplace-t-il complètement Pandas ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Polars est aujourd'hui le meilleur choix pour passer un pipeline data du prototype à la production. La formation couvre la migration de Pandas vers Polars avec les stratégies et équivalences. En pratique, beaucoup d'équipes maintiennent les deux pendant une période de transition — la formation prépare à gérer cette coexistence."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qu'est-ce que le streaming engine de Polars et quand en a-t-on besoin ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le streaming engine de Polars permet de traiter des datasets qui dépassent la RAM disponible en traitant les données par blocs de façon transparente. C'est traité en module 1. Cas typique : un fichier Parquet de 200 Go sur une machine avec 32 Go de RAM."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quelle est la différence entre Numba et multiprocessing, et quand choisir l'un ou l'autre ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Numba accélère des calculs numériques intensifs par compilation JIT — utile pour des boucles ou des fonctions NumPy. Multiprocessing parallélise des tâches indépendantes en contournant le GIL Python — utile pour des traitements CPU-bound de type \"map\". Le module 3 traite explicitement la comparaison et les critères de choix."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Faut-il avoir suivi la formation niveau 1 avant celle-ci ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La formation niveau 2 suppose une maîtrise intermédiaire de Python et une pratique de Pandas/NumPy. La formation Python data science niveau 1 est la suite logique naturelle, mais un niveau équivalent acquis par la pratique convient également."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Cette formation est-elle adaptée à des chercheurs qui traitent de gros volumes de données ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, c'est précisément le public visé. Le formateur utilise Polars quotidiennement dans ses propres travaux de recherche, notamment pour analyser 16,5 milliards de transactions Bitcoin sur fichiers Parquet partitionnés — la formation est construite à partir de cette pratique réelle."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Le format distanciel est-il adapté à ce type de formation ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui. 90&nbsp;% des participants jugent le format distanciel équivalent ou supérieur au présentiel. J'anime des formations à distance depuis 2020 et j'ai développé une pratique solide de l'enseignement en ligne. J'utilise Zoom, qui permet d'enregistrer les sessions et de les mettre à disposition des participants si souhaité, et CoCalc, une plateforme en ligne qui donne accès à des serveurs pré-configurés avec l'ensemble du matériel de formation et des librairies installées. CoCalc me permet également de suivre en temps réel la progression de chaque participant et d'intervenir directement pour corriger ou débloquer."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Aller au contenu principal</a>
+
+  <header class="header">
+    <nav class="nav container" aria-label="Navigation principale">
+      <a href="./" class="nav__logo">Arnaud Legout</a>
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item nav__item--has-dropdown">
+            <button type="button" class="nav__link">Formations</button>
+            <ul class="nav__dropdown">
+              <li class="nav__dropdown-label">Data science</li>
+              <li><a href="python-data-science-niveau-1.html">Python data science — niveau 1</a></li>
+              <li><a href="python-data-science-niveau-2.html">Python data science — niveau 2</a></li>
+              <li><a href="python-machine-learning.html">Python machine learning</a></li>
+              <li class="nav__dropdown-label">Compléments Python</li>
+              <li><a href="python-niveau-1.html">Python — niveau 1</a></li>
+              <li><a href="python-avance.html">Python — avancé</a></li>
+            </ul>
+          </li>
+          <li class="nav__item"><a href="a-propos.html" class="nav__link">À propos</a></li>
+        </ul>
+      </div>
+      <div class="nav__actions">
+        <a href="contact.html" class="nav__cta btn btn--primary"><span class="nav__cta-long">Demander un devis</span><span class="nav__cta-short">Devis</span></a>
+        <button type="button" class="nav__burger" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="nav-menu">
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <div class="page-hero">
+      <div class="container container--text">
+        <h1>Data science haute performance en Python</h1>
+        <p class="page-hero__subtitle">Polars, Numba, Multiprocessing&nbsp;: manipulation avancée de données</p>
+        <div class="page-hero__badges">
+          <span class="badge">⏱ 3 jours</span>
+          <span class="badge">👥 ≤ 10 pers.</span>
+          <span class="badge">📍 Présentiel ou distanciel</span>
+          <span class="badge">🌐 Français ou anglais</span>
+          <span class="badge">🎯 Avancé</span>
+          <span class="badge">👤 Utilisateurs Pandas en production</span>
+          <span class="badge">🏢 Intra-entreprise</span>
+          <span class="badge">★ 4,93/5</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-content">
+      <div class="container">
+
+        <div class="page-section">
+          <p class="lead">Pandas est incontournable en data science Python — mais ses limites se manifestent vite&nbsp;: consommation mémoire excessive, exécution mono-thread, API parfois incohérente. Cette formation donne à vos équipes les outils pour dépasser ces limites.</p>
+          <p>Polars redéfinit la manipulation de données en Python&nbsp;: moteur en Rust, parallélisme natif, lazy evaluation, et capacité à traiter des datasets qui dépassent la RAM disponible grâce à son streaming engine. C'est aujourd'hui le meilleur choix pour passer un pipeline data du prototype à la production.</p>
+          <p>J'utilise quotidiennement Polars dans mes propres travaux de
+          recherche, notamment pour l'analyse de l'intégralité du graphe de
+          transactions Bitcoin — 16,5 milliards de liens entre 1,5 milliard
+          d'adresses, sur fichiers Parquet partitionnés. Cette formation est
+          construite à partir de cette pratique&nbsp;: ce que j'aurais voulu savoir
+          quand mes traitements Pandas prenaient des semaines et saturaient la
+          RAM — et que passer à Polars les a ramenés à quelques heures.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>À l'issue de cette formation, vos collaborateurs sauront</h2>
+          <ul>
+            <li>Écrire ou réécrire leurs traitements en Polars pour des gains de vitesse significatifs</li>
+            <li>Traiter des datasets qui dépassent la RAM disponible grâce au streaming engine de Polars</li>
+            <li>Lire et écrire des fichiers Parquet avec Polars et PyArrow pour un stockage et des échanges efficaces</li>
+            <li>Accélérer leurs calculs numériques avec Numba et la compilation JIT</li>
+            <li>Paralléliser des tâches CPU-bound indépendantes avec le module <code>multiprocessing</code></li>
+            <li>Choisir la bonne stratégie de performance selon le contexte&nbsp;: Polars, Numba ou multiprocessing</li>
+            <li>Appliquer les meilleures pratiques de manipulation de données haute performance</li>
+          </ul>
+        </div>
+
+        <div class="page-section">
+          <h2>Programme détaillé</h2>
+
+          <h3>Module 1 — Polars, le remplaçant moderne de Pandas</h3>
+          <p>Architecture de Polars&nbsp;: moteur en Rust, parallélisme natif, Apache
+          Arrow. API de base&nbsp;: Series, DataFrame, opérations essentielles. Lazy
+          evaluation et query optimization. Streaming engine&nbsp;: traiter des
+          données qui dépassent la RAM. Expressions Polars&nbsp;: l'API la plus
+          puissante pour la manipulation de données. Gestion des données
+          manquantes. Agrégations et fenêtres&nbsp;: group_by, over. Jointures et
+          concaténations. Restructuration&nbsp;: pivot et unpivot. Séries temporelles
+         &nbsp;: resampling, fenêtres glissantes, gestion des fuseaux horaires.
+          Format Parquet&nbsp;: lecture/écriture, compression, partitionnement,
+          interopérabilité avec PyArrow et Pandas. Migration de Pandas vers
+          Polars&nbsp;: stratégies et équivalences. Benchmark comparatif sur des cas
+          réels.</p>
+
+          <h3>Module 2 — Numba, accélération JIT pour le calcul numérique</h3>
+          <p>Principe de la compilation JIT avec Numba. Le décorateur <code>@jit</code>&nbsp;: quand et comment l'utiliser. Accélération de boucles et de fonctions NumPy. Parallélisation avec <code>@jit(parallel=True)</code> et <code>prange</code>. Cas d'usage&nbsp;: simulation numérique, traitement de signaux, calcul scientifique. Limites de Numba et bonnes pratiques.</p>
+
+          <h3>Module 3 — Multiprocessing, parallélisme multi-processus en Python</h3>
+          <p>Le GIL Python et ses implications pour le parallélisme CPU-bound. Python sans GIL (version <em>free-threaded</em>, officiellement supportée depuis Python&nbsp;3.14)&nbsp;: ce qui change, et pourquoi le multiprocessing reste aujourd'hui la solution standard. Le module <code>multiprocessing</code>&nbsp;: Process, Pool, Queue, Pipe. <code>Pool.map()</code> et <code>Pool.starmap()</code>&nbsp;: parallélisation de tâches indépendantes. Modes de démarrage des processus (<code>fork</code>, <code>spawn</code>, <code>forkserver</code>, le défaut sous Linux depuis Python&nbsp;3.14) et leurs conséquences sur le code existant. Partage de mémoire et communication entre processus. Comparaison <code>multiprocessing</code> vs Numba vs Polars&nbsp;: quand utiliser quoi. Pièges courants et débogage de code multiprocessing.</p>
+        </div>
+
+        <div class="page-encart">
+          <h2>Vos équipes ont-elles le niveau Python requis&nbsp;?</h2>
+          <p>Les formations data science supposent une bonne maîtrise de Python&nbsp;: fonctions, itération, modules, espaces de nommage. Si ce n'est pas le cas de tous vos collaborateurs, je peux compléter la formation par le module <strong><a href="python-niveau-1.html">Python — niveau 1</a></strong> en amont des journées data science. Pour les équipes qui développent du code complexe, le module <strong><a href="python-avance.html">Python — avancé</a></strong> (programmation objet, décorateurs, métaclasses) est également disponible.</p>
+          <p>Ces compléments sont proposés au cas par cas — n'hésitez pas à m'en parler dans votre demande de devis.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Public et prérequis</h2>
+          <p><strong>Public cible</strong></p>
+          <p>Data scientists, ingénieurs, chercheurs, post-doctorants et doctorants utilisant Pandas et souhaitant améliorer les performances de leurs traitements.</p>
+          <p><strong>Prérequis</strong></p>
+          <p>Niveau intermédiaire en Python (fonctions, itération, espaces de nommage, importation de modules) et en Pandas/NumPy. Cette formation est conçue comme la suite logique de la formation <em>Python data science niveau 1</em>.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Méthode pédagogique</h2>
+          <p>La formation alterne exposés théoriques courts et exercices pratiques sur notebooks Jupyter. Chaque concept est immédiatement mis en application. J'attache une attention particulière à ce que chaque participant suive, quel que soit son niveau initial, et je calibre la profondeur de chaque sujet en fonction du groupe.</p>
+          <p>Les supports sont fournis aux participants à l'issue de la formation, accompagnés des notebooks d'exercices corrigés.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Documentation officielle</h2>
+          <p><a href="https://docs.pola.rs/" target="_blank" rel="noopener noreferrer">Polars</a>, <a href="https://numba.readthedocs.io/en/stable/" target="_blank" rel="noopener noreferrer">Numba</a>, module <a href="https://docs.python.org/3/library/multiprocessing.html" target="_blank" rel="noopener noreferrer">multiprocessing</a> (Python&nbsp;3), format <a href="https://parquet.apache.org/" target="_blank" rel="noopener noreferrer">Apache Parquet</a>.</p>
+        </div>
+
+        <section class="page-section" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">Questions fréquentes</h2>
+          <div class="faq">
+            <details class="faq__item">
+              <summary>Polars remplace-t-il complètement Pandas&nbsp;?</summary>
+              <div class="faq__answer"><p>Polars est aujourd'hui le meilleur choix pour passer un pipeline data du prototype à la production. La formation couvre la migration de Pandas vers Polars avec les stratégies et équivalences. En pratique, beaucoup d'équipes maintiennent les deux pendant une période de transition — la formation prépare à gérer cette coexistence.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Qu'est-ce que le streaming engine de Polars et quand en a-t-on besoin&nbsp;?</summary>
+              <div class="faq__answer"><p>Le streaming engine de Polars permet de traiter des datasets qui dépassent la RAM disponible en traitant les données par blocs de façon transparente. C'est traité en module 1. Cas typique&nbsp;: un fichier Parquet de 200 Go sur une machine avec 32 Go de RAM.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Quelle est la différence entre Numba et multiprocessing, et quand choisir l'un ou l'autre&nbsp;?</summary>
+              <div class="faq__answer"><p>Numba accélère des calculs numériques intensifs par compilation JIT — utile pour des boucles ou des fonctions NumPy. Multiprocessing parallélise des tâches indépendantes en contournant le GIL Python — utile pour des traitements CPU-bound de type "map". Le module 3 traite explicitement la comparaison et les critères de choix.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Faut-il avoir suivi la formation niveau 1 avant celle-ci&nbsp;?</summary>
+              <div class="faq__answer"><p>La formation niveau 2 suppose une maîtrise intermédiaire de Python et une pratique de Pandas/NumPy. La formation Python data science niveau 1 est la suite logique naturelle, mais un niveau équivalent acquis par la pratique convient également.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Cette formation est-elle adaptée à des chercheurs qui traitent de gros volumes de données&nbsp;?</summary>
+              <div class="faq__answer"><p>Oui, c'est précisément le public visé. Le formateur utilise Polars quotidiennement dans ses propres travaux de recherche, notamment pour analyser 16,5 milliards de transactions Bitcoin sur fichiers Parquet partitionnés — la formation est construite à partir de cette pratique réelle.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Le format distanciel est-il adapté à ce type de formation&nbsp;?</summary>
+              <div class="faq__answer"><p>Oui. 90&nbsp;% des participants jugent le format distanciel équivalent ou supérieur au présentiel. J'anime des formations à distance depuis 2020 et j'ai développé une pratique solide de l'enseignement en ligne. J'utilise Zoom, qui permet d'enregistrer les sessions et de les mettre à disposition des participants si souhaité, et CoCalc, une plateforme en ligne qui donne accès à des serveurs pré-configurés avec l'ensemble du matériel de formation et des librairies installées. CoCalc me permet également de suivre en temps réel la progression de chaque participant et d'intervenir directement pour corriger ou débloquer.</p></div>
+            </details>
+          </div>
+        </section>
+
+        <div class="page-cta">
+          <a href="contact.html" class="btn btn--primary">Demander un devis pour cette formation</a>
+        </div>
+
+      </div>
+    </div>
+
+    <section class="section voir-aussi" aria-labelledby="voir-aussi-title">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="voir-aussi-title">Voir aussi</h2>
+        </div>
+        <div class="cards-grid cards-grid--pair">
+          <a class="card card--link" href="python-data-science-niveau-1.html">
+            <h3 class="card__title">Python data science — niveau&nbsp;1</h3>
+            <p class="card__body">Les fondations de l'écosystème data science Python. Vectorisation, broadcasting,
+            manipulation de DataFrames, séries temporelles, format Parquet, visualisation statistique avec Seaborn.</p>
+            <span class="card__link">Voir le programme →</span>
+          </a>
+
+          <a class="card card--link" href="python-machine-learning.html">
+            <h3 class="card__title">Python machine learning</h3>
+            <p class="card__body">Maîtrise pratique du machine learning supervisé et non supervisé avec scikit-learn.
+            Pipelines, régularisation, méthodes d'ensemble, sélection de modèles. Accent mis sur la rigueur
+            méthodologique&nbsp;: évitement du surapprentissage, validation croisée, sélection sans fuite de données.</p>
+            <span class="card__link">Voir le programme →</span>
+          </a>
+        </div>
+        <p class="voir-aussi__note">Au-delà de la formation, j'interviens aussi en conseil sur la performance de vos
+          traitements, l'usage des agents IA et la revue de vos analyses.
+          <a href="/consulting/" target="_blank" rel="noopener">Découvrir le conseil →</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <p class="footer__col-title">Arnaud Legout</p>
+          <p class="footer__tagline">Directeur de recherche Inria — Sophia Antipolis, France</p>
+          <ul class="footer__link-list">
+            <li><a href="/" target="_blank" rel="noopener">Site personnel — arnaudlegout.fr</a></li>
+            <li><a href="https://www-sop.inria.fr/members/Arnaud.Legout/" target="_blank" rel="noopener">Page professionnelle Inria</a></li>
+            <li><a href="https://www.linkedin.com/in/arnaud-legout-866a404/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="/consulting/" target="_blank" rel="noopener">Conseil data science</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Navigation</p>
+          <ul class="footer__link-list">
+            <li><a href="python-data-science-niveau-1.html">Python data science niveau 1</a></li>
+            <li><a href="python-data-science-niveau-2.html">Python data science niveau 2</a></li>
+            <li><a href="python-machine-learning.html">Python machine learning</a></li>
+            <li><a href="python-niveau-1.html">Python — niveau 1</a></li>
+            <li><a href="python-avance.html">Python — avancé</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="contact.html">Formulaire de contact</a></li>
+            <!-- <li><a href="articles.html">Articles</a></li> -->
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Contact</p>
+          <ul class="footer__contact-list">
+            <li><a href="contact.html">Formulaire de contact</a></li>
+            <li><a href="mailto:arnaud.legout@gmail.com">Email</a></li>
+            <li><a href="/mentions-legales.html">Mentions légales</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Arnaud Legout. Site statique, sans cookie.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script data-goatcounter="https://arnaudlegout-formations.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+  <script>
+    (function () {
+      var btn = document.querySelector('.nav__burger');
+      var menu = document.getElementById('nav-menu');
+      if (!btn || !menu) return;
+      function closeMenu() {
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', 'Ouvrir le menu de navigation');
+        menu.classList.remove('is-open');
+      }
+      btn.addEventListener('click', function () {
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        btn.setAttribute('aria-label', open ? 'Ouvrir le menu de navigation' : 'Fermer le menu de navigation');
+        menu.classList.toggle('is-open', !open);
+      });
+      menu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') closeMenu();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeMenu();
+      });
+    })();
+  </script>
+</body>
+</html>

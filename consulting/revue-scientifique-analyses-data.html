@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Revue scientifique de vos analyses data | Arnaud Legout</title>
+  <meta name="description" content="Avant de décider à partir d'une analyse ou d'un test A/B : relecture indépendante par un directeur de recherche. Vos calculs répondent-ils à la bonne question ?">
+
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://arnaudlegout.fr/consulting/revue-scientifique-analyses-data.html">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Font preloads (les plus critiques) -->
+  <link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arnaudlegout.fr/consulting/revue-scientifique-analyses-data.html">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Arnaud Legout — Conseil data science">
+  <meta property="og:title" content="Revue scientifique de vos analyses data | Arnaud Legout">
+  <meta property="og:description" content="Avant de décider à partir d'une analyse ou d'un test A/B : relecture indépendante par un directeur de recherche. Vos calculs répondent-ils à la bonne question ?">
+  <meta property="og:image" content="https://arnaudlegout.fr/consulting/assets/og-image-v2.jpg">
+  <meta property="og:image:secure_url" content="https://arnaudlegout.fr/consulting/assets/og-image-v2.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Arnaud Legout, directeur de recherche Inria — conseil indépendant en data science">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Revue scientifique de vos analyses data | Arnaud Legout">
+  <meta name="twitter:description" content="Avant de décider à partir d'une analyse ou d'un test A/B : relecture indépendante par un directeur de recherche. Vos calculs répondent-ils à la bonne question ?">
+  <meta name="twitter:image" content="https://arnaudlegout.fr/consulting/assets/og-image-v2.jpg">
+  <meta name="twitter:image:alt" content="Arnaud Legout, directeur de recherche Inria — conseil indépendant en data science">
+
+  <!-- Données structurées -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://arnaudlegout.fr/#arnaud-legout",
+        "name": "Arnaud Legout",
+        "jobTitle": "Directeur de recherche Inria",
+        "worksFor": { "@type": "Organization", "name": "Inria", "url": "https://www.inria.fr/" },
+        "url": "https://arnaudlegout.fr/",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Sophia Antipolis",
+          "addressRegion": "Provence-Alpes-Côte d'Azur",
+          "addressCountry": "FR"
+        },
+        "sameAs": [
+          "https://www-sop.inria.fr/members/Arnaud.Legout/",
+          "https://www.linkedin.com/in/arnaud-legout-866a404/",
+          "https://scholar.google.com/citations?user=uGy5lroAAAAJ",
+          "https://orcid.org/0000-0003-4706-424X",
+          "https://cv.hal.science/arnaudlegout",
+          "https://arnaudlegout.fr/",
+          "https://univ-cotedazur.fr/arnaud-legout",
+          "https://github.com/arnaudlegout"
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://arnaudlegout.fr/consulting/revue-scientifique-analyses-data.html#service",
+        "name": "Votre analyse est-elle juste ? Et répond-elle à la bonne question ?",
+        "description": "Avant de décider à partir d'une analyse ou d'un test A/B : relecture indépendante par un directeur de recherche. Vos calculs répondent-ils à la bonne question ?",
+        "provider": { "@id": "https://arnaudlegout.fr/#arnaud-legout" },
+        "areaServed": { "@type": "Country", "name": "France" },
+        "serviceType": "Conseil en data science"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Arnaud Legout", "item": "https://arnaudlegout.fr/" },
+          { "@type": "ListItem", "position": 2, "name": "Accueil", "item": "https://arnaudlegout.fr/consulting/" },
+          { "@type": "ListItem", "position": 3, "name": "Revue scientifique de vos analyses", "item": "https://arnaudlegout.fr/consulting/revue-scientifique-analyses-data.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+  <!-- Script vide volontaire, à garder juste après la feuille de style : Firefox doit
+       attendre style.css avant de l'exécuter, donc il ne lit pas le <body> tant que le CSS
+       n'est pas chargé. Sans lui, une extension qui force la mise en page trop tôt
+       (« La mise en page a été forcée avant le chargement complet de la page ») fait
+       afficher la page sans style un instant au rechargement. Ne pas supprimer. -->
+  <script>0</script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main">Aller au contenu principal</a>
+
+  <!-- ====== HEADER ====== -->
+  <header class="header">
+    <nav class="nav container" aria-label="Navigation principale">
+      <a href="./" class="nav__logo">Arnaud Legout</a>
+
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="audit-performance-cout-traitements-data.html" class="nav__link">Performance et coût</a></li>
+          <li class="nav__item"><a href="audit-agents-ia-data-science.html" class="nav__link">Agents IA</a></li>
+          <li class="nav__item"><a href="revue-scientifique-analyses-data.html" class="nav__link" aria-current="page">Revue scientifique</a></li>
+          <li class="nav__item"><a href="a-propos.html" class="nav__link">À propos</a></li>
+        </ul>
+      </div>
+      <div class="nav__actions">
+        <a href="contact.html" class="nav__cta btn btn--primary"><span
+            class="nav__cta-long">Demander un diagnostic</span><span
+            class="nav__cta-short">Diagnostic</span></a>
+        <button type="button" class="nav__burger" aria-label="Ouvrir le menu de navigation" aria-expanded="false"
+          aria-controls="nav-menu">
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ====== MAIN ====== -->
+  <main id="main">
+
+    <div class="page-hero">
+      <div class="container container--text">
+        <h1>Votre analyse est-elle juste ? Et répond-elle à la bonne question ?</h1>
+        <div class="page-hero__badges">
+          <span class="badge">🔎 Diagnostic préalable d'une à deux journées</span>
+          <span class="badge">⏱ Relecture de 2 à 4 jours</span>
+          <span class="badge">🔁 Conseil récurrent possible</span>
+          <span class="badge">💶 Tarifs sur demande</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-content">
+      <div class="container">
+
+        <div class="page-section">
+          <p class="lead">Un modèle va passer en production. Une métrique va être présentée à vos investisseurs. Un test A/B va fixer un prix. Une prévision va engager un budget. Dans tous ces cas, une décision repose sur une analyse que personne, en dehors de son auteur, n'a réellement examinée. Elle est probablement correcte. Mais une analyse fausse ressemble exactement à une analyse juste, et le coût d'une erreur se paie longtemps après.</p>
+          <p>En science, aucun résultat n'est accepté sans qu'un pair l'ait relu et contesté. C'est ce que je propose à votre équipe : une relecture indépendante, par quelqu'un dont c'est le métier, avant que vous ne décidiez.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Pourquoi même les bonnes équipes se trompent</h2>
+          <p>Ce n'est pas une question de compétence. <a href="https://doi.org/10.1177/2515245917747646" target="_blank" rel="noopener">Silberzahn et ses coauteurs</a> ont confié le même jeu de données et la même question à vingt-neuf équipes d'analystes : leurs conclusions ont divergé, jusqu'au signe de l'effet, uniquement par leurs choix de méthode. <a href="https://doi.org/10.1038/s41586-020-2314-9" target="_blank" rel="noopener">Botvinik-Nezer et ses coauteurs</a> ont refait l'expérience avec soixante-dix équipes : même dispersion. <a href="https://doi.org/10.1016/j.patter.2023.100804" target="_blank" rel="noopener">Kapoor et Narayanan</a> ont recensé, dans dix-sept disciplines, des centaines d'articles publiés dont les résultats reposent sur une fuite d'information entre les données d'entraînement et celles de test — et dans un cas emblématique, l'avantage annoncé du machine learning disparaît une fois l'erreur corrigée. <a href="https://doi.org/10.1145/2339530.2339653" target="_blank" rel="noopener">Kohavi et ses coauteurs</a>, à partir des milliers d'expériences menées chez Microsoft, montrent que des tests A/B significatifs conduisent régulièrement à des conclusions fausses, pour des raisons qui n'apparaissent qu'à un regard exercé.</p>
+          <p>Ces erreurs ont un point commun : elles ne font pas planter le code. Une validation croisée mal construite, une variable qui contient déjà la réponse, une métrique qui mesure autre chose que ce qu'on croit, une comparaison entre des populations qui ne sont pas comparables, un effet réel mais trop petit pour justifier la décision. Le résultat est plausible, le graphique est propre, et l'entreprise avance dessus.</p>
+          <p>Le problème commence souvent avant l'analyse. Une question métier doit devenir une question mesurable, avec des données qui peuvent y répondre et une méthode adaptée. Beaucoup d'analyses sont techniquement justes et répondent à une question voisine de celle qui comptait.</p>
+          <p class="apport"><strong>Ce que j'apporte.</strong> La relecture par les pairs est mon activité depuis plus de vingt ans : comités de programme des conférences de référence de mon domaine, comité éditorial de revue, direction de thèses. Définir une question de recherche qui tienne face à la concurrence internationale, puis vérifier que les données et la méthode y répondent, est exactement ce que fait un directeur de recherche. Je l'applique à vos analyses avec le même niveau d'exigence, et sans aucun intérêt dans la réponse.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Ce que je relis</h2>
+          <ul>
+            <li><strong>La question</strong> : ce que vous voulez vraiment savoir, ce que l'analyse mesure réellement, et l'écart entre les deux.</li>
+            <li><strong>Les données</strong> : leur origine, ce qu'elles contiennent et ne contiennent pas, les biais de collecte, la représentativité.</li>
+            <li><strong>La méthode</strong> : le choix des outils statistiques ou d'apprentissage, leurs hypothèses, leur adéquation à la question ; les protocoles de validation ; les fuites d'information ; les comparaisons ; l'incertitude des résultats et ce qu'elle autorise à conclure.</li>
+            <li><strong>L'interprétation</strong> : ce que les résultats permettent réellement d'affirmer, et ce qui relève de l'extrapolation.</li>
+            <li><strong>La reproductibilité</strong> : peut-on refaire l'analyse dans six mois et obtenir le même résultat ?</li>
+          </ul>
+        </div>
+
+        <div class="page-section">
+          <h2>Comment je procède</h2>
+          <p>Une relecture porte sur une analyse, un modèle ou une décision, et dure deux à quatre jours. Je lis le code, les données et les documents produits ; j'échange avec les auteurs, comme un relecteur échange avec un auteur, pour comprendre les choix et les contraintes ; je vérifie les points critiques sur vos données ; je rends un avis écrit. Quand l'analyse tient, je le dis, et cet avis a une valeur pour ceux à qui vous la présentez. Quand elle ne tient pas, je dis pourquoi, et ce qu'il faudrait pour qu'elle tienne.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Ce que vous recevez</h2>
+          <p>Un avis écrit, structuré comme une relecture scientifique : ce qui est solide, ce qui est fragile, ce qui est faux, et pour chaque point la raison et la correction possible ; une évaluation de ce que la décision peut ou non s'appuyer sur ces résultats ; et, quand la question de départ mérite d'être reformulée, une proposition de question et de méthode. L'avis porte sur l'analyse, jamais sur les personnes : c'est le principe de la relecture par les pairs, et c'est ce qui la rend utile.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Conseil récurrent</h2>
+          <p>Pour les startups et les équipes R&amp;D qui prennent régulièrement
+          des décisions à partir de leurs analyses, je propose un rôle de
+          conseil scientifique : une demi-journée à une journée par mois, avec
+          relecture des analyses en cours, participation aux choix de méthode,
+          et un interlocuteur à qui poser la question « est-ce qu'on peut se
+          fier à ça ? » avant de décider.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Pour qui</h2>
+          <p>Les équipes data science et R&amp;D de PME, d'ETI et de startups en croissance, dont les analyses fondent des décisions qui engagent l'entreprise : mise en production d'un modèle, métriques présentées à des investisseurs ou à des clients, expérimentation produit, prévisions, choix stratégiques.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Pourquoi moi</h2>
+          <p>Directeur de recherche à Inria, habilité à diriger des recherches, j'ai construit ma carrière sur l'analyse expérimentale de données à grande échelle, publiée dans les conférences les plus sélectives de mon domaine et reprise par la presse internationale. Mes travaux ont notamment établi, sur l'ensemble du graphe de Twitter, que près de six personnes sur dix partagent un article sans l'avoir lu (<a href="https://www.washingtonpost.com/news/the-intersect/wp/2016/06/16/six-in-10-of-you-will-share-this-link-without-reading-it-according-to-a-new-and-depressing-study/" target="_blank" rel="noopener">The Washington Post</a>, <a href="https://fortune.com/2016/06/19/6-out-of-10-twitter-link-clicks/" target="_blank" rel="noopener">Fortune</a>, <a href="https://web.archive.org/web/20160805065730/http://www.lesechos.fr/tech-medias/medias/0211047169697-la-plupart-des-internautes-partagent-des-articles-sans-les-avoir-lus-2007983.php" target="_blank" rel="noopener">Les Échos</a>, <a href="https://www.slate.fr/story/119811/reseaux-sociaux-lisent-titre" target="_blank" rel="noopener">Slate.fr</a>) — le genre de résultat qui n'a de valeur que si la méthode est irréprochable. J'ai aussi été adjoint du CTO d'une startup, puis fondateur et dirigeant d'une autre : je connais la pression qui pousse à décider vite sur une analyse qu'on n'a pas eu le temps de vérifier.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Diagnostic préalable</h2>
+          <p>Avant toute chose, un appel d'une heure, gratuit et sans engagement, pour comprendre votre situation et vérifier que je peux vous être utile. S'il y a matière, un diagnostic d'une à deux journées : présentation de l'analyse par ses auteurs, lecture rapide, restitution orale des points de vigilance et recommandations écrites. Il conclut sur ce qui mérite une relecture approfondie, une <a href="/formation/python-machine-learning.html" target="_blank" rel="noopener">formation</a>, ou rien.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <section class="section section--alt quiz" data-quiz aria-labelledby="quiz-title">
+      <div class="container container--text">
+        <h2 id="quiz-title">Cinq questions avant de me contacter</h2>
+        <form class="quiz__form">
+        <fieldset class="quiz__item">
+          <legend><span class="quiz__num">1</span> Quelqu'un d'autre que son auteur a-t-il relu en détail l'analyse sur laquelle vous allez décider ?</legend>
+          <div class="quiz__options">
+            <input type="radio" class="quiz__radio" id="q1-oui" name="q1" value="oui">
+            <label class="quiz__label" for="q1-oui">Oui</label>
+            <input type="radio" class="quiz__radio" id="q1-non" name="q1" value="non">
+            <label class="quiz__label" for="q1-non">Non</label>
+            <input type="radio" class="quiz__radio" id="q1-nsp" name="q1" value="nsp">
+            <label class="quiz__label" for="q1-nsp">Je ne sais pas</label>
+          </div>
+        </fieldset>
+        <fieldset class="quiz__item">
+          <legend><span class="quiz__num">2</span> Savez-vous quelle question précise elle mesure, et si c'est celle qui compte pour vous ?</legend>
+          <div class="quiz__options">
+            <input type="radio" class="quiz__radio" id="q2-oui" name="q2" value="oui">
+            <label class="quiz__label" for="q2-oui">Oui</label>
+            <input type="radio" class="quiz__radio" id="q2-non" name="q2" value="non">
+            <label class="quiz__label" for="q2-non">Non</label>
+            <input type="radio" class="quiz__radio" id="q2-nsp" name="q2" value="nsp">
+            <label class="quiz__label" for="q2-nsp">Je ne sais pas</label>
+          </div>
+        </fieldset>
+        <fieldset class="quiz__item">
+          <legend><span class="quiz__num">3</span> Les données d'évaluation de votre modèle étaient-elles strictement inconnues au moment de l'entraînement ?</legend>
+          <div class="quiz__options">
+            <input type="radio" class="quiz__radio" id="q3-oui" name="q3" value="oui">
+            <label class="quiz__label" for="q3-oui">Oui</label>
+            <input type="radio" class="quiz__radio" id="q3-non" name="q3" value="non">
+            <label class="quiz__label" for="q3-non">Non</label>
+            <input type="radio" class="quiz__radio" id="q3-nsp" name="q3" value="nsp">
+            <label class="quiz__label" for="q3-nsp">Je ne sais pas</label>
+          </div>
+        </fieldset>
+        <fieldset class="quiz__item">
+          <legend><span class="quiz__num">4</span> Votre résultat est-il donné avec une incertitude, et cette incertitude autorise-t-elle votre décision ?</legend>
+          <div class="quiz__options">
+            <input type="radio" class="quiz__radio" id="q4-oui" name="q4" value="oui">
+            <label class="quiz__label" for="q4-oui">Oui</label>
+            <input type="radio" class="quiz__radio" id="q4-non" name="q4" value="non">
+            <label class="quiz__label" for="q4-non">Non</label>
+            <input type="radio" class="quiz__radio" id="q4-nsp" name="q4" value="nsp">
+            <label class="quiz__label" for="q4-nsp">Je ne sais pas</label>
+          </div>
+        </fieldset>
+        <fieldset class="quiz__item">
+          <legend><span class="quiz__num">5</span> Pourriez-vous refaire l'analyse dans six mois et obtenir le même chiffre ?</legend>
+          <div class="quiz__options">
+            <input type="radio" class="quiz__radio" id="q5-oui" name="q5" value="oui">
+            <label class="quiz__label" for="q5-oui">Oui</label>
+            <input type="radio" class="quiz__radio" id="q5-non" name="q5" value="non">
+            <label class="quiz__label" for="q5-non">Non</label>
+            <input type="radio" class="quiz__radio" id="q5-nsp" name="q5" value="nsp">
+            <label class="quiz__label" for="q5-nsp">Je ne sais pas</label>
+          </div>
+        </fieldset>
+          <div class="quiz__actions" hidden data-quiz-actions>
+            <button type="button" class="btn btn--primary" data-quiz-submit>Voir le résultat</button>
+          </div>
+        </form>
+        <div class="quiz__result" data-quiz-result role="status" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <h2>Décrivez-moi votre situation</h2>
+        <p>Tarifs sur demande.</p>
+        <div class="cta-section__actions">
+          <a href="contact.html" class="btn btn--primary">Me décrire votre situation</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section voir-aussi">
+      <div class="container">
+        <div class="section-header">
+          <h2>Voir aussi</h2>
+        </div>
+        <div class="cards-grid cards-grid--pair">
+          <a class="card card--link" href="audit-performance-cout-traitements-data.html">
+            <h3 class="card__title">Performance et coût de vos traitements de données</h3>
+            <p class="card__body">Vos analyses Python sont lentes, vos notebooks saturent, votre facture cloud grimpe.</p>
+            <span class="card__link">En savoir plus →</span>
+          </a>
+
+          <a class="card card--link" href="audit-agents-ia-data-science.html">
+            <h3 class="card__title">Usage des agents IA par votre équipe data</h3>
+            <p class="card__body">Copilot, Cursor, Claude Code : vos data scientists vont plus vite, mais que produisent-ils, et que transmettent-ils ?</p>
+            <span class="card__link">En savoir plus →</span>
+          </a>
+        </div>
+        <p class="voir-aussi__note">Un diagnostic conclut parfois que l'équipe n'a pas besoin d'un audit mais de
+          compétences. Quand c'est le cas, je le dis.
+          <a href="/formation/" target="_blank" rel="noopener">Voir les formations →</a></p>
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+
+        <div class="footer__col">
+          <p class="footer__col-title">Arnaud Legout</p>
+          <p class="footer__tagline">Directeur de recherche Inria — Sophia Antipolis, France</p>
+          <ul class="footer__link-list">
+            <li><a href="/" target="_blank" rel="noopener">Site personnel — arnaudlegout.fr</a></li>
+            <li><a href="https://www-sop.inria.fr/members/Arnaud.Legout/" target="_blank" rel="noopener">Page professionnelle Inria</a></li>
+            <li><a href="https://www.linkedin.com/in/arnaud-legout-866a404/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://scholar.google.com/citations?user=uGy5lroAAAAJ" target="_blank" rel="noopener">Google Scholar</a></li>
+            <li><a href="/formation/" target="_blank" rel="noopener">Formations Python</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <p class="footer__col-title">Interventions</p>
+          <ul class="footer__link-list">
+            <li><a href="audit-performance-cout-traitements-data.html">Performance et coût</a></li>
+            <li><a href="audit-agents-ia-data-science.html">Agents IA</a></li>
+            <li><a href="revue-scientifique-analyses-data.html">Revue scientifique</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="contact.html">Formulaire de contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <p class="footer__col-title">Contact</p>
+          <ul class="footer__contact-list">
+            <li><a href="contact.html">Formulaire de contact</a></li>
+            <li><a href="mailto:arnaud.legout@gmail.com">Email</a></li>
+            <li><a href="/mentions-legales.html">Mentions légales</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p>© 2026 Arnaud Legout. Site statique, sans cookie.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script data-goatcounter="https://arnaudlegout-consulting.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+
+  <script src="js/quiz.js" defer></script>
+  <script>
+    (function () {
+      var btn = document.querySelector('.nav__burger');
+      var menu = document.getElementById('nav-menu');
+      if (!btn || !menu) return;
+      function closeMenu() {
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', 'Ouvrir le menu de navigation');
+        menu.classList.remove('is-open');
+      }
+      btn.addEventListener('click', function () {
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        btn.setAttribute('aria-label', open ? 'Ouvrir le menu de navigation' : 'Fermer le menu de navigation');
+        menu.classList.toggle('is-open', !open);
+      });
+      menu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') closeMenu();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeMenu();
+      });
+    })();
+  </script>
+</body>
+
+</html>

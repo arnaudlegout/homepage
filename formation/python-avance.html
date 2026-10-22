@@ -1,0 +1,463 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formation Python avancé — décorateurs, descripteurs, métaclasses</title>
+  <meta name="description" content="Mécanismes internes de Python : décorateurs, générateurs, descripteurs, métaclasses. 3 jours pour développeurs expérimentés. Intra-entreprise. Note 4,93/5.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://arnaudlegout.fr/formation/python-avance.html">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arnaudlegout.fr/formation/python-avance.html">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Arnaud Legout — Formations Python data science">
+  <meta property="og:title" content="Formation Python avancé — décorateurs, descripteurs, métaclasses | Arnaud Legout">
+  <meta property="og:description" content="Mécanismes internes de Python : décorateurs, générateurs, descripteurs, métaclasses. 3 jours pour développeurs expérimentés. Intra-entreprise. Note 4,93/5.">
+  <meta property="og:image" content="https://arnaudlegout.fr/formation/assets/images/og-image-v2.jpg">
+  <meta property="og:image:secure_url" content="https://arnaudlegout.fr/formation/assets/images/og-image-v2.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Formation Python data science par Arnaud Legout, directeur de recherche Inria — Note 4,93/5">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Formation Python avancé — décorateurs, descripteurs, métaclasses | Arnaud Legout">
+  <meta name="twitter:description" content="Mécanismes internes de Python : décorateurs, générateurs, descripteurs, métaclasses. 3 jours pour développeurs expérimentés. Intra-entreprise. Note 4,93/5.">
+  <meta name="twitter:image" content="https://arnaudlegout.fr/formation/assets/images/og-image-v2.jpg">
+  <meta name="twitter:image:alt" content="Formation Python data science par Arnaud Legout, directeur de recherche Inria — Note 4,93/5">
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <!-- Script vide volontaire, à garder juste après la feuille de style : Firefox doit
+       attendre style.css avant de l'exécuter, donc il ne lit pas le <body> tant que le CSS
+       n'est pas chargé. Sans lui, une extension qui force la mise en page trop tôt
+       (« La mise en page a été forcée avant le chargement complet de la page ») fait
+       afficher la page sans style un instant au rechargement. Ne pas supprimer. -->
+  <script>0</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "@id": "https://arnaudlegout.fr/formation/python-avance.html#course",
+    "name": "Formation Python avancé — programmation objet, fonctionnelle et méta-programmation",
+    "description": "Formation professionnelle intensive de 3 jours sur les paradigmes avancés de Python : décorateurs et clôtures, itérateurs et générateurs personnalisés, descripteurs, métaclasses. Comprendre les mécanismes internes du langage pour lire et écrire des librairies Python de qualité professionnelle.",
+    "url": "https://arnaudlegout.fr/formation/python-avance.html",
+    "inLanguage": ["fr", "en"],
+    "provider": {
+      "@type": "Organization",
+      "@id": "https://arnaudlegout.fr/formation/#formation-arnaud-legout",
+      "name": "Elara Formations",
+      "url": "https://arnaudlegout.fr/formation/"
+    },
+    "about": [
+      "Python avancé",
+      "Décorateurs",
+      "Générateurs",
+      "Descripteurs",
+      "Métaclasses",
+      "Programmation orientée objet",
+      "Méta-programmation"
+    ],
+    "teaches": [
+      "Distinguer et utiliser méthodes statiques, de classe et d'instance",
+      "Implémenter des décorateurs avec clôtures et attributs de fonctions",
+      "Concevoir des itérateurs personnalisés avec des fonctions génératrices",
+      "Contrôler l'accès aux attributs avec propriétés et descripteurs",
+      "Comprendre le protocole des métaclasses et le système de types Python",
+      "Lire et comprendre le code source des grandes librairies de l'écosystème Python"
+    ],
+    "audience": {
+      "@type": "EducationalAudience",
+      "educationalRole": "Développeurs, ingénieurs et chercheurs souhaitant approfondir leur maîtrise de Python"
+    },
+    "educationalLevel": "Advanced",
+    "coursePrerequisites": "Avoir suivi la formation Python — niveau 1 ou disposer d'un niveau équivalent : maîtrise des références partagées, du typage dynamique, des espaces de nommage et de l'itération. Bonne compréhension des classes et instances.",
+    "timeRequired": "PT21H",
+    "hasCourseInstance": [
+      {
+        "@type": "CourseInstance",
+        "courseMode": "Onsite",
+        "courseWorkload": "PT21H",
+        "instructor": {
+          "@type": "Person",
+          "@id": "https://arnaudlegout.fr/#arnaud-legout",
+          "name": "Arnaud Legout",
+          "jobTitle": "Directeur de recherche Inria",
+          "url": "https://arnaudlegout.fr/formation/a-propos.html"
+        },
+        "location": {
+          "@type": "Place",
+          "name": "Sur site client, France"
+        }
+      },
+      {
+        "@type": "CourseInstance",
+        "courseMode": "Online",
+        "courseWorkload": "PT21H",
+        "instructor": {
+          "@type": "Person",
+          "@id": "https://arnaudlegout.fr/#arnaud-legout",
+          "name": "Arnaud Legout",
+          "jobTitle": "Directeur de recherche Inria",
+          "url": "https://arnaudlegout.fr/formation/a-propos.html"
+        }
+      }
+    ],
+    "offers": {
+      "@type": "Offer",
+      "category": "Formation professionnelle",
+      "availability": "https://schema.org/InStock",
+      "url": "https://arnaudlegout.fr/formation/contact.html"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.93",
+      "bestRating": "5",
+      "ratingCount": "289",
+      "reviewCount": "289"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Arnaud Legout",
+        "item": "https://arnaudlegout.fr/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Accueil",
+        "item": "https://arnaudlegout.fr/formation/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Python — avancé",
+        "item": "https://arnaudlegout.fr/formation/python-avance.html"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Quels sont les prérequis concrets pour suivre cette formation ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Il faut maîtriser les références partagées, le typage dynamique, les espaces de nommage et l'itération — soit avoir suivi la formation Python niveau 1, soit disposer d'un niveau équivalent. Une bonne compréhension des classes et instances est également requise."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "À quoi sert concrètement de connaître les métaclasses ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Les métaclasses permettent de comprendre le modèle objet de Python en profondeur, et d'écrire du code générique : enregistrement automatique de classes, validation à la définition, singletons. Elles apparaissent régulièrement dans les codes sources de Pandas, SQLAlchemy et pytest — des librairies que beaucoup d'équipes utilisent sans pouvoir en lire le code."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quelle est la différence entre un décorateur sous forme de fonction et sous forme de classe ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Les deux formes sont couvertes en module 2. Les décorateurs sous forme de classe peuvent sembler plus simples et plus puissants au premier abord, mais ils ont des limitations importantes — notamment lors de la décoration des méthodes de classe. Les décorateurs sous forme de fonction, appuyés sur les notions de clôtures et d'attributs non locaux (ou d'attributs de fonction), permettent de développer des décorateurs puissants et totalement génériques. C'est cette approche qui est privilégiée dans la formation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Cette formation est-elle utile pour des équipes qui n'écrivent pas de librairies ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui. Comprendre les descripteurs, les générateurs et les décorateurs permet de lire et de maintenir du code Python complexe, même sans en écrire. C'est utile pour toute équipe qui travaille avec des librairies tierces ou qui reprend du code de production existant."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Le format distanciel est-il adapté à ce type de formation ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui. 90&nbsp;% des participants jugent le format distanciel équivalent ou supérieur au présentiel. J'anime des formations à distance depuis 2020 et j'ai développé une pratique solide de l'enseignement en ligne. J'utilise Zoom, qui permet d'enregistrer les sessions et de les mettre à disposition des participants si souhaité, et CoCalc, une plateforme en ligne qui donne accès à des serveurs pré-configurés avec l'ensemble du matériel de formation et des librairies installées. CoCalc me permet également de suivre en temps réel la progression de chaque participant et d'intervenir directement pour corriger ou débloquer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Peut-on combiner cette formation avec une formation data science ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, c'est une combinaison naturelle pour les équipes qui veulent à la fois la performance (Polars, Numba) et la qualité d'architecture (décorateurs, descripteurs, métaclasses)."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Aller au contenu principal</a>
+
+  <header class="header">
+    <nav class="nav container" aria-label="Navigation principale">
+      <a href="./" class="nav__logo">Arnaud Legout</a>
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item nav__item--has-dropdown">
+            <button type="button" class="nav__link">Formations</button>
+            <ul class="nav__dropdown">
+              <li class="nav__dropdown-label">Data science</li>
+              <li><a href="python-data-science-niveau-1.html">Python data science — niveau 1</a></li>
+              <li><a href="python-data-science-niveau-2.html">Python data science — niveau 2</a></li>
+              <li><a href="python-machine-learning.html">Python machine learning</a></li>
+              <li class="nav__dropdown-label">Compléments Python</li>
+              <li><a href="python-niveau-1.html">Python — niveau 1</a></li>
+              <li><a href="python-avance.html">Python — avancé</a></li>
+            </ul>
+          </li>
+          <li class="nav__item"><a href="a-propos.html" class="nav__link">À propos</a></li>
+        </ul>
+      </div>
+      <div class="nav__actions">
+        <a href="contact.html" class="nav__cta btn btn--primary"><span class="nav__cta-long">Demander un devis</span><span class="nav__cta-short">Devis</span></a>
+        <button type="button" class="nav__burger" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="nav-menu">
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <div class="page-hero">
+      <div class="container container--text">
+        <h1>Formation Python — avancé</h1>
+        <p class="page-hero__subtitle">Programmation objet, fonctionnelle et méta-programmation</p>
+        <div class="page-hero__badges">
+          <span class="badge">⏱ 3 jours</span>
+          <span class="badge">👥 ≤ 10 pers.</span>
+          <span class="badge">📍 Présentiel ou distanciel</span>
+          <span class="badge">🌐 Français ou anglais</span>
+          <span class="badge">🎯 Avancé</span>
+          <span class="badge">👤 Développeurs Python expérimentés</span>
+          <span class="badge">🏢 Intra-entreprise</span>
+          <span class="badge">★ 4,93/5</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-content">
+      <div class="container">
+
+        <div class="page-section">
+          <p><em>Module proposé en complément des formations data science, ou comme formation autonome selon le besoin.</em></p>
+          <p class="lead">La plupart des développeurs Python atteignent un plateau après quelques années&nbsp;: ils écrivent du code qui fonctionne, mais ne maîtrisent pas les mécanismes qui rendent Python aussi expressif. Quand ils lisent le code source de Pandas, Polars, SQLAlchemy ou pytest, ils tombent sur des décorateurs, des descripteurs, des métaclasses — et ils décrochent.</p>
+          <p>Cette formation franchit ce cap. Elle explore les paradigmes avancés du langage&nbsp;: <strong>générateurs et itérateurs personnalisés, décorateurs et clôtures, descripteurs, métaclasses</strong>. Ce sont les notions qui permettent de comprendre les grandes librairies Python et d'écrire du code générique, réutilisable et maintenable.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>À l'issue de cette formation, vos collaborateurs sauront</h2>
+          <ul>
+            <li>Distinguer et utiliser méthodes statiques, de classe et d'instance selon le bon contexte</li>
+            <li>Implémenter des décorateurs en utilisant clôtures et attributs de fonctions</li>
+            <li>Concevoir des itérateurs personnalisés avec des fonctions génératrices</li>
+            <li>Contrôler l'accès aux attributs avec propriétés et descripteurs</li>
+            <li>Comprendre le protocole des métaclasses et sa relation avec le système de types Python</li>
+            <li>Lire et comprendre le code source des grandes librairies de l'écosystème Python</li>
+          </ul>
+        </div>
+
+        <div class="page-section">
+          <h2>Programme détaillé</h2>
+
+          <h3>Module 1 — Méthodes statiques et de classe</h3>
+          <p>Révision des classes et instances. Fonctions et méthodes bound. Méthodes statiques&nbsp;: usages et limites. Méthodes de classe&nbsp;: usages canoniques (constructeurs alternatifs, polymorphisme). Choisir la bonne forme selon le contexte.</p>
+
+          <h3>Module 2 — Décorateurs</h3>
+          <p>Callables, fonctions et clôtures&nbsp;: les mécanismes sous-jacents. Conception de décorateurs sous forme de fonctions, puis sous forme de classes. Attributs de fonctions et conservation des métadonnées avec <code>functools.wraps</code>. Décorateurs de classe. Applications concrètes&nbsp;: timer, watchdog, memoization.</p>
+
+          <h3>Module 3 — Itérateurs et générateurs</h3>
+          <p>Le protocole d'itération en profondeur&nbsp;: <code>__iter__</code> et <code>__next__</code>. Fonctions génératrices et le mot-clé <code>yield</code>. Expressions génératrices et leur empreinte mémoire. Conception d'itérateurs personnalisés pour vos propres structures de données. Application&nbsp;: chaînes de traitement composables.</p>
+
+          <h3>Module 4 — Gestion avancée des attributs</h3>
+          <p>Propriétés (<code>@property</code>, setter, deleter). Protocole descripteur&nbsp;: <code>__get__</code>, <code>__set__</code>, <code>__delete__</code>. Descripteurs de données vs non-données. Hooks d'attribut&nbsp;: <code>__getattr__</code>, <code>__setattr__</code>, <code>__getattribute__</code>. Applications&nbsp;: validation automatique, attributs calculés, branchements.</p>
+
+          <h3>Module 5 — Métaclasses</h3>
+          <p>La relation instance/classe/métaclasse dans le modèle objet Python. La métaclasse <code>type</code> et la création dynamique de classes. Définir une métaclasse personnalisée avec <code>__new__</code> et <code>__init__</code>. Cas d'usage&nbsp;: enregistrement automatique, validation de classe, singletons.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Public et prérequis</h2>
+          <p><strong>Public cible</strong></p>
+          <p>Développeurs, ingénieurs, chercheurs souhaitant approfondir leur maîtrise de Python au-delà des bases et comprendre les mécanismes internes du langage.</p>
+          <p><strong>Prérequis</strong></p>
+          <p>Avoir suivi la formation «&nbsp;Python — niveau 1&nbsp;» ou disposer d'un niveau équivalent&nbsp;: maîtrise des références partagées, du typage dynamique, des espaces de nommage et de l'itération. Bonne compréhension des classes et instances.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Méthode pédagogique</h2>
+          <p>La formation alterne exposés théoriques courts et exercices pratiques sur notebooks Jupyter. Chaque concept est immédiatement mis en application. Une attention particulière est portée aux techniques les plus récentes et aux bonnes pratiques issues de l'expérience terrain — notamment celles que je rencontre dans les codes sources des librairies majeures de l'écosystème.</p>
+          <p>Les supports sont fournis aux participants à l'issue de la formation, accompagnés des notebooks d'exercices corrigés.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Une formation utile à toute équipe Python mature</h2>
+          <p>Cette formation est particulièrement adaptée aux équipes qui développent leurs propres librairies internes, contribuent à des projets open source, ou doivent maintenir du code Python de production complexe. Elle se combine naturellement avec les formations data science pour les équipes qui veulent à la fois performance et qualité d'architecture.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Documentation officielle</h2>
+          <p><a href="https://docs.python.org/3/reference/datamodel.html" target="_blank" rel="noopener noreferrer">Data Model Python</a> (métaclasses, descripteurs), <a href="https://peps.python.org/pep-0318/" target="_blank" rel="noopener noreferrer">PEP&nbsp;318</a> (décorateurs), <a href="https://peps.python.org/pep-0255/" target="_blank" rel="noopener noreferrer">PEP&nbsp;255</a> (générateurs).</p>
+        </div>
+
+        <section class="page-section" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">Questions fréquentes</h2>
+          <div class="faq">
+            <details class="faq__item">
+              <summary>Quels sont les prérequis concrets pour suivre cette formation&nbsp;?</summary>
+              <div class="faq__answer"><p>Il faut maîtriser les références partagées, le typage dynamique, les espaces de nommage et l'itération — soit avoir suivi la formation Python niveau 1, soit disposer d'un niveau équivalent. Une bonne compréhension des classes et instances est également requise.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>À quoi sert concrètement de connaître les métaclasses&nbsp;?</summary>
+              <div class="faq__answer"><p>Les métaclasses permettent de comprendre le modèle objet de Python en profondeur, et d'écrire du code générique&nbsp;: enregistrement automatique de classes, validation à la définition, singletons. Elles apparaissent régulièrement dans les codes sources de Pandas, SQLAlchemy et pytest — des librairies que beaucoup d'équipes utilisent sans pouvoir en lire le code.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Quelle est la différence entre un décorateur sous forme de fonction et sous forme de classe&nbsp;?</summary>
+              <div class="faq__answer"><p>Les deux formes sont couvertes en module 2. Les décorateurs sous forme de classe peuvent sembler plus simples et plus puissants au premier abord, mais ils ont des limitations importantes — notamment lors de la décoration des méthodes de classe. Les décorateurs sous forme de fonction, appuyés sur les notions de clôtures et d'attributs non locaux (ou d'attributs de fonction), permettent de développer des décorateurs puissants et totalement génériques. C'est cette approche qui est privilégiée dans la formation.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Cette formation est-elle utile pour des équipes qui n'écrivent pas de librairies&nbsp;?</summary>
+              <div class="faq__answer"><p>Oui. Comprendre les descripteurs, les générateurs et les décorateurs permet de lire et de maintenir du code Python complexe, même sans en écrire. C'est utile pour toute équipe qui travaille avec des librairies tierces ou qui reprend du code de production existant.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Le format distanciel est-il adapté à ce type de formation&nbsp;?</summary>
+              <div class="faq__answer"><p>Oui. 90&nbsp;% des participants jugent le format distanciel équivalent ou supérieur au présentiel. J'anime des formations à distance depuis 2020 et j'ai développé une pratique solide de l'enseignement en ligne. J'utilise Zoom, qui permet d'enregistrer les sessions et de les mettre à disposition des participants si souhaité, et CoCalc, une plateforme en ligne qui donne accès à des serveurs pré-configurés avec l'ensemble du matériel de formation et des librairies installées. CoCalc me permet également de suivre en temps réel la progression de chaque participant et d'intervenir directement pour corriger ou débloquer.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Peut-on combiner cette formation avec une formation data science&nbsp;?</summary>
+              <div class="faq__answer"><p>Oui, c'est une combinaison naturelle pour les équipes qui veulent à la fois la performance (Polars, Numba) et la qualité d'architecture (décorateurs, descripteurs, métaclasses).</p></div>
+            </details>
+          </div>
+        </section>
+
+        <div class="page-cta">
+          <a href="contact.html" class="btn btn--primary">Demander un devis pour cette formation</a>
+        </div>
+
+      </div>
+    </div>
+
+    <section class="section voir-aussi" aria-labelledby="voir-aussi-title">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="voir-aussi-title">Voir aussi</h2>
+        </div>
+        <div class="cards-grid cards-grid--pair">
+          <a class="card card--link" href="python-niveau-1.html">
+            <h3 class="card__title">Python — niveau&nbsp;1</h3>
+            <p class="card__body">Les formations data science supposent une bonne maîtrise de Python&nbsp;: fonctions,
+            itération, modules, espaces de nommage. Si ce n'est pas le cas de tous vos collaborateurs, je peux
+            compléter la formation par ce module en amont des journées data science.</p>
+            <span class="card__link">Voir le programme →</span>
+          </a>
+
+          <a class="card card--link" href="python-data-science-niveau-2.html">
+            <h3 class="card__title">Python data science — niveau&nbsp;2</h3>
+            <p class="card__body">Aller au-delà de Pandas quand les volumes dépassent la RAM ou que les performances
+            comptent. Polars et son streaming engine, accélération JIT avec Numba, parallélisme multi-cœurs avec
+            multiprocessing.</p>
+            <span class="card__link">Voir le programme →</span>
+          </a>
+        </div>
+        <p class="voir-aussi__note">Au-delà de la formation, j'interviens aussi en conseil sur la performance de vos
+          traitements, l'usage des agents IA et la revue de vos analyses.
+          <a href="/consulting/" target="_blank" rel="noopener">Découvrir le conseil →</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <p class="footer__col-title">Arnaud Legout</p>
+          <p class="footer__tagline">Directeur de recherche Inria — Sophia Antipolis, France</p>
+          <ul class="footer__link-list">
+            <li><a href="/" target="_blank" rel="noopener">Site personnel — arnaudlegout.fr</a></li>
+            <li><a href="https://www-sop.inria.fr/members/Arnaud.Legout/" target="_blank" rel="noopener">Page professionnelle Inria</a></li>
+            <li><a href="https://www.linkedin.com/in/arnaud-legout-866a404/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="/consulting/" target="_blank" rel="noopener">Conseil data science</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Navigation</p>
+          <ul class="footer__link-list">
+            <li><a href="python-data-science-niveau-1.html">Python data science niveau 1</a></li>
+            <li><a href="python-data-science-niveau-2.html">Python data science niveau 2</a></li>
+            <li><a href="python-machine-learning.html">Python machine learning</a></li>
+            <li><a href="python-niveau-1.html">Python — niveau 1</a></li>
+            <li><a href="python-avance.html">Python — avancé</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="contact.html">Formulaire de contact</a></li>
+            <!-- <li><a href="articles.html">Articles</a></li> -->
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Contact</p>
+          <ul class="footer__contact-list">
+            <li><a href="contact.html">Formulaire de contact</a></li>
+            <li><a href="mailto:arnaud.legout@gmail.com">Email</a></li>
+            <li><a href="/mentions-legales.html">Mentions légales</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Arnaud Legout. Site statique, sans cookie.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script data-goatcounter="https://arnaudlegout-formations.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+  <script>
+    (function () {
+      var btn = document.querySelector('.nav__burger');
+      var menu = document.getElementById('nav-menu');
+      if (!btn || !menu) return;
+      function closeMenu() {
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', 'Ouvrir le menu de navigation');
+        menu.classList.remove('is-open');
+      }
+      btn.addEventListener('click', function () {
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        btn.setAttribute('aria-label', open ? 'Ouvrir le menu de navigation' : 'Fermer le menu de navigation');
+        menu.classList.toggle('is-open', !open);
+      });
+      menu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') closeMenu();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeMenu();
+      });
+    })();
+  </script>
+</body>
+</html>

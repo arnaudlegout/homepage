@@ -1,0 +1,449 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formation Python fondamentaux — pour ingénieurs et chercheurs</title>
+  <meta name="description" content="Fondamentaux Python en 3 jours : fonctions, itération, modules, espaces de nommage. Pour ingénieurs et chercheurs. Prérequis data science. Note 4,93/5.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://arnaudlegout.fr/formation/python-niveau-1.html">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arnaudlegout.fr/formation/python-niveau-1.html">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Arnaud Legout — Formations Python data science">
+  <meta property="og:title" content="Formation Python fondamentaux — pour ingénieurs et chercheurs | Arnaud Legout">
+  <meta property="og:description" content="Fondamentaux Python en 3 jours : fonctions, itération, modules, espaces de nommage. Pour ingénieurs et chercheurs. Prérequis data science. Note 4,93/5.">
+  <meta property="og:image" content="https://arnaudlegout.fr/formation/assets/images/og-image-v2.jpg">
+  <meta property="og:image:secure_url" content="https://arnaudlegout.fr/formation/assets/images/og-image-v2.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Formation Python data science par Arnaud Legout, directeur de recherche Inria — Note 4,93/5">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Formation Python fondamentaux — pour ingénieurs et chercheurs | Arnaud Legout">
+  <meta name="twitter:description" content="Fondamentaux Python en 3 jours : fonctions, itération, modules, espaces de nommage. Pour ingénieurs et chercheurs. Prérequis data science. Note 4,93/5.">
+  <meta name="twitter:image" content="https://arnaudlegout.fr/formation/assets/images/og-image-v2.jpg">
+  <meta name="twitter:image:alt" content="Formation Python data science par Arnaud Legout, directeur de recherche Inria — Note 4,93/5">
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <!-- Script vide volontaire, à garder juste après la feuille de style : Firefox doit
+       attendre style.css avant de l'exécuter, donc il ne lit pas le <body> tant que le CSS
+       n'est pas chargé. Sans lui, une extension qui force la mise en page trop tôt
+       (« La mise en page a été forcée avant le chargement complet de la page ») fait
+       afficher la page sans style un instant au rechargement. Ne pas supprimer. -->
+  <script>0</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "@id": "https://arnaudlegout.fr/formation/python-niveau-1.html#course",
+    "name": "Formation Python — niveau 1 (fondamentaux du langage)",
+    "description": "Formation professionnelle intensive de 3 jours sur les fondamentaux de Python pour développeurs expérimentés (C, C++, Java, Fortran, Matlab). Références partagées, typage dynamique, espaces de nommage, protocole d'itération, modules et packages, gestion des exceptions.",
+    "url": "https://arnaudlegout.fr/formation/python-niveau-1.html",
+    "inLanguage": ["fr", "en"],
+    "provider": {
+      "@type": "Organization",
+      "@id": "https://arnaudlegout.fr/formation/#formation-arnaud-legout",
+      "name": "Elara Formations",
+      "url": "https://arnaudlegout.fr/formation/"
+    },
+    "about": [
+      "Python",
+      "Programmation",
+      "Références partagées",
+      "Typage dynamique",
+      "Espaces de nommage",
+      "Itérateurs",
+      "Modules"
+    ],
+    "teaches": [
+      "Comprendre les mécanismes fondamentaux de Python : références partagées, typage dynamique, espaces de nommage",
+      "Écrire des fonctions Python en maîtrisant la portée des variables",
+      "Organiser le code en modules et packages réutilisables",
+      "Gérer les exceptions et utiliser les context managers",
+      "Utiliser les fonctions génératrices et les outils fonctionnels",
+      "Concevoir des classes et utiliser l'héritage (selon l'avancement du groupe)"
+    ],
+    "audience": {
+      "@type": "EducationalAudience",
+      "educationalRole": "Doctorants, ingénieurs, chercheurs ayant déjà des bases en programmation (C, C++, Java, Fortran, Matlab, Perl)"
+    },
+    "educationalLevel": "Beginner",
+    "coursePrerequisites": "Expérience en programmation dans au moins un autre langage. Aucune connaissance préalable de Python n'est nécessaire.",
+    "timeRequired": "PT21H",
+    "hasCourseInstance": [
+      {
+        "@type": "CourseInstance",
+        "courseMode": "Onsite",
+        "courseWorkload": "PT21H",
+        "instructor": {
+          "@type": "Person",
+          "@id": "https://arnaudlegout.fr/#arnaud-legout",
+          "name": "Arnaud Legout",
+          "jobTitle": "Directeur de recherche Inria",
+          "url": "https://arnaudlegout.fr/formation/a-propos.html"
+        },
+        "location": {
+          "@type": "Place",
+          "name": "Sur site client, France"
+        }
+      },
+      {
+        "@type": "CourseInstance",
+        "courseMode": "Online",
+        "courseWorkload": "PT21H",
+        "instructor": {
+          "@type": "Person",
+          "@id": "https://arnaudlegout.fr/#arnaud-legout",
+          "name": "Arnaud Legout",
+          "jobTitle": "Directeur de recherche Inria",
+          "url": "https://arnaudlegout.fr/formation/a-propos.html"
+        }
+      }
+    ],
+    "offers": {
+      "@type": "Offer",
+      "category": "Formation professionnelle",
+      "availability": "https://schema.org/InStock",
+      "url": "https://arnaudlegout.fr/formation/contact.html"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.93",
+      "bestRating": "5",
+      "ratingCount": "289",
+      "reviewCount": "289"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Arnaud Legout",
+        "item": "https://arnaudlegout.fr/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Accueil",
+        "item": "https://arnaudlegout.fr/formation/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Python — niveau 1",
+        "item": "https://arnaudlegout.fr/formation/python-niveau-1.html"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Est-ce que cette formation convient à quelqu'un qui n'a jamais fait de Python ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, aucune connaissance préalable de Python n'est nécessaire. La formation est conçue pour des ingénieurs, chercheurs ou doctorants qui programment déjà dans un autre langage (C, Java, Fortran, Matlab…) et qui veulent acquérir une maîtrise solide de Python, pas juste en apprendre la syntaxe."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "En combien de temps peut-on être opérationnel en Python après cette formation ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La formation dure 3 jours. À l'issue, les participants maîtrisent les mécanismes fondamentaux qui font la spécificité de Python : références partagées, espaces de nommage, protocole d'itération. Ce sont les modèles mentaux qui permettent d'écrire du Python idiomatique dès le retour en poste — à condition de pratiquer activement dans les semaines qui suivent, ce qui est déterminant pour l'assimilation durable des concepts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "La programmation orientée objet est-elle couverte ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le module POO (classes, héritage, surcharge d'opérateurs) est abordé en module 5, selon l'avancement du groupe. Il n'est traité qu'avec les groupes qui ont solidement assimilé les notions précédentes — la priorité reste les fondamentaux."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Cette formation est-elle un prérequis aux formations data science ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, c'est son rôle naturel. Une fois les mécanismes fondamentaux maîtrisés — références partagées, itération, espaces de nommage — NumPy, Pandas et Polars s'apprennent beaucoup plus vite et le code produit est meilleur dès le premier jet."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Le format distanciel est-il adapté à ce type de formation ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui. 90&nbsp;% des participants jugent le format distanciel équivalent ou supérieur au présentiel. J'anime des formations à distance depuis 2020 et j'ai développé une pratique solide de l'enseignement en ligne. J'utilise Zoom, qui permet d'enregistrer les sessions et de les mettre à disposition des participants si souhaité, et CoCalc, une plateforme en ligne qui donne accès à des serveurs pré-configurés avec l'ensemble du matériel de formation et des librairies installées. CoCalc me permet également de suivre en temps réel la progression de chaque participant et d'intervenir directement pour corriger ou débloquer."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Aller au contenu principal</a>
+
+  <header class="header">
+    <nav class="nav container" aria-label="Navigation principale">
+      <a href="./" class="nav__logo">Arnaud Legout</a>
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item nav__item--has-dropdown">
+            <button type="button" class="nav__link">Formations</button>
+            <ul class="nav__dropdown">
+              <li class="nav__dropdown-label">Data science</li>
+              <li><a href="python-data-science-niveau-1.html">Python data science — niveau 1</a></li>
+              <li><a href="python-data-science-niveau-2.html">Python data science — niveau 2</a></li>
+              <li><a href="python-machine-learning.html">Python machine learning</a></li>
+              <li class="nav__dropdown-label">Compléments Python</li>
+              <li><a href="python-niveau-1.html">Python — niveau 1</a></li>
+              <li><a href="python-avance.html">Python — avancé</a></li>
+            </ul>
+          </li>
+          <li class="nav__item"><a href="a-propos.html" class="nav__link">À propos</a></li>
+        </ul>
+      </div>
+      <div class="nav__actions">
+        <a href="contact.html" class="nav__cta btn btn--primary"><span class="nav__cta-long">Demander un devis</span><span class="nav__cta-short">Devis</span></a>
+        <button type="button" class="nav__burger" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="nav-menu">
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <div class="page-hero">
+      <div class="container container--text">
+        <h1>Formation Python — niveau 1</h1>
+        <p class="page-hero__subtitle">Python par la pratique&nbsp;: les fondamentaux du langage pour programmeurs expérimentés</p>
+        <div class="page-hero__badges">
+          <span class="badge">⏱ 3 jours</span>
+          <span class="badge">👥 ≤ 10 pers.</span>
+          <span class="badge">📍 Présentiel ou distanciel</span>
+          <span class="badge">🌐 Français ou anglais</span>
+          <span class="badge">🎯 Débutant Python</span>
+          <span class="badge">👤 Ingénieurs et chercheurs programmeurs</span>
+          <span class="badge">🏢 Intra-entreprise</span>
+          <span class="badge">★ 4,93/5</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-content">
+      <div class="container">
+
+        <div class="page-section">
+          <p><em>Module proposé en complément des formations data science, ou comme formation autonome selon le besoin.</em></p>
+          <p class="lead">Python est devenu le langage de référence pour la recherche, l'ingénierie et la data science. Pour quelqu'un qui programme déjà en C, Java, Fortran ou Matlab, la syntaxe s'apprend en quelques jours — mais c'est précisément ce qui piège&nbsp;: on écrit du Python qui marche, sans avoir compris ce qui le rend différent.</p>
+          <p>Cette formation cible cette population. Elle avance vite sur la syntaxe pour passer l'essentiel du temps sur les mécanismes qui font la spécificité de Python&nbsp;: <strong>références partagées, typage dynamique, espaces de nommage, protocole d'itération</strong>. Ce sont les modèles mentaux qui permettent d'écrire du Python idiomatique plutôt que du C déguisé.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>À l'issue de cette formation, vos collaborateurs sauront</h2>
+          <ul>
+            <li>Comprendre et appliquer les mécanismes fondamentaux de Python&nbsp;: références partagées, typage dynamique, espaces de nommage</li>
+            <li>Écrire des fonctions Python en maîtrisant la portée des variables et les différentes formes d'arguments</li>
+            <li>Organiser leur code en modules et packages réutilisables</li>
+            <li>Gérer les exceptions et utiliser les context managers</li>
+            <li>Utiliser les fonctions génératrices et les outils fonctionnels (compréhensions, expressions génératrices)</li>
+            <li>Concevoir des classes et utiliser l'héritage en programmation orientée objet, selon l'avancement du groupe</li>
+          </ul>
+        </div>
+
+        <div class="page-section">
+          <h2>Programme détaillé</h2>
+
+          <h3>Module 1 — Environnement et types de base</h3>
+          <p>Historique et évolutions de Python. Environnement de travail moderne&nbsp;: IDE VS Code, git, intégration LLM. Types numériques (<code>int</code>, <code>float</code>, <code>bool</code>) et séquences (<code>list</code>, <code>str</code>, <code>tuple</code>). Structures conditionnelles. Mutabilité et immuabilité&nbsp;: comprendre les types qui peuvent être modifiés en place.</p>
+
+          <h3>Module 2 — Références partagées et modèle objet</h3>
+          <p>Le cœur conceptuel du langage. Typage dynamique et références partagées&nbsp;: le modèle objet de Python. Shallow copy et deep copy&nbsp;: quand l'un suffit, quand l'autre s'impose. Les conséquences pratiques sur le code quotidien.</p>
+
+          <h3>Module 3 — Itération</h3>
+          <p>Le protocole d'itération en Python&nbsp;: boucles <code>for</code> et itérateurs sous-jacents. Tables de hash&nbsp;: <code>set</code> et <code>dict</code>. Gestion de fichiers et context managers. Fonctions génératrices, expressions génératrices, compréhensions de listes/sets/dictionnaires. Fonctions lambda et polymorphisme.</p>
+
+          <h3>Module 4 — Fonctions et espaces de nommage</h3>
+          <p>Déclaration de fonctions, arguments nommés, par défaut, quelconques (<code>*args</code>, <code>**kwargs</code>). Portée des variables et règle LEGB. Espaces de nommage&nbsp;: création et importation de modules, organisation en packages. Gestion des exceptions&nbsp;: <code>try</code>/<code>except</code>/<code>finally</code>.</p>
+
+          <h3>Module 5 — Programmation orientée objet <em>(selon l'avancement du groupe)</em></h3>
+          <p>Pour les groupes homogènes qui ont absorbé les notions précédentes&nbsp;: classes, instances, méthodes. Héritage et surcharge d'opérateurs. Espaces de nommage entre modules et classes. Conception de gestionnaires de contexte. Ce module n'est abordé qu'avec des groupes prêts — la priorité reste la solidité des fondamentaux.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Public et prérequis</h2>
+          <p><strong>Public cible</strong></p>
+          <p>Doctorants, ingénieurs, chercheurs ayant déjà des bases en programmation impérative ou fonctionnelle (C, C++, Java, Fortran, Matlab, Perl, etc.) et souhaitant acquérir une maîtrise solide de Python.</p>
+          <p><strong>Prérequis</strong></p>
+          <p>Expérience en programmation dans au moins un autre langage. Aucune connaissance préalable de Python n'est nécessaire.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Méthode pédagogique</h2>
+          <p>La formation alterne exposés théoriques courts et exercices pratiques sur notebooks Jupyter. Chaque concept est immédiatement mis en application. J'attache une attention particulière à ce que chaque participant suive, quel que soit son niveau initial, et je calibre la profondeur de chaque sujet en fonction du groupe — c'est notamment ce qui détermine la profondeur abordée sur la POO en module 5.</p>
+          <p>Les supports sont fournis aux participants à l'issue de la formation, accompagnés des notebooks d'exercices corrigés.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Une formation pour préparer vos équipes à la data science</h2>
+          <p>Cette formation est le socle naturel pour des équipes qui suivront ensuite une formation data science Python. Une fois les mécanismes fondamentaux maîtrisés, NumPy, Pandas et Polars s'apprennent beaucoup plus vite — et le code produit est meilleur dès le premier jet.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Documentation officielle</h2>
+          <p><a href="https://docs.python.org/3/" target="_blank" rel="noopener noreferrer">Documentation Python&nbsp;3</a> et son <a href="https://docs.python.org/3/tutorial/" target="_blank" rel="noopener noreferrer">tutoriel officiel</a>.</p>
+        </div>
+
+        <section class="page-section" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">Questions fréquentes</h2>
+          <div class="faq">
+            <details class="faq__item">
+              <summary>Est-ce que cette formation convient à quelqu'un qui n'a jamais fait de Python&nbsp;?</summary>
+              <div class="faq__answer"><p>Oui, aucune connaissance préalable de Python n'est nécessaire. La formation est conçue pour des ingénieurs, chercheurs ou doctorants qui programment déjà dans un autre langage (C, Java, Fortran, Matlab…) et qui veulent acquérir une maîtrise solide de Python, pas juste en apprendre la syntaxe.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>En combien de temps peut-on être opérationnel en Python après cette formation&nbsp;?</summary>
+              <div class="faq__answer"><p>La formation dure 3 jours. À l'issue, les participants maîtrisent les mécanismes fondamentaux qui font la spécificité de Python&nbsp;: références partagées, espaces de nommage, protocole d'itération. Ce sont les modèles mentaux qui permettent d'écrire du Python idiomatique dès le retour en poste — à condition de pratiquer activement dans les semaines qui suivent, ce qui est déterminant pour l'assimilation durable des concepts.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>La programmation orientée objet est-elle couverte&nbsp;?</summary>
+              <div class="faq__answer"><p>Le module POO (classes, héritage, surcharge d'opérateurs) est abordé en module 5, selon l'avancement du groupe. Il n'est traité qu'avec les groupes qui ont solidement assimilé les notions précédentes — la priorité reste les fondamentaux.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Cette formation est-elle un prérequis aux formations data science&nbsp;?</summary>
+              <div class="faq__answer"><p>Oui, c'est son rôle naturel. Une fois les mécanismes fondamentaux maîtrisés — références partagées, itération, espaces de nommage — NumPy, Pandas et Polars s'apprennent beaucoup plus vite et le code produit est meilleur dès le premier jet.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Le format distanciel est-il adapté à ce type de formation&nbsp;?</summary>
+              <div class="faq__answer"><p>Oui. 90&nbsp;% des participants jugent le format distanciel équivalent ou supérieur au présentiel. J'anime des formations à distance depuis 2020 et j'ai développé une pratique solide de l'enseignement en ligne. J'utilise Zoom, qui permet d'enregistrer les sessions et de les mettre à disposition des participants si souhaité, et CoCalc, une plateforme en ligne qui donne accès à des serveurs pré-configurés avec l'ensemble du matériel de formation et des librairies installées. CoCalc me permet également de suivre en temps réel la progression de chaque participant et d'intervenir directement pour corriger ou débloquer.</p></div>
+            </details>
+          </div>
+        </section>
+
+        <div class="page-cta">
+          <a href="contact.html" class="btn btn--primary">Demander un devis pour cette formation</a>
+        </div>
+
+      </div>
+    </div>
+
+    <section class="section voir-aussi" aria-labelledby="voir-aussi-title">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="voir-aussi-title">Voir aussi</h2>
+        </div>
+        <div class="cards-grid cards-grid--pair">
+          <a class="card card--link" href="python-avance.html">
+            <h3 class="card__title">Python — avancé</h3>
+            <p class="card__body">Pour les équipes qui développent du code complexe, le module Python — avancé
+            (programmation objet, décorateurs, métaclasses) est également disponible.</p>
+            <span class="card__link">Voir le programme →</span>
+          </a>
+
+          <a class="card card--link" href="python-data-science-niveau-1.html">
+            <h3 class="card__title">Python data science — niveau&nbsp;1</h3>
+            <p class="card__body">Les fondations de l'écosystème data science Python. Vectorisation, broadcasting,
+            manipulation de DataFrames, séries temporelles, format Parquet, visualisation statistique avec Seaborn.</p>
+            <span class="card__link">Voir le programme →</span>
+          </a>
+        </div>
+        <p class="voir-aussi__note">Au-delà de la formation, j'interviens aussi en conseil sur la performance de vos
+          traitements, l'usage des agents IA et la revue de vos analyses.
+          <a href="/consulting/" target="_blank" rel="noopener">Découvrir le conseil →</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <p class="footer__col-title">Arnaud Legout</p>
+          <p class="footer__tagline">Directeur de recherche Inria — Sophia Antipolis, France</p>
+          <ul class="footer__link-list">
+            <li><a href="/" target="_blank" rel="noopener">Site personnel — arnaudlegout.fr</a></li>
+            <li><a href="https://www-sop.inria.fr/members/Arnaud.Legout/" target="_blank" rel="noopener">Page professionnelle Inria</a></li>
+            <li><a href="https://www.linkedin.com/in/arnaud-legout-866a404/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="/consulting/" target="_blank" rel="noopener">Conseil data science</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Navigation</p>
+          <ul class="footer__link-list">
+            <li><a href="python-data-science-niveau-1.html">Python data science niveau 1</a></li>
+            <li><a href="python-data-science-niveau-2.html">Python data science niveau 2</a></li>
+            <li><a href="python-machine-learning.html">Python machine learning</a></li>
+            <li><a href="python-niveau-1.html">Python — niveau 1</a></li>
+            <li><a href="python-avance.html">Python — avancé</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="contact.html">Formulaire de contact</a></li>
+            <!-- <li><a href="articles.html">Articles</a></li> -->
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Contact</p>
+          <ul class="footer__contact-list">
+            <li><a href="contact.html">Formulaire de contact</a></li>
+            <li><a href="mailto:arnaud.legout@gmail.com">Email</a></li>
+            <li><a href="/mentions-legales.html">Mentions légales</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Arnaud Legout. Site statique, sans cookie.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script data-goatcounter="https://arnaudlegout-formations.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+  <script>
+    (function () {
+      var btn = document.querySelector('.nav__burger');
+      var menu = document.getElementById('nav-menu');
+      if (!btn || !menu) return;
+      function closeMenu() {
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', 'Ouvrir le menu de navigation');
+        menu.classList.remove('is-open');
+      }
+      btn.addEventListener('click', function () {
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        btn.setAttribute('aria-label', open ? 'Ouvrir le menu de navigation' : 'Fermer le menu de navigation');
+        menu.classList.toggle('is-open', !open);
+      });
+      menu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') closeMenu();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeMenu();
+      });
+    })();
+  </script>
+</body>
+</html>

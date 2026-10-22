@@ -1,0 +1,458 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formation Python machine learning scikit-learn</title>
+  <meta name="description" content="scikit-learn en 3 jours : pipelines, validation croisée, méthodes d'ensemble. Rigueur méthodologique, sans surapprentissage. Intra-entreprise. Note 4,93/5.">
+    <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://arnaudlegout.fr/formation/python-machine-learning.html">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arnaudlegout.fr/formation/python-machine-learning.html">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Arnaud Legout — Formations Python data science">
+  <meta property="og:title" content="Formation Python machine learning scikit-learn | Arnaud Legout">
+  <meta property="og:description" content="scikit-learn en 3 jours : pipelines, validation croisée, méthodes d'ensemble. Rigueur méthodologique, sans surapprentissage. Intra-entreprise. Note 4,93/5.">
+  <meta property="og:image" content="https://arnaudlegout.fr/formation/assets/images/og-image-v2.jpg">
+  <meta property="og:image:secure_url" content="https://arnaudlegout.fr/formation/assets/images/og-image-v2.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Formation Python data science par Arnaud Legout, directeur de recherche Inria — Note 4,93/5">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Formation Python machine learning scikit-learn | Arnaud Legout">
+  <meta name="twitter:description" content="scikit-learn en 3 jours : pipelines, validation croisée, méthodes d'ensemble. Rigueur méthodologique, sans surapprentissage. Intra-entreprise. Note 4,93/5.">
+  <meta name="twitter:image" content="https://arnaudlegout.fr/formation/assets/images/og-image-v2.jpg">
+  <meta name="twitter:image:alt" content="Formation Python data science par Arnaud Legout, directeur de recherche Inria — Note 4,93/5">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <!-- Script vide volontaire, à garder juste après la feuille de style : Firefox doit
+       attendre style.css avant de l'exécuter, donc il ne lit pas le <body> tant que le CSS
+       n'est pas chargé. Sans lui, une extension qui force la mise en page trop tôt
+       (« La mise en page a été forcée avant le chargement complet de la page ») fait
+       afficher la page sans style un instant au rechargement. Ne pas supprimer. -->
+  <script>0</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "@id": "https://arnaudlegout.fr/formation/python-machine-learning.html#course",
+    "name": "Formation Python machine learning — scikit-learn",
+    "description": "Formation professionnelle intensive de 3 jours sur le machine learning avec scikit-learn. Maîtrise pratique du ML supervisé et non supervisé : pipelines, régularisation, méthodes d'ensemble, sélection de modèles. Accent sur la rigueur méthodologique : évitement du surapprentissage, validation croisée, sélection sans fuite de données.",
+    "url": "https://arnaudlegout.fr/formation/python-machine-learning.html",
+    "inLanguage": ["fr", "en"],
+    "provider": {
+      "@type": "Organization",
+      "@id": "https://arnaudlegout.fr/formation/#formation-arnaud-legout",
+      "name": "Elara Formations",
+      "url": "https://arnaudlegout.fr/formation/"
+    },
+    "about": [
+      "scikit-learn",
+      "Machine learning",
+      "Python",
+      "Apprentissage supervisé",
+      "Apprentissage non supervisé",
+      "Pipelines",
+      "Validation croisée"
+    ],
+    "teaches": [
+      "Maîtriser le ML supervisé et non supervisé avec scikit-learn",
+      "Concevoir des pipelines reproductibles et industrialisables",
+      "Appliquer la régularisation et éviter le surapprentissage",
+      "Mettre en œuvre des méthodes d'ensemble (random forests, gradient boosting)",
+      "Sélectionner et évaluer des modèles sans fuite de données",
+      "Mener une validation croisée rigoureuse"
+    ],
+    "audience": {
+      "@type": "EducationalAudience",
+      "educationalRole": "Data scientists, ingénieurs et chercheurs souhaitant maîtriser le machine learning en pratique"
+    },
+    "educationalLevel": "Intermediate",
+    "coursePrerequisites": "Niveau intermédiaire en Python et bonne maîtrise de NumPy et Pandas. La formation Python data science niveau 1 constitue un prérequis idéal.",
+    "timeRequired": "PT21H",
+    "hasCourseInstance": [
+      {
+        "@type": "CourseInstance",
+        "courseMode": "Onsite",
+        "courseWorkload": "PT21H",
+        "instructor": {
+          "@type": "Person",
+          "@id": "https://arnaudlegout.fr/#arnaud-legout",
+          "name": "Arnaud Legout",
+          "jobTitle": "Directeur de recherche Inria",
+          "url": "https://arnaudlegout.fr/formation/a-propos.html"
+        },
+        "location": {
+          "@type": "Place",
+          "name": "Sur site client, France"
+        }
+      },
+      {
+        "@type": "CourseInstance",
+        "courseMode": "Online",
+        "courseWorkload": "PT21H",
+        "instructor": {
+          "@type": "Person",
+          "@id": "https://arnaudlegout.fr/#arnaud-legout",
+          "name": "Arnaud Legout",
+          "jobTitle": "Directeur de recherche Inria",
+          "url": "https://arnaudlegout.fr/formation/a-propos.html"
+        }
+      }
+    ],
+    "offers": {
+      "@type": "Offer",
+      "category": "Formation professionnelle",
+      "availability": "https://schema.org/InStock",
+      "url": "https://arnaudlegout.fr/formation/contact.html"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.93",
+      "bestRating": "5",
+      "ratingCount": "289",
+      "reviewCount": "289"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Arnaud Legout",
+        "item": "https://arnaudlegout.fr/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Accueil",
+        "item": "https://arnaudlegout.fr/formation/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Python machine learning",
+        "item": "https://arnaudlegout.fr/formation/python-machine-learning.html"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Quelle est la différence entre cette formation et un cours de machine learning théorique ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "L'accent est mis sur la rigueur méthodologique pratique : comment éviter le surapprentissage, comment évaluer correctement un modèle, comment sélectionner des hyperparamètres sans biais ni fuite de données. Les pièges de l'évaluation (p-hacking, comparaison multiple) sont traités explicitement — ce sont précisément les erreurs que commettent des pipelines de production réels."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "La formation couvre-t-elle le deep learning ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Non. La formation couvre les algorithmes classiques de scikit-learn : régression, classification, SVM, arbres, forêts aléatoires, gradient boosting, K-means, PCA. Pour le deep learning (réseaux de neurones, transformers), d'autres outils (PyTorch, TensorFlow) seraient nécessaires — ce n'est pas l'objet de cette formation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qu'est-ce qu'une fuite de données et pourquoi est-ce critique ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Une fuite de données (data leakage) se produit quand des informations du jeu de test contaminent l'entraînement, produisant des métriques de performance trop optimistes. En production, le modèle se révèle bien moins performant qu'annoncé. La sélection d'hyperparamètres avec GridSearchCV est un cas classique traité en module 4."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quels prérequis en mathématiques sont nécessaires ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Une compréhension intuitive des concepts de base (moyenne, variance, probabilités élémentaires) est suffisante. La formation n'est pas axée sur les démonstrations mathématiques mais sur la compréhension des mécanismes et leur application correcte avec scikit-learn."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Cette formation est-elle adaptée à des doctorants en sciences expérimentales ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, c'est un public fréquent. Les méthodes couvertes — régression, classification, clustering, PCA — sont directement applicables à l'analyse de données expérimentales. La rigueur méthodologique sur l'évaluation des modèles est particulièrement utile dans un contexte de publication scientifique."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Le format distanciel est-il adapté à ce type de formation ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui. 90&nbsp;% des participants jugent le format distanciel équivalent ou supérieur au présentiel. J'anime des formations à distance depuis 2020 et j'ai développé une pratique solide de l'enseignement en ligne. J'utilise Zoom, qui permet d'enregistrer les sessions et de les mettre à disposition des participants si souhaité, et CoCalc, une plateforme en ligne qui donne accès à des serveurs pré-configurés avec l'ensemble du matériel de formation et des librairies installées. CoCalc me permet également de suivre en temps réel la progression de chaque participant et d'intervenir directement pour corriger ou débloquer."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Aller au contenu principal</a>
+
+  <header class="header">
+    <nav class="nav container" aria-label="Navigation principale">
+      <a href="./" class="nav__logo">Arnaud Legout</a>
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item nav__item--has-dropdown">
+            <button type="button" class="nav__link">Formations</button>
+            <ul class="nav__dropdown">
+              <li class="nav__dropdown-label">Data science</li>
+              <li><a href="python-data-science-niveau-1.html">Python data science — niveau 1</a></li>
+              <li><a href="python-data-science-niveau-2.html">Python data science — niveau 2</a></li>
+              <li><a href="python-machine-learning.html">Python machine learning</a></li>
+              <li class="nav__dropdown-label">Compléments Python</li>
+              <li><a href="python-niveau-1.html">Python — niveau 1</a></li>
+              <li><a href="python-avance.html">Python — avancé</a></li>
+            </ul>
+          </li>
+          <li class="nav__item"><a href="a-propos.html" class="nav__link">À propos</a></li>
+        </ul>
+      </div>
+      <div class="nav__actions">
+        <a href="contact.html" class="nav__cta btn btn--primary"><span class="nav__cta-long">Demander un devis</span><span class="nav__cta-short">Devis</span></a>
+        <button type="button" class="nav__burger" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="nav-menu">
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <div class="page-hero">
+      <div class="container container--text">
+        <h1>Formation Python machine learning</h1>
+        <p class="page-hero__subtitle">scikit-learn&nbsp;: du concept à la mise en production</p>
+        <div class="page-hero__badges">
+          <span class="badge">⏱ 3 jours</span>
+          <span class="badge">👥 ≤ 10 pers.</span>
+          <span class="badge">📍 Présentiel ou distanciel</span>
+          <span class="badge">🌐 Français ou anglais</span>
+          <span class="badge">🎯 Intermédiaire</span>
+          <span class="badge">👤 Data scientists et ingénieurs</span>
+          <span class="badge">🏢 Intra-entreprise</span>
+          <span class="badge">★ 4,93/5</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-content">
+      <div class="container">
+
+        <div class="page-section">
+          <p class="lead">Le machine learning est devenu un outil incontournable pour analyser des données complexes, détecter des patterns et faire des prédictions. scikit-learn est la librairie de référence en Python&nbsp;: API unifiée, documentation exemplaire, couverture exhaustive des algorithmes classiques.</p>
+          <p>Cette formation donne à vos équipes une maîtrise pratique du machine learning, des concepts théoriques fondamentaux jusqu'à la sélection rigoureuse de modèles. J'insiste particulièrement sur la rigueur méthodologique&nbsp;: comment éviter le surapprentissage, comment évaluer correctement un modèle, comment choisir ses hyperparamètres sans biais. Trop de pipelines de production sont entraînés sur des protocoles qui surestiment leurs performances réelles — c'est précisément ce qu'on apprend à éviter ici.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>À l'issue de cette formation, vos collaborateurs sauront</h2>
+          <ul>
+            <li>Comprendre les concepts fondamentaux&nbsp;: biais, variance, surapprentissage, régularisation</li>
+            <li>Préparer et transformer des données avec les pipelines scikit-learn</li>
+            <li>Appliquer les principaux algorithmes supervisés&nbsp;: régression, classification, SVM, arbres, forêts</li>
+            <li>Utiliser les méthodes non supervisées&nbsp;: clustering K-means, réduction de dimension PCA</li>
+            <li>Évaluer rigoureusement leurs modèles&nbsp;: validation croisée, métriques adaptées, courbes ROC</li>
+            <li>Sélectionner et optimiser les hyperparamètres sans fuite de données</li>
+          </ul>
+        </div>
+
+        <div class="page-section">
+          <h2>Programme détaillé</h2>
+
+          <h3>Module 1 — Fondements du machine learning</h3>
+          <p>Taxonomie&nbsp;: apprentissage supervisé, non supervisé, semi-supervisé. Régression et classification&nbsp;: différences et métriques d'évaluation. Biais et variance&nbsp;: le compromis fondamental. Sous-apprentissage et surapprentissage. Introduction à l'API scikit-learn&nbsp;: <code>fit</code>, <code>predict</code>, <code>transform</code>, <code>Pipeline</code>.</p>
+
+          <h3>Module 2 — Apprentissage supervisé</h3>
+          <p>Modèles linéaires&nbsp;: régression linéaire, régression logistique. Régularisation&nbsp;: Ridge, Lasso, ElasticNet — quand et pourquoi. Machines à vecteurs de support (SVM)&nbsp;: principe et noyaux. Arbres de décision&nbsp;: construction, profondeur, critères de division. Méthodes d'ensemble&nbsp;: Random Forest, Gradient Boosting. Prétraitement&nbsp;: normalisation, encodage, gestion des valeurs manquantes.</p>
+
+          <h3>Module 3 — Apprentissage non supervisé</h3>
+          <p>Clustering K-means&nbsp;: algorithme, choix du nombre de clusters, évaluation. Clustering hiérarchique et DBSCAN. Réduction de dimension&nbsp;: PCA, variance expliquée, visualisation. Applications&nbsp;: détection d'anomalies, segmentation, compression.</p>
+
+          <h3>Module 4 — Sélection et évaluation de modèles</h3>
+          <p>Validation croisée&nbsp;: k-fold, stratifiée, leave-one-out. Métriques d'évaluation&nbsp;: accuracy, précision, rappel, F1, AUC-ROC. Sélection d'hyperparamètres&nbsp;: <code>GridSearchCV</code>, <code>RandomizedSearchCV</code>. Pièges de l'évaluation&nbsp;: fuite de données, p-hacking, comparaison multiple.</p>
+        </div>
+
+        <div class="page-encart">
+          <h2>Vos équipes ont-elles le niveau Python requis&nbsp;?</h2>
+          <p>Les formations data science supposent une bonne maîtrise de Python&nbsp;: fonctions, itération, modules, espaces de nommage. Si ce n'est pas le cas de tous vos collaborateurs, je peux compléter la formation par le module <strong><a href="python-niveau-1.html">Python — niveau 1</a></strong> en amont des journées data science. Pour les équipes qui développent du code complexe, le module <strong><a href="python-avance.html">Python — avancé</a></strong> (programmation objet, décorateurs, métaclasses) est également disponible.</p>
+          <p>Ces compléments sont proposés au cas par cas — n'hésitez pas à m'en parler dans votre demande de devis.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Public et prérequis</h2>
+          <p><strong>Public cible</strong></p>
+          <p>Data scientists, ingénieurs, chercheurs et doctorants souhaitant appliquer les méthodes d'apprentissage machine sur leurs données avec Python.</p>
+          <p><strong>Prérequis</strong></p>
+          <p>Maîtrise intermédiaire de Python, NumPy et Pandas. Cette formation est conçue comme la suite logique de la formation <em>Python data science niveau 1</em>.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Méthode pédagogique</h2>
+          <p>La formation alterne exposés théoriques courts et exercices pratiques sur notebooks Jupyter. Chaque concept est immédiatement mis en application. J'attache une attention particulière à ce que chaque participant suive, quel que soit son niveau initial, et je calibre la profondeur de chaque sujet en fonction du groupe.</p>
+          <p>Les supports sont fournis aux participants à l'issue de la formation, accompagnés des notebooks d'exercices corrigés.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Documentation officielle</h2>
+          <p><a href="https://scikit-learn.org/stable/" target="_blank" rel="noopener noreferrer">scikit-learn</a> (dont les <a href="https://scikit-learn.org/stable/modules/compose.html" target="_blank" rel="noopener noreferrer">pipelines</a>), <a href="https://numpy.org/doc/stable/" target="_blank" rel="noopener noreferrer">NumPy</a>, <a href="https://pandas.pydata.org/docs/" target="_blank" rel="noopener noreferrer">Pandas</a>.</p>
+        </div>
+
+        <section class="page-section" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">Questions fréquentes</h2>
+          <div class="faq">
+            <details class="faq__item">
+              <summary>Quelle est la différence entre cette formation et un cours de machine learning théorique&nbsp;?</summary>
+              <div class="faq__answer"><p>L'accent est mis sur la rigueur méthodologique pratique&nbsp;: comment éviter le surapprentissage, comment évaluer correctement un modèle, comment sélectionner des hyperparamètres sans biais ni fuite de données. Les pièges de l'évaluation (p-hacking, comparaison multiple) sont traités explicitement — ce sont précisément les erreurs que commettent des pipelines de production réels.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>La formation couvre-t-elle le deep learning&nbsp;?</summary>
+              <div class="faq__answer"><p>Non. La formation couvre les algorithmes classiques de scikit-learn&nbsp;: régression, classification, SVM, arbres, forêts aléatoires, gradient boosting, K-means, PCA. Pour le deep learning (réseaux de neurones, transformers), d'autres outils (PyTorch, TensorFlow) seraient nécessaires — ce n'est pas l'objet de cette formation.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Qu'est-ce qu'une fuite de données et pourquoi est-ce critique&nbsp;?</summary>
+              <div class="faq__answer"><p>Une fuite de données (data leakage) se produit quand des informations du jeu de test contaminent l'entraînement, produisant des métriques de performance trop optimistes. En production, le modèle se révèle bien moins performant qu'annoncé. La sélection d'hyperparamètres avec GridSearchCV est un cas classique traité en module 4.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Quels prérequis en mathématiques sont nécessaires&nbsp;?</summary>
+              <div class="faq__answer"><p>Une compréhension intuitive des concepts de base (moyenne, variance, probabilités élémentaires) est suffisante. La formation n'est pas axée sur les démonstrations mathématiques mais sur la compréhension des mécanismes et leur application correcte avec scikit-learn.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Cette formation est-elle adaptée à des doctorants en sciences expérimentales&nbsp;?</summary>
+              <div class="faq__answer"><p>Oui, c'est un public fréquent. Les méthodes couvertes — régression, classification, clustering, PCA — sont directement applicables à l'analyse de données expérimentales. La rigueur méthodologique sur l'évaluation des modèles est particulièrement utile dans un contexte de publication scientifique.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Le format distanciel est-il adapté à ce type de formation&nbsp;?</summary>
+              <div class="faq__answer"><p>Oui. 90&nbsp;% des participants jugent le format distanciel équivalent ou supérieur au présentiel. J'anime des formations à distance depuis 2020 et j'ai développé une pratique solide de l'enseignement en ligne. J'utilise Zoom, qui permet d'enregistrer les sessions et de les mettre à disposition des participants si souhaité, et CoCalc, une plateforme en ligne qui donne accès à des serveurs pré-configurés avec l'ensemble du matériel de formation et des librairies installées. CoCalc me permet également de suivre en temps réel la progression de chaque participant et d'intervenir directement pour corriger ou débloquer.</p></div>
+            </details>
+          </div>
+        </section>
+
+        <div class="page-cta">
+          <a href="contact.html" class="btn btn--primary">Demander un devis pour cette formation</a>
+        </div>
+
+      </div>
+    </div>
+
+    <section class="section voir-aussi" aria-labelledby="voir-aussi-title">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="voir-aussi-title">Voir aussi</h2>
+        </div>
+        <div class="cards-grid cards-grid--pair">
+          <a class="card card--link" href="python-data-science-niveau-1.html">
+            <h3 class="card__title">Python data science — niveau&nbsp;1</h3>
+            <p class="card__body">Les fondations de l'écosystème data science Python. Vectorisation, broadcasting,
+            manipulation de DataFrames, séries temporelles, format Parquet, visualisation statistique avec Seaborn.</p>
+            <span class="card__link">Voir le programme →</span>
+          </a>
+
+          <a class="card card--link" href="python-data-science-niveau-2.html">
+            <h3 class="card__title">Python data science — niveau&nbsp;2</h3>
+            <p class="card__body">Aller au-delà de Pandas quand les volumes dépassent la RAM ou que les performances
+            comptent. Polars et son streaming engine, accélération JIT avec Numba, parallélisme multi-cœurs avec
+            multiprocessing.</p>
+            <span class="card__link">Voir le programme →</span>
+          </a>
+        </div>
+        <p class="voir-aussi__note">Au-delà de la formation, j'interviens aussi en conseil sur la performance de vos
+          traitements, l'usage des agents IA et la revue de vos analyses.
+          <a href="/consulting/" target="_blank" rel="noopener">Découvrir le conseil →</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <p class="footer__col-title">Arnaud Legout</p>
+          <p class="footer__tagline">Directeur de recherche Inria — Sophia Antipolis, France</p>
+          <ul class="footer__link-list">
+            <li><a href="/" target="_blank" rel="noopener">Site personnel — arnaudlegout.fr</a></li>
+            <li><a href="https://www-sop.inria.fr/members/Arnaud.Legout/" target="_blank" rel="noopener">Page professionnelle Inria</a></li>
+            <li><a href="https://www.linkedin.com/in/arnaud-legout-866a404/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="/consulting/" target="_blank" rel="noopener">Conseil data science</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Navigation</p>
+          <ul class="footer__link-list">
+            <li><a href="python-data-science-niveau-1.html">Python data science niveau 1</a></li>
+            <li><a href="python-data-science-niveau-2.html">Python data science niveau 2</a></li>
+            <li><a href="python-machine-learning.html">Python machine learning</a></li>
+            <li><a href="python-niveau-1.html">Python — niveau 1</a></li>
+            <li><a href="python-avance.html">Python — avancé</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="contact.html">Formulaire de contact</a></li>
+            <!-- <li><a href="articles.html">Articles</a></li> -->
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Contact</p>
+          <ul class="footer__contact-list">
+            <li><a href="contact.html">Formulaire de contact</a></li>
+            <li><a href="mailto:arnaud.legout@gmail.com">Email</a></li>
+            <li><a href="/mentions-legales.html">Mentions légales</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Arnaud Legout. Site statique, sans cookie.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script data-goatcounter="https://arnaudlegout-formations.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+  <script>
+    (function () {
+      var btn = document.querySelector('.nav__burger');
+      var menu = document.getElementById('nav-menu');
+      if (!btn || !menu) return;
+      function closeMenu() {
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', 'Ouvrir le menu de navigation');
+        menu.classList.remove('is-open');
+      }
+      btn.addEventListener('click', function () {
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        btn.setAttribute('aria-label', open ? 'Ouvrir le menu de navigation' : 'Fermer le menu de navigation');
+        menu.classList.toggle('is-open', !open);
+      });
+      menu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') closeMenu();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeMenu();
+      });
+    })();
+  </script>
+</body>
+</html>
