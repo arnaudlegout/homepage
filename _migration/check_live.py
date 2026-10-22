@@ -83,11 +83,15 @@ def check_new(wait):
         ] if bad]
         print(f"{'OK  ' if not problems else 'FAIL'} {u}  {'; '.join(problems)}")
         fail += problems
-    for host in ("formation.arnaudlegout.fr", "consulting.arnaudlegout.fr"):
+    # the old hosts serve either their own site (before the switchover) or the redirect
+    # stubs (after it, since 2026-10-22): both are fine, anything else is not
+    for host, section in (("formation.arnaudlegout.fr", "formation"), ("consulting.arnaudlegout.fr", "consulting")):
         status, body = get(f"https://{host}/")
         canon = re.findall(r'<link rel="canonical" href="([^"]*)"', body)
-        ok = status == 200 and canon == [f"https://{host}/"]
-        print(f"{'OK  ' if ok else 'FAIL'} old host still serves its own site: https://{host}/  canonical {canon}")
+        state = ("own site" if canon == [f"https://{host}/"] else
+                 "redirect stub" if canon == [f"{APEX}/{section}/"] else None)
+        ok = status == 200 and state is not None
+        print(f"{'OK  ' if ok else 'FAIL'} old host https://{host}/ serves {state or 'something unexpected'}  canonical {canon}")
         fail += [] if ok else [host]
     print("check_live new: OK" if not fail else f"check_live new: {len(fail)} problems")
     return not fail
