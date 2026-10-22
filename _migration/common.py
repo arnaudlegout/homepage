@@ -1,5 +1,6 @@
 """Shared helpers for the migration checks: paths, local server, HTML parsing."""
 import csv
+import json
 import functools
 import subprocess
 import sys
@@ -129,6 +130,8 @@ document.getElementById('f').addEventListener('load', function () {
     var m = this.contentDocument.querySelector('.nav__menu');
     if (m) m.classList.add('is-open');
   }
+  var foc = %s;  /* focus an element, e.g. to open a dropdown via :focus-within */
+  if (foc) { var e = this.contentDocument.querySelector(foc); if (e) e.focus(); }
   var d = this.contentDocument.documentElement;
   document.title = 'H=' + Math.max(d.scrollHeight, this.contentDocument.body.scrollHeight);
 });
@@ -144,7 +147,8 @@ class Handler(SimpleHTTPRequestHandler):
         if u.path == "/__shot__":  # iframe wrapper used by screenshots.py
             q = parse_qs(u.query)
             body = (SHOT % (q["src"][0], int(q["w"][0]), int(q["h"][0]),
-                           "true" if q.get("open") == ["1"] else "false")).encode()
+                           "true" if q.get("open") == ["1"] else "false",
+                           json.dumps(q.get("focus", [""])[0]))).encode()
             self.send_response(200)
             self.send_header("Content-Type", "text/html; charset=utf-8")
             self.send_header("Content-Length", str(len(body)))

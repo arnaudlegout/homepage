@@ -62,6 +62,8 @@
   --max-grid: 1100px;
   --px: 1.5rem;
   --section-gap: 4rem;
+  /* Écart entre un titre de section et le texte qui le suit, partout */
+  --title-gap: 1rem;
 }
 
 @media (min-width: 768px) {
@@ -201,7 +203,11 @@ pre code {
   padding: 0 var(--px);
 }
 
-.container--text {
+/* Colonne de lecture : le conteneur reste large (aligné sur le logo, comme la
+   barre) et seul son contenu est limité à 720px, aligné à gauche, comme sur
+   l'accueil. Un contenu centré dans le conteneur décalerait les titres d'une page
+   à l'autre. */
+.container--text > * {
   max-width: var(--max-text);
 }
 
@@ -212,6 +218,9 @@ pre code {
 .section--alt {
   background-color: var(--color-bg-alt);
 }
+
+/* Section de texte courant : titre puis paragraphes */
+.section--text h2 { margin-bottom: var(--title-gap); }
 
 /* ============================================================
    HEADER / NAV
@@ -388,9 +397,9 @@ button.nav__link {
   }
 }
 
-/* Mobile nav — bascule à 999px : la barre complète (4 entrées aux libellés
-   longs plus le bouton d'action) réclame 964px */
-@media (max-width: 999px) {
+/* Mobile nav — bascule sous 800px : la barre la plus large (section conseil :
+   deux sous-menus, « L'approche » et « Demander un diagnostic ») réclame 751px */
+@media (max-width: 799px) {
   .nav__burger { display: flex; }
 
   .nav__menu {
@@ -817,6 +826,21 @@ button.nav__link {
   line-height: 1.75;
 }
 
+/* « Ma façon de former », sous les trois raisons et sur la même grille : le titre
+   dans la première colonne, au style des raisons (.reason h3), le texte sur les deux
+   autres, à la taille du leur (.reason p) ; empilés sur mobile */
+.approach {
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--color-border);
+  display: grid;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  .approach { grid-template-columns: repeat(3, 1fr); gap: 3rem; }
+  .approach__body { grid-column: 2 / 4; }
+}
+
 /* ============================================================
    CONSEIL BG-ALT BLOC
    ============================================================ */
@@ -827,7 +851,7 @@ button.nav__link {
   padding: var(--section-gap) 0;
 }
 .conseil-bloc h2,
-.formation-bloc h2 { margin-bottom: 1rem; }
+.formation-bloc h2 { margin-bottom: var(--title-gap); }
 .conseil-bloc p,
 .formation-bloc p  { max-width: var(--max-text); margin-bottom: 1.25rem; }
 .conseil-bloc p:last-of-type,
@@ -837,8 +861,8 @@ button.nav__link {
    IA AGENTIQUE — PROSE SECTION
    ============================================================ */
 
-.ia-section .container { max-width: var(--max-text); }
-.ia-section h2 { margin-bottom: 1.75rem; }
+.ia-section .container > * { max-width: var(--max-text); }
+.ia-section h2 { margin-bottom: var(--title-gap); }
 
 .ia-section__lead {
   font-size: 1.0625rem;
@@ -894,7 +918,6 @@ button.nav__link {
   border-radius: 6px;
   padding: 2rem;
   max-width: var(--max-text);
-  margin: 0 auto;
 }
 
 .cards-grid + .encart {
@@ -903,7 +926,7 @@ button.nav__link {
 
 .encart h2 {
   font-size: 1.25rem;
-  margin-bottom: 0.875rem;
+  margin-bottom: var(--title-gap);
 }
 @media (min-width: 768px) {
   .encart h2 { font-size: 1.5rem; }
@@ -1011,7 +1034,7 @@ button.nav__link {
   padding: var(--section-gap) 0;
 }
 .cta-section .container { max-width: var(--max-text); }
-.cta-section h2 { margin-bottom: 1rem; }
+.cta-section h2 { margin-bottom: var(--title-gap); }
 .cta-section p  { color: var(--color-text-muted); margin-bottom: 2rem; }
 
 .cta-section__actions {
@@ -1031,14 +1054,19 @@ button.nav__link {
   padding: 3rem 0 1.5rem;
 }
 
+/* Quatre colonnes (Arnaud Legout, Formation, Conseil, Contact) : deux par
+   ligne sur tablette, une sur téléphone */
 .footer__grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
   margin-bottom: 2rem;
 }
-@media (min-width: 768px) {
-  .footer__grid { grid-template-columns: 2fr 1fr 1fr; gap: 3rem; }
+@media (min-width: 600px) {
+  .footer__grid { grid-template-columns: repeat(2, 1fr); gap: 2.5rem 3rem; }
+}
+@media (min-width: 1000px) {
+  .footer__grid { grid-template-columns: 1.2fr 1.2fr 1fr 1fr; gap: 3rem; }
 }
 
 .footer__col-title {
@@ -1096,6 +1124,40 @@ button.nav__link {
 
 .page-hero h1 { margin-bottom: 0.625rem; }
 
+/* Fil d'Ariane au-dessus du titre (variante « hero » de site_chrome.py). Le hero des
+   racines a plus de marge haute (4rem, 5rem dès 768px) que l'en-tête des pages
+   intérieures (3rem) : on remonte le fil d'autant pour qu'il tombe au même endroit. */
+.breadcrumb { margin-bottom: 1.25rem; }
+.hero .breadcrumb { margin-top: -1rem; }
+@media (min-width: 768px) {
+  .hero .breadcrumb { margin-top: -2rem; }
+}
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+.breadcrumb li + li::before {
+  content: '›';
+  margin: 0 0.5rem;
+  color: #A3A3A3;
+}
+.breadcrumb a {
+  color: var(--color-text-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: rgba(26, 26, 26, 0.25);
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+.breadcrumb a:hover {
+  color: var(--color-accent);
+  text-decoration-color: var(--color-accent);
+}
+.breadcrumb [aria-current="page"] { color: var(--color-text); }
+
 .page-hero__subtitle {
   font-family: var(--font-serif);
   font-size: 1.1875rem;
@@ -1130,12 +1192,12 @@ button.nav__link {
   padding: var(--section-gap) 0;
 }
 
-.page-content > .container { max-width: var(--max-text); }
+.page-content > .container > * { max-width: var(--max-text); }
 
 .page-section { margin-bottom: 3rem; }
 .page-section:last-child { margin-bottom: 0; }
 
-.page-section h2 { margin-bottom: 1.25rem; }
+.page-section h2 { margin-bottom: var(--title-gap); }
 
 .page-section h3 {
   color: var(--color-accent);
@@ -1170,7 +1232,8 @@ button.nav__link {
   font-weight: 600;
 }
 
-.page-section .lead {
+.page-section .lead,
+.section .lead {
   font-size: 1.0625rem;
   line-height: 1.75;
 }
@@ -1186,7 +1249,7 @@ button.nav__link {
 
 .page-encart h2 {
   font-size: 1.25rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--title-gap);
 }
 
 .page-encart p { font-size: 0.9375rem; }
@@ -1333,7 +1396,7 @@ button.nav__link {
   border-top: 1px solid var(--color-border);
 }
 
-.contact-direct h2 { margin-bottom: 1.25rem; }
+.contact-direct h2 { margin-bottom: var(--title-gap); }
 
 .contact-direct ul {
   list-style: none;
@@ -1382,7 +1445,7 @@ button.nav__link {
   line-height: 1.75;
 }
 
-.article-body h2 { margin: 2.5rem 0 1rem; }
+.article-body h2 { margin: 2.5rem 0 var(--title-gap); }
 .article-body h3 { margin: 2rem 0 0.75rem; }
 .article-body p  { margin-bottom: 1.25rem; }
 
@@ -1420,11 +1483,13 @@ button.nav__link {
    ============================================================ */
 
 .legal-content { padding: var(--section-gap) 0; }
-.legal-content .container { max-width: var(--max-text); }
-.legal-content h2 { margin: 2rem 0 0.75rem; }
+.legal-content .container > * { max-width: var(--max-text); }
+.legal-content h2 { margin: 2rem 0 var(--title-gap); }
 .legal-content p  { margin-bottom: 1rem; font-size: 0.9375rem; }
 
 .not-found {
+  /* Page centrée, elle : bloc de 720px au milieu du conteneur */
+  margin-inline: auto;
   text-align: center;
   padding: calc(var(--section-gap) * 2) 0;
 }
@@ -1454,11 +1519,73 @@ button.nav__link {
    ============================================================
    ============================================================ */
 
-/* Navigation — page courante, et libellé court du bouton d'action :
-   avec le libellé complet l'en-tête réclame 412px et déborderait sur un
-   téléphone de 375 ou 390px */
+/* Navigation — section et page courantes, et libellé court du bouton
+   d'action : avec le libellé complet l'en-tête réclame 412px et déborderait
+   sur un téléphone de 375 ou 390px */
 
-.nav__link[aria-current="page"] { color: var(--color-accent); }
+.nav__link[aria-current],
+.nav__dropdown a[aria-current="page"] { color: var(--color-accent); }
+
+/* Fil d'Ariane dans la barre (variante « header » de site_chrome.py) :
+   « Arnaud Legout / Section », le logo et la section étant deux liens. Sous 480px,
+   empilé (logo, puis section en petit) pour laisser la place au bouton et au burger. */
+.nav__brand {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.nav__brand-sep { color: #A3A3A3; }
+.nav__section {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  transition: color 0.15s ease;
+}
+.nav__section:hover { color: var(--color-accent); }
+@media (max-width: 479px) {
+  .nav__brand { flex-direction: column; align-items: flex-start; gap: 0.1rem; line-height: 1.15; }
+  .nav__brand-sep { display: none; }
+  .nav__brand .nav__logo { font-size: 1rem; }
+  .nav__section { font-size: 0.8125rem; }
+}
+
+/* Sans bouton d'action (racine du site), la zone d'actions ne contient que le burger,
+   masqué sur grand écran : on la retire pour que la barre reste alignée à droite */
+@media (min-width: 800px) {
+  .nav__actions:not(:has(.nav__cta)) { display: none; }
+}
+
+/* Section courante : trait sous l'entrée de la barre (pas dans le menu burger) */
+@media (min-width: 800px) {
+  .nav__item > .nav__link[aria-current] {
+    box-shadow: inset 0 -2px 0 var(--color-accent);
+    border-radius: 4px 4px 0 0;
+  }
+}
+
+/* Entrées à sous-menu : chevron, retourné à l'ouverture */
+.nav__item--has-dropdown > .nav__link::after {
+  content: '';
+  display: inline-block;
+  width: 0.4em;
+  height: 0.4em;
+  margin-left: 0.45em;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-0.2em) rotate(45deg);
+  transition: transform 0.15s ease;
+}
+@media (min-width: 800px) {
+  .nav__item--has-dropdown:hover > .nav__link::after,
+  .nav__item--has-dropdown:focus-within > .nav__link::after {
+    transform: translateY(0.05em) rotate(-135deg);
+  }
+}
+@media (max-width: 799px) {
+  .nav__item--has-dropdown > .nav__link::after { display: none; }
+}
 
 .nav__cta-short { display: none; }
 
@@ -1750,7 +1877,7 @@ a.card--link:focus-visible .card__link {
    colonne de lecture alignée à gauche, comme le hero et les cartes */
 .prose > * { max-width: var(--max-text); }
 
-.prose h2 { margin-bottom: 1.25rem; }
+.prose h2 { margin-bottom: var(--title-gap); }
 
 .prose p { line-height: 1.75; }
 
@@ -1820,20 +1947,6 @@ a.card--link:focus-visible .card__link {
 }
 
 .links-list li { font-size: 0.9375rem; }
-
-/* Pied de page simple (une ligne de liens) */
-.footer__links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem 1.5rem;
-  margin-bottom: 1.5rem;
-  font-size: 0.875rem;
-  color: var(--color-text-muted);
-}
-
-.footer__links a { transition: color 0.15s ease; }
-.footer__links a:hover { color: var(--color-accent); }
 
 /* Mentions légales et 404 de la racine */
 .legal-content h1 { margin-bottom: 1rem; }

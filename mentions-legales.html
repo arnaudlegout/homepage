@@ -24,11 +24,38 @@
 
   <header class="header">
     <nav class="nav container" aria-label="Navigation principale">
-      <a href="index.html" class="nav__logo">Arnaud Legout</a>
-      <ul class="nav__list">
-        <li><a href="/formation/" class="nav__link">Formation</a></li>
-        <li><a href="/consulting/" class="nav__link">Conseil</a></li>
-      </ul>
+      <a href="/" class="nav__logo">Arnaud Legout</a>
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="/formation/" class="nav__link">Formation</a>
+            <ul class="nav__dropdown">
+              <li class="nav__dropdown-label">Data science</li>
+              <li><a href="/formation/python-data-science-niveau-1.html">Python data science — niveau 1</a></li>
+              <li><a href="/formation/python-data-science-niveau-2.html">Python data science — niveau 2</a></li>
+              <li><a href="/formation/python-machine-learning.html">Python machine learning</a></li>
+              <li class="nav__dropdown-label">Compléments Python</li>
+              <li><a href="/formation/python-niveau-1.html">Python — niveau 1</a></li>
+              <li><a href="/formation/python-avance.html">Python — avancé</a></li>
+            </ul>
+          </li>
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="/consulting/" class="nav__link">Conseil</a>
+            <ul class="nav__dropdown">
+              <li><a href="/consulting/audit-performance-cout-traitements-data.html">Performance et coût</a></li>
+              <li><a href="/consulting/audit-agents-ia-data-science.html">Agents IA</a></li>
+              <li><a href="/consulting/revue-scientifique-analyses-data.html">Revue scientifique</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="nav__actions">
+        <button type="button" class="nav__burger" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="nav-menu">
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+        </button>
+      </div>
     </nav>
   </header>
 
@@ -66,12 +93,45 @@
 
   <footer class="footer">
     <div class="container">
-      <ul class="footer__links">
-        <li><a href="/formation/">Formations Python data science</a></li>
-        <li><a href="/consulting/">Conseil data science</a></li>
-        <li><a href="https://www-sop.inria.fr/members/Arnaud.Legout/" target="_blank" rel="noopener">Recherche Inria</a></li>
-        <li><a href="mentions-legales.html">Mentions légales</a></li>
-      </ul>
+      <div class="footer__grid">
+        <div class="footer__col">
+          <p class="footer__col-title">Arnaud Legout</p>
+          <p class="footer__tagline">Directeur de recherche Inria — Sophia Antipolis, France</p>
+          <ul class="footer__link-list">
+            <li><a href="/">Parcours</a></li>
+            <li><a href="https://www-sop.inria.fr/members/Arnaud.Legout/" target="_blank" rel="noopener">Recherche Inria</a></li>
+            <li><a href="https://www.linkedin.com/in/arnaud-legout-866a404/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://scholar.google.com/citations?user=uGy5lroAAAAJ" target="_blank" rel="noopener">Google Scholar</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Formation</p>
+          <ul class="footer__link-list">
+            <li><a href="/formation/python-data-science-niveau-1.html">Python data science — niveau 1</a></li>
+            <li><a href="/formation/python-data-science-niveau-2.html">Python data science — niveau 2</a></li>
+            <li><a href="/formation/python-machine-learning.html">Python machine learning</a></li>
+            <li><a href="/formation/python-niveau-1.html">Python — niveau 1</a></li>
+            <li><a href="/formation/python-avance.html">Python — avancé</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Conseil</p>
+          <ul class="footer__link-list">
+            <li><a href="/consulting/audit-performance-cout-traitements-data.html">Performance et coût</a></li>
+            <li><a href="/consulting/audit-agents-ia-data-science.html">Agents IA</a></li>
+            <li><a href="/consulting/revue-scientifique-analyses-data.html">Revue scientifique</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Contact</p>
+          <ul class="footer__link-list">
+            <li><a href="/formation/contact.html">Contact formation</a></li>
+            <li><a href="/consulting/contact.html">Contact conseil</a></li>
+            <li><a href="mailto:arnaud.legout@gmail.com">Email</a></li>
+            <li><a href="/mentions-legales.html">Mentions légales</a></li>
+          </ul>
+        </div>
+      </div>
       <div class="footer__bottom">
         <p>© 2026 Arnaud Legout. Site statique, sans cookie.</p>
       </div>
@@ -81,6 +141,7 @@
   <script data-goatcounter="https://arnaudlegout-home.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
 
+  <script src="assets/js/nav.js"></script>
 </body>
 
 </html>
