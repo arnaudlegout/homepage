@@ -125,6 +125,10 @@ html,body{margin:0;padding:0;background:#fff;overflow:hidden}iframe{border:0;dis
 </style></head><body><iframe id="f" src="%s" width="%d" height="%d" scrolling="no"></iframe>
 <script>
 document.getElementById('f').addEventListener('load', function () {
+  if (%s) {  /* open the burger menu of the sections */
+    var m = this.contentDocument.querySelector('.nav__menu');
+    if (m) m.classList.add('is-open');
+  }
   var d = this.contentDocument.documentElement;
   document.title = 'H=' + Math.max(d.scrollHeight, this.contentDocument.body.scrollHeight);
 });
@@ -139,7 +143,8 @@ class Handler(SimpleHTTPRequestHandler):
         u = urlsplit(self.path)
         if u.path == "/__shot__":  # iframe wrapper used by screenshots.py
             q = parse_qs(u.query)
-            body = (SHOT % (q["src"][0], int(q["w"][0]), int(q["h"][0]))).encode()
+            body = (SHOT % (q["src"][0], int(q["w"][0]), int(q["h"][0]),
+                           "true" if q.get("open") == ["1"] else "false")).encode()
             self.send_response(200)
             self.send_header("Content-Type", "text/html; charset=utf-8")
             self.send_header("Content-Length", str(len(body)))
