@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greasy: which traces do you leave on the Web? — Arnaud Legout</title>
+  <meta name="description" content="Greasy research project: Web tracking that survives cookie blocking, invisible pixels, cookie respawning with browser fingerprinting, and the ERNIE browser extension.">
+
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://arnaudlegout.fr/research/Projects/greasy.html">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+
+  <link rel="preload" href="../../assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arnaudlegout.fr/research/Projects/greasy.html">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Arnaud Legout">
+  <meta property="og:title" content="Greasy: which traces do you leave on the Web? — Arnaud Legout">
+  <meta property="og:description" content="Greasy research project: Web tracking that survives cookie blocking, invisible pixels, cookie respawning with browser fingerprinting, and the ERNIE browser extension.">
+  <meta property="og:image" content="https://arnaudlegout.fr/assets/og-research.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Arnaud Legout, senior research scientist at Inria">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Greasy: which traces do you leave on the Web? — Arnaud Legout">
+  <meta name="twitter:description" content="Greasy research project: Web tracking that survives cookie blocking, invisible pixels, cookie respawning with browser fingerprinting, and the ERNIE browser extension.">
+  <meta name="twitter:image" content="https://arnaudlegout.fr/assets/og-research.jpg">
+  <meta name="twitter:image:alt" content="Arnaud Legout, senior research scientist at Inria">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://arnaudlegout.fr/research/Projects/greasy.html#webpage",
+        "url": "https://arnaudlegout.fr/research/Projects/greasy.html",
+        "name": "Greasy: which traces do you leave on the Web? — Arnaud Legout",
+        "inLanguage": "en",
+        "isPartOf": {
+          "@id": "https://arnaudlegout.fr/#website"
+        },
+        "about": {
+          "@id": "https://arnaudlegout.fr/#arnaud-legout"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Arnaud Legout",
+            "item": "https://arnaudlegout.fr/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Research",
+            "item": "https://arnaudlegout.fr/research/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Projects",
+            "item": "https://arnaudlegout.fr/research/#projects"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Greasy",
+            "item": "https://arnaudlegout.fr/research/Projects/greasy.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../../style.css">
+  <!-- Script vide volontaire, à garder juste après la feuille de style : Firefox doit
+       attendre style.css avant de l'exécuter, donc il ne lit pas le <body> tant que le CSS
+       n'est pas chargé. Sans lui, une extension qui force la mise en page trop tôt
+       (« La mise en page a été forcée avant le chargement complet de la page ») fait
+       afficher la page sans style un instant au rechargement. Ne pas supprimer. -->
+  <script>0</script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ====== HEADER ====== -->
+  <header class="header">
+    <div class="nav container">
+      <nav class="nav__brand" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/en/" class="nav__logo">Arnaud Legout</a></li>
+          <li><a href="../" class="nav__section">Research</a></li>
+        </ol>
+      </nav>
+      <nav class="nav__menu" id="nav-menu" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="../" class="nav__link" aria-current="true">Research</a>
+            <ul class="nav__dropdown">
+              <li><a href="../publications.html">Publications</a></li>
+              <li><a href="../#projects">Projects</a></li>
+              <li><a href="../phdstudents.html">Recommendations for Ph.D. students</a></li>
+            </ul>
+          </li>
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="/en/training/" class="nav__link">Training</a>
+            <ul class="nav__dropdown">
+              <li class="nav__dropdown-label">Data science</li>
+              <li><a href="/en/training/python-data-science-level-1.html">Python data science — level 1</a></li>
+              <li><a href="/en/training/python-data-science-level-2.html">Python data science — level 2</a></li>
+              <li><a href="/en/training/python-machine-learning.html">Python machine learning</a></li>
+              <li class="nav__dropdown-label">Python essentials</li>
+              <li><a href="/en/training/python-level-1.html">Python — level 1</a></li>
+              <li><a href="/en/training/python-advanced.html">Python — advanced</a></li>
+            </ul>
+          </li>
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="/en/consulting/" class="nav__link">Consulting</a>
+            <ul class="nav__dropdown">
+              <li><a href="/en/consulting/audit-performance-cost-data-processing.html">Performance and cost audit</a></li>
+              <li><a href="/en/consulting/audit-ai-agents-data-science.html">AI agents audit</a></li>
+              <li><a href="/en/consulting/scientific-review-data-analyses.html">Scientific review of analyses</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav__actions">
+        <button type="button" class="nav__burger" aria-label="Open the navigation menu" aria-expanded="false" aria-controls="nav-menu">
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ====== MAIN ====== -->
+  <main id="main">
+
+    <section class="page-hero">
+      <div class="container">
+        <h1>Greasy: Which traces do you leave on the Web?</h1>
+        <p class="page-hero__subtitle">Past project</p>
+      </div>
+    </section>
+
+    <div class="page-content">
+      <div class="container">
+
+        <section class="page-section" id="overview">
+          <h2>Overview</h2>
+          <p>Privacy on the Web is an extraordinary complex and poorly understood issue: extraordinary complex because the Web is at the root of the entire advertisement industry on the internet, a huge ecosystem generating trillions of dollar revenues spread among numerous actors each playing a key role on profiling users and selecting advertisements; poorly understood because most people believe, mainly due to the cookie banners that are everywhere on the Web thanks to the ePrivacy directive and GDPR, that, on the one hand, third-party cookies are responsible for their profiling and, on the other hand, they can easily be blocked, giving a false sense of protection.</p>
+          <p>The goal of this project is to evaluate how greasy cookies are, that is which traces remain despite efforts to clean them up. Said in other words, if you block or clean cookies, can you still be tracked? We show that not only you can still be tracked, but that the advertisement industry is already using sophisticated tracking techniques that work around the yet to be deployed deprecation of third party cookies by Web browsers.</p>
+        </section>
+
+        <section class="page-section" id="contributions">
+          <h2>Contributions</h2>
+          <h3>Missed by Filter Lists: Detecting Unknown Third-Party Trackers with Invisible Pixels</h3>
+          <p>Web tracking has been extensively studied over the last decade. To detect tracking, previous studies and user tools rely on filter lists. However, it has been shown that filter lists miss trackers. In this work, we propose an alternative method to detect trackers inspired by analyzing behavior of invisible pixels. By crawling 84,658 webpages from 8,744 domains, we detect that third-party invisible pixels are widely deployed: they are present on more than 94.51% of domains and constitute 35.66% of all third-party images. We propose a fine-grained behavioral classification of tracking based on the analysis of invisible pixels. We use this classification to detect new categories of tracking and uncover new collaborations between domains on the full dataset of 4,216,454 third-party requests. <b>We demonstrate that two popular methods to detect tracking, based on EasyList&#38;EasyPrivacy and on Disconnect lists respectively miss 25.22% and 30.34% of the trackers that we detect. Moreover, we find that if we combine all three lists, 379,245 requests originated from 8,744 domains still track users on 68.70% of websites.</b></p>
+          <figure>
+            <img alt="Third party cookie tracking classification overview" src="img/pets20_classification_overview.png">
+            <figcaption><b>Figure 1. Overview of our classification for third-party cookie tracking.</b></figcaption>
+          </figure>
+          <h3>My Cookie is a phoenix: detection, measurement, and lawfulness of cookie respawning with browser fingerprinting</h3>
+          <p>Stateful and stateless web tracking gathered much attention in the last decade, however they were always measured separately. To the best of our knowledge, our study is the first to detect and measure cookie respawning with browser and machine fingerprinting. We develop a detection methodology that allows us to detect cookies dependency on browser and machine features. Our results show that 1,150 out of the top 30,000 Alexa websites deploy this tracking mechanism. <b>We find out that this technique can be used to track users across websites even when third-party cookies are deprecated. Together with a legal scholar, we conclude that cookie respawning with browser fingerprinting lacks legal interpretation under the GDPR and the ePrivacy directive, but its use in practice may breach them, thus subjecting it to fines up to 20 million &#8364;.</b></p>
+          <figure>
+            <img alt="Crawling methodology to detect respawned cookies" src="img/pets21_methodology.png">
+            <figcaption><b>Figure 2. Crawling methodology to detect respawned cookies.</b></figcaption>
+          </figure>
+          <h3>In-Depth Technical and Legal Analysis of Tracking on Health Related Websites with ERNIE Extension</h3>
+          <p>Searching the Web to find doctors and make appointments online is a common practice nowadays. However, simply visiting a doctors website might disclose health related information. As the GDPR only allows processing of health data with explicit user consent, health related websites must ask consent before any data processing, in particular when they embed third party trackers. Admittedly, it is very hard for owners of such websites to both detect the complex tracking practices that exist today and to ensure legal compliance. In this work, we present Ernie, a browser extension we designed to visualise six state-of-the-art tracking techniques based on cookies. Using Ernie, we analysed 385 health related websites that users would visit when searching for doctors in Germany, Austria, France, Belgium, and Ireland. More specifically, we explored the tracking behavior before any interaction with the consent pop-up and after rejection of cookies on websites of doctors, hospitals, and health related online phone-books. <b>We found that at least one form of tracking occurs on 62% of the websites before interacting with the consent pop-up, and 15% of websites include tracking after rejection. Finally, we performed a detailed technical and legal analysis of three health related websites that demonstrate impactful legal violations. This work shows that while, from a legal point of view, health related websites are more privacy-sensitive than other kinds of websites, they are exposed to the same technical difficulties to implement a legally compliant website.</b> We believe Ernie, the browser extension we developed, to be an invaluable tool for policy-makers and regulators to improve detection and visualization of the complex tracking techniques used on these websites.</p>
+          <figure>
+            <img alt="Screenshot of the browser extension Ernie" src="img/wpes21_ernie_screenshot.png">
+            <figcaption><b>Figure 3. Screenshot of the browser extension Ernie.</b></figcaption>
+          </figure>
+        </section>
+
+        <section class="page-section" id="software">
+          <h2>Software</h2>
+          <p>ERNIE is an open-source browser extension that lets you easily and quickly discover complex Web tracking techniques that we discuss in our <a href="https://hal.inria.fr/hal-01943496" target="_blank" rel="noopener">[PETS20]</a> paper. Upon a visit to a webpage, the extension analyzes all HTTP-request and categorizes each as non-tracking or into one of six tracking categories presented in Fig. 1. This allows the user to get a quick overview on the tracking techniques used by websites. For a more in-depth analysis, it is optionally possible to save the data in a local database.</p>
+          <p>The ERNIE extension is available <a href="https://hal.archives-ouvertes.fr/hal-03413044" target="_blank" rel="noopener">here</a> or on <a href="https://github.com/vwesselkamp/ernie-extension/" target="_blank" rel="noopener">github</a>.</p>
+        </section>
+
+        <section class="page-section" id="papers">
+          <h2>Papers</h2>
+          <dl class="entries">
+            <dt><a href="https://hal.archives-ouvertes.fr/hal-03218403" target="_blank" rel="noopener">[PETS22]</a></dt>
+            <dd>Imane Fouad, Cristiana Santos, Arnaud Legout, Nataliia Bielova. <b>My Cookie is a phoenix: detection, measurement, and lawfulness of cookie respawning with browser fingerprinting.</b> In <i>Proc. of Privacy Enhancing Technologies Symposium (PETS 2022)</i>, July 11–-15, 2022. Sydney, Australia. <a class="entry__link" href="https://hal.archives-ouvertes.fr/hal-03218403" target="_blank" rel="noopener">download</a><br> <span class="badge badge--highlight">award</span> Received an Honorary Mention for the Student Paper Award for the Future of Privacy Forum’s annual Privacy Papers for Policymakers.</dd>
+            <dt><a href="https://hal.archives-ouvertes.fr/hal-03241333" target="_blank" rel="noopener">[WPES21]</a></dt>
+            <dd>Vera Wesselkamp, Imane Fouad, Cristiana Santos, Yanis Boussad, Nataliia Bielova, Arnaud Legout. <b>In-Depth Technical and Legal Analysis of Tracking on Health Related Websites with ERNIE Extension.</b> In <i>Proc. of WPES'21</i>, November 15, 2021. Seoul, South Korea. <a class="entry__link" href="https://hal.archives-ouvertes.fr/hal-03241333" target="_blank" rel="noopener">download</a> <br>The ERNIE extension is available <a href="https://hal.archives-ouvertes.fr/hal-03413044" target="_blank" rel="noopener">here</a> or on <a href="https://github.com/vwesselkamp/ernie-extension/" target="_blank" rel="noopener">github</a>.</dd>
+            <dt><a href="https://hal.inria.fr/hal-01943496" target="_blank" rel="noopener">[PETS20]</a></dt>
+            <dd>Imane Fouad, Nataliia Bielova, Arnaud Legout, Natasa Sarafijanovic-Djukic. <b>Missed by Filter Lists: Detecting Unknown Third-Party Trackers with Invisible Pixels.</b> In <i>Proc. of Privacy Enhancing Technologies Symposium (PETS 2020)</i>, July 14--18, 2020, Montréal, Canada. <a class="entry__link" href="https://hal.inria.fr/hal-01943496" target="_blank" rel="noopener">download</a><br> This paper is accepted for presentation at <a href="https://www.ftc.gov/news-events/events/2021/07/privacycon-2021" target="_blank" rel="noopener">PrivacyCon 2021</a> on July 27th, 2021.</dd>
+          </dl>
+          <span class="badge badge--highlight">Press release</span> <a href="https://www.lemonde.fr/sciences/article/2022/04/12/vie-privee-les-internautes-meme-precautionneux-pistes-a-leur-insu_6121754_1650684.html" target="_blank" rel="noopener">Le Monde</a>, <a href="https://www.franceinter.fr/societe/vous-refusez-les-cookies-sur-les-sites-web-dans-certains-cas-ce-n-est-pas-respecte-selon-une-etude" target="_blank" rel="noopener">France Inter</a>, <a href="https://www.nicematin.com/faits-de-societe/des-failles-dans-la-protection-de-nos-donnees-personnelles-sur-le-web-ces-chercheurs-azureens-sonnent-lalerte-758814" target="_blank" rel="noopener">Nice Matin</a>, <a href="https://www.inria.fr/fr/respect-vie-privee-RGPD-cookies-fiabilite-greasy" target="_blank" rel="noopener">Inria news</a>, <a href="https://www.techniques-ingenieur.fr/actualite/articles/arnaud-legout-%E2%80%89il-nexiste-pas-de-solution-grand-public-contre-la-publicite-ciblee%E2%80%89-111088/" target="_blank" rel="noopener">Techniques de l'ingénieur</a>, <a href="https://la-rem.eu/2022/07/meme-refuses-les-cookies-phenix-continuent-de-traquer-les-internautes/" target="_blank" rel="noopener">La revue européenne des médias et du numérique</a>.
+        </section>
+
+        <section class="page-section" id="members">
+          <h2>Members</h2>
+          <ul>
+            <li><a href="https://www.linkedin.com/in/imane-fouad-phd-1a069811a/" target="_blank" rel="noopener">Imane Fouad</a> (Postdoctoral Researcher at Université de Lille, CNRS, Inria)</li>
+            <li><a href="https://twitter.com/verahawe" target="_blank" rel="noopener">Vera Wesselkamp</a> (Master student, Inria)</li>
+            <li><a href="https://www-sop.inria.fr/members/Nataliia.Bielova/" target="_blank" rel="noopener">Nataliia Bielova</a> (Research Scientist, Inria, <b>project leader</b>)</li>
+            <li><a href="../">Arnaud Legout</a> (Research Scientist, Inria)</li>
+            <li><a href="https://www.linkedin.com/in/cristianateixeirasantos/" target="_blank" rel="noopener">Cristiana Santos</a> (Assistant Professor of Law&#38;Tech, Utrecht University)</li>
+            <li><a href="https://www.linkedin.com/in/yanisboussad/" target="_blank" rel="noopener">Yanis Boussad</a> (Research fellow, University of Leeds)</li>
+            <li><a href="https://www.linkedin.com/in/natasa-sdj" target="_blank" rel="noopener">Natasa Sarafijanovic-Djukic</a> (Researcher in Applied Machine Learning at Fernfachhochschule Schweiz)</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="../">Research</a></p>
+          <ul class="footer__link-list">
+            <li><a href="../publications.html">Publications</a></li>
+            <li><a href="../#projects">Projects</a></li>
+            <li><a href="../phdstudents.html">Recommendations for Ph.D. students</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="/en/training/">Training</a></p>
+          <ul class="footer__link-list">
+            <li><a href="/en/training/python-data-science-level-1.html">Python data science — level 1</a></li>
+            <li><a href="/en/training/python-data-science-level-2.html">Python data science — level 2</a></li>
+            <li><a href="/en/training/python-machine-learning.html">Python machine learning</a></li>
+            <li><a href="/en/training/python-level-1.html">Python — level 1</a></li>
+            <li><a href="/en/training/python-advanced.html">Python — advanced</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="/en/consulting/">Consulting</a></p>
+          <ul class="footer__link-list">
+            <li><a href="/en/consulting/audit-performance-cost-data-processing.html">Performance and cost audit</a></li>
+            <li><a href="/en/consulting/audit-ai-agents-data-science.html">AI agents audit</a></li>
+            <li><a href="/en/consulting/scientific-review-data-analyses.html">Scientific review of analyses</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Contact</p>
+          <ul class="footer__link-list">
+            <li><a href="/en/training/contact.html">Training contact</a></li>
+            <li><a href="/en/consulting/contact.html">Consulting contact</a></li>
+            <li><a href="mailto:arnaud.legout@gmail.com">Email</a></li>
+            <li><a href="/en/legal-notice.html">Legal notice</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Arnaud Legout. Static site, no cookies.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script data-goatcounter="https://arnaudlegout-inria.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+  <script src="../../assets/js/nav.js"></script>
+</body>
+
+</html>

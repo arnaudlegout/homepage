@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video streaming traffic characteristics — Arnaud Legout</title>
+  <meta name="description" content="Research project on the traffic characteristics of video streaming: streaming strategies per browser, container and application, with datasets.">
+
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://arnaudlegout.fr/research/Projects/streaming.html">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+
+  <link rel="preload" href="../../assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arnaudlegout.fr/research/Projects/streaming.html">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Arnaud Legout">
+  <meta property="og:title" content="Video streaming traffic characteristics — Arnaud Legout">
+  <meta property="og:description" content="Research project on the traffic characteristics of video streaming: streaming strategies per browser, container and application, with datasets.">
+  <meta property="og:image" content="https://arnaudlegout.fr/assets/og-research.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Arnaud Legout, senior research scientist at Inria">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Video streaming traffic characteristics — Arnaud Legout">
+  <meta name="twitter:description" content="Research project on the traffic characteristics of video streaming: streaming strategies per browser, container and application, with datasets.">
+  <meta name="twitter:image" content="https://arnaudlegout.fr/assets/og-research.jpg">
+  <meta name="twitter:image:alt" content="Arnaud Legout, senior research scientist at Inria">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://arnaudlegout.fr/research/Projects/streaming.html#webpage",
+        "url": "https://arnaudlegout.fr/research/Projects/streaming.html",
+        "name": "Video streaming traffic characteristics — Arnaud Legout",
+        "inLanguage": "en",
+        "isPartOf": {
+          "@id": "https://arnaudlegout.fr/#website"
+        },
+        "about": {
+          "@id": "https://arnaudlegout.fr/#arnaud-legout"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Arnaud Legout",
+            "item": "https://arnaudlegout.fr/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Research",
+            "item": "https://arnaudlegout.fr/research/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Projects",
+            "item": "https://arnaudlegout.fr/research/#projects"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Video Streaming",
+            "item": "https://arnaudlegout.fr/research/Projects/streaming.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../../style.css">
+  <!-- Script vide volontaire, à garder juste après la feuille de style : Firefox doit
+       attendre style.css avant de l'exécuter, donc il ne lit pas le <body> tant que le CSS
+       n'est pas chargé. Sans lui, une extension qui force la mise en page trop tôt
+       (« La mise en page a été forcée avant le chargement complet de la page ») fait
+       afficher la page sans style un instant au rechargement. Ne pas supprimer. -->
+  <script>0</script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ====== HEADER ====== -->
+  <header class="header">
+    <div class="nav container">
+      <nav class="nav__brand" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/en/" class="nav__logo">Arnaud Legout</a></li>
+          <li><a href="../" class="nav__section">Research</a></li>
+        </ol>
+      </nav>
+      <nav class="nav__menu" id="nav-menu" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="../" class="nav__link" aria-current="true">Research</a>
+            <ul class="nav__dropdown">
+              <li><a href="../publications.html">Publications</a></li>
+              <li><a href="../#projects">Projects</a></li>
+              <li><a href="../phdstudents.html">Recommendations for Ph.D. students</a></li>
+            </ul>
+          </li>
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="/en/training/" class="nav__link">Training</a>
+            <ul class="nav__dropdown">
+              <li class="nav__dropdown-label">Data science</li>
+              <li><a href="/en/training/python-data-science-level-1.html">Python data science — level 1</a></li>
+              <li><a href="/en/training/python-data-science-level-2.html">Python data science — level 2</a></li>
+              <li><a href="/en/training/python-machine-learning.html">Python machine learning</a></li>
+              <li class="nav__dropdown-label">Python essentials</li>
+              <li><a href="/en/training/python-level-1.html">Python — level 1</a></li>
+              <li><a href="/en/training/python-advanced.html">Python — advanced</a></li>
+            </ul>
+          </li>
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="/en/consulting/" class="nav__link">Consulting</a>
+            <ul class="nav__dropdown">
+              <li><a href="/en/consulting/audit-performance-cost-data-processing.html">Performance and cost audit</a></li>
+              <li><a href="/en/consulting/audit-ai-agents-data-science.html">AI agents audit</a></li>
+              <li><a href="/en/consulting/scientific-review-data-analyses.html">Scientific review of analyses</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav__actions">
+        <button type="button" class="nav__burger" aria-label="Open the navigation menu" aria-expanded="false" aria-controls="nav-menu">
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ====== MAIN ====== -->
+  <main id="main">
+
+    <section class="page-hero">
+      <div class="container">
+        <h1>Network Characteristics of Video Streaming Traffic</h1>
+        <p class="page-hero__subtitle">Past project</p>
+      </div>
+    </section>
+
+    <div class="page-content">
+      <div class="container">
+
+        <section class="page-section" id="overview">
+          <h2>Overview</h2>
+          <p>Video streaming represents a large fraction of Internet traffic. Surprisingly, little is known about the network characteristics of this traffic. In this paper, we study the network characteristics of the two most popular video streaming services, Netflix and YouTube. We show that the streaming strategies vary with the type of the application (Web browser or native mobile application), and the type of container (Silverlight, Flash, or HTML5) used for video streaming. In particular, we identify three different streaming strategies that produce traffic patterns from non-ack clocked ON-OFF cycles to bulk TCP transfer. We then present an analytical model to study the potential impact of these streaming strategies on the aggregate traffic and make recommendations accordingly.</p>
+        </section>
+
+        <section class="page-section" id="contributions">
+          <h2>Contributions</h2>
+          <figure>
+            <a href="img/traffic-pattern.png"><img alt="Generic behavior (traffic pattern) during a video streaming session" src="img/traffic-pattern.png"></a>
+            <figcaption><b>Figure 1. Generic behavior during a typical video streaming session.</b></figcaption>
+          </figure>
+          <p>During a typical streaming session, the video content is transferred in two phases: a <strong>buffering phase</strong> followed by a <strong>steady state phase</strong>. During the buffering phase, the data transfer rate is limited by the end-to-end available bandwidth. The video player begins playback when a sufficient amount of data is available in its buffer. Video playback does not wait for the buffering phase to end. In the steady state phase, the average download rate is slightly larger than video encoding rate. This average download rate in the steady state phase is achieved by periodically transferring one block of video content. These periodic transfers produce cycles of ON-OFF periods. During each ON period, a block of data is transferred at the end-to-end available bandwidth that can be used by TCP; the TCP connection is idle during the OFF periods. We use the existence of the steady state phase and the technique used to throttle the data transfer rate in the steady state phase to identify the underlying streaming strategy. We observe the following three streaming strategies for Netflix and YouTube videos.</p>
+          <figure>
+            <div class="table-scroll">
+              <table>
+                <tr>
+                  <td><strong>Service</strong></td>
+                  <td colspan="3"><strong>YouTube</strong></td>
+                  <td><strong>NetFlix</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>Container</strong></td>
+                  <td><strong>Flash</strong></td>
+                  <td><strong>HTML5</strong></td>
+                  <td><strong>Flash (HD)</strong></td>
+                  <td><strong>Silverlight</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>Internet Explorer</strong></td>
+                  <td>Short ON-OFF</td>
+                  <td>Short ON-OFF</td>
+                  <td>No ON-OFF</td>
+                  <td>Short ON-OFF</td>
+                </tr>
+                <tr>
+                  <td><strong>Google Chrome</strong></td>
+                  <td>Short ON-OFF</td>
+                  <td>Long ON-OFF</td>
+                  <td>No ON-OFF</td>
+                  <td>Short ON-OFF</td>
+                </tr>
+                <tr>
+                  <td><strong>Firefox</strong></td>
+                  <td>Short ON-OFF</td>
+                  <td>No ON-OFF</td>
+                  <td>No ON-OFF</td>
+                  <td>Short ON-OFF</td>
+                </tr>
+                <tr>
+                  <td><strong>iOS</strong></td>
+                  <td><em>Not applicable</em></td>
+                  <td>Multiple</td>
+                  <td><em> Not applicable</em></td>
+                  <td>Short ON-OFF</td>
+                </tr>
+                <tr>
+                  <td><strong>Android</strong></td>
+                  <td><em>Not applicable</em></td>
+                  <td>Long ON-OFF</td>
+                  <td><em>Not applicable</em></td>
+                  <td>Long ON-OFF</td>
+                </tr>
+              </table>
+            </div>
+            <figcaption><b>Table 1. Streaming strategies for a given combination of browser and container.</b></figcaption>
+          </figure>
+        </section>
+
+        <section class="page-section" id="papers">
+          <h2>Papers</h2>
+          <dl class="entries">
+            <dt><a href="https://hal.inria.fr/inria-00638063/en/" target="_blank" rel="noopener">[CONEXT11]</a></dt>
+            <dd>Ashwin Rao, Yeon-sup Lim, Chadi Barakat, Arnaud Legout, Don Towsley, and Walid Dabbous. <b>Network Characteristics of Video Streaming Traffic</b>. In <i>Proc. of ACM CoNEXT'11</i>, Dec. 6--9, 2011, Tokyo, Japan. <a class="entry__link" href="https://hal.inria.fr/inria-00638063/en/" target="_blank" rel="noopener">download</a> <br> The <a href="https://opendata.inria.fr/opendata_planete/streaming_conext/data/arao-streaming.pptx" target="_blank" rel="noopener">slide of the CoNEXT presentation</a> can be freely reused. However, the authors would appreciate if you inform them that you intend to use these slides. <br> The <a href="img/poster.png">poster presented at CCNxCon'11</a> is also available for download.</dd>
+          </dl>
+        </section>
+
+        <section class="page-section" id="members">
+          <h2>Members</h2>
+          This work was a joint collaboration between researchers at INRIA, Sophia Antipolis and University of Massachusetts, Amherst.
+          <ul>
+            <li><a href="https://www.linkedin.com/in/ashwinsrao/" target="_blank" rel="noopener">Ashwin Rao</a> (INRIA, Sophia Antipolis)</li>
+            <li><a href="http://people.cs.umass.edu/~ylim/" target="_blank" rel="noopener"> Yeon-sup Lim </a>(University of Massachusetts, Amherst)</li>
+            <li><a href="https://www-sop.inria.fr/members/Chadi.Barakat/" target="_blank" rel="noopener">Chadi Barakat </a>(INRIA, Sophia Antipolis)</li>
+            <li><a href="../">Arnaud Legout </a> (INRIA, Sophia Antipolis)</li>
+            <li><a href="https://www-net.cs.umass.edu/personnel/towsley.html" target="_blank" rel="noopener"> Don Towsley </a>(University of Massachusetts, Amherst -- was visiting INRIA when this work was in its initial stages)</li>
+            <li><a href="https://www-sop.inria.fr/members/Walid.Dabbous/" target="_blank" rel="noopener"> Walid Dabbous</a> (INRIA, Sophia Antipolis)</li>
+          </ul>
+        </section>
+
+        <section class="page-section" id="download-dataset">
+          <h2>Dataset</h2>
+          <h3>Download the dataset</h3>
+          <p>This dataset contains detail traffic logs of packets exchanged during YouTube and Netflix streaming sessions. Details about the dataset collection are available in the paper <a href="https://hal.inria.fr/inria-00638063/en/" target="_blank" rel="noopener">[RLB_CONEXT11]</a>. For each streaming session, we used tcpdump to capture the packets exchanged between the streaming server(s) and our client. We then parsed these pcap files to log the packet timestamp, the tcp sequence number, and packet length of each packet exchanged between the streaming server(s) and the client. This dataset comprises of these logs along with other auxilary information that we used to better understand the observed traffic patterns. For ease of download, we have split the dataset in multiple tarball files.</p>
+          <ol>
+            <li>
+              <p><strong>YouTube data</strong></p>
+              <p>This tarball contains the YouTube data in the format mentioned in dataset description. Please note that this tarball contains compressed folders.</p>
+              <p><a class="entry__link" href="https://opendata.inria.fr/opendata_planete/streaming_conext/data/YouTube.tar" target="_blank" rel="noopener">Download YouTube data</a> size: 1.5 GB, md5sum: e3062413b80160fe6b9117ca9057ca5f (YouTube.tar)</p>
+            </li>
+            <li>
+              <p><strong>Netflix data</strong></p>
+              <p>This tarball contains the Netflix data in the format mentioned in dataset description. Please note that this tarball contains compressed folders.</p>
+              <p><a class="entry__link" href="https://opendata.inria.fr/opendata_planete/streaming_conext/data/Netflix.tar" target="_blank" rel="noopener">Download Netflix data</a> size: 170 MB, md5sum: 21f844747dbead02c1e4b5b917d434d8 (Netflix.tar)</p>
+            </li>
+            <li>
+              <p><strong>Parsing scripts</strong></p>
+              <p>We also make available the scripts used to generate these datasets. This tarball contains the scripts used to parse the pcap files. Please contact the <a href="mailto:ashwin.rao@inria.fr;arnaud.legout@inria.fr">authors</a> for details on how to use the scripts.</p>
+              <p><a class="entry__link" href="https://opendata.inria.fr/opendata_planete/streaming_conext/data/PcapParsing.tar.bz2" target="_blank" rel="noopener">Download Parsing scripts</a> size: 227 KB, md5sum: 42d7e1d047cfd6aa3b7fc028be21eaee (PcapParsing.tar.bz2)</p>
+            </li>
+            <li>
+              <p><strong>Matlab scripts</strong></p>
+              <p>We use Matlab to further process the datasets. This tarball contains the scripts we used to process the data, the output of the processing, and the matlab scripts to generate the plots present in the paper. Please contact the <a href="mailto:ashwin.rao@inria.fr;arnaud.legout@inria.fr">authors</a> for details on how to use these scripts.</p>
+              <p><a class="entry__link" href="https://opendata.inria.fr/opendata_planete/streaming_conext/data/MatlabScripts.tar.bz2" target="_blank" rel="noopener">Download Matlab scripts</a> size: 204 MB, md5sum: 148418916c01fdb7ee65cdfd102a26d0 (MatlabScripts.tar.bz2)</p>
+            </li>
+          </ol>
+          <p>We would really appreciate if you inform us on how you plan to use this dataset. The raw pcap file used to generate this dataset are currently not available due to space constraints. If you require the raw pcap files please send us an <a href="mailto:ashwin.rao@inria.fr;arnaud.legout@inria.fr">email</a>.</p>
+          <h3>Dataset description</h3>
+          <p>The YouTube and Netflix tarballs contain the following file structure and contents.</p>
+<pre>
+	  [Location Name]
+	  ├── [Container]
+	  │   ├── [Browser 1]
+	  │   │   ├── contentLengths
+	  │   │   ├── downEvolution
+	  │   │   ├── parsedIAT
+	  │   │   ├── parsedPayloadLens
+	  │   │   ├── parsedSeqNums
+	  │   │   ├── parseMeta
+	  │   │   ├── rcvwndEvolution
+	  │   │   ├── seqEvolution
+	  │   │   └── streamingIPs
+	  │   ├── [Browser 2]
+	  │   │   ├── contentLengths
+	  │   │   ├── downEvolution
+	  │   │   ├── parsedIAT
+	  │   │   ├── parsedPayloadLens
+	  │   │   ├── parsedSeqNums
+	  │   │   ├── parseMeta
+	  │   │   ├── rcvwndEvolution
+	  │   │   ├── seqEvolution
+	  │   │   └── streamingIPs
+	</pre>
+          <p>In our paper, we performed our measurements from locations: Home, Research, Residence, and University. Each of these four locations abstracts a network within which we streamed video to different browsers and devices. The YouTube measurements were carried out from each of these four locations while NetFlix measurements were carried out from Home and University. The Home and University locations are in USA while the other two locations, Research and Residence, are in France. The mobile measurements for YouTube were carried out from the location named Research while NetFlix measurements for mobile devices were carried out from the location named University.</p>
+          <p>YouTube uses Flash and HTML5 as the containers to stream videos while Netflix uses Silverlight as the video container.</p>
+          <p>The description of each file is as follows.</p>
+          <ul>
+            <li>
+              <p><strong>contentLengths</strong>: This file is specific to the YouTube dataset. We use this file to get an estimate of the encoding rate of the YouTube video viewed during the streaming session. Each line of this file has the following four entries.</p>
+              <dl class="entries">
+                <dt>Video-ID</dt>
+                <dd>is the identifier of the YouTube video. (See paper for further details).</dd>
+                <dt>Content-Length</dt>
+                <dd>contains the value present in the <strong>Content-Length</strong> field of the HTTP GET response. This is an estimate of the amount of video content that is streamed.</dd>
+                <dt>Duration</dt>
+                <dd>contains the video duration in seconds.</dd>
+                <dt>Encoding Rate</dt>
+                <dd>is an estimate of the encoding rate obtained by computing (Content-Length/Duration).</dd>
+              </dl>
+            </li>
+            <li>
+              <p><strong> parseMeta </strong>: This file contains the meta information of the videos used for the given combination of container and webbrowser. This file is specific to the YouTube dataset. Each line in the file has the following four entries.</p>
+              <dl class="entries">
+                <dt>Index</dt>
+                <dd>is a sequentially incremenenting number. This number was assigned during the parsing of the pcap file.</dd>
+                <dt>Video-ID</dt>
+                <dd>is the identifier of the YouTube video. (See paper for further details).</dd>
+                <dt>Source IP</dt>
+                <dd>is the source address used by the Web browser during the streaming session.</dd>
+                <dt>Youtube IP</dt>
+                <dd>is the address of the YouTube server that streamed the YouTube video.</dd>
+              </dl>
+            </li>
+            <li>
+              <p><strong>downEvolution</strong>: This file, <em> stored in binary format</em>, contains a matrix where each row represents a video and a column represents the amount of data downloaded. The number of rows in this matrix is the number of rows in the <em>parseMeta</em> file. The i-th row in the <em>downEvolution</em> file corresponds to video whose details are present in the the i-th row of <em>parseMeta</em> file. Each column in the <em>downEvolution</em> file represents a time window of 10 ms, where the i-th column represents the time interval [i*10, (i+1)*10) milliseconds since the start of streaming. We stopped the streaming session after 181 seconds therefore number of columns = 181*100 (stopTime*1000/10). These 18,100 columns are prefixed by two columns that contain the maximum number of columns in this row and the total number of valid columns for this row. Thus the number of columns in each row is available in the first integer of the file. We also put the total number of valid columns because the streaming session may last for less than 180 seconds (for example, videos that have a duration of less than 180 seconds). For example, consider the following two rows of this file.</p>
+              <figure>
+                <div class="table-scroll">
+                  <table>
+                    <tr>
+                      <td>18102</td>
+                      <td>9</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>512</td>
+                      <td>512</td>
+                      <td>10240</td>
+                      <td>0</td>
+                      <td>1024</td>
+                      <td>0</td>
+                      <td>10240</td>
+                      <td>-1</td>
+                      <td>-1</td>
+                      <td>...</td>
+                    </tr>
+                    <tr>
+                      <td>18102</td>
+                      <td>11231</td>
+                      <td>0</td>
+                      <td>512</td>
+                      <td>1024</td>
+                      <td>512</td>
+                      <td>1024</td>
+                      <td>1024</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>21320</td>
+                      <td>2034</td>
+                      <td>100</td>
+                      <td>...</td>
+                    </tr>
+                  </table>
+                </div>
+                <figcaption><b>Table 2. Sample entries in the <em>downEvolution</em> file.</b></figcaption>
+              </figure>
+              <p>The first row can be read as follows. The first column value, 18102, is the number of columns. The second column indicates that the following 9 entries are valid. The third column indicates that 0 bytes were downloaded in the first 10 ms. The sixth column indicates that 10240 bytes were downloaded in the 10 ms interval.</p>
+            </li>
+            <li>
+              <p><strong>rcvwndEvolution</strong>: The organization of the file is the same as <em>downEvolution</em>. Each column in this file represents the maximum receive window advertised by the client during the 10 ms interval corresponding to the column</p>
+            </li>
+            <li>
+              <p><strong>seqEvolution</strong>: The organization of the file is the same as <em>downEvolution</em>. Each column in this file represents the maximum sequence number observed in the 10 ms interval corresponding to the column</p>
+            </li>
+            <li>
+              <p><strong>parsedSeqNums</strong>: This file is stored in binary format. The first column of each row is the maximum number of columns in each row of the matrix. The second column in the total number of packets from the server to the client. Each column after these two columns represents a packet received by the browser/application. The value in each column is the sequence number of the packet received.</p>
+            </li>
+            <li>
+              <p><strong>parsedPayloadLens</strong>: This file is stored in binary format. The first column of each row is the maximum number of columns in each row of the matrix. The second column in the total number of packets from the server to the client. Each column after these two columns represents a packet received by the browser/application. The value in each column is the amount of tcp payload (ip.length - ip.header_length - tcp.header_length) in the packet.</p>
+            </li>
+            <li>
+              <p><strong>parsedIAT</strong>: This file is stored in binary format. The first column of each row is the maximum number of columns in each row of the matrix. The second column in the total number of packets from the server to the client. Each column after these two columns represents a packet received by the browser/application. The value in each column is the interarrival time between successive packets.</p>
+            </li>
+            <li>
+              <p><strong>streamingIPs</strong>: This file is stored in ascii format. Each line of this file contains the list of IP addresses to used by the streaming server to transfer the video content.</p>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="../">Research</a></p>
+          <ul class="footer__link-list">
+            <li><a href="../publications.html">Publications</a></li>
+            <li><a href="../#projects">Projects</a></li>
+            <li><a href="../phdstudents.html">Recommendations for Ph.D. students</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="/en/training/">Training</a></p>
+          <ul class="footer__link-list">
+            <li><a href="/en/training/python-data-science-level-1.html">Python data science — level 1</a></li>
+            <li><a href="/en/training/python-data-science-level-2.html">Python data science — level 2</a></li>
+            <li><a href="/en/training/python-machine-learning.html">Python machine learning</a></li>
+            <li><a href="/en/training/python-level-1.html">Python — level 1</a></li>
+            <li><a href="/en/training/python-advanced.html">Python — advanced</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="/en/consulting/">Consulting</a></p>
+          <ul class="footer__link-list">
+            <li><a href="/en/consulting/audit-performance-cost-data-processing.html">Performance and cost audit</a></li>
+            <li><a href="/en/consulting/audit-ai-agents-data-science.html">AI agents audit</a></li>
+            <li><a href="/en/consulting/scientific-review-data-analyses.html">Scientific review of analyses</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Contact</p>
+          <ul class="footer__link-list">
+            <li><a href="/en/training/contact.html">Training contact</a></li>
+            <li><a href="/en/consulting/contact.html">Consulting contact</a></li>
+            <li><a href="mailto:arnaud.legout@gmail.com">Email</a></li>
+            <li><a href="/en/legal-notice.html">Legal notice</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Arnaud Legout. Static site, no cookies.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script data-goatcounter="https://arnaudlegout-inria.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+  <script src="../../assets/js/nav.js"></script>
+</body>
+
+</html>

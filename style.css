@@ -1,9 +1,10 @@
 /* ============================================================
    arnaudlegout.fr — feuille de style unique du site
-   Accueil, section formation (/formation/) et section conseil
-   (/consulting/). Fusion, en octobre 2026, des trois feuilles qui
-   avaient divergé : base de la feuille du conseil, complétée des
-   règles propres à la formation et à l'accueil.
+   Accueil, section formation (/formation/), section conseil
+   (/consulting/) et section recherche (/research/). Fusion, en
+   octobre 2026, des trois feuilles qui avaient divergé : base de la
+   feuille du conseil, complétée des règles propres à la formation
+   et à l'accueil ; règles de la recherche ajoutées ensuite.
    ============================================================ */
 
 /* ============================================================
@@ -87,6 +88,9 @@ html {
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
+  /* un lien vers une ancre (#projects…) s'arrête sous la barre collante (4rem), avec de
+     l'air au-dessus du titre de la section, au lieu de le cacher sous la barre */
+  scroll-padding-top: 5.5rem;
 }
 
 body {
@@ -402,9 +406,10 @@ button.nav__link {
   }
 }
 
-/* Mobile nav — bascule sous 800px : la barre la plus large (section conseil :
-   deux sous-menus, « L'approche » et « Demander un diagnostic ») réclame 751px */
-@media (max-width: 799px) {
+/* Mobile nav — bascule sous 900px : la barre la plus large (conseil en anglais : trois
+   sous-menus, « Arnaud Legout / Consulting », « Request a diagnostic » et le sélecteur
+   de langue) réclame 870px (mesuré en headless, octobre 2026) */
+@media (max-width: 899px) {
   .nav__burger { display: flex; }
 
   .nav__menu {
@@ -1071,7 +1076,7 @@ button.nav__link {
   .footer__grid { grid-template-columns: repeat(2, 1fr); gap: 2.5rem 3rem; }
 }
 @media (min-width: 1000px) {
-  .footer__grid { grid-template-columns: 1.15fr 1.2fr 1.2fr 0.85fr; gap: 3rem; }
+  .footer__grid { grid-template-columns: 1.2fr 1.2fr 1.2fr 0.85fr; gap: 3rem; }
 }
 
 .footer__col-title {
@@ -1086,13 +1091,6 @@ button.nav__link {
 .footer .footer__col-title a:hover { color: var(--color-accent); }
 
 /* Serif italique : un intitulé, à ne pas confondre avec les liens (sans-serif) dessous */
-.footer__tagline {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 0.9375rem;
-  color: var(--color-text);
-  margin-bottom: 0.875rem;
-}
 
 .footer__link-list,
 .footer__contact-list {
@@ -1563,16 +1561,42 @@ button.nav__link {
   .nav__section { font-size: 0.8125rem; }
 }
 
-/* Sans bouton d'action (racine du site), la zone d'actions ne contient que le burger,
-   masqué sur grand écran : on la retire pour que la barre reste alignée à droite */
-@media (min-width: 800px) {
-  .nav__actions:not(:has(.nav__cta)) { display: none; }
+/* Sélecteur de langue : « EN » ou « FR », vers la même page dans l'autre langue (ou
+   l'accueil de l'autre langue si la page n'y existe pas). Absent de la section
+   recherche (en anglais seulement) ; à la racine, seul élément de la zone d'actions. */
+.nav__lang {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.25rem;
+  height: 1.875rem;
+  padding: 0 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.nav__lang:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+/* Section recherche : ni bouton d'action ni sélecteur, la zone d'actions ne contient que
+   le burger, masqué sur grand écran : on la retire pour que la barre reste alignée à droite */
+@media (min-width: 900px) {
+  .nav__actions:not(:has(.nav__cta, .nav__lang)) { display: none; }
 }
 
+/* Texte dans les deux langues sur une même page (404.html) : seul celui de la langue de la
+   page (<html lang>) s'affiche */
+html[lang="en"] [data-lang="fr"],
+html[lang="fr"] [data-lang="en"] { display: none; }
 /* Section courante : trait sous l'entrée de la barre (pas dans le menu burger), de la
    première lettre à la pointe du chevron : la largeur du lien moins ses marges
    intérieures (0.875rem de chaque côté, voir .nav__link) */
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .nav__item > .nav__link[aria-current] {
     background-image: linear-gradient(var(--color-accent), var(--color-accent));
     background-repeat: no-repeat;
@@ -1583,7 +1607,7 @@ button.nav__link {
 
 /* Sous-menu refermé par Échap (nav.js) : reste fermé tant que le pointeur ou le focus
    ne l'ont pas quitté */
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .nav__item--has-dropdown.is-dismissed .nav__dropdown { display: none; }
   .nav__item--has-dropdown.is-dismissed > .nav__link::after { transform: translateY(-0.2em) rotate(45deg); }
 }
@@ -1607,13 +1631,13 @@ button.nav__link {
   transform: translateY(-0.2em) rotate(45deg);
   transition: transform 0.15s ease;
 }
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .nav__item--has-dropdown:hover > .nav__link::after,
   .nav__item--has-dropdown:focus-within > .nav__link::after {
     transform: translateY(0.05em) rotate(-135deg);
   }
 }
-@media (max-width: 799px) {
+@media (max-width: 899px) {
   .nav__item--has-dropdown > .nav__link::after { display: none; }
 }
 
@@ -1974,6 +1998,189 @@ a.card--link:focus-visible .card__link {
 
 /* Boutons de la 404 centrés sous le titre et le texte, eux-mêmes centrés */
 .not-found .hero__cta { justify-content: center; }
+
+/* ============================================================
+   ============================================================
+   SECTION RECHERCHE (/research/, en anglais)
+   coordonnées, listes à étiquette (publications, actualités,
+   activités, enseignement), liens de téléchargement, figures,
+   tableaux et code des pages de projets
+   ============================================================
+   ============================================================ */
+
+/* Coordonnées, en tête de la page de recherche, à côté du portrait (au-dessus sur
+   mobile : à côté, l'adresse se coupe à chaque mot) */
+.research-contact {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  align-items: start;
+  margin-top: 1.5rem;
+}
+.research-contact__photo {
+  width: 96px;
+  height: 125px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+@media (min-width: 600px) {
+  .research-contact { grid-template-columns: auto 1fr; gap: 2rem; }
+  .research-contact__photo { width: 140px; height: 182px; }
+}
+.research-contact dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25rem 1rem;
+  font-size: 0.9375rem;
+}
+.research-contact dt { color: var(--color-text-muted); }
+.research-contact a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.research-contact a:hover { color: var(--color-accent-hover); }
+
+/* Listes à étiquette : une clé ([PETS22]) ou une date, puis l'entrée. Chaque dd va
+   dans la seconde colonne, même quand plusieurs dd suivent un même dt */
+.entries {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.125rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.entries:last-child { margin-bottom: 0; }
+.entries dt {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-cta);
+  padding-top: 0.2rem;
+  overflow-wrap: anywhere;
+}
+.entries dd {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+.entries dd:last-child { margin-bottom: 0; }
+@media (min-width: 600px) {
+  .entries { grid-template-columns: 9.5rem 1fr; }
+  .entries dt { grid-column: 1; }
+  .entries dd { grid-column: 2; margin-bottom: 0.875rem; }
+}
+.entries dt a { color: inherit; }
+.entries dt a:hover { color: var(--color-accent); }
+.entries dd a:not(.entry__link),
+.page-section figcaption a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: rgba(26, 26, 26, 0.3);
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+.entries dd a:not(.entry__link):hover,
+.page-section figcaption a:hover {
+  color: var(--color-accent);
+  text-decoration-color: var(--color-accent);
+}
+.entries dd b { font-weight: 600; }
+.entries dd ul { margin: 0; }
+
+/* Lien de téléchargement d'une publication (« download ») */
+.entry__link {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-accent);
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  padding: 0 0.4rem;
+  margin-left: 0.125rem;
+  white-space: nowrap;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+.entry__link:hover {
+  color: #FFFFFF;
+  background-color: var(--color-accent);
+}
+
+/* Badge mis en avant : prix, communiqué de presse */
+.badge--highlight {
+  color: #FFFFFF;
+  background: var(--color-cta);
+  font-size: 0.75rem;
+  padding: 0.0625rem 0.5rem;
+}
+
+/* Projets : figures, tableaux, code */
+.page-section figure { margin: 1.5rem 0 2rem; }
+.page-section figure img {
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: #FFFFFF;
+}
+/* Légende des figures et des tables, toujours sous l'élément : « Figure n. Titre. » ou
+   « Table n. Titre. » en gras, puis la note éventuelle */
+.page-section figcaption {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin-top: 0.75rem;
+  max-width: var(--max-text);
+}
+.page-section figcaption b {
+  color: var(--color-text);
+  font-weight: 600;
+}
+.page-section figure .table-scroll { margin: 0; }
+
+/* Table de données (chiffres) : colonnes alignées, en-têtes centrés, variations en couleur */
+.page-section table.data-table {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.data-table thead th { text-align: center; }
+.data-table tbody th { background: var(--color-bg-alt); }
+.data-table td { text-align: right; }
+.data-table .is-up { color: var(--color-accent); }
+.data-table .is-down { color: var(--color-cta); }
+.table-scroll {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+.page-section table {
+  border-collapse: collapse;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+.page-section caption {
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.page-section th,
+.page-section td {
+  border: 1px solid var(--color-border);
+  padding: 0.375rem 0.625rem;
+  text-align: left;
+  vertical-align: top;
+}
+.page-section th { background: var(--color-bg-alt); font-weight: 600; }
+.page-section pre {
+  background-color: var(--color-code-bg);
+  color: var(--color-code-text);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  padding: 1.25rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+.table-scroll iframe { display: block; border: 0; }
 
 /* ============================================================
    Focus clavier visible

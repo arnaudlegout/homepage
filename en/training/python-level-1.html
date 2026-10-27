@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python fundamentals training — for engineers and researchers</title>
+  <meta name="description" content="Python fundamentals in 3 days: functions, iteration, modules, namespaces. For engineers and researchers. A prerequisite for data science. Rated 4.93/5.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://arnaudlegout.fr/en/training/python-level-1.html">
+  <link rel="alternate" hreflang="fr" href="https://arnaudlegout.fr/formation/python-niveau-1.html">
+  <link rel="alternate" hreflang="en" href="https://arnaudlegout.fr/en/training/python-level-1.html">
+  <link rel="alternate" hreflang="x-default" href="https://arnaudlegout.fr/formation/python-niveau-1.html">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arnaudlegout.fr/en/training/python-level-1.html">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="fr_FR">
+  <meta property="og:site_name" content="Arnaud Legout">
+  <meta property="og:title" content="Python fundamentals training — for engineers and researchers | Arnaud Legout">
+  <meta property="og:description" content="Python fundamentals in 3 days: functions, iteration, modules, namespaces. For engineers and researchers. A prerequisite for data science. Rated 4.93/5.">
+  <meta property="og:image" content="https://arnaudlegout.fr/assets/og-formation-en.jpg">
+  <meta property="og:image:secure_url" content="https://arnaudlegout.fr/assets/og-formation-en.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Python data science training by Arnaud Legout, senior research scientist at Inria — Rated 4.93/5">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Python fundamentals training — for engineers and researchers | Arnaud Legout">
+  <meta name="twitter:description" content="Python fundamentals in 3 days: functions, iteration, modules, namespaces. For engineers and researchers. A prerequisite for data science. Rated 4.93/5.">
+  <meta name="twitter:image" content="https://arnaudlegout.fr/assets/og-formation-en.jpg">
+  <meta name="twitter:image:alt" content="Python data science training by Arnaud Legout, senior research scientist at Inria — Rated 4.93/5">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+  <link rel="preload" href="../../assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../style.css">
+  <!-- Script vide volontaire, à garder juste après la feuille de style : Firefox doit
+       attendre style.css avant de l'exécuter, donc il ne lit pas le <body> tant que le CSS
+       n'est pas chargé. Sans lui, une extension qui force la mise en page trop tôt
+       (« La mise en page a été forcée avant le chargement complet de la page ») fait
+       afficher la page sans style un instant au rechargement. Ne pas supprimer. -->
+  <script>0</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "@id": "https://arnaudlegout.fr/en/training/python-level-1.html#course",
+    "name": "Python training — level 1 (language fundamentals)",
+    "description": "Intensive 3-day professional training on Python fundamentals for experienced developers (C, C++, Java, Fortran, Matlab). Shared references, dynamic typing, namespaces, the iteration protocol, modules and packages, exception handling.",
+    "url": "https://arnaudlegout.fr/en/training/python-level-1.html",
+    "inLanguage": [
+      "en",
+      "fr"
+    ],
+    "provider": {
+      "@id": "https://arnaudlegout.fr/formation/#formation-arnaud-legout"
+    },
+    "about": [
+      "Python",
+      "Programming",
+      "Shared references",
+      "Dynamic typing",
+      "Namespaces",
+      "Iterators",
+      "Modules"
+    ],
+    "teaches": [
+      "Understand Python's fundamental mechanisms: shared references, dynamic typing, namespaces",
+      "Write Python functions with a solid grasp of variable scope",
+      "Organize code into reusable modules and packages",
+      "Handle exceptions and use context managers",
+      "Use generator functions and functional tools",
+      "Design classes and use inheritance (depending on the group's progress)"
+    ],
+    "audience": {
+      "@type": "EducationalAudience",
+      "educationalRole": "Ph.D. students, engineers and researchers who already program (C, C++, Java, Fortran, Matlab, Perl)"
+    },
+    "educationalLevel": "Beginner",
+    "coursePrerequisites": "Programming experience in at least one other language. No prior knowledge of Python is needed.",
+    "timeRequired": "PT21H",
+    "hasCourseInstance": [
+      {
+        "@type": "CourseInstance",
+        "courseMode": "Onsite",
+        "courseWorkload": "PT21H",
+        "instructor": {
+          "@id": "https://arnaudlegout.fr/#arnaud-legout"
+        },
+        "location": {
+          "@type": "Place",
+          "name": "On the client's premises, France"
+        }
+      },
+      {
+        "@type": "CourseInstance",
+        "courseMode": "Online",
+        "courseWorkload": "PT21H",
+        "instructor": {
+          "@id": "https://arnaudlegout.fr/#arnaud-legout"
+        }
+      }
+    ],
+    "offers": {
+      "@type": "Offer",
+      "category": "Professional training",
+      "availability": "https://schema.org/InStock",
+      "url": "https://arnaudlegout.fr/en/training/contact.html"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Arnaud Legout",
+        "item": "https://arnaudlegout.fr/en/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Training",
+        "item": "https://arnaudlegout.fr/en/training/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Python — level 1",
+        "item": "https://arnaudlegout.fr/en/training/python-level-1.html"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "en",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is this course suitable for someone who has never used Python?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, no prior knowledge of Python is needed. The course is designed for engineers, researchers or Ph.D. students who already program in another language (C, Java, Fortran, Matlab…) and who want to acquire a solid command of Python, not just learn its syntax."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How soon can participants be productive in Python after this course?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The course lasts 3 days. At the end, participants master the fundamental mechanisms that make Python specific: shared references, namespaces, the iteration protocol. These mental models let them write idiomatic Python as soon as they are back at work — provided they practice actively in the following weeks, which is decisive for lasting learning."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is object-oriented programming covered?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The OOP module (classes, inheritance, operator overloading) is covered in module 5, depending on the group's progress. It is only covered with groups that have solidly absorbed the previous notions — the fundamentals remain the priority."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this course a prerequisite for the data science courses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, this is its natural role. Once the fundamental mechanisms are mastered — shared references, iteration, namespaces — NumPy, Pandas and Polars are learned much faster and the code is better from the first draft."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the remote format suitable for this kind of training?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. 90% of participants rate the remote format as equivalent or better than in-person. I have been running remote training since 2020 and have built a solid practice of online teaching. I use Zoom, which makes it possible to record the sessions and share them with participants if desired, and CoCalc, an online platform that gives access to preconfigured servers with all the training material and libraries installed. CoCalc also lets me follow each participant's progress in real time and step in directly to correct or unblock."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="header">
+    <div class="nav container">
+      <nav class="nav__brand" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/en/" class="nav__logo">Arnaud Legout</a></li>
+          <li><a href="./" class="nav__section">Training</a></li>
+        </ol>
+      </nav>
+      <nav class="nav__menu" id="nav-menu" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="/research/" class="nav__link">Research</a>
+            <ul class="nav__dropdown">
+              <li><a href="/research/publications.html">Publications</a></li>
+              <li><a href="/research/#projects">Projects</a></li>
+              <li><a href="/research/phdstudents.html">Recommendations for Ph.D. students</a></li>
+            </ul>
+          </li>
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="./" class="nav__link" aria-current="true">Training</a>
+            <ul class="nav__dropdown">
+              <li class="nav__dropdown-label">Data science</li>
+              <li><a href="python-data-science-level-1.html">Python data science — level 1</a></li>
+              <li><a href="python-data-science-level-2.html">Python data science — level 2</a></li>
+              <li><a href="python-machine-learning.html">Python machine learning</a></li>
+              <li class="nav__dropdown-label">Python essentials</li>
+              <li><a href="python-level-1.html" aria-current="page">Python — level 1</a></li>
+              <li><a href="python-advanced.html">Python — advanced</a></li>
+            </ul>
+          </li>
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="/en/consulting/" class="nav__link">Consulting</a>
+            <ul class="nav__dropdown">
+              <li><a href="/en/consulting/audit-performance-cost-data-processing.html">Performance and cost audit</a></li>
+              <li><a href="/en/consulting/audit-ai-agents-data-science.html">AI agents audit</a></li>
+              <li><a href="/en/consulting/scientific-review-data-analyses.html">Scientific review of analyses</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav__actions">
+        <a href="contact.html" class="nav__cta btn btn--primary"><span class="nav__cta-long">Request a quote</span><span class="nav__cta-short">Quote</span></a>
+        <a href="/formation/python-niveau-1.html" class="nav__lang" hreflang="fr" lang="fr" aria-label="Version française de cette page">FR</a>
+        <button type="button" class="nav__burger" aria-label="Open the navigation menu" aria-expanded="false" aria-controls="nav-menu">
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <div class="page-hero">
+      <div class="container container--text">
+        <h1>Python training — level 1</h1>
+        <p class="page-hero__subtitle">Python through practice: the language fundamentals for experienced programmers</p>
+        <div class="page-hero__badges">
+          <span class="badge">⏱ 3 days</span>
+          <span class="badge">👥 ≤ 10 people</span>
+          <span class="badge">📍 On site or remote</span>
+          <span class="badge">🌐 English or French</span>
+          <span class="badge">🎯 Python beginner</span>
+          <span class="badge">👤 Engineers and researchers who program</span>
+          <span class="badge">🏢 In-company</span>
+          <span class="badge">★ 4.93/5</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-content">
+      <div class="container">
+
+        <div class="page-section">
+          <p><em>A module offered as a complement to the data science courses, or as a standalone course depending on your needs.</em></p>
+          <p class="lead">Python has become the reference language for research, engineering and data science. For someone who already programs in C, Java, Fortran or Matlab, the syntax can be learned in a few days — and that is precisely the trap: you write Python that works, without understanding what makes it different.</p>
+          <p>This course targets exactly these people. It moves quickly through the syntax to spend most of the time on the mechanisms that make Python specific: <strong>shared references, dynamic typing, namespaces, the iteration protocol</strong>. These are the mental models that let you write idiomatic Python rather than disguised C.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>After this course, your staff will be able to</h2>
+          <ul>
+            <li>Understand and apply Python's fundamental mechanisms: shared references, dynamic typing, namespaces</li>
+            <li>Write Python functions with a solid grasp of variable scope and the different forms of arguments</li>
+            <li>Organize their code into reusable modules and packages</li>
+            <li>Handle exceptions and use context managers</li>
+            <li>Use generator functions and functional tools (comprehensions, generator expressions)</li>
+            <li>Design classes and use inheritance in object-oriented programming, depending on the group's progress</li>
+          </ul>
+        </div>
+
+        <div class="page-section">
+          <h2>Detailed program</h2>
+
+          <h3>Module 1 — Environment and basic types</h3>
+          <p>History and evolution of Python. A modern working environment: VS Code IDE, git, LLM integration. Numeric types (<code>int</code>, <code>float</code>, <code>bool</code>) and sequences (<code>list</code>, <code>str</code>, <code>tuple</code>). Conditional statements. Mutability and immutability: understanding which types can be modified in place.</p>
+
+          <h3>Module 2 — Shared references and the object model</h3>
+          <p>The conceptual core of the language. Dynamic typing and shared references: Python's object model. Shallow copy and deep copy: when one is enough and when the other is needed. The practical consequences for everyday code.</p>
+
+          <h3>Module 3 — Iteration</h3>
+          <p>The iteration protocol in Python: <code>for</code> loops and the underlying iterators. Hash tables: <code>set</code> and <code>dict</code>. File handling and context managers. Generator functions, generator expressions, list/set/dictionary comprehensions. Lambda functions and polymorphism.</p>
+
+          <h3>Module 4 — Functions and namespaces</h3>
+          <p>Declaring functions, keyword, default and arbitrary arguments (<code>*args</code>, <code>**kwargs</code>). Variable scope and the LEGB rule. Namespaces: creating and importing modules, organizing them into packages. Exception handling: <code>try</code>/<code>except</code>/<code>finally</code>.</p>
+
+          <h3>Module 5 — Object-oriented programming <em>(depending on the group's progress)</em></h3>
+          <p>For homogeneous groups that have absorbed the previous notions: classes, instances, methods. Inheritance and operator overloading. Namespaces across modules and classes. Designing context managers. This module is only covered with groups that are ready — solid fundamentals remain the priority.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Audience and prerequisites</h2>
+          <p><strong>Target audience</strong></p>
+          <p>Ph.D. students, engineers and researchers who already have a background in imperative or functional programming (C, C++, Java, Fortran, Matlab, Perl, etc.) and want to acquire a solid command of Python.</p>
+          <p><strong>Prerequisites</strong></p>
+          <p>Programming experience in at least one other language. No prior knowledge of Python is needed.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Teaching method</h2>
+          <p>The course alternates short theoretical presentations and hands-on exercises in Jupyter notebooks. Each concept is put into practice immediately. I pay particular attention to making sure every participant keeps up, whatever their starting level, and I calibrate the depth of each topic to the group — this is in particular what determines how deep we go into OOP in module 5.</p>
+          <p>The material is given to the participants at the end of the course, along with the exercise notebooks and their solutions.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>A course to prepare your teams for data science</h2>
+          <p>This course is the natural foundation for teams who will then take a Python data science course. Once the fundamental mechanisms are mastered, NumPy, Pandas and Polars are learned much faster — and the code is better from the first draft.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Official documentation</h2>
+          <p>The <a href="https://docs.python.org/3/" target="_blank" rel="noopener noreferrer">Python&nbsp;3 documentation</a> and its <a href="https://docs.python.org/3/tutorial/" target="_blank" rel="noopener noreferrer">official tutorial</a>.</p>
+        </div>
+
+
+        <section class="page-section" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">Frequently asked questions</h2>
+          <div class="faq">
+            <details class="faq__item">
+              <summary>Is this course suitable for someone who has never used Python?</summary>
+              <div class="faq__answer"><p>Yes, no prior knowledge of Python is needed. The course is designed for engineers, researchers or Ph.D. students who already program in another language (C, Java, Fortran, Matlab…) and who want to acquire a solid command of Python, not just learn its syntax.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>How soon can participants be productive in Python after this course?</summary>
+              <div class="faq__answer"><p>The course lasts 3 days. At the end, participants master the fundamental mechanisms that make Python specific: shared references, namespaces, the iteration protocol. These mental models let them write idiomatic Python as soon as they are back at work — provided they practice actively in the following weeks, which is decisive for lasting learning.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Is object-oriented programming covered?</summary>
+              <div class="faq__answer"><p>The OOP module (classes, inheritance, operator overloading) is covered in module 5, depending on the group's progress. It is only covered with groups that have solidly absorbed the previous notions — the fundamentals remain the priority.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Is this course a prerequisite for the data science courses?</summary>
+              <div class="faq__answer"><p>Yes, this is its natural role. Once the fundamental mechanisms are mastered — shared references, iteration, namespaces — NumPy, Pandas and Polars are learned much faster and the code is better from the first draft.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Is the remote format suitable for this kind of training?</summary>
+              <div class="faq__answer"><p>Yes. 90% of participants rate the remote format as equivalent or better than in-person. I have been running remote training since 2020 and have built a solid practice of online teaching. I use Zoom, which makes it possible to record the sessions and share them with participants if desired, and CoCalc, an online platform that gives access to preconfigured servers with all the training material and libraries installed. CoCalc also lets me follow each participant's progress in real time and step in directly to correct or unblock.</p></div>
+            </details>
+          </div>
+        </section>
+
+        <div class="page-cta">
+          <a href="contact.html" class="btn btn--primary">Request a quote for this course</a>
+        </div>
+
+      </div>
+    </div>
+
+    <section class="section voir-aussi" aria-labelledby="see-also-title">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="see-also-title">See also</h2>
+        </div>
+        <div class="cards-grid cards-grid--pair">
+          <a class="card card--link" href="python-advanced.html">
+            <h3 class="card__title">Python — advanced</h3>
+            <p class="card__body">For teams that develop complex code, the Python — advanced module (object-oriented
+            programming, decorators, metaclasses) is also available.</p>
+            <span class="card__link">See the program →</span>
+          </a>
+
+          <a class="card card--link" href="python-data-science-level-1.html">
+            <h3 class="card__title">Python data science — level&nbsp;1</h3>
+            <p class="card__body">The foundations of the Python data science ecosystem. Vectorization, broadcasting,
+            DataFrame manipulation, time series, the Parquet format, statistical visualization with Seaborn.</p>
+            <span class="card__link">See the program →</span>
+          </a>
+        </div>
+        <p class="voir-aussi__note">Beyond training, I also work as a consultant on the performance of your data
+          pipelines, the use of AI agents and the review of your analyses.
+          <a href="/en/consulting/">Discover consulting →</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="/research/">Research</a></p>
+          <ul class="footer__link-list">
+            <li><a href="/research/publications.html">Publications</a></li>
+            <li><a href="/research/#projects">Projects</a></li>
+            <li><a href="/research/phdstudents.html">Recommendations for Ph.D. students</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="./">Training</a></p>
+          <ul class="footer__link-list">
+            <li><a href="python-data-science-level-1.html">Python data science — level 1</a></li>
+            <li><a href="python-data-science-level-2.html">Python data science — level 2</a></li>
+            <li><a href="python-machine-learning.html">Python machine learning</a></li>
+            <li><a href="python-level-1.html">Python — level 1</a></li>
+            <li><a href="python-advanced.html">Python — advanced</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="/en/consulting/">Consulting</a></p>
+          <ul class="footer__link-list">
+            <li><a href="/en/consulting/audit-performance-cost-data-processing.html">Performance and cost audit</a></li>
+            <li><a href="/en/consulting/audit-ai-agents-data-science.html">AI agents audit</a></li>
+            <li><a href="/en/consulting/scientific-review-data-analyses.html">Scientific review of analyses</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Contact</p>
+          <ul class="footer__link-list">
+            <li><a href="contact.html">Training contact</a></li>
+            <li><a href="/en/consulting/contact.html">Consulting contact</a></li>
+            <li><a href="mailto:arnaud.legout@gmail.com">Email</a></li>
+            <li><a href="/en/legal-notice.html">Legal notice</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Arnaud Legout. Static site, no cookies.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script data-goatcounter="https://arnaudlegout-formations.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+  <script src="../../assets/js/nav.js"></script>
+</body>
+</html>

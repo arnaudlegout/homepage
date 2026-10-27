@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audit of AI agent use in data science | Arnaud Legout</title>
+  <meta name="description" content="Copilot, Cursor, Claude Code: what do they really produce in your data team? An audit of code quality, productivity and data leaks.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://arnaudlegout.fr/en/consulting/audit-ai-agents-data-science.html">
+  <link rel="alternate" hreflang="fr" href="https://arnaudlegout.fr/consulting/audit-agents-ia-data-science.html">
+  <link rel="alternate" hreflang="en" href="https://arnaudlegout.fr/en/consulting/audit-ai-agents-data-science.html">
+  <link rel="alternate" hreflang="x-default" href="https://arnaudlegout.fr/consulting/audit-agents-ia-data-science.html">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+  <!-- Font preloads (most critical) -->
+  <link rel="preload" href="../../assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arnaudlegout.fr/en/consulting/audit-ai-agents-data-science.html">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="fr_FR">
+  <meta property="og:site_name" content="Arnaud Legout">
+  <meta property="og:title" content="Audit of AI agent use in data science | Arnaud Legout">
+  <meta property="og:description" content="Copilot, Cursor, Claude Code: what do they really produce in your data team? An audit of code quality, productivity and data leaks.">
+  <meta property="og:image" content="https://arnaudlegout.fr/assets/og-consulting-en.jpg">
+  <meta property="og:image:secure_url" content="https://arnaudlegout.fr/assets/og-consulting-en.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Arnaud Legout, senior research scientist at Inria — independent data science consulting">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Audit of AI agent use in data science | Arnaud Legout">
+  <meta name="twitter:description" content="Copilot, Cursor, Claude Code: what do they really produce in your data team? An audit of code quality, productivity and data leaks.">
+  <meta name="twitter:image" content="https://arnaudlegout.fr/assets/og-consulting-en.jpg">
+  <meta name="twitter:image:alt" content="Arnaud Legout, senior research scientist at Inria — independent data science consulting">
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://arnaudlegout.fr/en/consulting/audit-ai-agents-data-science.html#service",
+        "name": "Audit of how your data team uses AI agents",
+        "description": "Copilot, Cursor, Claude Code: what do they really produce in your data team? An audit of code quality, productivity and data leaks.",
+        "provider": {
+          "@id": "https://arnaudlegout.fr/#arnaud-legout"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "France"
+        },
+        "serviceType": "Data science consulting",
+        "url": "https://arnaudlegout.fr/en/consulting/audit-ai-agents-data-science.html"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Arnaud Legout",
+            "item": "https://arnaudlegout.fr/en/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Consulting",
+            "item": "https://arnaudlegout.fr/en/consulting/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "How your data team uses AI agents",
+            "item": "https://arnaudlegout.fr/en/consulting/audit-ai-agents-data-science.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="../../style.css">
+  <!-- Script vide volontaire, à garder juste après la feuille de style : Firefox doit
+       attendre style.css avant de l'exécuter, donc il ne lit pas le <body> tant que le CSS
+       n'est pas chargé. Sans lui, une extension qui force la mise en page trop tôt
+       (« La mise en page a été forcée avant le chargement complet de la page ») fait
+       afficher la page sans style un instant au rechargement. Ne pas supprimer. -->
+  <script>0</script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ====== HEADER ====== -->
+  <header class="header">
+    <div class="nav container">
+      <nav class="nav__brand" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/en/" class="nav__logo">Arnaud Legout</a></li>
+          <li><a href="./" class="nav__section">Consulting</a></li>
+        </ol>
+      </nav>
+      <nav class="nav__menu" id="nav-menu" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="/research/" class="nav__link">Research</a>
+            <ul class="nav__dropdown">
+              <li><a href="/research/publications.html">Publications</a></li>
+              <li><a href="/research/#projects">Projects</a></li>
+              <li><a href="/research/phdstudents.html">Recommendations for Ph.D. students</a></li>
+            </ul>
+          </li>
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="/en/training/" class="nav__link">Training</a>
+            <ul class="nav__dropdown">
+              <li class="nav__dropdown-label">Data science</li>
+              <li><a href="/en/training/python-data-science-level-1.html">Python data science — level 1</a></li>
+              <li><a href="/en/training/python-data-science-level-2.html">Python data science — level 2</a></li>
+              <li><a href="/en/training/python-machine-learning.html">Python machine learning</a></li>
+              <li class="nav__dropdown-label">Python essentials</li>
+              <li><a href="/en/training/python-level-1.html">Python — level 1</a></li>
+              <li><a href="/en/training/python-advanced.html">Python — advanced</a></li>
+            </ul>
+          </li>
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="./" class="nav__link" aria-current="true">Consulting</a>
+            <ul class="nav__dropdown">
+              <li><a href="audit-performance-cost-data-processing.html">Performance and cost audit</a></li>
+              <li><a href="audit-ai-agents-data-science.html" aria-current="page">AI agents audit</a></li>
+              <li><a href="scientific-review-data-analyses.html">Scientific review of analyses</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav__actions">
+        <a href="contact.html" class="nav__cta btn btn--primary"><span class="nav__cta-long">Request a diagnostic</span><span class="nav__cta-short">Diagnostic</span></a>
+        <a href="/consulting/audit-agents-ia-data-science.html" class="nav__lang" hreflang="fr" lang="fr" aria-label="Version française de cette page">FR</a>
+        <button type="button" class="nav__burger" aria-label="Open the navigation menu" aria-expanded="false" aria-controls="nav-menu">
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ====== MAIN ====== -->
+  <main id="main">
+
+    <div class="page-hero">
+      <div class="container container--text">
+        <h1>Your data scientists code with AI agents. Do you know what it has changed?</h1>
+        <div class="page-hero__badges">
+          <span class="badge">⏱ 3- to 5-day audit</span>
+          <span class="badge">🔎 One- to two-day preliminary diagnostic</span>
+          <span class="badge">🔁 Ongoing advisory available</span>
+          <span class="badge">💶 Pricing on request</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-content">
+      <div class="container">
+
+        <div class="page-section">
+          <p class="lead">For the past two years, most of your data team's code has been written with Copilot, Cursor, Claude Code or ChatGPT. Nobody formally decided it; it happened one workstation at a time. Everyone will tell you they are faster, and for part of the work that is true.</p>
+          <p>Three questions remain unanswered, though. Is the quality of the code improving or degrading? Is the productivity gain real or perceived? And does what goes out to the models — your code, your data, your methods — pose a risk to the company?</p>
+          <p>This audit answers them based on your code and your practices, not on generalities about AI.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Quality and productivity: what agents really produce</h2>
+          <p>Research results are more nuanced than vendors' promises. In a <a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/" target="_blank" rel="noopener">randomized trial by METR</a>, experienced developers working with AI tools on their own projects took 19% longer, while believing they were 20% faster. At Stanford, <a href="https://dl.acm.org/doi/10.1145/3576915.3623157" target="_blank" rel="noopener">Perry and coauthors</a> showed that assisted participants wrote less secure code and were nevertheless more confident in it. <a href="https://dl.acm.org/doi/10.1145/3632620.3671116" target="_blank" rel="noopener">Prather and coauthors</a> describe a widening gap: assistance benefits those who master the subject and harms the others, by giving them an illusion of competence. <a href="https://www.pnas.org/doi/10.1073/pnas.2422633122" target="_blank" rel="noopener">Bastani and coauthors</a> establish the mechanism on nearly a thousand participants: AI without guardrails improves immediate results and degrades learning, because people stop understanding what they get.</p>
+          <p>The principle is simple. An agent saves time for those who already know how, because they can judge and correct the suggestion. For those who do not master the subject, it proposes a solution that drifts away from the right one without anything signaling it. Final quality comes from the expert's small adjustments; degradation comes from small surrenders of understanding.</p>
+          <p>In data science, this mechanism is more dangerous than in software development. An application bug is visible: the program crashes, a test fails. An analysis error is not. Information leaking between training and test, a badly built cross-validation, an ignored statistical assumption produce a plausible result, presented with confidence, and carried into a decision. Notebooks have no tests, exploratory code ends up in production, and the model that wrote the analysis knew nothing about your data.</p>
+          <p class="apport"><strong>What I bring.</strong> I have been training teams in Python since 2011 (<a href="/en/training/">arnaudlegout.fr/en/training</a>) and I code with these agents myself every day. I recognize code that a competent practitioner would not have written, and analysis that looks right without being right. The audit establishes, by type of task and by profile, where the agent speeds the team up and where it loses control of what it produces.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Data, code and methods: what leaves the company, and what it costs you</h2>
+          <p>Here too, research is ahead of practice. <a href="https://www.usenix.org/conference/usenixsecurity21/presentation/carlini-extracting" target="_blank" rel="noopener">Carlini and coauthors</a> showed that verbatim extracts of a model's training data, including code, can be extracted from it, and that <a href="https://arxiv.org/abs/2202.07646" target="_blank" rel="noopener">this memorization increases with model size</a>. <a href="https://arxiv.org/abs/2302.12173" target="_blank" rel="noopener">Greshake and coauthors</a> established that an agent reading documents or web pages can receive hidden instructions and exfiltrate what it has access to — a risk that grows as agents gain autonomy and tools. <a href="https://www.usenix.org/conference/usenixsecurity21/presentation/schuster" target="_blank" rel="noopener">Schuster and coauthors</a> showed that a code completion assistant can be poisoned to suggest vulnerable code.</p>
+          <p>In practice, every request sends context: code snippets, column names, data samples, sometimes revenue figures or customer data. Depending on the tool, the subscription and the configuration, this context is retained or not, reused for training or not, hosted in Europe or not. Usage often goes beyond the contractual framework: a personal account to get by, an extension installed without approval.</p>
+          <p>The question is not only what goes out, but whether it harms you. A business algorithm that sets you apart from your competitors, sent to a model that trains on it, becomes a suggestion available to everyone. Customer data sent outside Europe engages your liability under the GDPR. An autonomous agent with access to your databases and to the Internet is an exfiltration target that your security controls do not cover. And dependence on a vendor whose terms change is a sovereignty question that few teams have asked.</p>
+          <p class="apport"><strong>What I bring.</strong> A large part of my research, published in the leading conferences on security and privacy, deals with measuring data leaks and threats on the Internet. The audit establishes what actually goes out, to whom, under which conditions, and qualifies the risk according to your business: what is harmless, what is regulatory, what puts your competitive edge at stake.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>How I work</h2>
+          <p>The audit lasts three to five days, partly on site.</p>
+          <ul>
+            <li><strong>Individual interviews</strong> on the real use of agents: for which tasks, with what level of review, with which tools and which accounts.</li>
+            <li><strong>Review of a sample</strong> of notebooks, scripts and pipelines produced over recent months, with the Git history, to tell what was generated, understood and reworked.</li>
+            <li><strong>Observation of work sessions</strong>, to see how suggestions are accepted, modified or rejected.</li>
+            <li><strong>Validity check</strong> of two or three analyses that are critical for your business.</li>
+            <li><strong>Mapping of data flows</strong>: tools, subscriptions, configuration, retention and training clauses, data actually sent, and how sensitive each is for the company.</li>
+          </ul>
+        </div>
+
+        <div class="page-section">
+          <h2>What you receive</h2>
+          <p>A written report that answers the three questions, with the observations they rest on; an assessment of practices by type of task and profile; usage, review and verification rules adapted to your team; the measures to protect your code, data and methods, in order of priority. Two debriefs: one for the team, focused on practices; the other for management, focused on risks and decisions.</p>
+          <p>The goal is not to restrict the use of agents. It is for your team to get the productivity they allow, without losing control of what it produces or ownership of what it knows.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Ongoing advisory</h2>
+          <p>Tools and practices evolve fast, and the rules adopted after an audit loosen or become obsolete within a few months. Half a day to a day per month makes it possible to review a recent sample, check what the team has really retained, and adjust the rules to the tools of the moment.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Who it is for</h2>
+          <p>Data science, data engineering and R&amp;D teams in SMEs, mid-sized companies and growing startups, whose analyses, models and code are company assets.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Why me</h2>
+          <p>As a senior research scientist at Inria, with a habilitation to supervise research, I have built my career on the experimental analysis of very large volumes of data: the complete Twitter graph, all Bitcoin transactions, millions of IP addresses observed continuously. A large part of this work deals with data protection and measuring what leaks on the Internet. I was also CTO assistant at one startup, then founder of another: I know the trade-offs of a team that has to deliver.</p>
+          <p><a href="/en/">My career and research →</a></p>
+        </div>
+
+        <div class="page-section">
+          <h2>Preliminary diagnostic</h2>
+          <p>First of all, a free, no-commitment one-hour call, to understand your situation and check that I can be useful to you. If there is something to work on, a one- to two-day diagnostic follows: interviews with the manager and two or three team members, a quick review of a code sample, an oral debrief and written recommendations. It concludes on what deserves to be explored further, through an audit or a <a href="/en/training/">training course</a>.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <section class="section section--alt quiz" data-quiz aria-labelledby="quiz-title">
+      <div class="container container--text">
+        <h2 id="quiz-title">Five questions before contacting me</h2>
+        <form class="quiz__form">
+        <fieldset class="quiz__item">
+          <legend><span class="quiz__num">1</span> Can each member of your team explain, line by line, the code of their analyses in production?</legend>
+          <div class="quiz__options">
+            <input type="radio" class="quiz__radio" id="q1-oui" name="q1" value="oui">
+            <label class="quiz__label" for="q1-oui">Yes</label>
+            <input type="radio" class="quiz__radio" id="q1-non" name="q1" value="non">
+            <label class="quiz__label" for="q1-non">No</label>
+            <input type="radio" class="quiz__radio" id="q1-nsp" name="q1" value="nsp">
+            <label class="quiz__label" for="q1-nsp">I don't know</label>
+          </div>
+        </fieldset>
+        <fieldset class="quiz__item">
+          <legend><span class="quiz__num">2</span> Do you know which AI tools are used in the team, with which accounts and under which data retention terms?</legend>
+          <div class="quiz__options">
+            <input type="radio" class="quiz__radio" id="q2-oui" name="q2" value="oui">
+            <label class="quiz__label" for="q2-oui">Yes</label>
+            <input type="radio" class="quiz__radio" id="q2-non" name="q2" value="non">
+            <label class="quiz__label" for="q2-non">No</label>
+            <input type="radio" class="quiz__radio" id="q2-nsp" name="q2" value="nsp">
+            <label class="quiz__label" for="q2-nsp">I don't know</label>
+          </div>
+        </fieldset>
+        <fieldset class="quiz__item">
+          <legend><span class="quiz__num">3</span> Are your critical analyses reviewed by someone other than their author, and the agent that helped write them?</legend>
+          <div class="quiz__options">
+            <input type="radio" class="quiz__radio" id="q3-oui" name="q3" value="oui">
+            <label class="quiz__label" for="q3-oui">Yes</label>
+            <input type="radio" class="quiz__radio" id="q3-non" name="q3" value="non">
+            <label class="quiz__label" for="q3-non">No</label>
+            <input type="radio" class="quiz__radio" id="q3-nsp" name="q3" value="nsp">
+            <label class="quiz__label" for="q3-nsp">I don't know</label>
+          </div>
+        </fieldset>
+        <fieldset class="quiz__item">
+          <legend><span class="quiz__num">4</span> Have you measured the productivity gain of agents other than by asking the team?</legend>
+          <div class="quiz__options">
+            <input type="radio" class="quiz__radio" id="q4-oui" name="q4" value="oui">
+            <label class="quiz__label" for="q4-oui">Yes</label>
+            <input type="radio" class="quiz__radio" id="q4-non" name="q4" value="non">
+            <label class="quiz__label" for="q4-non">No</label>
+            <input type="radio" class="quiz__radio" id="q4-nsp" name="q4" value="nsp">
+            <label class="quiz__label" for="q4-nsp">I don't know</label>
+          </div>
+        </fieldset>
+        <fieldset class="quiz__item">
+          <legend><span class="quiz__num">5</span> If an AI vendor changed its terms tomorrow, would you know which code and which data have already been sent to it?</legend>
+          <div class="quiz__options">
+            <input type="radio" class="quiz__radio" id="q5-oui" name="q5" value="oui">
+            <label class="quiz__label" for="q5-oui">Yes</label>
+            <input type="radio" class="quiz__radio" id="q5-non" name="q5" value="non">
+            <label class="quiz__label" for="q5-non">No</label>
+            <input type="radio" class="quiz__radio" id="q5-nsp" name="q5" value="nsp">
+            <label class="quiz__label" for="q5-nsp">I don't know</label>
+          </div>
+        </fieldset>
+          <div class="quiz__actions" hidden data-quiz-actions>
+            <button type="button" class="btn btn--primary" data-quiz-submit>See the result</button>
+          </div>
+        </form>
+        <div class="quiz__result" data-quiz-result role="status" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <h2>Describe your situation</h2>
+        <p>Pricing on request.</p>
+        <div class="cta-section__actions">
+          <a href="contact.html" class="btn btn--primary">Describe your situation</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section voir-aussi">
+      <div class="container">
+        <div class="section-header">
+          <h2>See also</h2>
+        </div>
+        <div class="cards-grid cards-grid--pair">
+          <a class="card card--link" href="audit-performance-cost-data-processing.html">
+            <h3 class="card__title">Performance and cost of your data processing</h3>
+            <p class="card__body">Your Python analyses are slow, your notebooks max out, your cloud bill keeps growing.</p>
+            <span class="card__link">Learn more →</span>
+          </a>
+
+          <a class="card card--link" href="scientific-review-data-analyses.html">
+            <h3 class="card__title">Scientific review of your analyses</h3>
+            <p class="card__body">Before putting a model into production, presenting a metric to your investors or deciding on the basis of an A/B test: an independent review, by someone whose job it is.</p>
+            <span class="card__link">Learn more →</span>
+          </a>
+        </div>
+        <p class="voir-aussi__note">A diagnostic sometimes concludes that the team does not need an audit but
+          skills. When that is the case, I say so.
+          <a href="/en/training/">See the training courses →</a></p>
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="/research/">Research</a></p>
+          <ul class="footer__link-list">
+            <li><a href="/research/publications.html">Publications</a></li>
+            <li><a href="/research/#projects">Projects</a></li>
+            <li><a href="/research/phdstudents.html">Recommendations for Ph.D. students</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="/en/training/">Training</a></p>
+          <ul class="footer__link-list">
+            <li><a href="/en/training/python-data-science-level-1.html">Python data science — level 1</a></li>
+            <li><a href="/en/training/python-data-science-level-2.html">Python data science — level 2</a></li>
+            <li><a href="/en/training/python-machine-learning.html">Python machine learning</a></li>
+            <li><a href="/en/training/python-level-1.html">Python — level 1</a></li>
+            <li><a href="/en/training/python-advanced.html">Python — advanced</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="./">Consulting</a></p>
+          <ul class="footer__link-list">
+            <li><a href="audit-performance-cost-data-processing.html">Performance and cost audit</a></li>
+            <li><a href="audit-ai-agents-data-science.html">AI agents audit</a></li>
+            <li><a href="scientific-review-data-analyses.html">Scientific review of analyses</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Contact</p>
+          <ul class="footer__link-list">
+            <li><a href="/en/training/contact.html">Training contact</a></li>
+            <li><a href="contact.html">Consulting contact</a></li>
+            <li><a href="mailto:arnaud.legout@gmail.com">Email</a></li>
+            <li><a href="/en/legal-notice.html">Legal notice</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Arnaud Legout. Static site, no cookies.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script data-goatcounter="https://arnaudlegout-consulting.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+  <script src="../../assets/js/quiz.js" defer></script>
+  <script src="../../assets/js/nav.js"></script>
+</body>
+</html>

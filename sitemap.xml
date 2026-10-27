@@ -3,12 +3,12 @@
 
   <url>
     <loc>https://arnaudlegout.fr/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-27</lastmod>
   </url>
 
   <url>
     <loc>https://arnaudlegout.fr/formation/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -57,35 +57,196 @@
 
   <url>
     <loc>https://arnaudlegout.fr/consulting/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://arnaudlegout.fr/consulting/audit-performance-cout-traitements-data.html</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://arnaudlegout.fr/consulting/audit-agents-ia-data-science.html</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://arnaudlegout.fr/consulting/revue-scientifique-analyses-data.html</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://arnaudlegout.fr/consulting/contact.html</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://arnaudlegout.fr/research/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://arnaudlegout.fr/research/publications.html</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://arnaudlegout.fr/research/phdstudents.html</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://arnaudlegout.fr/research/Projects/greasy.html</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://arnaudlegout.fr/research/Projects/electrosmart.html</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://arnaudlegout.fr/research/Projects/sotweet.html</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://arnaudlegout.fr/research/Projects/streaming.html</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://arnaudlegout.fr/research/Projects/bluebear.html</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://arnaudlegout.fr/research/Projects/p2p_cd.html</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://arnaudlegout.fr/research/Projects/plm.html</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://arnaudlegout.fr/en/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://arnaudlegout.fr/en/training/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://arnaudlegout.fr/en/training/python-data-science-level-1.html</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://arnaudlegout.fr/en/training/python-data-science-level-2.html</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://arnaudlegout.fr/en/training/python-machine-learning.html</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://arnaudlegout.fr/en/training/python-level-1.html</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://arnaudlegout.fr/en/training/python-advanced.html</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://arnaudlegout.fr/en/training/contact.html</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://arnaudlegout.fr/en/consulting/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://arnaudlegout.fr/en/consulting/audit-performance-cost-data-processing.html</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://arnaudlegout.fr/en/consulting/audit-ai-agents-data-science.html</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://arnaudlegout.fr/en/consulting/scientific-review-data-analyses.html</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://arnaudlegout.fr/en/consulting/contact.html</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python data science training — NumPy, Pandas, Polars, scikit-learn</title>
+  <meta name="description"
+    content="In-company Python data science and high-performance training. 3 days, 10 participants max, in English or French. Rated 4.93/5. Free quote.">
+
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://arnaudlegout.fr/en/training/">
+  <link rel="alternate" hreflang="fr" href="https://arnaudlegout.fr/formation/">
+  <link rel="alternate" hreflang="en" href="https://arnaudlegout.fr/en/training/">
+  <link rel="alternate" hreflang="x-default" href="https://arnaudlegout.fr/formation/">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+  <!-- Font preloads (most critical) -->
+  <link rel="preload" href="../../assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arnaudlegout.fr/en/training/">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="fr_FR">
+  <meta property="og:site_name" content="Arnaud Legout">
+  <meta property="og:title"
+    content="In-company Python data science training — NumPy, Pandas, Polars, scikit-learn | Arnaud Legout">
+  <meta property="og:description"
+    content="In-company Python data science and high-performance training. 3 days, 10 participants max, in English or French. Rated 4.93/5. Free quote.">
+  <meta property="og:image" content="https://arnaudlegout.fr/assets/og-formation-en.jpg">
+  <meta property="og:image:secure_url" content="https://arnaudlegout.fr/assets/og-formation-en.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Python data science training by Arnaud Legout, senior research scientist at Inria — Rated 4.93/5">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title"
+    content="In-company Python data science training — NumPy, Pandas, Polars, scikit-learn | Arnaud Legout">
+  <meta name="twitter:description"
+    content="In-company Python data science and high-performance training. 3 days, 10 participants max, in English or French. Rated 4.93/5. Free quote.">
+  <meta name="twitter:image" content="https://arnaudlegout.fr/assets/og-formation-en.jpg">
+  <meta name="twitter:image:alt" content="Python data science training by Arnaud Legout, senior research scientist at Inria — Rated 4.93/5">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://arnaudlegout.fr/en/training/#webpage",
+        "url": "https://arnaudlegout.fr/en/training/",
+        "name": "Python data science training — NumPy, Pandas, Polars, scikit-learn",
+        "inLanguage": "en",
+        "isPartOf": { "@id": "https://arnaudlegout.fr/#website" },
+        "about": { "@id": "https://arnaudlegout.fr/formation/#formation-arnaud-legout" }
+      },
+      {
+        "@type": "ItemList",
+        "name": "Python training courses",
+        "itemListElement": [
+          {
+            "@type": "ListItem", "position": 1,
+            "item": {
+              "@type": "Course",
+              "@id": "https://arnaudlegout.fr/en/training/python-data-science-level-1.html#course",
+              "name": "Python data science training — level 1",
+              "description": "Intensive 3-day professional training on NumPy, Pandas and Seaborn. Vectorization, broadcasting, DataFrame manipulation, time series, the Parquet format, statistical visualization. For data scientists, engineers and researchers in companies.",
+              "url": "https://arnaudlegout.fr/en/training/python-data-science-level-1.html",
+              "inLanguage": "en",
+              "hasCourseInstance": {
+                "@type": "CourseInstance",
+                "courseMode": "Blended",
+                "courseWorkload": "PT21H",
+                "location": { "@type": "Place", "name": "In-company (on site or remote)" }
+              },
+              "provider": { "@id": "https://arnaudlegout.fr/formation/#formation-arnaud-legout" }
+            }
+          },
+          {
+            "@type": "ListItem", "position": 2,
+            "item": {
+              "@type": "Course",
+              "@id": "https://arnaudlegout.fr/en/training/python-data-science-level-2.html#course",
+              "name": "High-performance data science — Polars, Numba, Multiprocessing",
+              "description": "Intensive 3-day professional training on high-performance data science in Python. Polars and its streaming engine, JIT acceleration with Numba, multi-core parallelism with multiprocessing. Going beyond Pandas when data exceeds RAM or when performance matters.",
+              "url": "https://arnaudlegout.fr/en/training/python-data-science-level-2.html",
+              "inLanguage": "en",
+              "hasCourseInstance": {
+                "@type": "CourseInstance",
+                "courseMode": "Blended",
+                "courseWorkload": "PT21H",
+                "location": { "@type": "Place", "name": "In-company (on site or remote)" }
+              },
+              "provider": { "@id": "https://arnaudlegout.fr/formation/#formation-arnaud-legout" }
+            }
+          },
+          {
+            "@type": "ListItem", "position": 3,
+            "item": {
+              "@type": "Course",
+              "@id": "https://arnaudlegout.fr/en/training/python-machine-learning.html#course",
+              "name": "Python machine learning training — scikit-learn",
+              "description": "Intensive 3-day professional training on machine learning with scikit-learn. Hands-on mastery of supervised and unsupervised ML: pipelines, regularization, ensemble methods, model selection. Focus on methodological rigor: avoiding overfitting, cross-validation, selection without data leakage.",
+              "url": "https://arnaudlegout.fr/en/training/python-machine-learning.html",
+              "inLanguage": "en",
+              "hasCourseInstance": {
+                "@type": "CourseInstance",
+                "courseMode": "Blended",
+                "courseWorkload": "PT21H",
+                "location": { "@type": "Place", "name": "In-company (on site or remote)" }
+              },
+              "provider": { "@id": "https://arnaudlegout.fr/formation/#formation-arnaud-legout" }
+            }
+          },
+          {
+            "@type": "ListItem", "position": 4,
+            "item": {
+              "@type": "Course",
+              "@id": "https://arnaudlegout.fr/en/training/python-level-1.html#course",
+              "name": "Python training — level 1 (language fundamentals)",
+              "description": "Intensive 3-day professional training on Python fundamentals for experienced developers (C, C++, Java, Fortran, Matlab). Shared references, dynamic typing, namespaces, the iteration protocol, modules and packages, exception handling.",
+              "url": "https://arnaudlegout.fr/en/training/python-level-1.html",
+              "inLanguage": "en",
+              "hasCourseInstance": {
+                "@type": "CourseInstance",
+                "courseMode": "Blended",
+                "courseWorkload": "PT21H",
+                "location": { "@type": "Place", "name": "In-company (on site or remote)" }
+              },
+              "provider": { "@id": "https://arnaudlegout.fr/formation/#formation-arnaud-legout" }
+            }
+          },
+          {
+            "@type": "ListItem", "position": 5,
+            "item": {
+              "@type": "Course",
+              "@id": "https://arnaudlegout.fr/en/training/python-advanced.html#course",
+              "name": "Advanced Python training — object-oriented, functional and metaprogramming",
+              "description": "Intensive 3-day professional training on advanced Python paradigms: decorators and closures, custom iterators and generators, descriptors, metaclasses. Understanding the inner workings of the language to read and write professional-quality Python libraries.",
+              "url": "https://arnaudlegout.fr/en/training/python-advanced.html",
+              "inLanguage": "en",
+              "hasCourseInstance": {
+                "@type": "CourseInstance",
+                "courseMode": "Blended",
+                "courseWorkload": "PT21H",
+                "location": { "@type": "Place", "name": "In-company (on site or remote)" }
+              },
+              "provider": { "@id": "https://arnaudlegout.fr/formation/#formation-arnaud-legout" }
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Arnaud Legout", "item": "https://arnaudlegout.fr/en/" },
+          { "@type": "ListItem", "position": 2, "name": "Training", "item": "https://arnaudlegout.fr/en/training/" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "en",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is the remote format suitable for this kind of training?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, and it is a fair question for such technical courses. Remote training works well here for several reasons: the hands-on exercises are done on CoCalc, a collaborative cloud environment that lets me see each participant's code in real time and step in directly when someone is stuck — exactly as in person. Sessions are limited to 10 participants to ensure individual follow-up. The pace is adapted, with frequent time for questions. In our post-training surveys, 90% of participants rate the remote format as equivalent or better than in-person."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long are the courses and how are they organized?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Each course lasts 3 days (21 hours), in continuous sessions. The in-company format lets you adapt the daily schedule to your constraints (3 consecutive or spaced-out days). The group is limited to 10 participants."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can the training take place on our premises?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The courses are offered on site or remotely. On site, each participant needs a computer with Internet access and a large screen that comfortably fits two windows side by side, or a dual screen. The technical environment (CoCalc) requires no installation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do participants need to know Python already?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on the course. The Python data science course (NumPy, Pandas, Seaborn) assumes some prior Python experience but no data science. The high-performance data science course (Polars, Numba, parallelism) is for teams already comfortable with the data science ecosystem. If your team needs a Python refresher before starting, I also offer a dedicated Python level 1 course. A preliminary discussion lets us check that the program matches the team's level."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can the courses be adapted to our team's context?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The in-company format makes it possible to adjust the content to your use cases, your data and your technical constraints. A scoping discussion before the training identifies the priorities and steers the exercises accordingly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between the three courses in the catalog?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The three courses cover distinct levels and goals: Python data science lays the foundations (NumPy, Pandas, visualization); high-performance data science in Python moves on to performance at scale (Polars, Numba, parallelism, memory management); the third course focuses on machine learning with scikit-learn, from prototype to production. They can be taken independently, depending on the team's level."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are the courses available in English?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. All courses are available in English or French, depending on your team."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I get a quote?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Just fill in the contact form. I take into account the number of participants, the format you want (on site or remote), the language and any need to adapt the program. A quote is sent promptly after a scoping discussion."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can we get references from past training sessions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "These courses have been delivered to teams in many organizations, in companies as well as in public research: Orange, Cisco, Intel Mobile Communications, Gemalto, EPCOS, Transvalor, Supersonic Imagine, Eau d'Azur on the industry side; CNRS, INRAE, INSERM, Observatoire de la Côte d'Azur, Université Côte d'Azur on the research and higher education side. Detailed testimonials are available on this page, and I can provide further references on request."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer follow-up after the training?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The courses are designed to be immediately applicable. The complete material (notebooks, exercises, solutions) is given to each participant. For specific follow-up needs or longer support, feel free to mention it in your quote request."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+
+  <link rel="stylesheet" href="../../style.css">
+  <!-- Script vide volontaire, à garder juste après la feuille de style : Firefox doit
+       attendre style.css avant de l'exécuter, donc il ne lit pas le <body> tant que le CSS
+       n'est pas chargé. Sans lui, une extension qui force la mise en page trop tôt
+       (« La mise en page a été forcée avant le chargement complet de la page ») fait
+       afficher la page sans style un instant au rechargement. Ne pas supprimer. -->
+  <script>0</script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ====== HEADER ====== -->
+  <header class="header">
+    <div class="nav container">
+      <nav class="nav__brand" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/en/" class="nav__logo">Arnaud Legout</a></li>
+          <li><a href="./" class="nav__section" aria-current="page">Training</a></li>
+        </ol>
+      </nav>
+      <nav class="nav__menu" id="nav-menu" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="/research/" class="nav__link">Research</a>
+            <ul class="nav__dropdown">
+              <li><a href="/research/publications.html">Publications</a></li>
+              <li><a href="/research/#projects">Projects</a></li>
+              <li><a href="/research/phdstudents.html">Recommendations for Ph.D. students</a></li>
+            </ul>
+          </li>
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="./" class="nav__link" aria-current="true">Training</a>
+            <ul class="nav__dropdown">
+              <li class="nav__dropdown-label">Data science</li>
+              <li><a href="python-data-science-level-1.html">Python data science — level 1</a></li>
+              <li><a href="python-data-science-level-2.html">Python data science — level 2</a></li>
+              <li><a href="python-machine-learning.html">Python machine learning</a></li>
+              <li class="nav__dropdown-label">Python essentials</li>
+              <li><a href="python-level-1.html">Python — level 1</a></li>
+              <li><a href="python-advanced.html">Python — advanced</a></li>
+            </ul>
+          </li>
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="/en/consulting/" class="nav__link">Consulting</a>
+            <ul class="nav__dropdown">
+              <li><a href="/en/consulting/audit-performance-cost-data-processing.html">Performance and cost audit</a></li>
+              <li><a href="/en/consulting/audit-ai-agents-data-science.html">AI agents audit</a></li>
+              <li><a href="/en/consulting/scientific-review-data-analyses.html">Scientific review of analyses</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav__actions">
+        <a href="contact.html" class="nav__cta btn btn--primary"><span class="nav__cta-long">Request a quote</span><span class="nav__cta-short">Quote</span></a>
+        <a href="/formation/" class="nav__lang" hreflang="fr" lang="fr" aria-label="Version française de cette page">FR</a>
+        <button type="button" class="nav__burger" aria-label="Open the navigation menu" aria-expanded="false" aria-controls="nav-menu">
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ====== MAIN ====== -->
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__content">
+          <h1>Train your teams in modern Python data science</h1>
+          <p class="hero__tagline">From prototype to high-performance production</p>
+          <p class="hero__intro">Intensive in-company training in Python, data science and high-performance computing.
+            For data scientists, engineers and researchers in companies.</p>
+          <div class="hero__cta">
+            <a href="contact.html" class="btn btn--primary">Request a quote</a>
+          </div>
+          <p class="hero__note"><em>In English or French — on site or remote</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY FIGURES -->
+    <div class="figures-bandeau">
+      <div class="container">
+        <div class="figures-grid">
+          <div class="figure-item">
+            <span class="figure-item__value">15&nbsp;years</span>
+            <span class="figure-item__label">of professional training in companies since 2011</span>
+          </div>
+          <div class="figure-item">
+            <span class="figure-item__value">150,000+</span>
+            <span class="figure-item__label">learners in the FUN Python MOOC, co-created in 2014</span>
+            <span class="figure-item__note"><span class="figure-item__stars">★★★★<span
+                  class="figure-item__star-half">★</span></span> <a
+                href="https://www.my-mooc.com/fr/mooc/python-des-fondamentaux-a-lutilisation-du-langage-abaa71d6-1f4a-4c30-a0c7-e6367efbd8c6"
+                target="_blank" rel="noopener">See the reviews&nbsp;→</a></span>
+          </div>
+          <div class="figure-item">
+            <span class="figure-item__value">20+&nbsp;years</span>
+            <span class="figure-item__label">of Python use in research</span>
+          </div>
+          <div class="figure-item">
+            <span class="figure-item__value figure-item__value--text">Senior Research Scientist</span>
+            <span class="figure-item__label">at Inria — the French national institute for research in digital science and technology</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- THREE COURSES -->
+    <section class="section" id="courses" aria-labelledby="courses-title">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="courses-title">Three data science courses designed for production</h2>
+          <p>Each course lasts 3 days (21 hours), on site or remote, for 10 participants at most.</p>
+        </div>
+
+        <div class="cards-grid">
+          <!-- Card 1 -->
+          <a class="card card--link" data-num="01" href="python-data-science-level-1.html">
+            <h3 class="card__title">Python data science — level&nbsp;1</h3>
+            <p class="card__subtitle">Data analysis and visualization</p>
+            <ul class="card__stack">
+              <li>NumPy</li>
+              <li>Pandas</li>
+              <li>Seaborn</li>
+            </ul>
+            <p class="card__body">The foundations of the Python data science ecosystem. Vectorization, broadcasting,
+              DataFrame manipulation, time series, the Parquet format, statistical visualization with Seaborn.
+            </p>
+            <span class="card__link">See the program →</span>
+          </a>
+
+          <!-- Card 2 -->
+          <a class="card card--link" data-num="02" href="python-data-science-level-2.html">
+            <h3 class="card__title">Python data science — level&nbsp;2</h3>
+            <p class="card__subtitle">Advanced manipulation and high performance</p>
+            <ul class="card__stack">
+              <li>Polars</li>
+              <li>Numba</li>
+              <li>Multiprocessing</li>
+            </ul>
+            <p class="card__body">Going beyond Pandas when data exceeds RAM or when performance matters. Polars and
+              its streaming engine, JIT acceleration with Numba, multi-core parallelism with multiprocessing.</p>
+            <span class="card__link">See the program →</span>
+          </a>
+
+          <!-- Card 3 -->
+          <a class="card card--link" data-num="03" href="python-machine-learning.html">
+            <h3 class="card__title">Python machine learning</h3>
+            <p class="card__subtitle">From concept to production</p>
+            <ul class="card__stack">
+              <li>scikit-learn</li>
+            </ul>
+            <p class="card__body">Hands-on mastery of supervised and unsupervised machine learning with scikit-learn.
+              Pipelines, regularization, ensemble methods, model selection. Emphasis on methodological rigor:
+              avoiding overfitting, cross-validation, selection without data leakage.
+            </p>
+            <span class="card__link">See the program →</span>
+          </a>
+        </div>
+        <div class="encart">
+          <h2 id="python-level-title">Do your teams have the required Python level?</h2>
+          <p>The data science courses assume a good command of Python: functions, iteration, modules, namespaces.
+            If this is not the case for all your staff, I can add the <strong><a href="python-level-1.html">Python —
+            level 1</a></strong> module before the data science days. For teams that develop complex code, the
+            <strong><a href="python-advanced.html">Python — advanced</a></strong> module (object-oriented programming,
+            decorators, metaclasses) is also available.</p>
+          <p>These complements are offered case by case — feel free to mention them in your quote request.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY ME -->
+    <section class="section section--alt" aria-labelledby="why-title">
+      <div class="container">
+        <h2 id="why-title">Why trust me with training your teams?</h2>
+        <div class="reasons-grid">
+
+          <div class="reason">
+            <h3>I teach what I practice as a researcher</h3>
+            <p>As a senior research scientist at Inria, I have been using Python for more than 20 years in my own
+              research, on data at very large scale: a complete analysis of the Twitter social graph (505 million
+              accounts, 23 billion links), processing of the entire Bitcoin transaction graph (16.5 billion links,
+              1.5 billion addresses), massive measurements of exposure to radio waves. This work was covered by the
+              <a href="https://archive.nytimes.com/bits.blogs.nytimes.com/2011/11/29/skype-can-expose-your-location-researchers-say/"
+                target="_blank" rel="noopener noreferrer">New York Times</a>, <a
+                href="https://www.washingtonpost.com/news/the-intersect/wp/2016/06/16/six-in-10-of-you-will-share-this-link-without-reading-it-according-to-a-new-and-depressing-study/"
+                target="_blank" rel="noopener noreferrer">the Washington Post</a>, <a
+                href="https://fortune.com/2016/06/19/6-out-of-10-twitter-link-clicks/" target="_blank"
+                rel="noopener noreferrer">Fortune</a> and <a
+                href="https://www.lemonde.fr/technologies/article/2010/05/08/l-anonymat-du-reseau-bittorrent-mis-en-cause_1348214_651865.html"
+                target="_blank" rel="noopener noreferrer">Le Monde</a>.
+              When I teach Polars, the streaming engine or the pitfalls of parallelism, these are the tools I use
+              every day.</p>
+          </div>
+
+          <div class="reason">
+            <h3>A teaching method proven on 150,000 learners</h3>
+            <p>Co-creator in 2014, with Thierry Parmentelat, of the Python MOOC on the FUN platform, followed by more
+              than 150,000 learners and used by Sorbonne Université and CentraleSupélec. The material and the
+              learning path have been tested on an extremely varied audience, from complete beginners to experienced
+              developers who want to consolidate their foundations. This diversity taught me to quickly identify a
+              team's real level and to adapt the pace accordingly.</p>
+          </div>
+
+          <div class="reason">
+            <h3>A focus on performance, always state of the art</h3>
+            <p>What sets my catalog apart: going beyond introductory data science. Polars vs Pandas on data that
+              exceeds RAM, CPU-bound parallelism, JIT acceleration with Numba, fine-grained memory management. These
+              are the topics that separate a team that prototypes from a team that ships to production. The material
+              evolves continuously to follow the ecosystem — new Polars versions, changes in the streaming engine,
+              emerging best practices — because this is also my research ground every day.</p>
+          </div>
+
+        </div>
+
+        <div class="reason approach">
+          <h3>How I teach</h3>
+          <div class="approach__body">
+            <p>My experience as a researcher, university teacher and corporate trainer has taught me one thing: the quality of a training course is not measured by the number of slides covered, but by the participants' ability to apply what they learned to their own code.</p>
+            <p>I build my courses around hands-on exercises in Jupyter notebooks, with use cases close to the real problems participants face. I make sure each concept is understood before moving on to the next, even if it means adapting the pace to the group. I remain available for occasional questions in the weeks following the training: learning does not stop on the last day.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AGENTIC AI -->
+    <section class="section ia-section" aria-labelledby="agentic-ai-title">
+      <div class="container">
+        <p class="eyebrow">Agentic AI</p>
+        <h2 id="agentic-ai-title">Why train your teams in the age of agentic AI?</h2>
+
+        <p class="ia-section__lead">Claude Code, Codex, Cursor, Gemini CLI, Aider: coding agents are transforming the engineering profession. A developer can now produce hundreds of lines of NumPy or Polars without mastering the fundamentals. This is precisely what makes training strategic today.</p>
+
+        <div class="ia-point">
+          <h3>Models are structurally behind the libraries</h3>
+          <p>Training a frontier model takes months, and data science libraries evolve constantly — new Polars APIs, changes in the streaming engine, changes in scikit-learn's behavior, new NumPy releases. Agents often generate code that looks plausible but relies on obsolete APIs, deprecated patterns, or ignores recent optimizations. Without a team able to spot these gaps, the code drifts silently.</p>
+        </div>
+
+        <div class="ia-point">
+          <h3>Agentic AI amplifies gaps as much as skills</h3>
+          <p>For an engineer who masters the subject, it is a real productivity booster: they know how to steer the agent, check its output and correct its drift. For a team that does not master the fundamentals, it is the opposite: a sink of unmaintainable code, where subtle, hard-to-fix bugs pile up. A recent CodeRabbit study, <a href="https://stackoverflow.blog/2026/01/28/are-bugs-and-incidents-inevitable-with-ai-coding-agents/" target="_blank" rel="noopener noreferrer">reported by Stack Overflow</a>, shows that AI-generated code contains 1.7 times more bugs than human-written code, including 75% more logic and correctness issues — exactly the kind of errors that slip through code review and end up as production incidents.</p>
+        </div>
+
+        <div class="ia-point">
+          <h3>My courses include the use of AI agents</h3>
+          <p>I use these tools myself every day in my research work — Claude Code, GitHub Copilot and others — and I have a cross-cutting view of them. Beyond the Python and data science fundamentals, I teach how to get the most out of coding assistants in a professional setting: structuring requests to get quality code, reviewing and auditing the output efficiently, spotting suspicious patterns, and combining the agent with good testing and profiling practices. The goal: make AI a real productivity lever, while guaranteeing the maintainability and reliability of the code you ship.</p>
+        </div>
+
+        <p class="ia-section__takeaway">Training your teams today gives them the critical skills that turn an AI agent into a real productivity lever, and a lasting competitive edge over teams that endure AI instead of steering it.</p>
+
+        <div class="ia-section__cta">
+          <a href="#courses" class="btn btn--secondary">See the courses →</a>
+          <a href="contact.html" class="btn btn--primary">Request a quote for my team</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONSULTING -->
+    <div class="conseil-bloc">
+      <div class="container">
+        <h2>Beyond training: an independent look at your data science</h2>
+        <p>Are your data pipelines slow or too expensive? Do your data scientists code with AI agents without anyone
+          measuring what it changes? Does an important decision rest on an analysis that nobody has reviewed? I work
+          as a consultant on these three topics: a one- to two-day diagnostic, an in-depth engagement if it is
+          justified, or ongoing advisory of half a day to a day per month.
+        </p>
+        <a href="/en/consulting/" class="btn btn--secondary">Discover consulting →</a>
+      </div>
+    </div>
+
+    <!-- SATISFACTION FIGURES -->
+    <section class="section" aria-labelledby="satisfaction-title">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="satisfaction-title">Participant satisfaction</h2>
+          <p>Out of <strong>289 evaluations</strong> collected over <strong>39 training sessions</strong> since 2022:
+          </p>
+        </div>
+        <div class="figures-grid">
+          <div class="figure-item">
+            <span class="figure-item__value">4.98/5</span>
+            <span class="figure-item__label">for command of the subject</span>
+          </div>
+          <div class="figure-item">
+            <span class="figure-item__value">4.88/5</span>
+            <span class="figure-item__label">for teaching skills</span>
+          </div>
+          <div class="figure-item">
+            <span class="figure-item__value">4.93/5</span>
+            <span class="figure-item__label">for listening and adapting to questions</span>
+          </div>
+          <div class="figure-item">
+            <span class="figure-item__value">90%</span>
+            <span class="figure-item__label">of participants rate the remote format as equivalent or better than
+              in-person</span>
+          </div>
+        </div>
+        <h2 id="testimonials-title" class="visually-hidden">Testimonials</h2>
+        <div class="testimonials-grid">
+
+          <blockquote class="testimonial">
+            <p class="testimonial__text">“Mr. Legout has a perfect command of the subject. He humbly answers every
+              question in the clearest and most honest way. I learned Pandas and Seaborn very well, and also many
+              very useful things about NumPy: the most efficient methods among several, the way NumPy ‘thinks’. I
+              would gladly attend another course if he gives one.”</p>
+            <footer class="testimonial__author">— Tony Z., Mines Paris – PSL / CEMEF (translated from French)</footer>
+          </blockquote>
+
+          <blockquote class="testimonial">
+            <p class="testimonial__text">“Arnaud Legout is a very good trainer, he explains things very well, knows
+              his subject very well and answers all our questions. The CoCalc tool is very practical: you write code
+              while the trainer can see what you are doing, so he can help when you are stuck. I learned many things
+              that will be very useful in my work.”</p>
+            <footer class="testimonial__author">— Damien P., IGBMC – CNRS (translated from French)</footer>
+          </blockquote>
+
+          <blockquote class="testimonial">
+            <p class="testimonial__text">“Very well documented. Perfectly meets my needs and goes further.
+              Pedagogical course. The rhythm is fine. The answers to questions are great.”</p>
+            <footer class="testimonial__author">— Fabien P., Observatoire de la Côte d'Azur</footer>
+          </blockquote>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CLIENT REFERENCES -->
+    <section class="section section--alt" aria-labelledby="refs-title">
+      <div class="container">
+        <h2 id="refs-title">They trusted me with training their teams</h2>
+        <div class="refs-groups">
+
+          <div class="refs-group">
+            <p class="refs-group__title">Tech and industry</p>
+            <p class="refs-group__list">Orange · Cisco · Intel Mobile Communications · Gemalto · EPCOS · Transvalor ·
+              Supersonic Imagine · CNEDI-CERTIAM · Eau d'Azur</p>
+          </div>
+
+          <div class="refs-group">
+            <p class="refs-group__title">Public research and higher education</p>
+            <p class="refs-group__list">CNRS · INRAE · INSERM · Observatoire de la Côte d'Azur · Université Côte d'Azur
+            </p>
+          </div>
+
+          <div class="refs-group">
+            <p class="refs-group__title">Specialized training</p>
+            <p class="refs-group__list">École des Marins-Pompiers de Marseille</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="faq-title">Frequently asked questions</h2>
+        </div>
+
+        <p class="faq__group-title">Format and organization</p>
+        <div class="faq">
+
+          <details class="faq__item">
+            <summary>Is the remote format suitable for this kind of training?</summary>
+            <div class="faq__answer">
+              <p>Yes, and it is a fair question for such technical courses. Remote training works well here for several reasons: the hands-on exercises are done on CoCalc, a collaborative cloud environment that lets me see each participant's code in real time and step in directly when someone is stuck — exactly as in person. Sessions are limited to 10 participants to ensure individual follow-up. The pace is adapted, with frequent time for questions. In our post-training surveys, 90% of participants rate the remote format as equivalent or better than in-person.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>How long are the courses and how are they organized?</summary>
+            <div class="faq__answer">
+              <p>Each course lasts 3 days (21 hours), in continuous sessions. The in-company format lets you adapt the daily schedule to your constraints (3 consecutive or spaced-out days). The group is limited to 10 participants.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>Can the training take place on our premises?</summary>
+            <div class="faq__answer">
+              <p>Yes. The courses are offered on site or remotely. On site, each participant needs a computer with Internet access and a large screen that comfortably fits two windows side by side, or a dual screen. The technical environment (CoCalc) requires no installation.</p>
+            </div>
+          </details>
+
+        </div>
+
+        <p class="faq__group-title">Content and level</p>
+        <div class="faq">
+
+          <details class="faq__item">
+            <summary>Do participants need to know Python already?</summary>
+            <div class="faq__answer">
+              <p>It depends on the course. The Python data science course (NumPy, Pandas, Seaborn) assumes some prior Python experience but no data science. The high-performance data science course (Polars, Numba, parallelism) is for teams already comfortable with the data science ecosystem. If your team needs a Python refresher before starting, I also offer a dedicated Python level&nbsp;1 course. A preliminary discussion lets us check that the program matches the team's level.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>Can the courses be adapted to our team's context?</summary>
+            <div class="faq__answer">
+              <p>Yes. The in-company format makes it possible to adjust the content to your use cases, your data and your technical constraints. A scoping discussion before the training identifies the priorities and steers the exercises accordingly.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>What is the difference between the three courses in the catalog?</summary>
+            <div class="faq__answer">
+              <p>The three courses cover distinct levels and goals: Python data science lays the foundations (NumPy, Pandas, visualization); high-performance data science in Python moves on to performance at scale (Polars, Numba, parallelism, memory management); the third course focuses on machine learning with scikit-learn, from prototype to production. They can be taken independently, depending on the team's level.</p>
+            </div>
+          </details>
+
+        </div>
+
+        <p class="faq__group-title">Organization and pricing</p>
+        <div class="faq">
+
+          <details class="faq__item">
+            <summary>Are the courses available in English?</summary>
+            <div class="faq__answer">
+              <p>Yes. All courses are available in English or French, depending on your team.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>How do I get a quote?</summary>
+            <div class="faq__answer">
+              <p>Just fill in the contact form. I take into account the number of participants, the format you want (on site or remote), the language and any need to adapt the program. A quote is sent promptly after a scoping discussion.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>Can we get references from past training sessions?</summary>
+            <div class="faq__answer">
+              <p>These courses have been delivered to teams in many organizations, in companies as well as in public research: Orange, Cisco, Intel Mobile Communications, Gemalto, EPCOS, Transvalor, Supersonic Imagine, Eau d'Azur on the industry side; CNRS, INRAE, INSERM, Observatoire de la Côte d'Azur, Université Côte d'Azur on the research and higher education side. Detailed testimonials are available on this page, and I can provide further references on request.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>Do you offer follow-up after the training?</summary>
+            <div class="faq__answer">
+              <p>The courses are designed to be immediately applicable. The complete material (notebooks, exercises, solutions) is given to each participant. For specific follow-up needs or longer support, feel free to mention it in your quote request.</p>
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="cta-section section--alt" aria-labelledby="cta-title">
+      <div class="container">
+        <h2 id="cta-title">Let's discuss your training needs</h2>
+        <p>Each course can be adapted to your teams' context: starting level, business use cases, choice of modules.
+          Describe your needs and I will suggest a suitable format and quote.</p>
+        <div class="cta-section__actions">
+          <a href="contact.html" class="btn btn--primary">Request a quote</a>
+          <a href="mailto:arnaud.legout@gmail.com" class="btn btn--secondary">Contact me by email</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="/research/">Research</a></p>
+          <ul class="footer__link-list">
+            <li><a href="/research/publications.html">Publications</a></li>
+            <li><a href="/research/#projects">Projects</a></li>
+            <li><a href="/research/phdstudents.html">Recommendations for Ph.D. students</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="./">Training</a></p>
+          <ul class="footer__link-list">
+            <li><a href="python-data-science-level-1.html">Python data science — level 1</a></li>
+            <li><a href="python-data-science-level-2.html">Python data science — level 2</a></li>
+            <li><a href="python-machine-learning.html">Python machine learning</a></li>
+            <li><a href="python-level-1.html">Python — level 1</a></li>
+            <li><a href="python-advanced.html">Python — advanced</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="/en/consulting/">Consulting</a></p>
+          <ul class="footer__link-list">
+            <li><a href="/en/consulting/audit-performance-cost-data-processing.html">Performance and cost audit</a></li>
+            <li><a href="/en/consulting/audit-ai-agents-data-science.html">AI agents audit</a></li>
+            <li><a href="/en/consulting/scientific-review-data-analyses.html">Scientific review of analyses</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Contact</p>
+          <ul class="footer__link-list">
+            <li><a href="contact.html">Training contact</a></li>
+            <li><a href="/en/consulting/contact.html">Consulting contact</a></li>
+            <li><a href="mailto:arnaud.legout@gmail.com">Email</a></li>
+            <li><a href="/en/legal-notice.html">Legal notice</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Arnaud Legout. Static site, no cookies.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script data-goatcounter="https://arnaudlegout-formations.goatcounter.com/count" async
+    src="//gc.zgo.at/count.js"></script>
+  <script src="../../assets/js/nav.js"></script>
+</body>
+
+</html>

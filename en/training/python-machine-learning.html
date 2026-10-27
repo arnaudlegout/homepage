@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python machine learning training with scikit-learn</title>
+  <meta name="description" content="scikit-learn in 3 days: pipelines, cross-validation, ensemble methods. Methodological rigor, without overfitting. In-company. Rated 4.93/5.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://arnaudlegout.fr/en/training/python-machine-learning.html">
+  <link rel="alternate" hreflang="fr" href="https://arnaudlegout.fr/formation/python-machine-learning.html">
+  <link rel="alternate" hreflang="en" href="https://arnaudlegout.fr/en/training/python-machine-learning.html">
+  <link rel="alternate" hreflang="x-default" href="https://arnaudlegout.fr/formation/python-machine-learning.html">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arnaudlegout.fr/en/training/python-machine-learning.html">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="fr_FR">
+  <meta property="og:site_name" content="Arnaud Legout">
+  <meta property="og:title" content="Python machine learning training with scikit-learn | Arnaud Legout">
+  <meta property="og:description" content="scikit-learn in 3 days: pipelines, cross-validation, ensemble methods. Methodological rigor, without overfitting. In-company. Rated 4.93/5.">
+  <meta property="og:image" content="https://arnaudlegout.fr/assets/og-formation-en.jpg">
+  <meta property="og:image:secure_url" content="https://arnaudlegout.fr/assets/og-formation-en.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Python data science training by Arnaud Legout, senior research scientist at Inria — Rated 4.93/5">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Python machine learning training with scikit-learn | Arnaud Legout">
+  <meta name="twitter:description" content="scikit-learn in 3 days: pipelines, cross-validation, ensemble methods. Methodological rigor, without overfitting. In-company. Rated 4.93/5.">
+  <meta name="twitter:image" content="https://arnaudlegout.fr/assets/og-formation-en.jpg">
+  <meta name="twitter:image:alt" content="Python data science training by Arnaud Legout, senior research scientist at Inria — Rated 4.93/5">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+  <link rel="preload" href="../../assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../style.css">
+  <!-- Script vide volontaire, à garder juste après la feuille de style : Firefox doit
+       attendre style.css avant de l'exécuter, donc il ne lit pas le <body> tant que le CSS
+       n'est pas chargé. Sans lui, une extension qui force la mise en page trop tôt
+       (« La mise en page a été forcée avant le chargement complet de la page ») fait
+       afficher la page sans style un instant au rechargement. Ne pas supprimer. -->
+  <script>0</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "@id": "https://arnaudlegout.fr/en/training/python-machine-learning.html#course",
+    "name": "Python machine learning training — scikit-learn",
+    "description": "Intensive 3-day professional training on machine learning with scikit-learn. Hands-on mastery of supervised and unsupervised ML: pipelines, regularization, ensemble methods, model selection. Focus on methodological rigor: avoiding overfitting, cross-validation, selection without data leakage.",
+    "url": "https://arnaudlegout.fr/en/training/python-machine-learning.html",
+    "inLanguage": [
+      "en",
+      "fr"
+    ],
+    "provider": {
+      "@id": "https://arnaudlegout.fr/formation/#formation-arnaud-legout"
+    },
+    "about": [
+      "scikit-learn",
+      "Machine learning",
+      "Python",
+      "Supervised learning",
+      "Unsupervised learning",
+      "Pipelines",
+      "Cross-validation"
+    ],
+    "teaches": [
+      "Master supervised and unsupervised ML with scikit-learn",
+      "Design reproducible, production-ready pipelines",
+      "Apply regularization and avoid overfitting",
+      "Use ensemble methods (random forests, gradient boosting)",
+      "Select and evaluate models without data leakage",
+      "Carry out rigorous cross-validation"
+    ],
+    "audience": {
+      "@type": "EducationalAudience",
+      "educationalRole": "Data scientists, engineers and researchers who want to master machine learning in practice"
+    },
+    "educationalLevel": "Intermediate",
+    "coursePrerequisites": "Intermediate level in Python and a good command of NumPy and Pandas. The Python data science level 1 course is an ideal prerequisite.",
+    "timeRequired": "PT21H",
+    "hasCourseInstance": [
+      {
+        "@type": "CourseInstance",
+        "courseMode": "Onsite",
+        "courseWorkload": "PT21H",
+        "instructor": {
+          "@id": "https://arnaudlegout.fr/#arnaud-legout"
+        },
+        "location": {
+          "@type": "Place",
+          "name": "On the client's premises, France"
+        }
+      },
+      {
+        "@type": "CourseInstance",
+        "courseMode": "Online",
+        "courseWorkload": "PT21H",
+        "instructor": {
+          "@id": "https://arnaudlegout.fr/#arnaud-legout"
+        }
+      }
+    ],
+    "offers": {
+      "@type": "Offer",
+      "category": "Professional training",
+      "availability": "https://schema.org/InStock",
+      "url": "https://arnaudlegout.fr/en/training/contact.html"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Arnaud Legout",
+        "item": "https://arnaudlegout.fr/en/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Training",
+        "item": "https://arnaudlegout.fr/en/training/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Python machine learning",
+        "item": "https://arnaudlegout.fr/en/training/python-machine-learning.html"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "en",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the difference between this course and a theoretical machine learning course?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The emphasis is on practical methodological rigor: how to avoid overfitting, how to evaluate a model correctly, how to select hyperparameters without bias or data leakage. Evaluation pitfalls (p-hacking, multiple comparisons) are covered explicitly — these are precisely the mistakes made by real production pipelines."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the course cover deep learning?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The course covers the classical scikit-learn algorithms: regression, classification, SVM, trees, random forests, gradient boosting, K-means, PCA. Deep learning (neural networks, transformers) would require other tools (PyTorch, TensorFlow) — it is not the subject of this course."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is data leakage and why is it critical?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Data leakage happens when information from the test set contaminates training, producing overly optimistic performance metrics. In production, the model turns out to perform much worse than announced. Hyperparameter selection with GridSearchCV is a classic case covered in module 4."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What math background is needed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An intuitive understanding of basic concepts (mean, variance, elementary probability) is enough. The course does not focus on mathematical proofs but on understanding the mechanisms and applying them correctly with scikit-learn."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this course suitable for Ph.D. students in experimental sciences?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, they are a frequent audience. The methods covered — regression, classification, clustering, PCA — apply directly to the analysis of experimental data. Methodological rigor in model evaluation is particularly useful in the context of scientific publication."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the remote format suitable for this kind of training?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. 90% of participants rate the remote format as equivalent or better than in-person. I have been running remote training since 2020 and have built a solid practice of online teaching. I use Zoom, which makes it possible to record the sessions and share them with participants if desired, and CoCalc, an online platform that gives access to preconfigured servers with all the training material and libraries installed. CoCalc also lets me follow each participant's progress in real time and step in directly to correct or unblock."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="header">
+    <div class="nav container">
+      <nav class="nav__brand" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/en/" class="nav__logo">Arnaud Legout</a></li>
+          <li><a href="./" class="nav__section">Training</a></li>
+        </ol>
+      </nav>
+      <nav class="nav__menu" id="nav-menu" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="/research/" class="nav__link">Research</a>
+            <ul class="nav__dropdown">
+              <li><a href="/research/publications.html">Publications</a></li>
+              <li><a href="/research/#projects">Projects</a></li>
+              <li><a href="/research/phdstudents.html">Recommendations for Ph.D. students</a></li>
+            </ul>
+          </li>
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="./" class="nav__link" aria-current="true">Training</a>
+            <ul class="nav__dropdown">
+              <li class="nav__dropdown-label">Data science</li>
+              <li><a href="python-data-science-level-1.html">Python data science — level 1</a></li>
+              <li><a href="python-data-science-level-2.html">Python data science — level 2</a></li>
+              <li><a href="python-machine-learning.html" aria-current="page">Python machine learning</a></li>
+              <li class="nav__dropdown-label">Python essentials</li>
+              <li><a href="python-level-1.html">Python — level 1</a></li>
+              <li><a href="python-advanced.html">Python — advanced</a></li>
+            </ul>
+          </li>
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="/en/consulting/" class="nav__link">Consulting</a>
+            <ul class="nav__dropdown">
+              <li><a href="/en/consulting/audit-performance-cost-data-processing.html">Performance and cost audit</a></li>
+              <li><a href="/en/consulting/audit-ai-agents-data-science.html">AI agents audit</a></li>
+              <li><a href="/en/consulting/scientific-review-data-analyses.html">Scientific review of analyses</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav__actions">
+        <a href="contact.html" class="nav__cta btn btn--primary"><span class="nav__cta-long">Request a quote</span><span class="nav__cta-short">Quote</span></a>
+        <a href="/formation/python-machine-learning.html" class="nav__lang" hreflang="fr" lang="fr" aria-label="Version française de cette page">FR</a>
+        <button type="button" class="nav__burger" aria-label="Open the navigation menu" aria-expanded="false" aria-controls="nav-menu">
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <div class="page-hero">
+      <div class="container container--text">
+        <h1>Python machine learning training</h1>
+        <p class="page-hero__subtitle">scikit-learn: from concept to production</p>
+        <div class="page-hero__badges">
+          <span class="badge">⏱ 3 days</span>
+          <span class="badge">👥 ≤ 10 people</span>
+          <span class="badge">📍 On site or remote</span>
+          <span class="badge">🌐 English or French</span>
+          <span class="badge">🎯 Intermediate</span>
+          <span class="badge">👤 Data scientists and engineers</span>
+          <span class="badge">🏢 In-company</span>
+          <span class="badge">★ 4.93/5</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-content">
+      <div class="container">
+
+        <div class="page-section">
+          <p class="lead">Machine learning has become an essential tool to analyze complex data, detect patterns and make predictions. scikit-learn is the reference library in Python: a unified API, exemplary documentation, exhaustive coverage of classical algorithms.</p>
+          <p>This course gives your teams a hands-on mastery of machine learning, from the fundamental theoretical concepts to rigorous model selection. I put particular emphasis on methodological rigor: how to avoid overfitting, how to evaluate a model correctly, how to choose hyperparameters without bias. Too many production pipelines are trained with protocols that overestimate their real performance — this is precisely what you learn to avoid here.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>After this course, your staff will be able to</h2>
+          <ul>
+            <li>Understand the fundamental concepts: bias, variance, overfitting, regularization</li>
+            <li>Prepare and transform data with scikit-learn pipelines</li>
+            <li>Apply the main supervised algorithms: regression, classification, SVM, trees, forests</li>
+            <li>Use unsupervised methods: K-means clustering, PCA dimensionality reduction</li>
+            <li>Evaluate their models rigorously: cross-validation, appropriate metrics, ROC curves</li>
+            <li>Select and tune hyperparameters without data leakage</li>
+          </ul>
+        </div>
+
+        <div class="page-section">
+          <h2>Detailed program</h2>
+
+          <h3>Module 1 — Machine learning foundations</h3>
+          <p>Taxonomy: supervised, unsupervised and semi-supervised learning. Regression and classification: differences and evaluation metrics. Bias and variance: the fundamental trade-off. Underfitting and overfitting. Introduction to the scikit-learn API: <code>fit</code>, <code>predict</code>, <code>transform</code>, <code>Pipeline</code>.</p>
+
+          <h3>Module 2 — Supervised learning</h3>
+          <p>Linear models: linear regression, logistic regression. Regularization: Ridge, Lasso, ElasticNet — when and why. Support vector machines (SVM): principle and kernels. Decision trees: construction, depth, splitting criteria. Ensemble methods: Random Forest, Gradient Boosting. Preprocessing: scaling, encoding, handling missing values.</p>
+
+          <h3>Module 3 — Unsupervised learning</h3>
+          <p>K-means clustering: algorithm, choosing the number of clusters, evaluation. Hierarchical clustering and DBSCAN. Dimensionality reduction: PCA, explained variance, visualization. Applications: anomaly detection, segmentation, compression.</p>
+
+          <h3>Module 4 — Model selection and evaluation</h3>
+          <p>Cross-validation: k-fold, stratified, leave-one-out. Evaluation metrics: accuracy, precision, recall, F1, AUC-ROC. Hyperparameter selection: <code>GridSearchCV</code>, <code>RandomizedSearchCV</code>. Evaluation pitfalls: data leakage, p-hacking, multiple comparisons.</p>
+        </div>
+
+        <div class="page-encart">
+          <h2>Do your teams have the required Python level?</h2>
+          <p>The data science courses assume a good command of Python: functions, iteration, modules, namespaces. If this is not the case for all your staff, I can add the <strong><a href="python-level-1.html">Python — level 1</a></strong> module before the data science days. For teams that develop complex code, the <strong><a href="python-advanced.html">Python — advanced</a></strong> module (object-oriented programming, decorators, metaclasses) is also available.</p>
+          <p>These complements are offered case by case — feel free to mention them in your quote request.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Audience and prerequisites</h2>
+          <p><strong>Target audience</strong></p>
+          <p>Data scientists, engineers, researchers and Ph.D. students who want to apply machine learning methods to their data with Python.</p>
+          <p><strong>Prerequisites</strong></p>
+          <p>Intermediate command of Python, NumPy and Pandas. This course is designed as the natural follow-up to the <em>Python data science level 1</em> course.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Teaching method</h2>
+          <p>The course alternates short theoretical presentations and hands-on exercises in Jupyter notebooks. Each concept is put into practice immediately. I pay particular attention to making sure every participant keeps up, whatever their starting level, and I calibrate the depth of each topic to the group.</p>
+          <p>The material is given to the participants at the end of the course, along with the exercise notebooks and their solutions.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Official documentation</h2>
+          <p><a href="https://scikit-learn.org/stable/" target="_blank" rel="noopener noreferrer">scikit-learn</a> (including <a href="https://scikit-learn.org/stable/modules/compose.html" target="_blank" rel="noopener noreferrer">pipelines</a>), <a href="https://numpy.org/doc/stable/" target="_blank" rel="noopener noreferrer">NumPy</a>, <a href="https://pandas.pydata.org/docs/" target="_blank" rel="noopener noreferrer">Pandas</a>.</p>
+        </div>
+
+
+        <section class="page-section" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">Frequently asked questions</h2>
+          <div class="faq">
+            <details class="faq__item">
+              <summary>What is the difference between this course and a theoretical machine learning course?</summary>
+              <div class="faq__answer"><p>The emphasis is on practical methodological rigor: how to avoid overfitting, how to evaluate a model correctly, how to select hyperparameters without bias or data leakage. Evaluation pitfalls (p-hacking, multiple comparisons) are covered explicitly — these are precisely the mistakes made by real production pipelines.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Does the course cover deep learning?</summary>
+              <div class="faq__answer"><p>No. The course covers the classical scikit-learn algorithms: regression, classification, SVM, trees, random forests, gradient boosting, K-means, PCA. Deep learning (neural networks, transformers) would require other tools (PyTorch, TensorFlow) — it is not the subject of this course.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>What is data leakage and why is it critical?</summary>
+              <div class="faq__answer"><p>Data leakage happens when information from the test set contaminates training, producing overly optimistic performance metrics. In production, the model turns out to perform much worse than announced. Hyperparameter selection with GridSearchCV is a classic case covered in module 4.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>What math background is needed?</summary>
+              <div class="faq__answer"><p>An intuitive understanding of basic concepts (mean, variance, elementary probability) is enough. The course does not focus on mathematical proofs but on understanding the mechanisms and applying them correctly with scikit-learn.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Is this course suitable for Ph.D. students in experimental sciences?</summary>
+              <div class="faq__answer"><p>Yes, they are a frequent audience. The methods covered — regression, classification, clustering, PCA — apply directly to the analysis of experimental data. Methodological rigor in model evaluation is particularly useful in the context of scientific publication.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Is the remote format suitable for this kind of training?</summary>
+              <div class="faq__answer"><p>Yes. 90% of participants rate the remote format as equivalent or better than in-person. I have been running remote training since 2020 and have built a solid practice of online teaching. I use Zoom, which makes it possible to record the sessions and share them with participants if desired, and CoCalc, an online platform that gives access to preconfigured servers with all the training material and libraries installed. CoCalc also lets me follow each participant's progress in real time and step in directly to correct or unblock.</p></div>
+            </details>
+          </div>
+        </section>
+
+        <div class="page-cta">
+          <a href="contact.html" class="btn btn--primary">Request a quote for this course</a>
+        </div>
+
+      </div>
+    </div>
+
+    <section class="section voir-aussi" aria-labelledby="see-also-title">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="see-also-title">See also</h2>
+        </div>
+        <div class="cards-grid cards-grid--pair">
+          <a class="card card--link" href="python-data-science-level-1.html">
+            <h3 class="card__title">Python data science — level&nbsp;1</h3>
+            <p class="card__body">The foundations of the Python data science ecosystem. Vectorization, broadcasting,
+            DataFrame manipulation, time series, the Parquet format, statistical visualization with Seaborn.</p>
+            <span class="card__link">See the program →</span>
+          </a>
+
+          <a class="card card--link" href="python-data-science-level-2.html">
+            <h3 class="card__title">Python data science — level&nbsp;2</h3>
+            <p class="card__body">Going beyond Pandas when data exceeds RAM or when performance matters. Polars and its
+            streaming engine, JIT acceleration with Numba, multi-core parallelism with multiprocessing.</p>
+            <span class="card__link">See the program →</span>
+          </a>
+        </div>
+        <p class="voir-aussi__note">Beyond training, I also work as a consultant on the performance of your data
+          pipelines, the use of AI agents and the review of your analyses.
+          <a href="/en/consulting/">Discover consulting →</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="/research/">Research</a></p>
+          <ul class="footer__link-list">
+            <li><a href="/research/publications.html">Publications</a></li>
+            <li><a href="/research/#projects">Projects</a></li>
+            <li><a href="/research/phdstudents.html">Recommendations for Ph.D. students</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="./">Training</a></p>
+          <ul class="footer__link-list">
+            <li><a href="python-data-science-level-1.html">Python data science — level 1</a></li>
+            <li><a href="python-data-science-level-2.html">Python data science — level 2</a></li>
+            <li><a href="python-machine-learning.html">Python machine learning</a></li>
+            <li><a href="python-level-1.html">Python — level 1</a></li>
+            <li><a href="python-advanced.html">Python — advanced</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="/en/consulting/">Consulting</a></p>
+          <ul class="footer__link-list">
+            <li><a href="/en/consulting/audit-performance-cost-data-processing.html">Performance and cost audit</a></li>
+            <li><a href="/en/consulting/audit-ai-agents-data-science.html">AI agents audit</a></li>
+            <li><a href="/en/consulting/scientific-review-data-analyses.html">Scientific review of analyses</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Contact</p>
+          <ul class="footer__link-list">
+            <li><a href="contact.html">Training contact</a></li>
+            <li><a href="/en/consulting/contact.html">Consulting contact</a></li>
+            <li><a href="mailto:arnaud.legout@gmail.com">Email</a></li>
+            <li><a href="/en/legal-notice.html">Legal notice</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Arnaud Legout. Static site, no cookies.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script data-goatcounter="https://arnaudlegout-formations.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+  <script src="../../assets/js/nav.js"></script>
+</body>
+</html>

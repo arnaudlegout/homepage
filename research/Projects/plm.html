@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PLM: efficient multicast congestion control — Arnaud Legout</title>
+  <meta name="description" content="PLM research project: a receiver-driven multicast congestion control protocol based on packet pair and fair queueing.">
+
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://arnaudlegout.fr/research/Projects/plm.html">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+
+  <link rel="preload" href="../../assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arnaudlegout.fr/research/Projects/plm.html">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Arnaud Legout">
+  <meta property="og:title" content="PLM: efficient multicast congestion control — Arnaud Legout">
+  <meta property="og:description" content="PLM research project: a receiver-driven multicast congestion control protocol based on packet pair and fair queueing.">
+  <meta property="og:image" content="https://arnaudlegout.fr/assets/og-research.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Arnaud Legout, senior research scientist at Inria">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PLM: efficient multicast congestion control — Arnaud Legout">
+  <meta name="twitter:description" content="PLM research project: a receiver-driven multicast congestion control protocol based on packet pair and fair queueing.">
+  <meta name="twitter:image" content="https://arnaudlegout.fr/assets/og-research.jpg">
+  <meta name="twitter:image:alt" content="Arnaud Legout, senior research scientist at Inria">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://arnaudlegout.fr/research/Projects/plm.html#webpage",
+        "url": "https://arnaudlegout.fr/research/Projects/plm.html",
+        "name": "PLM: efficient multicast congestion control — Arnaud Legout",
+        "inLanguage": "en",
+        "isPartOf": {
+          "@id": "https://arnaudlegout.fr/#website"
+        },
+        "about": {
+          "@id": "https://arnaudlegout.fr/#arnaud-legout"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Arnaud Legout",
+            "item": "https://arnaudlegout.fr/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Research",
+            "item": "https://arnaudlegout.fr/research/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Projects",
+            "item": "https://arnaudlegout.fr/research/#projects"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "PLM",
+            "item": "https://arnaudlegout.fr/research/Projects/plm.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../../style.css">
+  <!-- Script vide volontaire, à garder juste après la feuille de style : Firefox doit
+       attendre style.css avant de l'exécuter, donc il ne lit pas le <body> tant que le CSS
+       n'est pas chargé. Sans lui, une extension qui force la mise en page trop tôt
+       (« La mise en page a été forcée avant le chargement complet de la page ») fait
+       afficher la page sans style un instant au rechargement. Ne pas supprimer. -->
+  <script>0</script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ====== HEADER ====== -->
+  <header class="header">
+    <div class="nav container">
+      <nav class="nav__brand" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/en/" class="nav__logo">Arnaud Legout</a></li>
+          <li><a href="../" class="nav__section">Research</a></li>
+        </ol>
+      </nav>
+      <nav class="nav__menu" id="nav-menu" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="../" class="nav__link" aria-current="true">Research</a>
+            <ul class="nav__dropdown">
+              <li><a href="../publications.html">Publications</a></li>
+              <li><a href="../#projects">Projects</a></li>
+              <li><a href="../phdstudents.html">Recommendations for Ph.D. students</a></li>
+            </ul>
+          </li>
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="/en/training/" class="nav__link">Training</a>
+            <ul class="nav__dropdown">
+              <li class="nav__dropdown-label">Data science</li>
+              <li><a href="/en/training/python-data-science-level-1.html">Python data science — level 1</a></li>
+              <li><a href="/en/training/python-data-science-level-2.html">Python data science — level 2</a></li>
+              <li><a href="/en/training/python-machine-learning.html">Python machine learning</a></li>
+              <li class="nav__dropdown-label">Python essentials</li>
+              <li><a href="/en/training/python-level-1.html">Python — level 1</a></li>
+              <li><a href="/en/training/python-advanced.html">Python — advanced</a></li>
+            </ul>
+          </li>
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="/en/consulting/" class="nav__link">Consulting</a>
+            <ul class="nav__dropdown">
+              <li><a href="/en/consulting/audit-performance-cost-data-processing.html">Performance and cost audit</a></li>
+              <li><a href="/en/consulting/audit-ai-agents-data-science.html">AI agents audit</a></li>
+              <li><a href="/en/consulting/scientific-review-data-analyses.html">Scientific review of analyses</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav__actions">
+        <button type="button" class="nav__burger" aria-label="Open the navigation menu" aria-expanded="false" aria-controls="nav-menu">
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ====== MAIN ====== -->
+  <main id="main">
+
+    <section class="page-hero">
+      <div class="container">
+        <h1>The PLM project</h1>
+        <p class="page-hero__subtitle">Past project</p>
+      </div>
+    </section>
+
+    <div class="page-content">
+      <div class="container">
+
+        <section class="page-section" id="overview">
+          <h2>Overview</h2>
+          <p>Multicast congestion control is a complex problem. However, a well designed multicast congestion control protocol is fundamental to the deployment of a multicast service. The major constraint while designing multicast congestion control protocols is the TCP-friendly constraint. The problem is that TCP-friendliness is not well adapted to large scale multicast sessions. When the protocol is source based, the TCP-friendliness is a real performance issue on large heterogeneous sessions. When the protocol is receiver based, TCP-friendliness is not well defined and lead to suboptimality.</p>
+          <p>We decided to explore alternatives to the TCP-friendly paradigm. Although this approach cannot offer a viable solution at short term, it offers an alternative to and a better understanding of the TCP-friendly paradigm. We introduced the notion of FS-paradigm. This paradigm relies heavily on previous works of Keshav and Shenker, but has a new focus on the general design of congestion control protocols. With the assumption of Fair Queuing in the network, we show that we can define nearly ideal end-to-end congestion control protocols. At first sight, the FS-paradigm statement seems pretty philosophical and difficult to apply. Indeed, it does not offer a practical solution to the problem of the design of congestion control protocols. However, it sheds a new light on the issues raised by TCP-friendliness and on alternatives to this TCP-friendly paradigm.</p>
+          <p>We applied the FS-paradigm to the design of a new multicast congestion control protocol called PLM. All the good properties predicted by the FS-paradigm are verified. PLM is based on the use of packet pair (PP) to infer the available bandwidth. We test PLM in a large variety of configuration and compare PLM with RLM and RLC. In all the cases studied, PLM outperforms RLM and RLC. The performance comparison was performed with both FIFO and FQ queues. Moreover, PLM is able to find the available bandwidth and to track the available bandwidth with no loss induced. To verify the stability of our PP bandwidth inference, we tested PLM in a complex environment (Self Similar and Multi-fractal background traffic). For all the scenarios considered PLM, never experienced any loss and followed closely the available bandwidth. It is clear that most of the good properties of PLM comes from the FQ network. However, even in a FQ network neither RLM nor RLC come close the PLM. Therefore this work has shown the importance of the bandwidth inference mechanism. The TCP-friendly paradigm imposes a bandwidth inference mechanism based on losses. We have shown that we can achieve a better efficiency with another class of bandwidth inference mechanisms.</p>
+          <p>In conclusion, the intent of this project was not to offer a practical alternative to the TCP-friendly paradigm, but to explore alternative design paths.</p>
+        </section>
+
+        <section class="page-section" id="papers">
+          <h2>Papers</h2>
+          <dl class="entries">
+            <dt><a id="LogRD" href="../Papers/np_IEEE_Network.ps.gz">[NetworkMag02]</a></dt>
+            <dd>A. Legout, and E. W. Biersack. <b>Revisiting the Fair Queueing Paradigm for End-to-End Congestion Control</b>. <i>IEEE Network Magazine</i>, 16(5), September 2002. <a class="entry__link" href="../Papers/np_IEEE_Network.pdf">download</a></dd>
+            <dt><a href="../Papers/pathol_rlm_rlc_nossdav00.ps.gz">[NOSSDAV00]</a></dt>
+            <dd>A. Legout, and E. W. Biersack. <b>Pathological Behaviors for RLM and RLC</b>. In <i>Proc. of NOSSDAV'2000</i>, Chapel Hill, North Carolina, USA, June 2000. <a class="entry__link" href="../Papers/pathol_rlm_rlc_nossdav00.pdf">download</a></dd>
+            <dt><a id="PLM" href="../Papers/plm_sigmetrics00.ps.gz"> [SIGMETRICS00]</a></dt>
+            <dd>A. Legout, and E. W. Biersack. <b>PLM: Fast Convergence for Cumulative Layered Multicast Transmission Schemes</b>. In <i>Proc. of ACM SIGMETRICS'2000</i>, Santa Clara, CA, USA, June 2000. <a class="entry__link" href="../Papers/plm_sigmetrics00.pdf">download</a> <br> An extended version is available as Eurecom <a href="../Papers/plm.pdf">Technical Report</a>, March 2000.</dd>
+            <dt><a href="../Papers/fcc_infocom99.ps.gz"> [INFOCOM99]</a></dt>
+            <dd>A. Legout, J. Nonnenmacher, and E. W. Biersack. <b>Bandwidth Allocation Policies for Unicast and Multicast Flows</b>. In <i>Proc. of IEEE INFOCOM'99</i>, New York, NY, USA, March 1999. <a class="entry__link" href="../Papers/fcc_infocom99.pdf">download</a></dd>
+          </dl>
+        </section>
+
+        <section class="page-section" id="members">
+          <h2>Members</h2>
+          <ul>
+            <li>Arnaud Legout</li>
+            <li>Ernst W. Biersack</li>
+          </ul>
+        </section>
+
+        <section class="page-section" id="software">
+          <h2>Software</h2>
+          <p><strong>PLM has been in the ns release since July 24, 2000.</strong><br> If you have a version of ns later than the July 24, 2000 daily snapshot, PLM is already included into your ns version. If you have a version of ns former than the July 24, 2000 daily snapshot, you need to follow the procedure below in order to integrate PLM into your ns version.</p>
+          <p>This procedure guides you install PLM within your <a href="https://www.isi.edu/nsnam/ns/" target="_blank" rel="noopener">ns</a> simulator. Please, follow the instructions below:</p>
+          <ul>
+            <li>First, download the file: <a href="plm-v1.tar.gz">plm-v1.tar.gz</a>.</li>
+            <li>Second, gunzip and untar the file (you might use the command line: gtar xvfz plm-v1.tar.gz).</li>
+            <LI> Finally, follow the instruction of the file: INSTALL_PLM.</li>
+          </ul>
+          <p><strong>Warning</strong>: I only tested the installation of PLM on the versions 2.1b6 and higher of ns .</p>
+          <p>If you have any comments, questions, etc. I would be pleased to receive your message at: <a href="mailto:arnaud.legout@inria.fr">arnaud.legout@inria.fr</a></p>
+        </section>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="../">Research</a></p>
+          <ul class="footer__link-list">
+            <li><a href="../publications.html">Publications</a></li>
+            <li><a href="../#projects">Projects</a></li>
+            <li><a href="../phdstudents.html">Recommendations for Ph.D. students</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="/en/training/">Training</a></p>
+          <ul class="footer__link-list">
+            <li><a href="/en/training/python-data-science-level-1.html">Python data science — level 1</a></li>
+            <li><a href="/en/training/python-data-science-level-2.html">Python data science — level 2</a></li>
+            <li><a href="/en/training/python-machine-learning.html">Python machine learning</a></li>
+            <li><a href="/en/training/python-level-1.html">Python — level 1</a></li>
+            <li><a href="/en/training/python-advanced.html">Python — advanced</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="/en/consulting/">Consulting</a></p>
+          <ul class="footer__link-list">
+            <li><a href="/en/consulting/audit-performance-cost-data-processing.html">Performance and cost audit</a></li>
+            <li><a href="/en/consulting/audit-ai-agents-data-science.html">AI agents audit</a></li>
+            <li><a href="/en/consulting/scientific-review-data-analyses.html">Scientific review of analyses</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Contact</p>
+          <ul class="footer__link-list">
+            <li><a href="/en/training/contact.html">Training contact</a></li>
+            <li><a href="/en/consulting/contact.html">Consulting contact</a></li>
+            <li><a href="mailto:arnaud.legout@gmail.com">Email</a></li>
+            <li><a href="/en/legal-notice.html">Legal notice</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Arnaud Legout. Static site, no cookies.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script data-goatcounter="https://arnaudlegout-inria.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+  <script src="../../assets/js/nav.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bluebear: privacy threats in the Internet — Arnaud Legout</title>
+  <meta name="description" content="Bluebear research project: monitoring BitTorrent downloads at scale, the limits of anonymizing networks, and linking a social identity to an IP address.">
+
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://arnaudlegout.fr/research/Projects/bluebear.html">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+
+  <link rel="preload" href="../../assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arnaudlegout.fr/research/Projects/bluebear.html">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Arnaud Legout">
+  <meta property="og:title" content="Bluebear: privacy threats in the Internet — Arnaud Legout">
+  <meta property="og:description" content="Bluebear research project: monitoring BitTorrent downloads at scale, the limits of anonymizing networks, and linking a social identity to an IP address.">
+  <meta property="og:image" content="https://arnaudlegout.fr/assets/og-research.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Arnaud Legout, senior research scientist at Inria">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bluebear: privacy threats in the Internet — Arnaud Legout">
+  <meta name="twitter:description" content="Bluebear research project: monitoring BitTorrent downloads at scale, the limits of anonymizing networks, and linking a social identity to an IP address.">
+  <meta name="twitter:image" content="https://arnaudlegout.fr/assets/og-research.jpg">
+  <meta name="twitter:image:alt" content="Arnaud Legout, senior research scientist at Inria">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://arnaudlegout.fr/research/Projects/bluebear.html#webpage",
+        "url": "https://arnaudlegout.fr/research/Projects/bluebear.html",
+        "name": "Bluebear: privacy threats in the Internet — Arnaud Legout",
+        "inLanguage": "en",
+        "isPartOf": {
+          "@id": "https://arnaudlegout.fr/#website"
+        },
+        "about": {
+          "@id": "https://arnaudlegout.fr/#arnaud-legout"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Arnaud Legout",
+            "item": "https://arnaudlegout.fr/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Research",
+            "item": "https://arnaudlegout.fr/research/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Projects",
+            "item": "https://arnaudlegout.fr/research/#projects"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Bluebear",
+            "item": "https://arnaudlegout.fr/research/Projects/bluebear.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../../style.css">
+  <!-- Script vide volontaire, à garder juste après la feuille de style : Firefox doit
+       attendre style.css avant de l'exécuter, donc il ne lit pas le <body> tant que le CSS
+       n'est pas chargé. Sans lui, une extension qui force la mise en page trop tôt
+       (« La mise en page a été forcée avant le chargement complet de la page ») fait
+       afficher la page sans style un instant au rechargement. Ne pas supprimer. -->
+  <script>0</script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ====== HEADER ====== -->
+  <header class="header">
+    <div class="nav container">
+      <nav class="nav__brand" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/en/" class="nav__logo">Arnaud Legout</a></li>
+          <li><a href="../" class="nav__section">Research</a></li>
+        </ol>
+      </nav>
+      <nav class="nav__menu" id="nav-menu" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="../" class="nav__link" aria-current="true">Research</a>
+            <ul class="nav__dropdown">
+              <li><a href="../publications.html">Publications</a></li>
+              <li><a href="../#projects">Projects</a></li>
+              <li><a href="../phdstudents.html">Recommendations for Ph.D. students</a></li>
+            </ul>
+          </li>
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="/en/training/" class="nav__link">Training</a>
+            <ul class="nav__dropdown">
+              <li class="nav__dropdown-label">Data science</li>
+              <li><a href="/en/training/python-data-science-level-1.html">Python data science — level 1</a></li>
+              <li><a href="/en/training/python-data-science-level-2.html">Python data science — level 2</a></li>
+              <li><a href="/en/training/python-machine-learning.html">Python machine learning</a></li>
+              <li class="nav__dropdown-label">Python essentials</li>
+              <li><a href="/en/training/python-level-1.html">Python — level 1</a></li>
+              <li><a href="/en/training/python-advanced.html">Python — advanced</a></li>
+            </ul>
+          </li>
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="/en/consulting/" class="nav__link">Consulting</a>
+            <ul class="nav__dropdown">
+              <li><a href="/en/consulting/audit-performance-cost-data-processing.html">Performance and cost audit</a></li>
+              <li><a href="/en/consulting/audit-ai-agents-data-science.html">AI agents audit</a></li>
+              <li><a href="/en/consulting/scientific-review-data-analyses.html">Scientific review of analyses</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav__actions">
+        <button type="button" class="nav__burger" aria-label="Open the navigation menu" aria-expanded="false" aria-controls="nav-menu">
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ====== MAIN ====== -->
+  <main id="main">
+
+    <section class="page-hero">
+      <div class="container">
+        <h1>Bluebear: Exploring Privacy Threats in the Internet</h1>
+        <p class="page-hero__subtitle">Past project</p>
+      </div>
+    </section>
+
+    <div class="page-content">
+      <div class="container">
+
+        <section class="page-section" id="overview">
+          <h2>Overview</h2>
+          <p>The Internet has never been designed with privacy in mind. For instance, the Internet is based on the IP protocol that exposes the IP address of a user to any other users it is communicating with. However, we believe that current users of the Internet do not realize how much they compromise their privacy by using the Internet. Indeed, the common wisdom is that there are so many users in the Internet that it is not feasible for an attacker, apart may be for national agencies, to globally compromise the privacy of a large fraction of users. Therefore, finding a specific user is like looking for a needle in a haystack.</p>
+          <p>The goal of the bluebear project is to raise attention on privacy issues when using the Internet. In particular, we want to show that without any dedicated infrastructure, it is possible to globally compromise the privacy of Internet users.</p>
+        </section>
+
+        <section class="page-section" id="contributions">
+          <h2>Contributions</h2>
+          <h3>It is possible to monitor all BitTorrent downloads and all BitTorrent content providers.</h3>
+          <p>BitTorrent is <a href="p2p_cd.html">arguably</a> the most efficient peer-to-peer protocol for content replication. However, BitTorrent has not been designed with privacy in mind and its popularity could threaten the privacy of millions of users. Surprisingly, privacy threats due to BitTorrent have been overlooked because BitTorrent popularity gives its users the illusion that finding them is like looking for a needle in a haystack. The goal of this project is to explore the severity of the privacy threats faced by BitTorrent users.</p>
+          <p>We argue that it is possible to continuously monitor from a single machine most BitTorrent users and to identify the content providers (also called initial seeds) [LLL_LEET10, LLL_TR10]. This is a major privacy threat as it is possible for anybody in the Internet to reconstruct all the download and upload history of most BitTorrent users.</p>
+          <h3>Using an anonymizing network does not help</h3>
+          To circumvent the kind of monitoring with described for BitTorrent, BitTorrent users are increasingly using anonymizing networks such as Tor to hide their IP address from the tracker and, possibly, from other peers. However, we showed that it is possible to retrieve the IP address for more than 70% of BitTorrent users on top of Tor [LML_LEET11]. Moreover, once the IP address of a peer is retrieved, it is possible to link to the IP address other applications used by this peer on top of Tor.
+          <h3>It is possible to map your social identity to your network activity.</h3>
+          <p>The fact that it is hard for a person to map an IP address to an identity mitigates the impact of the privacy attacks we described. However, we show that we can exploit a peer-to-peer VoIP system to associate a social identity (name, email address, etc.) to an IP address [LZL_IMC11]. This means that anybody can now find this mapping that was only known by ISPs or big companies (like Google and Facebook), but never communicated unless in case of a legal action. The privacy threat is thus very high because this mapping enables blackmail, social attacks, targeted phishing attacks, etc.</p>
+          <p>As a proof of concept, we show that it is possible to track VoIP users mobility and BitTorrent downloads [LZL_IMC11].</p>
+        </section>
+
+        <section class="page-section" id="papers">
+          <h2>Papers</h2>
+          <dl class="entries">
+            <dt><a href="https://hal.inria.fr/inria-00632780/en/" target="_blank" rel="noopener">[IMC11]</a></dt>
+            <dd>Stevens Le Blond, Chao Zhang, Arnaud Legout, Keith Ross, and Walid Dabbous. <b>I Know Where You are and What You are Sharing: Exploiting P2P Communications to Invade Users' Privacy</b>. In <i>Proc. of ACM SIGCOMM/USENIX IMC'11</i>, Nov. 2--3, 2011, Berlin, Germany. <a class="entry__link" href="https://hal.inria.fr/inria-00632780/en/" target="_blank" rel="noopener">download</a> <br><span class="badge badge--highlight">Press release</span>: <a href="https://bits.blogs.nytimes.com/2011/11/29/skype-can-expose-your-location-researchers-say/" target="_blank" rel="noopener">The New York Times, Bits </a>, <a href="https://www.schneier.com/blog/archives/2011/12/skype_security.html" target="_blank" rel="noopener">Bruce Schneier Blog</a>, <a href="https://www.prnewswire.com/news-releases/spying-through-skype-researchers-uncover-privacy-flaws-that-can-reveal-users-identities-locations-and-digital-files-132044753.html" target="_blank" rel="noopener">PR Newswire</a>, <a href="https://torrentfreak.com/security-flaw-links-bittorrent-users-to-skype-accounts-111020/" target="_blank" rel="noopener">TorrentFreak</a>, <a href="https://www.theregister.co.uk/2011/10/21/skype_bittorrent_stalking/" target="_blank" rel="noopener">The Register</a>, <a href="http://www.poly.edu/press-release/2011/10/18/researchers-uncover-privacy-flaws-can-reveal-users-identities-locations-and" target="_blank" rel="noopener">Polytechnic Institute of New York University Press Release</a>, <a href="http://www.networkworld.com/community/node/78986" target="_blank" rel="noopener">Network World</a>, <a href="https://www.techspot.com/news/45945-skype-flaw-can-reveal-users-identity-location-filesharing-habits.html" target="_blank" rel="noopener">TechSpot</a>, <a href="http://www.internetsafetyproject.org/blog/skype-exposed-potential-security-risks" target="_blank" rel="noopener">Internet Safety Project</a>, <a href="http://www.zataz.com/news/21651/faille--vulnerability-skype.html" target="_blank" rel="noopener">Zataz</a>, <a href="http://www.wired.com/threatlevel/2011/10/researchers-identify-skype-user/" target="_blank" rel="noopener">Wired News</a>, <a href="http://www.computerworlduk.com/news/security/3312670/researchers-id-skype-users-who-also-use-bittorrent/" target="_blank" rel="noopener">ComputerWorld UK</a>, <a href="http://www.pcworld.com/article/242278/researchers_id_skype_users_who_also_use_bittorrent.html" target="_blank" rel="noopener">PCWorld</a>, <a href="http://yro.slashdot.org/story/11/10/21/1721233/researchers-id-skype-bittorrent-users" target="_blank" rel="noopener">Slashdot</a>, <a href="http://mobile.clubic.com/antivirus-securite-informatique/actualite-454116-etude-skype-bittorrent-faille-vie-privee.html" target="_blank" rel="noopener">Clubic</a>, <a href="http://www.pcinpact.com/actu/news/66544-skype-bittorrent-etude-scientifiques-faille.htm" target="_blank" rel="noopener">PC Inpact</a>, <a href="https://www.inria.fr/centre/sophia/actualites/comment-skyper-sans-etre-observe" target="_blank" rel="noopener">Actualités Inria</a>, <a href="http://www.fastcompany.com/1790447/the-problems-with-skype" target="_blank" rel="noopener">Fast Company</a></dd>
+            <dt><a href="https://hal.inria.fr/inria-00574178/en/" target="_blank" rel="noopener">[LEET11]</a></dt>
+            <dd>Stevens Le Blond, Pere Manils, Abdelberi Chaabane, Mohamed Ali Kaafar, Claude Castelluccia, Arnaud Legout, Walid Dabbous. <b>One Bad Apple Spoils the Bunch: Exploiting P2P Applications to Trace and Profile Tor Users</b>. In <i>Proc. of LEET'11</i>, March 29, 2011, Boston, MA, USA. <a class="entry__link" href="https://hal.inria.fr/inria-00574178/en/" target="_blank" rel="noopener">download</a> <br>Former versions of this work were presented at HotPets'2010 (July 2010), and appeared as an <a href="https://hal.inria.fr/inria-00471177/en/" target="_blank" rel="noopener">NDSI'10 poster </a>(April 2010) and a <a href="https://hal.inria.fr/inria-00471556/en/" target="_blank" rel="noopener">technical report</a> (April 2010) <br><span class="badge badge--highlight">Press release</span>: <a href="https://blog.torproject.org/blog/bittorrent-over-tor-isnt-good-idea" target="_blank" rel="noopener">Tor Project </a>, <a href="http://yro.slashdot.org/story/10/05/01/0023258/Why-Tor-Users-Should-Be-Cautious-About-P2P-Privacy" target="_blank" rel="noopener">Slashdot</a>, <a href="https://www.theregister.co.uk/2010/04/30/bittorrent_continuous_spying/" target="_blank" rel="noopener">The Register</a>, <a href="http://www.slyck.com/story1952_Surprise_Youre_Not_Anonymous_on_BitTorrent" target="_blank" rel="noopener">Slyck</a>, <a href="https://www.lemonde.fr/technologies/article/2010/05/08/l-anonymat-du-reseau-bittorrent-mis-en-cause_1348214_651865.html" target="_blank" rel="noopener">Le Monde</a>, <a href="https://www.schneier.com/blog/archives/2011/03/identifying_tor.html" target="_blank" rel="noopener">Schneier blog</a>, <a href="http://yro.slashdot.org/story/11/03/29/1743201/Attacking-and-Defending-the-Tor-Network" target="_blank" rel="noopener">Slashdot </a>, <a href="https://threatpost.com/en_us/blogs/attacking-and-defending-tor-network-032911" target="_blank" rel="noopener">threatpost.com </a>, <a href="http://nouvelles-de-technologie.blogspot.com/2011/03/attaque-et-de-defense-du-reseau-tor.html" target="_blank" rel="noopener">nouvelles de technologie</a>, <a href="http://www.newscientist.com/article/mg21028085.000" target="_blank" rel="noopener">NewScientist</a>, <a href="https://technews.tmcnet.com/news/2011/04/16/5449389.htm" target="_blank" rel="noopener">TMCnet.com</a>, <a href="https://en.wikipedia.org/wiki/Tor_%28anonymity_network%29#Weaknesses" target="_blank" rel="noopener">Wikipedia</a></dd>
+            <dt><a href="https://hal.inria.fr/inria-00470324/en/" target="_blank" rel="noopener">[LEET10]</a></dt>
+            <dd>Stevens Le Blond, Arnaud Legout, Fabrice Lefessant, Walid Dabbous, Mohamed Ali Kaafar. <b>Spying the World from your Laptop - Identifying and Profiling Content Providers and Big Downloaders in BitTorrent</b>. In <i>Proc. of LEET'10</i>, April 27, 2010, San Jose, CA, USA. <a class="entry__link" href="https://hal.inria.fr/inria-00470324/en/" target="_blank" rel="noopener">download</a> <br> An extended version of this work is available in <a href="https://hal.inria.fr/inria-00451282/en/" target="_blank" rel="noopener">[LLL_TR10]</a>. <br><span class="badge badge--highlight">Press release</span>: <a href="http://tech.slashdot.org/story/10/04/28/1948257/Anyone-Can-Play-Big-Brother-With-BitTorrent" target="_blank" rel="noopener">Slashdot</a>, <a href="https://torrentfreak.com/research-exposes-risks-for-bittorrent-seeders-100430/" target="_blank" rel="noopener">TorrentFreak</a>, <a href="https://www.theregister.co.uk/2010/04/30/bittorrent_continuous_spying/" target="_blank" rel="noopener">The Register</a>, <a href="http://www.slyck.com/story1952_Surprise_Youre_Not_Anonymous_on_BitTorrent" target="_blank" rel="noopener">Slyck</a>, <a href="https://www.lemonde.fr/technologies/article/2010/05/08/l-anonymat-du-reseau-bittorrent-mis-en-cause_1348214_651865.html" target="_blank" rel="noopener">Le Monde</a></dd>
+            <dt><a href="https://hal.inria.fr/inria-00451282/en/" target="_blank" rel="noopener">[TechReport10]</a></dt>
+            <dd>Stevens Le Blond, Arnaud Legout, Fabrice Lefessant, Walid Dabbous. <b>Angling for Big Fish in BitTorrent</b>. <i>Technical Report (inria-00451282, version 1 - 28 Jan 2010)</i>, INRIA, Sophia Antipolis, January 2010. <a class="entry__link" href="https://hal.inria.fr/inria-00451282/en/" target="_blank" rel="noopener">download</a></dd>
+          </dl>
+        </section>
+
+        <section class="page-section" id="members">
+          <h2>Members</h2>
+          <ul>
+            <li>Arnaud Legout (INRIA, F)</li>
+            <li>Stevens Le Blond (MPI, Germany)</li>
+            <li>Chao Zhang (NYU-Poly, USA)</li>
+            <li>Keith Ross (NYU-Poly, USA)</li>
+            <li>Walid Dabbous (INRIA, F)</li>
+            <li>Fabrice Le Fessant (INRIA, F)</li>
+            <li>Pere Manils (INRIA, F)</li>
+            <li>Abdelberi Chaabane (INRIA, F)</li>
+            <li>Mohamed Ali Kaafar (INRIA, F)</li>
+            <li>Claude Castelluccia (INRIA, F)</li>
+          </ul>
+        </section>
+
+        If you have any comments or questions you can send me an email at: <a href="mailto:arnaud.legout@inria.fr">arnaud.legout@inria.fr</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="../">Research</a></p>
+          <ul class="footer__link-list">
+            <li><a href="../publications.html">Publications</a></li>
+            <li><a href="../#projects">Projects</a></li>
+            <li><a href="../phdstudents.html">Recommendations for Ph.D. students</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="/en/training/">Training</a></p>
+          <ul class="footer__link-list">
+            <li><a href="/en/training/python-data-science-level-1.html">Python data science — level 1</a></li>
+            <li><a href="/en/training/python-data-science-level-2.html">Python data science — level 2</a></li>
+            <li><a href="/en/training/python-machine-learning.html">Python machine learning</a></li>
+            <li><a href="/en/training/python-level-1.html">Python — level 1</a></li>
+            <li><a href="/en/training/python-advanced.html">Python — advanced</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="/en/consulting/">Consulting</a></p>
+          <ul class="footer__link-list">
+            <li><a href="/en/consulting/audit-performance-cost-data-processing.html">Performance and cost audit</a></li>
+            <li><a href="/en/consulting/audit-ai-agents-data-science.html">AI agents audit</a></li>
+            <li><a href="/en/consulting/scientific-review-data-analyses.html">Scientific review of analyses</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Contact</p>
+          <ul class="footer__link-list">
+            <li><a href="/en/training/contact.html">Training contact</a></li>
+            <li><a href="/en/consulting/contact.html">Consulting contact</a></li>
+            <li><a href="mailto:arnaud.legout@gmail.com">Email</a></li>
+            <li><a href="/en/legal-notice.html">Legal notice</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Arnaud Legout. Static site, no cookies.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script data-goatcounter="https://arnaudlegout-inria.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+  <script src="../../assets/js/nav.js"></script>
+</body>
+
+</html>

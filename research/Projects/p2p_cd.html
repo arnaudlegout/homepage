@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P2P-CD: peer-to-peer content delivery — Arnaud Legout</title>
+  <meta name="description" content="P2P-CD research project: understanding and improving peer-to-peer content delivery with BitTorrent, from rarest first to locality.">
+
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://arnaudlegout.fr/research/Projects/p2p_cd.html">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+
+  <link rel="preload" href="../../assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arnaudlegout.fr/research/Projects/p2p_cd.html">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Arnaud Legout">
+  <meta property="og:title" content="P2P-CD: peer-to-peer content delivery — Arnaud Legout">
+  <meta property="og:description" content="P2P-CD research project: understanding and improving peer-to-peer content delivery with BitTorrent, from rarest first to locality.">
+  <meta property="og:image" content="https://arnaudlegout.fr/assets/og-research.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Arnaud Legout, senior research scientist at Inria">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="P2P-CD: peer-to-peer content delivery — Arnaud Legout">
+  <meta name="twitter:description" content="P2P-CD research project: understanding and improving peer-to-peer content delivery with BitTorrent, from rarest first to locality.">
+  <meta name="twitter:image" content="https://arnaudlegout.fr/assets/og-research.jpg">
+  <meta name="twitter:image:alt" content="Arnaud Legout, senior research scientist at Inria">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://arnaudlegout.fr/research/Projects/p2p_cd.html#webpage",
+        "url": "https://arnaudlegout.fr/research/Projects/p2p_cd.html",
+        "name": "P2P-CD: peer-to-peer content delivery — Arnaud Legout",
+        "inLanguage": "en",
+        "isPartOf": {
+          "@id": "https://arnaudlegout.fr/#website"
+        },
+        "about": {
+          "@id": "https://arnaudlegout.fr/#arnaud-legout"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Arnaud Legout",
+            "item": "https://arnaudlegout.fr/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Research",
+            "item": "https://arnaudlegout.fr/research/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Projects",
+            "item": "https://arnaudlegout.fr/research/#projects"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "P2P-CD",
+            "item": "https://arnaudlegout.fr/research/Projects/p2p_cd.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../../style.css">
+  <!-- Script vide volontaire, à garder juste après la feuille de style : Firefox doit
+       attendre style.css avant de l'exécuter, donc il ne lit pas le <body> tant que le CSS
+       n'est pas chargé. Sans lui, une extension qui force la mise en page trop tôt
+       (« La mise en page a été forcée avant le chargement complet de la page ») fait
+       afficher la page sans style un instant au rechargement. Ne pas supprimer. -->
+  <script>0</script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ====== HEADER ====== -->
+  <header class="header">
+    <div class="nav container">
+      <nav class="nav__brand" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/en/" class="nav__logo">Arnaud Legout</a></li>
+          <li><a href="../" class="nav__section">Research</a></li>
+        </ol>
+      </nav>
+      <nav class="nav__menu" id="nav-menu" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="../" class="nav__link" aria-current="true">Research</a>
+            <ul class="nav__dropdown">
+              <li><a href="../publications.html">Publications</a></li>
+              <li><a href="../#projects">Projects</a></li>
+              <li><a href="../phdstudents.html">Recommendations for Ph.D. students</a></li>
+            </ul>
+          </li>
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="/en/training/" class="nav__link">Training</a>
+            <ul class="nav__dropdown">
+              <li class="nav__dropdown-label">Data science</li>
+              <li><a href="/en/training/python-data-science-level-1.html">Python data science — level 1</a></li>
+              <li><a href="/en/training/python-data-science-level-2.html">Python data science — level 2</a></li>
+              <li><a href="/en/training/python-machine-learning.html">Python machine learning</a></li>
+              <li class="nav__dropdown-label">Python essentials</li>
+              <li><a href="/en/training/python-level-1.html">Python — level 1</a></li>
+              <li><a href="/en/training/python-advanced.html">Python — advanced</a></li>
+            </ul>
+          </li>
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="/en/consulting/" class="nav__link">Consulting</a>
+            <ul class="nav__dropdown">
+              <li><a href="/en/consulting/audit-performance-cost-data-processing.html">Performance and cost audit</a></li>
+              <li><a href="/en/consulting/audit-ai-agents-data-science.html">AI agents audit</a></li>
+              <li><a href="/en/consulting/scientific-review-data-analyses.html">Scientific review of analyses</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav__actions">
+        <button type="button" class="nav__burger" aria-label="Open the navigation menu" aria-expanded="false" aria-controls="nav-menu">
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ====== MAIN ====== -->
+  <main id="main">
+
+    <section class="page-hero">
+      <div class="container">
+        <h1>The Peer-to-Peer Content Delivery (P2P-CD) Project</h1>
+        <p class="page-hero__subtitle">Past project</p>
+      </div>
+    </section>
+
+    <div class="page-content">
+      <div class="container">
+
+        <section class="page-section" id="overview">
+          <h2>Overview</h2>
+          <p>Since the early days of the internet, from the email to the Web, the client-server architecture has been used for data transfer. However, in a few years, the peer-to-peer architecture has changed our way to share information. At the present time, peer-to-peer communications account for between 40% to 80% of the internet backbone traffic. The peer-to-peer architecture deployment has followed a rare model in the history of the internet. Whereas, most of the time, even the smallest improvement requires years of academic evaluations and experimentations, before a real large scale deployment, the peer-to-peer applications were deployed at large scale based on an empirical process. The understanding of these new applications is incipient and starts to be a very active research area.</p>
+          <p>This project focuses on the understanding and improvement of peer-to-peer content delivery. Indeed, we believe that the value of peer-to-peer comes from its ability to distribute contents to a large number of peers without any specific infrastructure, and within a delay that is logarithmic with the number of peers.</p>
+          <p>We have performed [LUM_IMC06] an experimental evaluation of BitTorrent, which is the only one popular peer-to-peer protocol to focus on efficient content delivery. We evaluated its two core mechanisms: its piece selection mechanism called rarest first, and its peer selection algorithm called choke algorithm. We show that the rarest first algorithm guarantees a diversity of the pieces among peers close to the ideal one. In particular, on our experiments, a replacement of the rarest first algorithm with a source or network coding solution cannot be justified. We also show that the choke algorithm in its latest version fosters reciprocation and is robust to free riders. In particular, the choke algorithm is fair and its replacement with a bit level tit-for-tat solution is not appropriate.</p>
+          <p>Focusing on the properties of the choke algorithm [LLKZ_07], we showed that it enables clustering of similar-bandwidth peers, ensures effective sharing incentives by rewarding peers who contribute with high download rates, and achieves high upload utilization for the majority of the download duration. We also examined the properties of the new choke algorithm in seed state and the impact of initial seed capacity on the overall BitTorrent system performance. In particular, we showed that an underprovisioned initial seed does not enable clustering of peers and does not guarantee effective sharing incentives. However, we showed that even in such a case, the choke algorithm guarantees an efficient utilization of the available resources by enforcing fast peers to help other peers with their download. Based on our observations, we offered guidelines for content providers regarding seed provisioning, and discussed a tracker protocol extension that addresses an identified limitation of the protocol.</p>
+          <p>We are also exploring the BitTorrent overlay structure [ALC_07] and its impact on BitTorrent traffic locality [LBLD_09]. Indeed, keeping BitTorrent Traffic local enables to significantly reduce the inter-ISP traffic without impacting (and often even improving) the peers download completion time. Also, we have shown that at the scale of the Internet, a high BitTorrent locality has the potential to reduce the inter-ISP traffic by 40%.</p>
+        </section>
+
+        <section class="page-section" id="papers">
+          <h2>Papers</h2>
+          <dl class="entries">
+            <dt><a id="BTLOC" href="https://dx.doi.org/10.1016/j.comnet.2010.09.014" target="_blank" rel="noopener">[COMNET10]</a></dt>
+            <dd>Stevens Le Blond, Arnaud Legout, and Walid Dabbous. <b>Pushing BitTorrent Locality to the Limit</b>. <i>Computer Networks, doi:10.1016/j.comnet.2010.09.014</i>, 2010. <a class="entry__link" href="https://dx.doi.org/10.1016/j.comnet.2010.09.014" target="_blank" rel="noopener">download</a> <br> <a href="https://hal.archives-ouvertes.fr/inria-00534117/en/" target="_blank" rel="noopener">Author version</a> of this paper. <br> A former version is available as an INRIA Technical Report (<a href="https://hal.inria.fr/inria-00343822/en/" target="_blank" rel="noopener"><i>inria-00343822, version 2 - 12 May 2009</i></a>), INRIA, Sophia Antipolis, May 2009.</dd>
+            <dt><a href="https://hal.inria.fr/inria-00494410/en/" target="_blank" rel="noopener">[P2P10]</a></dt>
+            <dd>Ashwin Rao, Arnaud Legout, Walid Dabbous. <b>Can Realistic BitTorrent Experiments Be Performed on Clusters?</b>. In <i>Proc. of P2P'10</i>, August 25--27, 2010, Delft, Netherlands. <a class="entry__link" href="https://hal.inria.fr/inria-00494410/en/" target="_blank" rel="noopener">download</a></dd>
+            <dt><a href="https://hal.inria.fr/inria-00467560/en/" target="_blank" rel="noopener">[JDIR10]</a></dt>
+            <dd>Ashwin Rao, Arnaud Legout, Walid Dabbous. <b>BitTorrent Experiments on Testbeds: A Study of the Impact of Network Latencies</b>. In <i>11es Journées Doctorales en Informatique et Réseaux (JDIR'10)</i>, March 24--26, 2010, Sophia Antipolis, France. <a class="entry__link" href="https://hal.inria.fr/inria-00467560/en/" target="_blank" rel="noopener">download</a></dd>
+            <dt><a href="https://hal.inria.fr/inria-00385351/en/" target="_blank" rel="noopener">[ICCCN09]</a></dt>
+            <dd>Anwar Al Hamra, Nikitas Liogkas, Arnaud Legout, Chadi Barakat. <b>Swarming Overlay Construction Strategies</b>. In <i>Proc. of ICCCN'2009</i>, August 2--6, 2009, San Francisco, CA, USA. <a class="entry__link" href="https://hal.inria.fr/inria-00385351/en/" target="_blank" rel="noopener">download</a></dd>
+            <dt><a href="https://hal.inria.fr/inria-00246564/en/" target="_blank" rel="noopener">[IPTPS08]</a></dt>
+            <dd>P. Marciniak, N. Liogkas, A. Legout, E. Kohler. <b>Small Is Not Always Beautiful</b>. In <i>Proc. of IPTPS'2008</i>, February 25--26, 2008, Tampa Bay, FL, USA. <a class="entry__link" href="https://hal.inria.fr/inria-00246564/en/" target="_blank" rel="noopener">download</a></dd>
+            <dt><a href="https://hal.inria.fr/inria-00162088/en/" target="_blank" rel="noopener">[TechReport07]</a></dt>
+            <dd>A. Al Hamra, A. Legout, C. Barakat. <b>Understanding the Properties of the BitTorrent Overlay</b>. <i>Technical Report (inria-00162088, version 1 - 12 July 2007)</i>, INRIA, Sophia Antipolis, July 2007. <a class="entry__link" href="https://hal.inria.fr/inria-00162088/en/" target="_blank" rel="noopener">download</a></dd>
+            <dt><a href="https://hal.inria.fr/inria-00137444/en/" target="_blank" rel="noopener">[SIGMETRICS07]</a></dt>
+            <dd>A. Legout, N. Liogkas, E. Kohler, and L. Zhang. <b>Clustering and Sharing Incentives in BitTorrent Systems</b>. In <i>Proc. of ACM SIGMETRICS'2007</i>, June 12--16, 2007, San Diego, CA, USA. <a class="entry__link" href="https://hal.inria.fr/inria-00137444/en/" target="_blank" rel="noopener">download</a> <br>An older version is available as INRIA Technical Report (<a href="https://hal.inria.fr/inria-00112066/en" target="_blank" rel="noopener">inria-00112066, version 1 - 21 November 2006</a>), Sophia Antipolis, November 2006.</dd>
+            <dt><a href="https://hal.inria.fr/inria-00091678/en/" target="_blank" rel="noopener">[IMC06]</a></dt>
+            <dd>A. Legout, G. Urvoy-Keller, and P. Michiardi. <b>Rarest First and Choke Algorithms Are Enough</b>. In <i>Proc. of ACM SIGCOMM/USENIX IMC'2006</i>, October 25--27, 2006, Rio de Janeiro, Brazil. <a class="entry__link" href="https://hal.inria.fr/inria-00091678/en/" target="_blank" rel="noopener">download</a> <br>An extended version is available as INRIA Technical Report (<a href="https://hal.inria.fr/inria-00001111/en" target="_blank" rel="noopener">inria-00001111, version 3 - 6 September 2006</a>), Sophia Antipolis, September 2006.</dd>
+            <dt><a href="https://hal.inria.fr/inria-00000156/en" target="_blank" rel="noopener">[TechReport05]</a></dt>
+            <dd>A. Legout, G. Urvoy-Keller, and P. Michiardi. <b>Understanding BitTorrent: An Experimental Perspective</b>. <i>Technical Report (inria-00000156, version 3 - 9 November 2005)</i>, INRIA, Sophia Antipolis, November 2005. <a class="entry__link" href="https://hal.inria.fr/inria-00000156/en" target="_blank" rel="noopener">download</a></dd>
+          </dl>
+        </section>
+
+        <section class="page-section" id="members">
+          <h2>Members</h2>
+          <ul>
+            <li>Arnaud Legout (INRIA, F)</li>
+            <li><a href="http://www.cs.ucla.edu/~nikitas/" target="_blank" rel="noopener">Nikitas Liogkas</a> (UCLA, USA)</li>
+            <li>Stevens Le Blond (INRIA, F)</li>
+            <li>Anwar Al Hamra (HCU, Lebanon)</li>
+            <li>Eddie Kohler (UCLA, USA)</li>
+            <li>Lixia Zhang (UCLA, USA)</li>
+            <li>Pietro Michiardi (Institut Eurecom, F)</li>
+            <li>Guillaume Urvoy-Keller (Institut Eurecom, F)</li>
+          </ul>
+        </section>
+
+        <section class="page-section" id="software">
+          <h2>Software</h2>
+          <p>I have instrumented the <a href="https://www.bittorrent.com" target="_blank" rel="noopener">BitTorrent mainline client</a> in its version 4.0.2 released in May 2005. I also commented parts of the code (in particular the parts on the peer and piece selection). However, these comments were intended for my own use and may not be clear out of context. Moreover, they represent my understanding of the code, which may be wrong.</p>
+          <p>You can freely download and use my instrumentation of the mailine client, as long as you acknowledge its source. This is the instrumented client used for the experiments performed in the following publications: [HLLB_09, LBLD_09, MLLK_08, ALC_07, LLKZ_07, LUM_IMC06, LUM_05]. You can find the instrumented client here: <a href="../Software/Instrumented_BT_mainline_4.0.2_V2.zip">Instrumented_BT_mainline_4.0.2_V2.zip</a>. In order to run the client you need to:</p>
+          <ul>
+            <li>Install <a href="https://www.python.org/" target="_blank" rel="noopener">python</a> if it is not yet available. To check if it is installed, you just have to type <i>python</i> in a command line</li>
+            <li>Unzip Instrumented_BT_mainline_4.0.2.zip</li>
+            <li>Type at a command prompt: <br><br> &gt; btdownloadheadless.py &lt;<i>your-torrent-file.torrent</i>&gt; <br></li>
+          </ul>
+          <p>A file logfileYYYYMMDDhhmmss.log will be generated and will contain the trace of the experiment. The header of this file will be a legend that explains the format of the file. Thus, each log file should be self contained.</p>
+          <p>If you have any comments or questions you can send me an email at: <a href="mailto:arnaud.legout@inria.fr">arnaud.legout@inria.fr</a></p>
+        </section>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="../">Research</a></p>
+          <ul class="footer__link-list">
+            <li><a href="../publications.html">Publications</a></li>
+            <li><a href="../#projects">Projects</a></li>
+            <li><a href="../phdstudents.html">Recommendations for Ph.D. students</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="/en/training/">Training</a></p>
+          <ul class="footer__link-list">
+            <li><a href="/en/training/python-data-science-level-1.html">Python data science — level 1</a></li>
+            <li><a href="/en/training/python-data-science-level-2.html">Python data science — level 2</a></li>
+            <li><a href="/en/training/python-machine-learning.html">Python machine learning</a></li>
+            <li><a href="/en/training/python-level-1.html">Python — level 1</a></li>
+            <li><a href="/en/training/python-advanced.html">Python — advanced</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="/en/consulting/">Consulting</a></p>
+          <ul class="footer__link-list">
+            <li><a href="/en/consulting/audit-performance-cost-data-processing.html">Performance and cost audit</a></li>
+            <li><a href="/en/consulting/audit-ai-agents-data-science.html">AI agents audit</a></li>
+            <li><a href="/en/consulting/scientific-review-data-analyses.html">Scientific review of analyses</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Contact</p>
+          <ul class="footer__link-list">
+            <li><a href="/en/training/contact.html">Training contact</a></li>
+            <li><a href="/en/consulting/contact.html">Consulting contact</a></li>
+            <li><a href="mailto:arnaud.legout@gmail.com">Email</a></li>
+            <li><a href="/en/legal-notice.html">Legal notice</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Arnaud Legout. Static site, no cookies.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script data-goatcounter="https://arnaudlegout-inria.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+  <script src="../../assets/js/nav.js"></script>
+</body>
+
+</html>

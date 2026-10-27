@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>soTweet: information propagation in social networks — Arnaud Legout</title>
+  <meta name="description" content="soTweet research project: the macrostructure of the Twitter social graph, how news media use Twitter, and the social clicks datasets.">
+
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://arnaudlegout.fr/research/Projects/sotweet.html">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+
+  <link rel="preload" href="../../assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arnaudlegout.fr/research/Projects/sotweet.html">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Arnaud Legout">
+  <meta property="og:title" content="soTweet: information propagation in social networks — Arnaud Legout">
+  <meta property="og:description" content="soTweet research project: the macrostructure of the Twitter social graph, how news media use Twitter, and the social clicks datasets.">
+  <meta property="og:image" content="https://arnaudlegout.fr/assets/og-research.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Arnaud Legout, senior research scientist at Inria">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="soTweet: information propagation in social networks — Arnaud Legout">
+  <meta name="twitter:description" content="soTweet research project: the macrostructure of the Twitter social graph, how news media use Twitter, and the social clicks datasets.">
+  <meta name="twitter:image" content="https://arnaudlegout.fr/assets/og-research.jpg">
+  <meta name="twitter:image:alt" content="Arnaud Legout, senior research scientist at Inria">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://arnaudlegout.fr/research/Projects/sotweet.html#webpage",
+        "url": "https://arnaudlegout.fr/research/Projects/sotweet.html",
+        "name": "soTweet: information propagation in social networks — Arnaud Legout",
+        "inLanguage": "en",
+        "isPartOf": {
+          "@id": "https://arnaudlegout.fr/#website"
+        },
+        "about": {
+          "@id": "https://arnaudlegout.fr/#arnaud-legout"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Arnaud Legout",
+            "item": "https://arnaudlegout.fr/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Research",
+            "item": "https://arnaudlegout.fr/research/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Projects",
+            "item": "https://arnaudlegout.fr/research/#projects"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "soTweet",
+            "item": "https://arnaudlegout.fr/research/Projects/sotweet.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../../style.css">
+  <!-- Script vide volontaire, à garder juste après la feuille de style : Firefox doit
+       attendre style.css avant de l'exécuter, donc il ne lit pas le <body> tant que le CSS
+       n'est pas chargé. Sans lui, une extension qui force la mise en page trop tôt
+       (« La mise en page a été forcée avant le chargement complet de la page ») fait
+       afficher la page sans style un instant au rechargement. Ne pas supprimer. -->
+  <script>0</script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ====== HEADER ====== -->
+  <header class="header">
+    <div class="nav container">
+      <nav class="nav__brand" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/en/" class="nav__logo">Arnaud Legout</a></li>
+          <li><a href="../" class="nav__section">Research</a></li>
+        </ol>
+      </nav>
+      <nav class="nav__menu" id="nav-menu" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="../" class="nav__link" aria-current="true">Research</a>
+            <ul class="nav__dropdown">
+              <li><a href="../publications.html">Publications</a></li>
+              <li><a href="../#projects">Projects</a></li>
+              <li><a href="../phdstudents.html">Recommendations for Ph.D. students</a></li>
+            </ul>
+          </li>
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="/en/training/" class="nav__link">Training</a>
+            <ul class="nav__dropdown">
+              <li class="nav__dropdown-label">Data science</li>
+              <li><a href="/en/training/python-data-science-level-1.html">Python data science — level 1</a></li>
+              <li><a href="/en/training/python-data-science-level-2.html">Python data science — level 2</a></li>
+              <li><a href="/en/training/python-machine-learning.html">Python machine learning</a></li>
+              <li class="nav__dropdown-label">Python essentials</li>
+              <li><a href="/en/training/python-level-1.html">Python — level 1</a></li>
+              <li><a href="/en/training/python-advanced.html">Python — advanced</a></li>
+            </ul>
+          </li>
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="/en/consulting/" class="nav__link">Consulting</a>
+            <ul class="nav__dropdown">
+              <li><a href="/en/consulting/audit-performance-cost-data-processing.html">Performance and cost audit</a></li>
+              <li><a href="/en/consulting/audit-ai-agents-data-science.html">AI agents audit</a></li>
+              <li><a href="/en/consulting/scientific-review-data-analyses.html">Scientific review of analyses</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav__actions">
+        <button type="button" class="nav__burger" aria-label="Open the navigation menu" aria-expanded="false" aria-controls="nav-menu">
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ====== MAIN ====== -->
+  <main id="main">
+
+    <section class="page-hero">
+      <div class="container">
+        <h1>soTweet: Studying Twitter at Scale</h1>
+        <p class="page-hero__subtitle">Past project</p>
+      </div>
+    </section>
+
+    <div class="page-content">
+      <div class="container">
+
+        <section class="page-section" id="overview">
+          <h2>Overview</h2>
+          <p>The goal of this project is to understand information propagation and opinion manipulation. There are two main ways information propagate among people. First, information can propagate using friend relationships. This is typically what happens during a discussion among friends, colleagues, or relatives. In this case, the communication is symmetrical, everybody can participate, but the scale is small. The friend relationship is the one implemented by, for instance, Facebook or LinkedIn. Second, information can propagate using a producer-consumer relationship. This is typically what happens when we watch a news channel, read a newspaper, or attend a live event. In this case, the communication is asymmetrical, consumers cannot directly communicate with the producer, but the scale is large.</p>
+          <p>Twitter is a widely popular social network that is based on a unidirectional follow relationship. This relationship enables both friends and producer-consumer information propagation. Because we can observe in Twitter the two fundamental ways information propagates, Twitter is the perfect candidate to study information propagation and opinion manipulation.</p>
+        </section>
+
+        <section class="page-section" id="contributions">
+          <h2>Contributions</h2>
+          <h3>What is the mascrostructure of the Twitter social graph?</h3>
+          <p>Twitter is one of the largest social networks using exclusively directed links among accounts. This makes the Twitter social graph much closer to the social graph supporting real life communications than, for instance, Facebook. Therefore, understanding the structure of the Twitter social graph is interesting not only for computer scientists, but also for researchers in other fields, such as sociologists. However, little is known about how the information propagation in Twitter is constrained by its inner structure.</p>
+          <p>We conducted an in-depth study of the macroscopic structure of the Twitter social graph unveiling the highways on which tweets propagate, the specific user activity associated with each component of this macroscopic structure, and the evolution of this macroscopic structure with time for the past 6 years. For this study, we crawled Twitter to retrieve all accounts and all social relationships (follow links) among accounts; the crawl completed in July 2012 with 505 million accounts interconnected by 23 billion links. Then, we present a methodology to unveil the macroscopic structure of the Twitter social graph. This macroscopic structure consists of 8 components defined by their connectivity characteristics. Each component group users with a specific usage of Twitter. For instance, we identified components gathering together spammers, or celebrities. Finally, we present a method to approximate the macroscopic structure of the Twitter social graph in the past, validate this method using old datasets, and discuss the evolution of the macroscopic structure of the Twitter social graph during the past 6 years.</p>
+          <figure>
+            <img alt="Macrostructure of any directed graph" src="img/graph_struct.png">
+            <figcaption><b>Figure 1. Macrostructure of any directed graph.</b></figcaption>
+          </figure>
+          <figure>
+            <img alt="Macrostructure of Twitter in July 2012" src="img/twitter2012_struct.png">
+            <figcaption><b>Figure 2. Macrostructure of Twitter in July 2012.</b> The size of the circles is proportional to the number of accounts in components. The labels on arrows give the number of arcs between components.</figcaption>
+          </figure>
+          <h3>How news media use Twitter to attrack traffic?</h3>
+          <p>Online news domains increasingly rely on social media to drive traffic to their website. Yet we know surprisingly little about how social media conversation mentioning an online article actually generates a click to it. Posting behaviors, in contrast, have been fully or partially available and scrutinized over the years. While this has led to to multiple assumptions on the diffusion of information, each were designed or validated while ignoring this important step.</p>
+          <p>We present a large scale, validated and reproducible study of social clicks -- that is also the first data of its kind -- gathering a month of web visits to online resources that are located in 5 leading news domains and that are mentioned in the third largest social media by web referral (Twitter). Our dataset amounts to 2.8 million posts, together responsible for 75 billion potential views on this social media, and 9.6 million actual clicks to 59,088 unique resources. We design a reproducible methodology, carefully corrected its biases, enabling data sharing, future collection and validation. As we prove, properties of clicks and social media Click-Through-Rates (CTR) impact multiple aspects of information diffusion, all previously unknown. Secondary resources, that are not promoted through headlines and are responsible for the long tail of content popularity, generate more clicks both in absolute and relative terms. Social media attention is actually long-lived, in contrast with temporal evolution estimated from posts or impressions. The actual influence of an intermediary or a resource is poorly predicted by their posting behavior, but we show how that prediction can be made more precise.</p>
+        </section>
+
+        <section class="page-section" id="papers">
+          <h2>Papers</h2>
+          <dl class="entries">
+            <dt><a href="https://hal.inria.fr/hal-01281190/en/" target="_blank" rel="noopener">[SIGMETRICS16]</a></dt>
+            <dd>Maksym Gabielkov, Arthi Ramachandran, Arnaud Legout, Augustin Chaintreau. <b>Social Clicks: What and Who Gets Read on Twitter?</b> In <i>Proc. of ACM SIGMETRICS 2016</i>, June 14--18, 2016, Antibes Juan-les-Pins, France. <a class="entry__link" href="https://hal.inria.fr/hal-01281190/en/" target="_blank" rel="noopener">download</a> <br><span class="badge badge--highlight">Press release</span> <a href="https://www.sciencedaily.com/releases/2016/06/160615134949.htm" target="_blank" rel="noopener">Science Daily</a>, <a href="https://www.dailymail.co.uk/sciencetech/article-3646526/Six-10-people-post-news-story-social-media-WITHOUT-reading-it.html/" target="_blank" rel="noopener">DailyMail</a>, <a href="https://www.washingtonpost.com/news/the-intersect/wp/2016/06/16/six-in-10-of-you-will-share-this-link-without-reading-it-according-to-a-new-and-depressing-study/" target="_blank" rel="noopener">The Washington Post</a>, <a href="http://www.lesechos.fr/tech-medias/medias/0211047169697-la-plupart-des-internautes-partagent-des-articles-sans-les-avoir-lus-2007983.php" target="_blank" rel="noopener">Les Échos</a>, <a href="https://www.20minutes.fr/insolite/1869599-20160620-pourquoi-allez-partager-article-forcement-lire" target="_blank" rel="noopener">20 minutes</a>, <a href="https://bfmbusiness.bfmtv.com/mediaplayer/video/les-reseaux-sociaux-ont-modifie-la-maniere-de-s-informer-836695.html" target="_blank" rel="noopener">BFM TV</a>, <a href="https://fortune.com/2016/06/19/6-out-of-10-twitter-link-clicks/" target="_blank" rel="noopener">Fortune</a>, <a href="https://www.newscientist.com/article/2101483-scammer-ai-can-tailor-clickbait-to-you-for-phishing-attacks/" target="_blank" rel="noopener">New Scientist</a>, <a href="http://www.pcmag.com/news/345424/web-users-quick-to-share-stories-without-reading-them" target="_blank" rel="noopener">PC mag</a>, <a href="http://www.lastampa.it/2016/06/21/tecnologia/news/i-link-su-twitter-sei-su-dieci-non-sono-mai-cliccati-4qQc5yQ1D21MRewHDQar1O/pagina.html" target="_blank" rel="noopener">La Stampa</a>, <a href="https://trends.levif.be/economie/high-tech/comment-facebook-compte-balayer-rumeurs-et-autres-theories-du-complot/article-opinion-538547.html" target="_blank" rel="noopener">Le vif</a>, <a href="https://www.eldiario.es/cultura/tecnologia/personas-compartan-articulo-Twitter-abierto_0_528797659.html" target="_blank" rel="noopener">El diaro</a>, <a href="https://www.slate.fr/story/119811/reseaux-sociaux-lisent-titre" target="_blank" rel="noopener">Slate.fr</a>.</dd>
+            <dt><a href="https://hal.inria.fr/hal-00948889/en/" target="_blank" rel="noopener">[SIGMETRICS14]</a></dt>
+            <dd>Maksym Gabielkov, Ashwin Rao, and Arnaud Legout. <b>Studying Social Networks at Scale: Macroscopic Anatomy of the Twitter Social Graph</b>. In <i>Proc. of ACM SIGMETRICS 2014</i>, June 16--20, 2014, Austin, Texas, USA. <a class="entry__link" href="https://hal.inria.fr/hal-00948889/en/" target="_blank" rel="noopener">download</a></dd>
+            <dt><a href="https://hal.inria.fr/hal-00954271/en" target="_blank" rel="noopener">[NetSciCom14]</a></dt>
+            <dd>Giovanni Neglia, Xiuhui Ye, Maksym Gabielkov, and Arnaud Legout. <b>How to Network in Online Social Networks</b>. In <i>Proc. of IEEE NetSciCom'14</i>, May 2, 2014, Toronto, Canada. <a class="entry__link" href="https://hal.inria.fr/hal-00954271/en" target="_blank" rel="noopener">download</a><br></dd>
+            <dt><a href="https://hal.inria.fr/hal-00752934" target="_blank" rel="noopener">[CONEXT12stud1]</a></dt>
+            <dd>Maksym Gabielkov, Arnaud Legout. <b>The Complete Picture of the Twitter Social Graph</b>. In <i>Proc. of ACM CoNEXT'12 Student Workshop</i>, Dec. 10, 2012, Nice, France. <a class="entry__link" href="https://hal.inria.fr/hal-00752934/en" target="_blank" rel="noopener">download</a></dd>
+          </dl>
+        </section>
+
+        <section class="page-section" id="members">
+          <h2>Members</h2>
+          <ul>
+            <li><a href="https://www.linkedin.com/in/maksym-gabielkov-96123160/" target="_blank" rel="noopener">Maksym Gabielkov</a> (MSR - INRIA - Microsoft Research - Inria Joint Centre)</li>
+            <li><a href="https://www.linkedin.com/in/ashwinsrao/" target="_blank" rel="noopener">Ashwin Rao</a> (Inria Sophia Antipolis Méditerranée)</li>
+            <li><a href="../">Arnaud Legout</a> (MSR - INRIA - Microsoft Research - Inria Joint Centre)</li>
+            <li><a href="https://www.cs.columbia.edu/~augustin/" target="_blank" rel="noopener">Augustin Chaintreau</a> (Columbia University)</li>
+            <li><a href="https://www.cs.columbia.edu/~arthir/" target="_blank" rel="noopener">Arthi Ramachandran</a> (Columbia University)</li>
+            <li><a href="https://www-sop.inria.fr/members/Giovanni.Neglia/" target="_blank" rel="noopener">Giovanni Neglia</a> (Inria Sophia Antipolis Méditerranée)</li>
+            <li>Xiuhui Ye (Politecnico di Torino)</li>
+          </ul>
+        </section>
+
+        <section class="page-section" id="dataset">
+          <h2>Dataset</h2>
+          <h3>Twitter Social Graph 2012</h3>
+          <p>We share an anonymized version of the Twitter social graph we collected as described in our SIGMETRICS'2014 publication <a href="https://hal.inria.fr/hal-00948889/en/" target="_blank" rel="noopener">[GRL_SIG_14]</a>. The dataset we share consists of adjacency lists for the full Twitter social graph and for each of its macro component (<a href="https://hal.inria.fr/hal-00948889/en/" target="_blank" rel="noopener">[GRL_SIG_14]</a>). Each account ID in the adjacency lists is anonymized.</p>
+          <p>We make available this dataset for academic studies only. Redistribution and commercial use of this dataset are prohibited. If you are interested in this dataset, please contact <a href="mailto:arnaud.legout@inria.fr">Arnaud Legout</a>.</p>
+          <p>You can refer to this dataset by citing the publication <a href="https://hal.inria.fr/hal-00948889/en/" target="_blank" rel="noopener">[GRL_SIG_14]</a>.</p>
+          <h3>Social Clicks 2016</h3>
+          <p>We share an anonymized version of the dataset on the social clicks we collected as descibed in our SIGMETRICS'2016 publication <a href="https://hal.inria.fr/hal-01281190/en/" target="_blank" rel="noopener">[GRL_16]</a></p>
+          <p>We make available this dataset for academic studies only. Redistribution and commercial use of this dataset are prohibited. If you are interested in this dataset, please contact <a href="mailto:arnaud.legout@inria.fr">Arnaud Legout</a>.</p>
+          <p>You can refer to this dataset by citing the publication <a href="https://hal.inria.fr/hal-01281190/en/" target="_blank" rel="noopener">[GRL_16]</a>.</p>
+        </section>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="../">Research</a></p>
+          <ul class="footer__link-list">
+            <li><a href="../publications.html">Publications</a></li>
+            <li><a href="../#projects">Projects</a></li>
+            <li><a href="../phdstudents.html">Recommendations for Ph.D. students</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="/en/training/">Training</a></p>
+          <ul class="footer__link-list">
+            <li><a href="/en/training/python-data-science-level-1.html">Python data science — level 1</a></li>
+            <li><a href="/en/training/python-data-science-level-2.html">Python data science — level 2</a></li>
+            <li><a href="/en/training/python-machine-learning.html">Python machine learning</a></li>
+            <li><a href="/en/training/python-level-1.html">Python — level 1</a></li>
+            <li><a href="/en/training/python-advanced.html">Python — advanced</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="/en/consulting/">Consulting</a></p>
+          <ul class="footer__link-list">
+            <li><a href="/en/consulting/audit-performance-cost-data-processing.html">Performance and cost audit</a></li>
+            <li><a href="/en/consulting/audit-ai-agents-data-science.html">AI agents audit</a></li>
+            <li><a href="/en/consulting/scientific-review-data-analyses.html">Scientific review of analyses</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Contact</p>
+          <ul class="footer__link-list">
+            <li><a href="/en/training/contact.html">Training contact</a></li>
+            <li><a href="/en/consulting/contact.html">Consulting contact</a></li>
+            <li><a href="mailto:arnaud.legout@gmail.com">Email</a></li>
+            <li><a href="/en/legal-notice.html">Legal notice</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Arnaud Legout. Static site, no cookies.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script data-goatcounter="https://arnaudlegout-inria.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+  <script src="../../assets/js/nav.js"></script>
+</body>
+
+</html>

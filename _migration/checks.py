@@ -1,6 +1,6 @@
 """Checks 2, 3 and 5 (static, on the files of the repo).
 
-2. no formation.arnaudlegout.fr / consulting.arnaudlegout.fr / github.io outside
+2. no formation.arnaudlegout.fr / consulting.arnaudlegout.fr / arnaudlegout.github.io outside
    _migration/ and CLAUDE.md; //gc.zgo.at/count.js intact, once per page;
 3. per page: one canonical = its new URL, og:url = canonical, no noindex except legal,
    articles, 404 (and the unpublished article template); sitemap = indexable pages;
@@ -24,11 +24,12 @@ fail = []
 n = 0
 for p in sorted(HOME.rglob("*")):
     rel = p.relative_to(HOME).as_posix()
+    # text files only: the research section also publishes PDF, PostScript, slides, archives
     if not p.is_file() or rel.startswith((".git/", "_migration/")) or rel == "CLAUDE.md" \
-            or p.suffix in (".woff2", ".jpg", ".png"):
+            or p.suffix not in (".html", ".css", ".js", ".xml", ".txt", ".svg", ""):
         continue
     n += 1
-    for m in re.finditer(r"formation\.arnaudlegout\.fr|consulting\.arnaudlegout\.fr|github\.io", p.read_text(encoding="utf-8")):
+    for m in re.finditer(r"formation\.arnaudlegout\.fr|consulting\.arnaudlegout\.fr|arnaudlegout\.github\.io", p.read_text(encoding="utf-8")):
         fail.append(f"old host: {rel}: {m.group(0)}")
 gc = {rel: read(rel).count('src="//gc.zgo.at/count.js"') for rel in pages()}
 if set(gc.values()) != {1}:

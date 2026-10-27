@@ -15,17 +15,34 @@
        (« La mise en page a été forcée avant le chargement complet de la page ») fait
        afficher la page sans style un instant au rechargement. Ne pas supprimer. -->
   <script>0</script>
+  <!-- Une seule 404 pour tout le site : en anglais pour les URL anglaises (/en/, /research/).
+       Fixé avant l'affichage ; nav.js remplace alors la barre et le pied de page par leur
+       version anglaise, et le CSS masque le texte français ([data-lang]). -->
+  <script>
+    if (/^\/(en|research)\//.test(location.pathname)) {
+      document.documentElement.lang = 'en';
+      document.title = 'Page not found | Arnaud Legout';
+    }
+  </script>
 </head>
 
 <body>
 
-  <a class="skip-link" href="#main">Aller au contenu principal</a>
+  <a class="skip-link" href="#main"><span data-lang="fr">Aller au contenu principal</span><span data-lang="en">Skip to main content</span></a>
 
   <header class="header">
     <div class="nav container">
       <a href="/" class="nav__logo">Arnaud Legout</a>
       <nav class="nav__menu" id="nav-menu" aria-label="Navigation principale">
         <ul class="nav__list">
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="/research/" class="nav__link" hreflang="en">Recherche</a>
+            <ul class="nav__dropdown">
+              <li><a href="/research/publications.html" hreflang="en">Publications</a></li>
+              <li><a href="/research/#projects" hreflang="en">Projets</a></li>
+              <li><a href="/research/phdstudents.html" hreflang="en">Conseils aux doctorants</a></li>
+            </ul>
+          </li>
           <li class="nav__item nav__item--has-dropdown">
             <a href="/formation/" class="nav__link">Formation</a>
             <ul class="nav__dropdown">
@@ -49,6 +66,7 @@
         </ul>
       </nav>
       <div class="nav__actions">
+        <a href="/en/" class="nav__lang" hreflang="en" lang="en" aria-label="English version of this page">EN</a>
         <button type="button" class="nav__burger" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="nav-menu">
           <span class="nav__burger-bar"></span>
           <span class="nav__burger-bar"></span>
@@ -60,13 +78,24 @@
 
   <main id="main">
     <div class="container container--text">
-      <div class="not-found">
+      <div class="not-found" data-lang="fr">
         <h1>Page introuvable</h1>
         <p>Cette page n'existe pas — ou plus. Vous cherchiez peut-être l'une de ces pages&nbsp;:</p>
         <div class="hero__cta">
           <a href="/" class="btn btn--primary">Accueil</a>
+          <a href="/research/" class="btn btn--secondary" hreflang="en">Recherche</a>
           <a href="/formation/" class="btn btn--secondary">Formation</a>
           <a href="/consulting/" class="btn btn--secondary">Conseil</a>
+        </div>
+      </div>
+      <div class="not-found" data-lang="en" lang="en">
+        <h1>Page not found</h1>
+        <p>This page does not exist — or no longer exists. You may be looking for one of these pages:</p>
+        <div class="hero__cta">
+          <a href="/en/" class="btn btn--primary">Home</a>
+          <a href="/research/" class="btn btn--secondary">Research</a>
+          <a href="/en/training/" class="btn btn--secondary">Training</a>
+          <a href="/en/consulting/" class="btn btn--secondary">Consulting</a>
         </div>
       </div>
     </div>
@@ -76,13 +105,11 @@
     <div class="container">
       <div class="footer__grid">
         <div class="footer__col">
-          <p class="footer__col-title">Arnaud Legout</p>
-          <p class="footer__tagline">Directeur de recherche Inria — Sophia Antipolis, France</p>
+          <p class="footer__col-title"><a href="/research/" hreflang="en">Recherche</a></p>
           <ul class="footer__link-list">
-            <li><a href="/">Parcours</a></li>
-            <li><a href="https://www-sop.inria.fr/members/Arnaud.Legout/" target="_blank" rel="noopener">Recherche Inria</a></li>
-            <li><a href="https://www.linkedin.com/in/arnaud-legout-866a404/" target="_blank" rel="noopener">LinkedIn</a></li>
-            <li><a href="https://scholar.google.com/citations?user=uGy5lroAAAAJ" target="_blank" rel="noopener">Google Scholar</a></li>
+            <li><a href="/research/publications.html" hreflang="en">Publications</a></li>
+            <li><a href="/research/#projects" hreflang="en">Projets</a></li>
+            <li><a href="/research/phdstudents.html" hreflang="en">Conseils aux doctorants</a></li>
           </ul>
         </div>
         <div class="footer__col">
@@ -118,6 +145,99 @@
       </div>
     </div>
   </footer>
+  <template data-chrome="header-en">
+  <header class="header">
+    <div class="nav container">
+      <a href="/en/" class="nav__logo">Arnaud Legout</a>
+      <nav class="nav__menu" id="nav-menu" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="/research/" class="nav__link">Research</a>
+            <ul class="nav__dropdown">
+              <li><a href="/research/publications.html">Publications</a></li>
+              <li><a href="/research/#projects">Projects</a></li>
+              <li><a href="/research/phdstudents.html">Recommendations for Ph.D. students</a></li>
+            </ul>
+          </li>
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="/en/training/" class="nav__link">Training</a>
+            <ul class="nav__dropdown">
+              <li class="nav__dropdown-label">Data science</li>
+              <li><a href="/en/training/python-data-science-level-1.html">Python data science — level 1</a></li>
+              <li><a href="/en/training/python-data-science-level-2.html">Python data science — level 2</a></li>
+              <li><a href="/en/training/python-machine-learning.html">Python machine learning</a></li>
+              <li class="nav__dropdown-label">Python essentials</li>
+              <li><a href="/en/training/python-level-1.html">Python — level 1</a></li>
+              <li><a href="/en/training/python-advanced.html">Python — advanced</a></li>
+            </ul>
+          </li>
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="/en/consulting/" class="nav__link">Consulting</a>
+            <ul class="nav__dropdown">
+              <li><a href="/en/consulting/audit-performance-cost-data-processing.html">Performance and cost audit</a></li>
+              <li><a href="/en/consulting/audit-ai-agents-data-science.html">AI agents audit</a></li>
+              <li><a href="/en/consulting/scientific-review-data-analyses.html">Scientific review of analyses</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav__actions">
+        <a href="/" class="nav__lang" hreflang="fr" lang="fr" aria-label="Version française de cette page">FR</a>
+        <button type="button" class="nav__burger" aria-label="Open the navigation menu" aria-expanded="false" aria-controls="nav-menu">
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  </template>
+  <template data-chrome="footer-en">
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="/research/">Research</a></p>
+          <ul class="footer__link-list">
+            <li><a href="/research/publications.html">Publications</a></li>
+            <li><a href="/research/#projects">Projects</a></li>
+            <li><a href="/research/phdstudents.html">Recommendations for Ph.D. students</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="/en/training/">Training</a></p>
+          <ul class="footer__link-list">
+            <li><a href="/en/training/python-data-science-level-1.html">Python data science — level 1</a></li>
+            <li><a href="/en/training/python-data-science-level-2.html">Python data science — level 2</a></li>
+            <li><a href="/en/training/python-machine-learning.html">Python machine learning</a></li>
+            <li><a href="/en/training/python-level-1.html">Python — level 1</a></li>
+            <li><a href="/en/training/python-advanced.html">Python — advanced</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="/en/consulting/">Consulting</a></p>
+          <ul class="footer__link-list">
+            <li><a href="/en/consulting/audit-performance-cost-data-processing.html">Performance and cost audit</a></li>
+            <li><a href="/en/consulting/audit-ai-agents-data-science.html">AI agents audit</a></li>
+            <li><a href="/en/consulting/scientific-review-data-analyses.html">Scientific review of analyses</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Contact</p>
+          <ul class="footer__link-list">
+            <li><a href="/en/training/contact.html">Training contact</a></li>
+            <li><a href="/en/consulting/contact.html">Consulting contact</a></li>
+            <li><a href="mailto:arnaud.legout@gmail.com">Email</a></li>
+            <li><a href="/en/legal-notice.html">Legal notice</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Arnaud Legout. Static site, no cookies.</p>
+      </div>
+    </div>
+  </footer>
+  </template>
 
   <script data-goatcounter="https://arnaudlegout-home.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>

@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Python training — decorators, descriptors, metaclasses</title>
+  <meta name="description" content="Python&#x27;s inner mechanisms: decorators, generators, descriptors, metaclasses. 3 days for experienced developers. In-company. Rated 4.93/5.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://arnaudlegout.fr/en/training/python-advanced.html">
+  <link rel="alternate" hreflang="fr" href="https://arnaudlegout.fr/formation/python-avance.html">
+  <link rel="alternate" hreflang="en" href="https://arnaudlegout.fr/en/training/python-advanced.html">
+  <link rel="alternate" hreflang="x-default" href="https://arnaudlegout.fr/formation/python-avance.html">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arnaudlegout.fr/en/training/python-advanced.html">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="fr_FR">
+  <meta property="og:site_name" content="Arnaud Legout">
+  <meta property="og:title" content="Advanced Python training — decorators, descriptors, metaclasses | Arnaud Legout">
+  <meta property="og:description" content="Python&#x27;s inner mechanisms: decorators, generators, descriptors, metaclasses. 3 days for experienced developers. In-company. Rated 4.93/5.">
+  <meta property="og:image" content="https://arnaudlegout.fr/assets/og-formation-en.jpg">
+  <meta property="og:image:secure_url" content="https://arnaudlegout.fr/assets/og-formation-en.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Python data science training by Arnaud Legout, senior research scientist at Inria — Rated 4.93/5">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Advanced Python training — decorators, descriptors, metaclasses | Arnaud Legout">
+  <meta name="twitter:description" content="Python&#x27;s inner mechanisms: decorators, generators, descriptors, metaclasses. 3 days for experienced developers. In-company. Rated 4.93/5.">
+  <meta name="twitter:image" content="https://arnaudlegout.fr/assets/og-formation-en.jpg">
+  <meta name="twitter:image:alt" content="Python data science training by Arnaud Legout, senior research scientist at Inria — Rated 4.93/5">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+  <link rel="preload" href="../../assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../style.css">
+  <!-- Script vide volontaire, à garder juste après la feuille de style : Firefox doit
+       attendre style.css avant de l'exécuter, donc il ne lit pas le <body> tant que le CSS
+       n'est pas chargé. Sans lui, une extension qui force la mise en page trop tôt
+       (« La mise en page a été forcée avant le chargement complet de la page ») fait
+       afficher la page sans style un instant au rechargement. Ne pas supprimer. -->
+  <script>0</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "@id": "https://arnaudlegout.fr/en/training/python-advanced.html#course",
+    "name": "Advanced Python training — object-oriented, functional and metaprogramming",
+    "description": "Intensive 3-day professional training on advanced Python paradigms: decorators and closures, custom iterators and generators, descriptors, metaclasses. Understanding the inner workings of the language to read and write professional-quality Python libraries.",
+    "url": "https://arnaudlegout.fr/en/training/python-advanced.html",
+    "inLanguage": [
+      "en",
+      "fr"
+    ],
+    "provider": {
+      "@id": "https://arnaudlegout.fr/formation/#formation-arnaud-legout"
+    },
+    "about": [
+      "Advanced Python",
+      "Decorators",
+      "Generators",
+      "Descriptors",
+      "Metaclasses",
+      "Object-oriented programming",
+      "Metaprogramming"
+    ],
+    "teaches": [
+      "Distinguish and use static, class and instance methods",
+      "Implement decorators with closures and function attributes",
+      "Design custom iterators with generator functions",
+      "Control attribute access with properties and descriptors",
+      "Understand the metaclass protocol and Python's type system",
+      "Read and understand the source code of the major Python libraries"
+    ],
+    "audience": {
+      "@type": "EducationalAudience",
+      "educationalRole": "Developers, engineers and researchers who want to deepen their command of Python"
+    },
+    "educationalLevel": "Advanced",
+    "coursePrerequisites": "Having taken the Python — level 1 course or having an equivalent level: a command of shared references, dynamic typing, namespaces and iteration. A good understanding of classes and instances.",
+    "timeRequired": "PT21H",
+    "hasCourseInstance": [
+      {
+        "@type": "CourseInstance",
+        "courseMode": "Onsite",
+        "courseWorkload": "PT21H",
+        "instructor": {
+          "@id": "https://arnaudlegout.fr/#arnaud-legout"
+        },
+        "location": {
+          "@type": "Place",
+          "name": "On the client's premises, France"
+        }
+      },
+      {
+        "@type": "CourseInstance",
+        "courseMode": "Online",
+        "courseWorkload": "PT21H",
+        "instructor": {
+          "@id": "https://arnaudlegout.fr/#arnaud-legout"
+        }
+      }
+    ],
+    "offers": {
+      "@type": "Offer",
+      "category": "Professional training",
+      "availability": "https://schema.org/InStock",
+      "url": "https://arnaudlegout.fr/en/training/contact.html"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Arnaud Legout",
+        "item": "https://arnaudlegout.fr/en/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Training",
+        "item": "https://arnaudlegout.fr/en/training/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Python — advanced",
+        "item": "https://arnaudlegout.fr/en/training/python-advanced.html"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "en",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What are the concrete prerequisites for this course?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You need to master shared references, dynamic typing, namespaces and iteration — either by having taken the Python level 1 course, or by having an equivalent level. A good understanding of classes and instances is also required."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the concrete use of knowing metaclasses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Metaclasses let you understand Python's object model in depth, and write generic code: automatic class registration, validation at definition time, singletons. They appear regularly in the source code of Pandas, SQLAlchemy and pytest — libraries that many teams use without being able to read their code."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between a decorator written as a function and one written as a class?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Both forms are covered in module 2. Class-based decorators may look simpler and more powerful at first, but they have important limitations — in particular when decorating class methods. Function-based decorators, relying on closures and nonlocal attributes (or function attributes), make it possible to build powerful and fully generic decorators. This is the approach favored in the course."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this course useful for teams that do not write libraries?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Understanding descriptors, generators and decorators lets you read and maintain complex Python code, even without writing it. It is useful for any team that works with third-party libraries or takes over existing production code."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the remote format suitable for this kind of training?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. 90% of participants rate the remote format as equivalent or better than in-person. I have been running remote training since 2020 and have built a solid practice of online teaching. I use Zoom, which makes it possible to record the sessions and share them with participants if desired, and CoCalc, an online platform that gives access to preconfigured servers with all the training material and libraries installed. CoCalc also lets me follow each participant's progress in real time and step in directly to correct or unblock."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can this course be combined with a data science course?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, it is a natural combination for teams that want both performance (Polars, Numba) and architectural quality (decorators, descriptors, metaclasses)."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="header">
+    <div class="nav container">
+      <nav class="nav__brand" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/en/" class="nav__logo">Arnaud Legout</a></li>
+          <li><a href="./" class="nav__section">Training</a></li>
+        </ol>
+      </nav>
+      <nav class="nav__menu" id="nav-menu" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="/research/" class="nav__link">Research</a>
+            <ul class="nav__dropdown">
+              <li><a href="/research/publications.html">Publications</a></li>
+              <li><a href="/research/#projects">Projects</a></li>
+              <li><a href="/research/phdstudents.html">Recommendations for Ph.D. students</a></li>
+            </ul>
+          </li>
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="./" class="nav__link" aria-current="true">Training</a>
+            <ul class="nav__dropdown">
+              <li class="nav__dropdown-label">Data science</li>
+              <li><a href="python-data-science-level-1.html">Python data science — level 1</a></li>
+              <li><a href="python-data-science-level-2.html">Python data science — level 2</a></li>
+              <li><a href="python-machine-learning.html">Python machine learning</a></li>
+              <li class="nav__dropdown-label">Python essentials</li>
+              <li><a href="python-level-1.html">Python — level 1</a></li>
+              <li><a href="python-advanced.html" aria-current="page">Python — advanced</a></li>
+            </ul>
+          </li>
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="/en/consulting/" class="nav__link">Consulting</a>
+            <ul class="nav__dropdown">
+              <li><a href="/en/consulting/audit-performance-cost-data-processing.html">Performance and cost audit</a></li>
+              <li><a href="/en/consulting/audit-ai-agents-data-science.html">AI agents audit</a></li>
+              <li><a href="/en/consulting/scientific-review-data-analyses.html">Scientific review of analyses</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav__actions">
+        <a href="contact.html" class="nav__cta btn btn--primary"><span class="nav__cta-long">Request a quote</span><span class="nav__cta-short">Quote</span></a>
+        <a href="/formation/python-avance.html" class="nav__lang" hreflang="fr" lang="fr" aria-label="Version française de cette page">FR</a>
+        <button type="button" class="nav__burger" aria-label="Open the navigation menu" aria-expanded="false" aria-controls="nav-menu">
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <div class="page-hero">
+      <div class="container container--text">
+        <h1>Python training — advanced</h1>
+        <p class="page-hero__subtitle">Object-oriented, functional and metaprogramming</p>
+        <div class="page-hero__badges">
+          <span class="badge">⏱ 3 days</span>
+          <span class="badge">👥 ≤ 10 people</span>
+          <span class="badge">📍 On site or remote</span>
+          <span class="badge">🌐 English or French</span>
+          <span class="badge">🎯 Advanced</span>
+          <span class="badge">👤 Experienced Python developers</span>
+          <span class="badge">🏢 In-company</span>
+          <span class="badge">★ 4.93/5</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-content">
+      <div class="container">
+
+        <div class="page-section">
+          <p><em>A module offered as a complement to the data science courses, or as a standalone course depending on your needs.</em></p>
+          <p class="lead">Most Python developers reach a plateau after a few years: they write code that works, but do not master the mechanisms that make Python so expressive. When they read the source code of Pandas, Polars, SQLAlchemy or pytest, they run into decorators, descriptors, metaclasses — and they lose track.</p>
+          <p>This course takes them past that point. It explores the advanced paradigms of the language: <strong>custom generators and iterators, decorators and closures, descriptors, metaclasses</strong>. These are the notions that let you understand the major Python libraries and write generic, reusable and maintainable code.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>After this course, your staff will be able to</h2>
+          <ul>
+            <li>Distinguish and use static, class and instance methods in the right context</li>
+            <li>Implement decorators using closures and function attributes</li>
+            <li>Design custom iterators with generator functions</li>
+            <li>Control attribute access with properties and descriptors</li>
+            <li>Understand the metaclass protocol and its relation to Python's type system</li>
+            <li>Read and understand the source code of the major libraries of the Python ecosystem</li>
+          </ul>
+        </div>
+
+        <div class="page-section">
+          <h2>Detailed program</h2>
+
+          <h3>Module 1 — Static and class methods</h3>
+          <p>A refresher on classes and instances. Functions and bound methods. Static methods: uses and limits. Class methods: canonical uses (alternative constructors, polymorphism). Choosing the right form for the context.</p>
+
+          <h3>Module 2 — Decorators</h3>
+          <p>Callables, functions and closures: the underlying mechanisms. Designing decorators as functions, then as classes. Function attributes and preserving metadata with <code>functools.wraps</code>. Class decorators. Concrete applications: timer, watchdog, memoization.</p>
+
+          <h3>Module 3 — Iterators and generators</h3>
+          <p>The iteration protocol in depth: <code>__iter__</code> and <code>__next__</code>. Generator functions and the <code>yield</code> keyword. Generator expressions and their memory footprint. Designing custom iterators for your own data structures. Application: composable processing chains.</p>
+
+          <h3>Module 4 — Advanced attribute management</h3>
+          <p>Properties (<code>@property</code>, setter, deleter). The descriptor protocol: <code>__get__</code>, <code>__set__</code>, <code>__delete__</code>. Data vs non-data descriptors. Attribute hooks: <code>__getattr__</code>, <code>__setattr__</code>, <code>__getattribute__</code>. Applications: automatic validation, computed attributes, hooks.</p>
+
+          <h3>Module 5 — Metaclasses</h3>
+          <p>The instance/class/metaclass relationship in Python's object model. The <code>type</code> metaclass and dynamic class creation. Defining a custom metaclass with <code>__new__</code> and <code>__init__</code>. Use cases: automatic registration, class validation, singletons.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Audience and prerequisites</h2>
+          <p><strong>Target audience</strong></p>
+          <p>Developers, engineers and researchers who want to deepen their command of Python beyond the basics and understand the inner mechanisms of the language.</p>
+          <p><strong>Prerequisites</strong></p>
+          <p>Having taken the “Python — level 1” course or having an equivalent level: a command of shared references, dynamic typing, namespaces and iteration. A good understanding of classes and instances.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Teaching method</h2>
+          <p>The course alternates short theoretical presentations and hands-on exercises in Jupyter notebooks. Each concept is put into practice immediately. Particular attention is paid to the most recent techniques and to best practices drawn from field experience — in particular those I come across in the source code of the major libraries of the ecosystem.</p>
+          <p>The material is given to the participants at the end of the course, along with the exercise notebooks and their solutions.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>A course for every mature Python team</h2>
+          <p>This course is particularly suited to teams that develop their own internal libraries, contribute to open source projects, or must maintain complex production Python code. It combines naturally with the data science courses for teams that want both performance and architectural quality.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Official documentation</h2>
+          <p>The <a href="https://docs.python.org/3/reference/datamodel.html" target="_blank" rel="noopener noreferrer">Python data model</a> (metaclasses, descriptors), <a href="https://peps.python.org/pep-0318/" target="_blank" rel="noopener noreferrer">PEP&nbsp;318</a> (decorators), <a href="https://peps.python.org/pep-0255/" target="_blank" rel="noopener noreferrer">PEP&nbsp;255</a> (generators).</p>
+        </div>
+
+
+        <section class="page-section" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">Frequently asked questions</h2>
+          <div class="faq">
+            <details class="faq__item">
+              <summary>What are the concrete prerequisites for this course?</summary>
+              <div class="faq__answer"><p>You need to master shared references, dynamic typing, namespaces and iteration — either by having taken the Python level 1 course, or by having an equivalent level. A good understanding of classes and instances is also required.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>What is the concrete use of knowing metaclasses?</summary>
+              <div class="faq__answer"><p>Metaclasses let you understand Python's object model in depth, and write generic code: automatic class registration, validation at definition time, singletons. They appear regularly in the source code of Pandas, SQLAlchemy and pytest — libraries that many teams use without being able to read their code.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>What is the difference between a decorator written as a function and one written as a class?</summary>
+              <div class="faq__answer"><p>Both forms are covered in module 2. Class-based decorators may look simpler and more powerful at first, but they have important limitations — in particular when decorating class methods. Function-based decorators, relying on closures and nonlocal attributes (or function attributes), make it possible to build powerful and fully generic decorators. This is the approach favored in the course.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Is this course useful for teams that do not write libraries?</summary>
+              <div class="faq__answer"><p>Yes. Understanding descriptors, generators and decorators lets you read and maintain complex Python code, even without writing it. It is useful for any team that works with third-party libraries or takes over existing production code.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Is the remote format suitable for this kind of training?</summary>
+              <div class="faq__answer"><p>Yes. 90% of participants rate the remote format as equivalent or better than in-person. I have been running remote training since 2020 and have built a solid practice of online teaching. I use Zoom, which makes it possible to record the sessions and share them with participants if desired, and CoCalc, an online platform that gives access to preconfigured servers with all the training material and libraries installed. CoCalc also lets me follow each participant's progress in real time and step in directly to correct or unblock.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Can this course be combined with a data science course?</summary>
+              <div class="faq__answer"><p>Yes, it is a natural combination for teams that want both performance (Polars, Numba) and architectural quality (decorators, descriptors, metaclasses).</p></div>
+            </details>
+          </div>
+        </section>
+
+        <div class="page-cta">
+          <a href="contact.html" class="btn btn--primary">Request a quote for this course</a>
+        </div>
+
+      </div>
+    </div>
+
+    <section class="section voir-aussi" aria-labelledby="see-also-title">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="see-also-title">See also</h2>
+        </div>
+        <div class="cards-grid cards-grid--pair">
+          <a class="card card--link" href="python-level-1.html">
+            <h3 class="card__title">Python — level&nbsp;1</h3>
+            <p class="card__body">The data science courses assume a good command of Python: functions, iteration,
+            modules, namespaces. If this is not the case for all your staff, I can add this module before the data
+            science days.</p>
+            <span class="card__link">See the program →</span>
+          </a>
+
+          <a class="card card--link" href="python-data-science-level-2.html">
+            <h3 class="card__title">Python data science — level&nbsp;2</h3>
+            <p class="card__body">Going beyond Pandas when data exceeds RAM or when performance matters. Polars and its
+            streaming engine, JIT acceleration with Numba, multi-core parallelism with multiprocessing.</p>
+            <span class="card__link">See the program →</span>
+          </a>
+        </div>
+        <p class="voir-aussi__note">Beyond training, I also work as a consultant on the performance of your data
+          pipelines, the use of AI agents and the review of your analyses.
+          <a href="/en/consulting/">Discover consulting →</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="/research/">Research</a></p>
+          <ul class="footer__link-list">
+            <li><a href="/research/publications.html">Publications</a></li>
+            <li><a href="/research/#projects">Projects</a></li>
+            <li><a href="/research/phdstudents.html">Recommendations for Ph.D. students</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="./">Training</a></p>
+          <ul class="footer__link-list">
+            <li><a href="python-data-science-level-1.html">Python data science — level 1</a></li>
+            <li><a href="python-data-science-level-2.html">Python data science — level 2</a></li>
+            <li><a href="python-machine-learning.html">Python machine learning</a></li>
+            <li><a href="python-level-1.html">Python — level 1</a></li>
+            <li><a href="python-advanced.html">Python — advanced</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="/en/consulting/">Consulting</a></p>
+          <ul class="footer__link-list">
+            <li><a href="/en/consulting/audit-performance-cost-data-processing.html">Performance and cost audit</a></li>
+            <li><a href="/en/consulting/audit-ai-agents-data-science.html">AI agents audit</a></li>
+            <li><a href="/en/consulting/scientific-review-data-analyses.html">Scientific review of analyses</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Contact</p>
+          <ul class="footer__link-list">
+            <li><a href="contact.html">Training contact</a></li>
+            <li><a href="/en/consulting/contact.html">Consulting contact</a></li>
+            <li><a href="mailto:arnaud.legout@gmail.com">Email</a></li>
+            <li><a href="/en/legal-notice.html">Legal notice</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Arnaud Legout. Static site, no cookies.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script data-goatcounter="https://arnaudlegout-formations.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+  <script src="../../assets/js/nav.js"></script>
+</body>
+</html>

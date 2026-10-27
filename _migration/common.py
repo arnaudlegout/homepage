@@ -18,9 +18,12 @@ APEX = "https://arnaudlegout.fr"
 OLD_REPOS = {"formation": WEB / "formation-consulting", "consulting": WEB / "consulting"}
 COURSES = {"python-niveau-1.html", "python-avance.html", "python-data-science-niveau-1.html",
            "python-data-science-niveau-2.html", "python-machine-learning.html"}
-NOINDEX_OK = {"mentions-legales.html", "404.html", "formation/articles.html",
+NOINDEX_OK = {"mentions-legales.html", "en/legal-notice.html", "404.html", "formation/articles.html",
               "formation/articles/_template-article.html"}
 TEMPLATE = "formation/articles/_template-article.html"
+# Documents published as they are, without the site chrome: copies of third-party texts
+# recommended to Ph.D. students
+RAW = {"research/Documents/hitch4.html", "research/Documents/external_reviewing.html"}
 sys.stdout.reconfigure(encoding="utf-8")
 
 
@@ -30,9 +33,9 @@ def url_map():
 
 
 def pages():
-    """Every HTML file of the new site, as paths relative to HOME (posix)."""
-    return sorted(p.relative_to(HOME).as_posix() for p in HOME.rglob("*.html")
-                  if not p.relative_to(HOME).parts[0].startswith(("_", ".")))
+    """Every HTML page of the site (RAW documents excluded), as paths relative to HOME (posix)."""
+    return sorted(rel for rel in (p.relative_to(HOME).as_posix() for p in HOME.rglob("*.html"))
+                  if not rel.startswith(("_", ".")) and rel not in RAW)
 
 
 def new_url(rel):

@@ -5,8 +5,11 @@
 ## Pages
 - [Arnaud Legout — directeur de recherche Inria, formation et conseil en data science](https://arnaudlegout.fr/) : parcours, recherche, enseignement, liens.
 
-## Liens
-- [Page de recherche Inria](https://www-sop.inria.fr/members/Arnaud.Legout/) : publications, projets, encadrement.
+## Recherche (en anglais)
+- [Arnaud Legout — Senior Research Scientist at Inria](https://arnaudlegout.fr/research/) : coordonnées, actualités, biographie, projets, doctorants, activités, enseignement.
+- [Publications — Arnaud Legout](https://arnaudlegout.fr/research/publications.html) : articles de revues et de conférences, rapports, thèses, supports de cours, exposés, brevets.
+- [Recommendations for Ph.D. students](https://arnaudlegout.fr/research/phdstudents.html) : lectures conseillées aux doctorants.
+- Projets passés : [Greasy](https://arnaudlegout.fr/research/Projects/greasy.html), [ElectroSmart](https://arnaudlegout.fr/research/Projects/electrosmart.html), [soTweet](https://arnaudlegout.fr/research/Projects/sotweet.html), [Video Streaming](https://arnaudlegout.fr/research/Projects/streaming.html), [Bluebear](https://arnaudlegout.fr/research/Projects/bluebear.html), [P2P-CD](https://arnaudlegout.fr/research/Projects/p2p_cd.html), [PLM](https://arnaudlegout.fr/research/Projects/plm.html).
 
 ## Formation
 - [Formation Python data science — NumPy, Pandas, Polars, scikit-learn](https://arnaudlegout.fr/formation/) : Formations intra-entreprise Python data science et haute performance. 3 jours, 10 participants max, français ou anglais. Note 4,93/5. Devis gratuit.
@@ -23,3 +26,8 @@
 - [Audit de l'usage des agents IA en data science | Arnaud Legout](https://arnaudlegout.fr/consulting/audit-agents-ia-data-science.html) : Copilot, Cursor, Claude Code : que produisent-ils réellement dans votre équipe data ? Audit de la qualité du code, de la productivité et des fuites de données.
 - [Revue scientifique de vos analyses data | Arnaud Legout](https://arnaudlegout.fr/consulting/revue-scientifique-analyses-data.html) : Avant de décider à partir d'une analyse ou d'un test A/B : relecture indépendante par un directeur de recherche. Vos calculs répondent-ils à la bonne question ?
 - [Contact — conseil data science | Arnaud Legout](https://arnaudlegout.fr/consulting/contact.html) : Décrivez votre situation : traitements lents, agents IA, analyse à relire. Réponse sous 48 heures avec une proposition de diagnostic ou d'intervention.
+
+## English
+- [Arnaud Legout — senior research scientist at Inria, data science training and consulting](https://arnaudlegout.fr/en/) : the home page in English.
+- [Python data science training](https://arnaudlegout.fr/en/training/) : the training section in English (NumPy, Pandas, Polars, Numba, scikit-learn, Python fundamentals and advanced Python).
+- [Independent data science consulting](https://arnaudlegout.fr/en/consulting/) : the consulting section in English (performance and cost, AI agents, scientific review of analyses).

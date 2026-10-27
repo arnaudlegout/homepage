@@ -5,11 +5,19 @@
 (function () {
   'use strict';
 
-  var RESULTS = [
+  // Textes dans la langue de la page (<html lang>) ; les valeurs des réponses
+  // (oui, non, nsp) restent les mêmes dans les deux langues.
+  var EN = document.documentElement.lang === 'en';
+  var RESULTS = EN ? [
+    { max: 1, text: "Your situation seems under control. If you would still like an outside opinion, describe it to me." },
+    { max: 3, text: "Two or three points deserve an outside look. A one-day diagnostic is usually enough to assess them." },
+    { max: 5, text: "These are the answers of most of the teams I meet. This is exactly what the preliminary diagnostic helps clarify." }
+  ] : [
     { max: 1, text: "Votre situation semble maîtrisée. Si vous voulez tout de même un avis extérieur, décrivez-la-moi." },
     { max: 3, text: "Deux ou trois points méritent un regard extérieur. Un diagnostic d'une journée suffit généralement à les qualifier." },
     { max: 5, text: "Ces réponses sont celles de la plupart des équipes que je rencontre. C'est exactement ce que le diagnostic préalable permet de clarifier." }
   ];
+  var CTA = EN ? 'Describe your situation' : 'Décrivez-moi votre situation';
 
   function textFor(score) {
     for (var i = 0; i < RESULTS.length; i++) {
@@ -42,7 +50,7 @@
       var link = document.createElement('a');
       link.href = 'contact.html';
       link.className = 'btn btn--primary';
-      link.textContent = 'Décrivez-moi votre situation';
+      link.textContent = CTA;
       result.appendChild(link);
     });
   }

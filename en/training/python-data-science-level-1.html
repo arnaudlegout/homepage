@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python data science training — NumPy, Pandas, Seaborn</title>
+  <meta name="description" content="NumPy, Pandas, Seaborn in 3 days: vectorization, DataFrames, Parquet, visualization. In-company, in English or French. Rated 4.93/5.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://arnaudlegout.fr/en/training/python-data-science-level-1.html">
+  <link rel="alternate" hreflang="fr" href="https://arnaudlegout.fr/formation/python-data-science-niveau-1.html">
+  <link rel="alternate" hreflang="en" href="https://arnaudlegout.fr/en/training/python-data-science-level-1.html">
+  <link rel="alternate" hreflang="x-default" href="https://arnaudlegout.fr/formation/python-data-science-niveau-1.html">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arnaudlegout.fr/en/training/python-data-science-level-1.html">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="fr_FR">
+  <meta property="og:site_name" content="Arnaud Legout">
+  <meta property="og:title" content="Python data science training — NumPy, Pandas, Seaborn | Arnaud Legout">
+  <meta property="og:description" content="NumPy, Pandas, Seaborn in 3 days: vectorization, DataFrames, Parquet, visualization. In-company, in English or French. Rated 4.93/5.">
+  <meta property="og:image" content="https://arnaudlegout.fr/assets/og-formation-en.jpg">
+  <meta property="og:image:secure_url" content="https://arnaudlegout.fr/assets/og-formation-en.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Python data science training by Arnaud Legout, senior research scientist at Inria — Rated 4.93/5">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Python data science training — NumPy, Pandas, Seaborn | Arnaud Legout">
+  <meta name="twitter:description" content="NumPy, Pandas, Seaborn in 3 days: vectorization, DataFrames, Parquet, visualization. In-company, in English or French. Rated 4.93/5.">
+  <meta name="twitter:image" content="https://arnaudlegout.fr/assets/og-formation-en.jpg">
+  <meta name="twitter:image:alt" content="Python data science training by Arnaud Legout, senior research scientist at Inria — Rated 4.93/5">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+  <link rel="preload" href="../../assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../style.css">
+  <!-- Script vide volontaire, à garder juste après la feuille de style : Firefox doit
+       attendre style.css avant de l'exécuter, donc il ne lit pas le <body> tant que le CSS
+       n'est pas chargé. Sans lui, une extension qui force la mise en page trop tôt
+       (« La mise en page a été forcée avant le chargement complet de la page ») fait
+       afficher la page sans style un instant au rechargement. Ne pas supprimer. -->
+  <script>0</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "@id": "https://arnaudlegout.fr/en/training/python-data-science-level-1.html#course",
+    "name": "Python data science training — level 1",
+    "description": "Intensive 3-day professional training on NumPy, Pandas and Seaborn. Vectorization, broadcasting, DataFrame manipulation, time series, the Parquet format, statistical visualization. For data scientists, engineers and researchers in companies.",
+    "url": "https://arnaudlegout.fr/en/training/python-data-science-level-1.html",
+    "inLanguage": ["en", "fr"],
+    "provider": { "@id": "https://arnaudlegout.fr/formation/#formation-arnaud-legout" },
+    "about": [
+      "NumPy",
+      "Pandas",
+      "Seaborn",
+      "Data science",
+      "Python",
+      "Data visualization",
+      "Parquet"
+    ],
+    "teaches": [
+      "Master NumPy's ndarray type: creation, indexing, slicing, reshaping",
+      "Apply vectorization and broadcasting to write efficient computations",
+      "Manipulate Pandas DataFrames with groupby, merge, pivot",
+      "Handle indexes, dates and time series in Pandas",
+      "Read and write Parquet files with Pandas and PyArrow",
+      "Produce publication-quality statistical visualizations with Seaborn"
+    ],
+    "audience": {
+      "@type": "EducationalAudience",
+      "educationalRole": "Data scientists, engineers, researchers and Ph.D. students"
+    },
+    "educationalLevel": "Intermediate",
+    "timeRequired": "PT21H",
+    "hasCourseInstance": [
+      {
+        "@type": "CourseInstance",
+        "courseMode": "Onsite",
+        "courseWorkload": "PT21H",
+        "instructor": { "@id": "https://arnaudlegout.fr/#arnaud-legout" },
+        "location": {
+          "@type": "Place",
+          "name": "On the client's premises, France"
+        }
+      },
+      {
+        "@type": "CourseInstance",
+        "courseMode": "Online",
+        "courseWorkload": "PT21H",
+        "instructor": { "@id": "https://arnaudlegout.fr/#arnaud-legout" }
+      }
+    ],
+    "offers": {
+      "@type": "Offer",
+      "category": "Professional training",
+      "availability": "https://schema.org/InStock",
+      "url": "https://arnaudlegout.fr/en/training/contact.html"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Arnaud Legout",
+        "item": "https://arnaudlegout.fr/en/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Training",
+        "item": "https://arnaudlegout.fr/en/training/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Python data science — level 1",
+        "item": "https://arnaudlegout.fr/en/training/python-data-science-level-1.html"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "en",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the difference between a view and a copy in Pandas, and why does it matter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Historically, this is one of the most common pitfalls in Pandas. Since Pandas 3.0, the Copy-on-Write (CoW) mechanism makes the notion of a view fully consistent and makes this problem much easier to reason about. The course covers the most modern and efficient idioms of the libraries taught — including the recent changes in Pandas that change best practices."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why learn Seaborn rather than Matplotlib directly?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Seaborn is built on top of Matplotlib and produces publication-quality statistical visualizations with much less code. It is covered in module 4, with theme customization and figure export. Matplotlib remains available underneath when fine-grained customization is needed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the Parquet format really necessary at this level?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Parquet has become the reference format for exchanging and storing tabular data in data science. The course covers reading and writing Parquet with Pandas and PyArrow, as well as compression and partitioning — useful notions as soon as you work with files of significant size."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "My teams do not all have the same Python level. How does it work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The level is calibrated to the group. If some staff do not have the required Python level (functions, iteration, modules, namespaces), the Python level 1 course can be added beforehand. This is to be discussed when preparing the quote."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this course cover time series?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, in module 3: DatetimeIndex, resample and rolling are covered in Pandas. It is a frequent topic for teams working on sensor data, logs or financial data."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the remote format suitable for this kind of training?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. 90% of participants rate the remote format as equivalent or better than in-person. I have been running remote training since 2020 and have built a solid practice of online teaching. I use Zoom, which makes it possible to record the sessions and share them with participants if desired, and CoCalc, an online platform that gives access to preconfigured servers with all the training material and libraries installed. CoCalc also lets me follow each participant's progress in real time and step in directly to correct or unblock."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="header">
+    <div class="nav container">
+      <nav class="nav__brand" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/en/" class="nav__logo">Arnaud Legout</a></li>
+          <li><a href="./" class="nav__section">Training</a></li>
+        </ol>
+      </nav>
+      <nav class="nav__menu" id="nav-menu" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="/research/" class="nav__link">Research</a>
+            <ul class="nav__dropdown">
+              <li><a href="/research/publications.html">Publications</a></li>
+              <li><a href="/research/#projects">Projects</a></li>
+              <li><a href="/research/phdstudents.html">Recommendations for Ph.D. students</a></li>
+            </ul>
+          </li>
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="./" class="nav__link" aria-current="true">Training</a>
+            <ul class="nav__dropdown">
+              <li class="nav__dropdown-label">Data science</li>
+              <li><a href="python-data-science-level-1.html" aria-current="page">Python data science — level 1</a></li>
+              <li><a href="python-data-science-level-2.html">Python data science — level 2</a></li>
+              <li><a href="python-machine-learning.html">Python machine learning</a></li>
+              <li class="nav__dropdown-label">Python essentials</li>
+              <li><a href="python-level-1.html">Python — level 1</a></li>
+              <li><a href="python-advanced.html">Python — advanced</a></li>
+            </ul>
+          </li>
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="/en/consulting/" class="nav__link">Consulting</a>
+            <ul class="nav__dropdown">
+              <li><a href="/en/consulting/audit-performance-cost-data-processing.html">Performance and cost audit</a></li>
+              <li><a href="/en/consulting/audit-ai-agents-data-science.html">AI agents audit</a></li>
+              <li><a href="/en/consulting/scientific-review-data-analyses.html">Scientific review of analyses</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav__actions">
+        <a href="contact.html" class="nav__cta btn btn--primary"><span class="nav__cta-long">Request a quote</span><span class="nav__cta-short">Quote</span></a>
+        <a href="/formation/python-data-science-niveau-1.html" class="nav__lang" hreflang="fr" lang="fr" aria-label="Version française de cette page">FR</a>
+        <button type="button" class="nav__burger" aria-label="Open the navigation menu" aria-expanded="false" aria-controls="nav-menu">
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <div class="page-hero">
+      <div class="container container--text">
+        <h1>Python data science training — level 1</h1>
+        <p class="page-hero__subtitle">NumPy, Pandas, Seaborn: data analysis and visualization</p>
+        <div class="page-hero__badges">
+          <span class="badge">⏱ 3 days</span>
+          <span class="badge">👥 ≤ 10 people</span>
+          <span class="badge">📍 On site or remote</span>
+          <span class="badge">🌐 English or French</span>
+          <span class="badge">🎯 Intermediate</span>
+          <span class="badge">👤 Data scientists and engineers</span>
+          <span class="badge">🏢 In-company</span>
+          <span class="badge">★ 4.93/5</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-content">
+      <div class="container">
+
+        <div class="page-section">
+          <p class="lead">NumPy and Pandas are the foundations of the Python data science ecosystem. Poorly mastered, these libraries produce slow, verbose and fragile code: unnecessary copies, explicit loops where vectorization is needed, a misunderstood Pandas Copy-on-Write model.</p>
+          <p>I have seen these pitfalls dozens of times in training. They do not come from the participants' level: they come from an <strong>incomplete mental model</strong> of how these libraries work inside. This course builds that mental model, so that your teams write correct data science code from the first draft.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>After this course, your staff will be able to</h2>
+          <ul>
+            <li>Master NumPy's <code>ndarray</code> type: creation, indexing, slicing, reshaping</li>
+            <li>Apply vectorization and broadcasting to write efficient computations without loops</li>
+            <li>Manipulate Pandas DataFrames with advanced operations: <code>groupby</code>, <code>merge</code>, <code>pivot</code></li>
+            <li>Handle indexes, dates and time series correctly in Pandas</li>
+            <li>Read and write Parquet files with Pandas and PyArrow for efficient storage</li>
+            <li>Produce publication-quality statistical visualizations with Seaborn</li>
+            <li>Understand the Pandas Copy-on-Write model and avoid common pitfalls: chained assignment, implicit types</li>
+          </ul>
+        </div>
+
+        <div class="page-section">
+          <h2>Detailed program</h2>
+
+          <h3>Module 1 — Working environment</h3>
+          <p>Setting up a data science environment with Conda. A modern IDE: VS Code, git, LLM integration.</p>
+
+          <h3>Module 2 — NumPy, vectorized computing in Python</h3>
+          <p>The <code>ndarray</code> type: memory layout, dtype, dimensions. Creating arrays, slicing, reshaping, advanced indexing. Vectorization and ufuncs. Broadcasting: rules and applications. Aggregation and sorting functions. An introduction to SciPy.</p>
+
+          <h3>Module 3 — Pandas, tabular data manipulation</h3>
+          <p>Series and Index: structure, automatic alignment. DataFrame: creation, selection, filtering, modification. Reading and writing: CSV, Excel, JSON, Parquet. Data cleaning: missing values, duplicates, types. Advanced operations: <code>concat</code>, <code>groupby</code>, <code>merge</code>/<code>join</code>, pivot tables. Dates and time series: <code>DatetimeIndex</code>, <code>resample</code>, <code>rolling</code>. The Parquet format: compression, partitioning, interoperability with PyArrow.</p>
+
+          <h3>Module 4 — Seaborn, statistical visualization</h3>
+          <p>Seaborn's architecture and its relation to Matplotlib. Relational plots (<code>relplot</code>), distribution plots (<code>displot</code>), categorical plots (<code>catplot</code>). Multivariate visualizations: <code>jointplot</code>, <code>pairplot</code>. Customization: themes, palettes, exporting publication-quality figures.</p>
+        </div>
+
+        <div class="page-encart">
+          <h2>Do your teams have the required Python level?</h2>
+          <p>The data science courses assume a good command of Python: functions, iteration, modules, namespaces. If this is not the case for all your staff, I can add the <strong><a href="python-level-1.html">Python — level 1</a></strong> module before the data science days. For teams that develop complex code, the <strong><a href="python-advanced.html">Python — advanced</a></strong> module (object-oriented programming, decorators, metaclasses) is also available.</p>
+          <p>These complements are offered case by case — feel free to mention them in your quote request.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Audience and prerequisites</h2>
+          <p><strong>Target audience</strong></p>
+          <p>Data scientists, engineers, researchers and Ph.D. students who want to master the fundamental Python tools for data analysis.</p>
+          <p><strong>Prerequisites</strong></p>
+          <p>Intermediate command of Python: functions, iteration, namespaces, importing modules. If your teams do not have this level, I offer a Python refresher in addition — see the box <em>Do your teams have the required Python level?</em> above.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Teaching method</h2>
+          <p>The course alternates short theoretical presentations and hands-on exercises in Jupyter notebooks. Each concept is put into practice immediately. I pay particular attention to making sure every participant keeps up, whatever their starting level, and I calibrate the depth of each topic to the group.</p>
+          <p>The material is given to the participants at the end of the course, along with the exercise notebooks and their solutions.</p>
+        </div>
+
+        <div class="page-section">
+          <h2>Official documentation</h2>
+          <p><a href="https://numpy.org/doc/stable/" target="_blank" rel="noopener noreferrer">NumPy</a>, <a href="https://pandas.pydata.org/docs/" target="_blank" rel="noopener noreferrer">Pandas</a>, <a href="https://seaborn.pydata.org/" target="_blank" rel="noopener noreferrer">Seaborn</a>, the <a href="https://parquet.apache.org/" target="_blank" rel="noopener noreferrer">Apache Parquet</a> format.</p>
+        </div>
+
+        <section class="page-section" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">Frequently asked questions</h2>
+          <div class="faq">
+            <details class="faq__item">
+              <summary>What is the difference between a view and a copy in Pandas, and why does it matter?</summary>
+              <div class="faq__answer"><p>Historically, this is one of the most common pitfalls in Pandas. Since Pandas 3.0, the Copy-on-Write (CoW) mechanism makes the notion of a view fully consistent and makes this problem much easier to reason about. The course covers the most modern and efficient idioms of the libraries taught — including the recent changes in Pandas that change best practices.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Why learn Seaborn rather than Matplotlib directly?</summary>
+              <div class="faq__answer"><p>Seaborn is built on top of Matplotlib and produces publication-quality statistical visualizations with much less code. It is covered in module 4, with theme customization and figure export. Matplotlib remains available underneath when fine-grained customization is needed.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Is the Parquet format really necessary at this level?</summary>
+              <div class="faq__answer"><p>Yes. Parquet has become the reference format for exchanging and storing tabular data in data science. The course covers reading and writing Parquet with Pandas and PyArrow, as well as compression and partitioning — useful notions as soon as you work with files of significant size.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>My teams do not all have the same Python level. How does it work?</summary>
+              <div class="faq__answer"><p>The level is calibrated to the group. If some staff do not have the required Python level (functions, iteration, modules, namespaces), the Python level 1 course can be added beforehand. This is to be discussed when preparing the quote.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Does this course cover time series?</summary>
+              <div class="faq__answer"><p>Yes, in module 3: DatetimeIndex, resample and rolling are covered in Pandas. It is a frequent topic for teams working on sensor data, logs or financial data.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Is the remote format suitable for this kind of training?</summary>
+              <div class="faq__answer"><p>Yes. 90% of participants rate the remote format as equivalent or better than in-person. I have been running remote training since 2020 and have built a solid practice of online teaching. I use Zoom, which makes it possible to record the sessions and share them with participants if desired, and CoCalc, an online platform that gives access to preconfigured servers with all the training material and libraries installed. CoCalc also lets me follow each participant's progress in real time and step in directly to correct or unblock.</p></div>
+            </details>
+          </div>
+        </section>
+
+        <div class="page-cta">
+          <a href="contact.html" class="btn btn--primary">Request a quote for this course</a>
+        </div>
+
+      </div>
+    </div>
+
+    <section class="section voir-aussi" aria-labelledby="see-also-title">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="see-also-title">See also</h2>
+        </div>
+        <div class="cards-grid cards-grid--pair">
+          <a class="card card--link" href="python-data-science-level-2.html">
+            <h3 class="card__title">Python data science — level&nbsp;2</h3>
+            <p class="card__body">Going beyond Pandas when data exceeds RAM or when performance matters. Polars and its
+            streaming engine, JIT acceleration with Numba, multi-core parallelism with multiprocessing.</p>
+            <span class="card__link">See the program →</span>
+          </a>
+
+          <a class="card card--link" href="python-machine-learning.html">
+            <h3 class="card__title">Python machine learning</h3>
+            <p class="card__body">Hands-on mastery of supervised and unsupervised machine learning with scikit-learn.
+            Pipelines, regularization, ensemble methods, model selection. Emphasis on methodological rigor: avoiding
+            overfitting, cross-validation, selection without data leakage.</p>
+            <span class="card__link">See the program →</span>
+          </a>
+        </div>
+        <p class="voir-aussi__note">Beyond training, I also work as a consultant on the performance of your data
+          pipelines, the use of AI agents and the review of your analyses.
+          <a href="/en/consulting/">Discover consulting →</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="/research/">Research</a></p>
+          <ul class="footer__link-list">
+            <li><a href="/research/publications.html">Publications</a></li>
+            <li><a href="/research/#projects">Projects</a></li>
+            <li><a href="/research/phdstudents.html">Recommendations for Ph.D. students</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="./">Training</a></p>
+          <ul class="footer__link-list">
+            <li><a href="python-data-science-level-1.html">Python data science — level 1</a></li>
+            <li><a href="python-data-science-level-2.html">Python data science — level 2</a></li>
+            <li><a href="python-machine-learning.html">Python machine learning</a></li>
+            <li><a href="python-level-1.html">Python — level 1</a></li>
+            <li><a href="python-advanced.html">Python — advanced</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title"><a href="/en/consulting/">Consulting</a></p>
+          <ul class="footer__link-list">
+            <li><a href="/en/consulting/audit-performance-cost-data-processing.html">Performance and cost audit</a></li>
+            <li><a href="/en/consulting/audit-ai-agents-data-science.html">AI agents audit</a></li>
+            <li><a href="/en/consulting/scientific-review-data-analyses.html">Scientific review of analyses</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Contact</p>
+          <ul class="footer__link-list">
+            <li><a href="contact.html">Training contact</a></li>
+            <li><a href="/en/consulting/contact.html">Consulting contact</a></li>
+            <li><a href="mailto:arnaud.legout@gmail.com">Email</a></li>
+            <li><a href="/en/legal-notice.html">Legal notice</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Arnaud Legout. Static site, no cookies.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script data-goatcounter="https://arnaudlegout-formations.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+  <script src="../../assets/js/nav.js"></script>
+</body>
+</html>

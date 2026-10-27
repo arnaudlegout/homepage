@@ -14,6 +14,9 @@
 
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://arnaudlegout.fr/">
+  <link rel="alternate" hreflang="fr" href="https://arnaudlegout.fr/">
+  <link rel="alternate" hreflang="en" href="https://arnaudlegout.fr/en/">
+  <link rel="alternate" hreflang="x-default" href="https://arnaudlegout.fr/">
   <link rel="sitemap" type="application/xml" href="sitemap.xml">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
@@ -52,7 +55,7 @@
         "@id": "https://arnaudlegout.fr/#website",
         "name": "Arnaud Legout",
         "url": "https://arnaudlegout.fr/",
-        "inLanguage": "fr",
+        "inLanguage": ["fr", "en"],
         "publisher": { "@id": "https://arnaudlegout.fr/#arnaud-legout" }
       },
       {
@@ -63,7 +66,7 @@
         "inLanguage": "fr",
         "isPartOf": { "@id": "https://arnaudlegout.fr/#website" },
         "dateCreated": "2026-10-20T17:35:52+02:00",
-        "dateModified": "2026-10-22T16:02:01+02:00",
+        "dateModified": "2026-10-27T12:00:00+01:00",
         "mainEntity": { "@id": "https://arnaudlegout.fr/#arnaud-legout" }
       },
       {
@@ -92,7 +95,6 @@
           "addressCountry": "FR"
         },
         "sameAs": [
-          "https://www-sop.inria.fr/members/Arnaud.Legout/",
           "https://www.linkedin.com/in/arnaud-legout-866a404/",
           "https://scholar.google.com/citations?user=uGy5lroAAAAJ",
           "https://orcid.org/0000-0003-4706-424X",
@@ -126,6 +128,14 @@
       <nav class="nav__menu" id="nav-menu" aria-label="Navigation principale">
         <ul class="nav__list">
           <li class="nav__item nav__item--has-dropdown">
+            <a href="/research/" class="nav__link" hreflang="en">Recherche</a>
+            <ul class="nav__dropdown">
+              <li><a href="/research/publications.html" hreflang="en">Publications</a></li>
+              <li><a href="/research/#projects" hreflang="en">Projets</a></li>
+              <li><a href="/research/phdstudents.html" hreflang="en">Conseils aux doctorants</a></li>
+            </ul>
+          </li>
+          <li class="nav__item nav__item--has-dropdown">
             <a href="/formation/" class="nav__link">Formation</a>
             <ul class="nav__dropdown">
               <li class="nav__dropdown-label">Data science</li>
@@ -148,6 +158,7 @@
         </ul>
       </nav>
       <div class="nav__actions">
+        <a href="/en/" class="nav__lang" hreflang="en" lang="en" aria-label="English version of this page">EN</a>
         <button type="button" class="nav__burger" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="nav-menu">
           <span class="nav__burger-bar"></span>
           <span class="nav__burger-bar"></span>
@@ -179,13 +190,26 @@
       </div>
     </section>
 
-    <!-- DEUX POINTS D'ENTRÉE -->
+    <!-- TROIS POINTS D'ENTRÉE (recherche toujours en premier) -->
     <section class="section section--alt" aria-labelledby="activites-title">
       <div class="container">
         <div class="section-header">
-          <h2 id="activites-title">Formation et conseil</h2>
+          <h2 id="activites-title">Recherche, formation et conseil</h2>
         </div>
-        <div class="cards-grid cards-grid--pair">
+        <div class="cards-grid">
+
+          <a class="card card--link" href="/research/" hreflang="en">
+            <p class="eyebrow">Recherche</p>
+            <h3 class="card__title">Recherche à Inria</h3>
+            <ul class="card__stack">
+              <li>mesure de l'Internet</li>
+              <li>vie privée</li>
+              <li>réseaux sociaux</li>
+              <li>Bitcoin</li>
+            </ul>
+            <p class="card__body">Publications, projets en cours et passés, doctorants encadrés, activités éditoriales et enseignement. Vingt ans d'analyse de données à très grande échelle, publiés dans les conférences de référence.</p>
+            <span class="card__link">Voir la recherche (en anglais) →</span>
+          </a>
 
           <a class="card card--link" href="/formation/">
             <p class="eyebrow">Formation</p>
@@ -276,8 +300,8 @@
           <li>la mesure crowdsourcée de l'exposition aux ondes radiofréquences avec l'application ElectroSmart, auprès de 254&nbsp;410 utilisateurs dans 13 pays de 2017 à 2020 (<a href="https://doi.org/10.1016/j.envint.2022.107144" target="_blank" rel="noopener"><em>Environment International</em></a>).</li>
         </ul>
         <p>Plusieurs de ces travaux ont été repris par la presse internationale, dont le <a href="https://archive.nytimes.com/bits.blogs.nytimes.com/2011/11/29/skype-can-expose-your-location-researchers-say/" target="_blank" rel="noopener">New York Times</a>, le <a href="https://www.washingtonpost.com/news/the-intersect/wp/2016/06/16/six-in-10-of-you-will-share-this-link-without-reading-it-according-to-a-new-and-depressing-study/" target="_blank" rel="noopener">Washington Post</a>, <a href="https://fortune.com/2016/06/19/6-out-of-10-twitter-link-clicks/" target="_blank" rel="noopener">Fortune</a>, <a href="https://www.eldiario.es/tecnologia/personas-compartan-articulo-twitter-abierto_1_3937933.html" target="_blank" rel="noopener">El Diario</a> et <a href="https://www.lemonde.fr/technologies/article/2010/05/08/l-anonymat-du-reseau-bittorrent-mis-en-cause_1348214_651865.html" target="_blank" rel="noopener">Le Monde</a>. Mes travaux récents portent aussi sur l'effet des suggestions de type IA sur la justesse des décisions, sur l'identification d'adresses Bitcoin illicites dans les forums clandestins et sur les discours de santé sur les réseaux sociaux.</p>
-        <p>J'ai encadré six thèses jusqu'à la soutenance, siégé aux comités éditoriaux de <em>Proceedings on Privacy Enhancing Technologies</em> (2021–2023) et d'<em>Elsevier Computer Networks</em> (2012–2016), et aux comités de programme de conférences comme ACM SIGCOMM, ACM IMC, ACM CoNEXT et PETS.</p>
-        <p>La liste complète de mes publications se trouve sur ma <a href="https://www-sop.inria.fr/members/Arnaud.Legout/" target="_blank" rel="noopener">page de recherche Inria</a>, qui présente aussi mes projets et mes interventions, ainsi que sur <a href="https://scholar.google.com/citations?user=uGy5lroAAAAJ" target="_blank" rel="noopener">Google Scholar</a> et sur mon <a href="https://cv.hal.science/arnaudlegout" target="_blank" rel="noopener">CV HAL</a>.</p>
+        <p>J'ai encadré six thèses jusqu'à la soutenance, siégé aux comités éditoriaux de <em>Proceedings on Privacy Enhancing Technologies</em> (2021–2023, puis 2026–2027) et d'<em>Elsevier Computer Networks</em> (2012–2016), et aux comités de programme de conférences comme ACM SIGCOMM, ACM IMC, ACM CoNEXT et PETS.</p>
+        <p>La liste complète de mes <a href="/research/publications.html" hreflang="en">publications</a> se trouve dans la <a href="/research/" hreflang="en">section recherche</a> du site, en anglais, qui présente aussi mes projets, mes doctorants et mes enseignements, ainsi que sur <a href="https://scholar.google.com/citations?user=uGy5lroAAAAJ" target="_blank" rel="noopener">Google Scholar</a> et sur mon <a href="https://cv.hal.science/arnaudlegout" target="_blank" rel="noopener">CV HAL</a>.</p>
       </div>
     </section>
 
@@ -296,9 +320,9 @@
       <div class="container prose">
         <h2 id="liens-title">Liens et contact</h2>
         <ul class="links-list">
-          <li><a href="https://www-sop.inria.fr/members/Arnaud.Legout/" target="_blank" rel="noopener">Page de recherche Inria</a></li>
-          <li><a href="https://www-sop.inria.fr/members/Arnaud.Legout/publications.html" target="_blank" rel="noopener">Publications, exposés et brevets</a></li>
-          <li><a href="https://www-sop.inria.fr/members/Arnaud.Legout/cv_english_full.pdf" target="_blank" rel="noopener">Curriculum vitæ (PDF, en anglais)</a></li>
+          <li><a href="/research/" hreflang="en">Page de recherche (en anglais)</a></li>
+          <li><a href="/research/publications.html" hreflang="en">Publications, exposés et brevets</a></li>
+          <li><a href="/research/cv_english_full.pdf" hreflang="en">Curriculum vitæ (PDF, en anglais)</a></li>
           <li><a href="https://scholar.google.com/citations?user=uGy5lroAAAAJ" target="_blank" rel="noopener">Google Scholar</a></li>
           <li><a href="https://cv.hal.science/arnaudlegout" target="_blank" rel="noopener">CV HAL</a></li>
           <li><a href="https://orcid.org/0000-0003-4706-424X" target="_blank" rel="noopener">ORCID</a></li>
@@ -317,13 +341,11 @@
     <div class="container">
       <div class="footer__grid">
         <div class="footer__col">
-          <p class="footer__col-title">Arnaud Legout</p>
-          <p class="footer__tagline">Directeur de recherche Inria — Sophia Antipolis, France</p>
+          <p class="footer__col-title"><a href="/research/" hreflang="en">Recherche</a></p>
           <ul class="footer__link-list">
-            <li><a href="/">Parcours</a></li>
-            <li><a href="https://www-sop.inria.fr/members/Arnaud.Legout/" target="_blank" rel="noopener">Recherche Inria</a></li>
-            <li><a href="https://www.linkedin.com/in/arnaud-legout-866a404/" target="_blank" rel="noopener">LinkedIn</a></li>
-            <li><a href="https://scholar.google.com/citations?user=uGy5lroAAAAJ" target="_blank" rel="noopener">Google Scholar</a></li>
+            <li><a href="/research/publications.html" hreflang="en">Publications</a></li>
+            <li><a href="/research/#projects" hreflang="en">Projets</a></li>
+            <li><a href="/research/phdstudents.html" hreflang="en">Conseils aux doctorants</a></li>
           </ul>
         </div>
         <div class="footer__col">
