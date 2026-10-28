@@ -3,10 +3,10 @@
 > Directeur de recherche à Inria (Sophia Antipolis), Arnaud Legout analyse des données à très grande échelle depuis plus de vingt ans. Il propose des formations Python data science et du conseil indépendant en data science.
 
 ## Pages
-- [Arnaud Legout — directeur de recherche Inria, formation et conseil en data science](https://arnaudlegout.fr/) : parcours, recherche, enseignement, liens.
+- [Arnaud Legout — formation et conseil en data science](https://arnaudlegout.fr/) : parcours, recherche, enseignement, liens.
 
 ## Recherche (en anglais)
-- [Arnaud Legout — Senior Research Scientist at Inria](https://arnaudlegout.fr/research/) : coordonnées, actualités, biographie, projets, doctorants, activités, enseignement.
+- [Arnaud Legout — Research at Inria](https://arnaudlegout.fr/research/) : coordonnées, actualités, biographie, projets, doctorants, activités, enseignement.
 - [Publications — Arnaud Legout](https://arnaudlegout.fr/research/publications.html) : articles de revues et de conférences, rapports, thèses, supports de cours, exposés, brevets.
 - [Recommendations for Ph.D. students](https://arnaudlegout.fr/research/phdstudents.html) : lectures conseillées aux doctorants.
 - Projets passés : [Greasy](https://arnaudlegout.fr/research/Projects/greasy.html), [ElectroSmart](https://arnaudlegout.fr/research/Projects/electrosmart.html), [soTweet](https://arnaudlegout.fr/research/Projects/sotweet.html), [Video Streaming](https://arnaudlegout.fr/research/Projects/streaming.html), [Bluebear](https://arnaudlegout.fr/research/Projects/bluebear.html), [P2P-CD](https://arnaudlegout.fr/research/Projects/p2p_cd.html), [PLM](https://arnaudlegout.fr/research/Projects/plm.html).
@@ -30,6 +30,6 @@ Satisfaction : 4,93/5 en moyenne sur 289 évaluations collectées sur 39 session
 - [Contact — conseil data science | Arnaud Legout](https://arnaudlegout.fr/consulting/contact.html) : Décrivez votre situation : traitements lents, agents IA, analyse à relire. Réponse sous 48 heures avec une proposition de diagnostic ou d'intervention.
 
 ## English
-- [Arnaud Legout — senior research scientist at Inria, data science training and consulting](https://arnaudlegout.fr/en/) : the home page in English.
+- [Arnaud Legout — data science training and consulting](https://arnaudlegout.fr/en/) : the home page in English.
 - [Python data science training](https://arnaudlegout.fr/en/training/) : the training section in English (NumPy, Pandas, Polars, Numba, scikit-learn, Python fundamentals and advanced Python).
 - [Independent data science consulting](https://arnaudlegout.fr/en/consulting/) : the consulting section in English (performance and cost, AI agents, scientific review of analyses).
