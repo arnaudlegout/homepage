@@ -2107,6 +2107,48 @@ a.card--link:focus-visible .card__link {
   background-color: var(--color-accent);
 }
 
+/* Accès rapide aux sections d'une longue page (publications) : pastilles sous le titre
+   du hero, une par section. La flèche est décorative (texte alternatif vide). L'arrivée
+   sous la barre collante est réglée par scroll-padding-top (html). */
+.page-toc ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+.page-toc a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--color-text);
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.375rem 0.875rem;
+  transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+}
+.page-toc a::after {
+  content: '↓';
+  content: '↓' / '';
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+.page-toc a:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+.page-toc a:hover::after {
+  color: var(--color-accent);
+  transform: translateY(2px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-toc a:hover::after { transform: none; }
+}
+
 /* Badge mis en avant : prix, communiqué de presse */
 .badge--highlight {
   color: #FFFFFF;
